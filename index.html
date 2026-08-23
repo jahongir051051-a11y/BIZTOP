@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BIZTOP — Eng yaxshi bizneslarni toping</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07152f;
+    color: white;
+}
+
+header {
+    background: #061127;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #17315f;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1683ff;
+}
+
+.logo span {
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+}
+
+.hero {
+    text-align: center;
+    padding: 65px 20px 50px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #1683ff;
+}
+
+.hero p {
+    color: #b7c5df;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.search {
+    max-width: 650px;
+    margin: auto;
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.search button {
+    background: #1683ff;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.section {
+    padding: 35px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h2 {
+    margin-bottom: 22px;
+    font-size: 25px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.category {
+    background: #0d2145;
+    padding: 25px 15px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #173b72;
+    transition: 0.2s;
+}
+
+.category:hover {
+    transform: translateY(-3px);
+    border-color: #1683ff;
+}
+
+.category .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.businesses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.business {
+    background: #0d2145;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid #173b72;
+}
+
+.business h3 {
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #ffd43b;
+    margin-bottom: 10px;
+}
+
+.business p {
+    color: #b7c5df;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.business button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 11px;
+    background: transparent;
+    color: #1683ff;
+    border: 1px solid #1683ff;
+    border-radius: 8px;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 30px 20px;
+    text-align: center;
+    background: #061127;
+    color: #8fa3c4;
+}
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .search {
+        flex-direction: column;
+        background: transparent;
+        gap: 10px;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+    .search button {
+        padding: 14px;
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .businesses {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">BIZ<span>TOP</span></div>
+
+    <nav>
+        <a href="#">Bosh sahifa</a>
+        <a href="#">Kategoriyalar</a>
+        <a href="#">Biznes qo‘shish</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <h1>Eng yaxshi <span>bizneslarni</span> toping</h1>
+
+    <p>
+        BIZTOP — bizneslarni topish, baholash va tanlash platformasi.
+    </p>
+
+    <div class="search">
+        <input
+            type="text"
+            placeholder="Restoran, kafe, do‘kon yoki boshqa biznes..."
+        >
+
+        <button onclick="searchBusiness()">
+            Qidirish
+        </button>
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>Kategoriyalar</h2>
+
+    <div class="categories">
+
+        <div class="category">
+            <div class="icon">🍽️</div>
+            <b>Restoran</b>
+        </div>
+
+        <div class="category">
+            <div class="icon">☕</div>
+            <b>Kafe</b>
+        </div>
+
+        <div class="category">
+            <div class="icon">🛒</div>
+            <b>Do‘kon</b>
+        </div>
+
+        <div class="category">
+            <div class="icon">🏨</div>
+            <b>Mehmonxona</b>
+        </div>
+
+        <div class="category">
+            <div class="icon">🚗</div>
+            <b>Avtoservis</b>
+        </div>
+
+        <div class="category">
+            <div class="icon">💇</div>
+            <b>Go‘zallik</b>
+        </div>
+
+        <div class="category">
+            <div class="icon">🏗️</div>
+            <b>Qurilish</b>
+        </div>
+
+        <div class="category">
+            <div class="icon">🎓</div>
+            <b>Ta’lim</b>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>⭐ Mashhur bizneslar</h2>
+
+    <div class="businesses">
+
+        <div class="business">
+            <h3>Royal Restaurant</h3>
+            <div class="rating">★★★★★ 4.9</div>
+            <p>📍 Toshkent</p>
+            <p>🍽️ Restoran</p>
+            <button>Biznesni ko‘rish</button>
+        </div>
+
+        <div class="business">
+            <h3>Coffee House</h3>
+            <div class="rating">★★★★★ 4.8</div>
+            <p>📍 Nukus</p>
+            <p>☕ Kafe</p>
+            <button>Biznesni ko‘rish</button>
+        </div>
+
+        <div class="business">
+            <h3>Best Auto Service</h3>
+            <div class="rating">★★★★☆ 4.7</div>
+            <p>📍 Urganch</p>
+            <p>🚗 Avtoservis</p>
+            <button>Biznesni ko‘rish</button>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 BIZTOP — Bizneslarni toping va baholang.
+</footer>
+
+<script>
+
+function searchBusiness() {
+
+    const input = document.querySelector(".search input");
+
+    if (input.value.trim() === "") {
+        alert("Iltimos, biznes nomi yoki kategoriyasini kiriting.");
+    } else {
+        alert("BIZTOP qidiruvi: " + input.value);
+    }
+
+}
+
+</script>
+
+</body>
+</html>
