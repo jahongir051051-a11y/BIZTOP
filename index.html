@@ -7,6 +7,7 @@
 <title>BIZTOP — Eng yaxshi bizneslarni toping</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -81,6 +82,7 @@ header{
   color:white;
   font-size:17px;
   font-weight:bold;
+  cursor:pointer;
 }
 
 .search button:active{
@@ -174,6 +176,20 @@ h2{
   background:#1685ff;
   color:white;
   font-weight:bold;
+  cursor:pointer;
+}
+
+.card button:hover{
+  background:#0d70d9;
+}
+
+.no-results{
+  grid-column:1/-1;
+  text-align:center;
+  padding:30px;
+  color:#b9c7df;
+  background:#102b58;
+  border-radius:16px;
 }
 
 footer{
@@ -184,6 +200,7 @@ footer{
 }
 
 @media(max-width:800px){
+
   .categories{
     grid-template-columns:repeat(2,1fr);
   }
@@ -195,9 +212,11 @@ footer{
   .hero h1{
     font-size:34px;
   }
+
 }
 
 @media(max-width:500px){
+
   .search{
     flex-direction:column;
   }
@@ -209,17 +228,26 @@ footer{
   header{
     padding:18px 20px;
   }
+
+  .hero{
+    padding-top:45px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
   <div class="logo">
     <span>BIZ</span>TOP
   </div>
+
 </header>
+
 
 <section class="hero">
 
@@ -232,6 +260,7 @@ footer{
   </p>
 
   <div class="search">
+
     <input
       type="text"
       id="searchInput"
@@ -239,11 +268,13 @@ footer{
     >
 
     <button onclick="searchBusiness()">
-      Qidirish
+      🔎 Qidirish
     </button>
+
   </div>
 
 </section>
+
 
 <div class="container">
 
@@ -251,66 +282,206 @@ footer{
 
   <div class="categories">
 
-    <div class="category" onclick="selectCategory('Restoran')">
+    <div
+      class="category"
+      onclick="selectCategory('Restoran')"
+    >
       <div class="icon">🍽️</div>
       <h3>Restoran</h3>
     </div>
 
-    <div class="category" onclick="selectCategory('Kafe')">
+
+    <div
+      class="category"
+      onclick="selectCategory('Kafe')"
+    >
       <div class="icon">☕</div>
       <h3>Kafe</h3>
     </div>
 
-    <div class="category" onclick="selectCategory('Do‘kon')">
+
+    <div
+      class="category"
+      onclick="selectCategory('Do‘kon')"
+    >
       <div class="icon">🛒</div>
       <h3>Do‘kon</h3>
     </div>
 
-    <div class="category" onclick="selectCategory('Xizmatlar')">
+
+    <div
+      class="category"
+      onclick="selectCategory('Xizmatlar')"
+    >
       <div class="icon">🔧</div>
       <h3>Xizmatlar</h3>
     </div>
 
   </div>
 
+
   <section class="businesses">
 
-    <h2>Mashhur bizneslar</h2>
+    <h2>🏆 Mashhur bizneslar</h2>
 
     <div class="cards" id="businessCards">
 
-      <div class="card">
+
+      <div
+        class="card business-card"
+        data-category="Restoran"
+      >
+
         <div class="emoji">🍔</div>
+
         <h3>BIZTOP Burger</h3>
+
         <p>📍 To‘rtko‘l</p>
-        <p>🍔 Fast food</p>
-        <div class="rating">★★★★★ 4.9</div>
-        <button onclick="showBusiness('BIZTOP Burger')">
+
+        <p>🍽️ Restoran</p>
+
+        <div class="rating">
+          ★★★★★ 4.9
+        </div>
+
+        <button
+          onclick="showBusiness('BIZTOP Burger')"
+        >
           Ko‘rish
         </button>
+
       </div>
 
-      <div class="card">
+
+      <div
+        class="card business-card"
+        data-category="Kafe"
+      >
+
         <div class="emoji">☕</div>
+
         <h3>Top Coffee</h3>
+
         <p>📍 To‘rtko‘l</p>
+
         <p>☕ Kafe</p>
-        <div class="rating">★★★★★ 4.8</div>
-        <button onclick="showBusiness('Top Coffee')">
+
+        <div class="rating">
+          ★★★★★ 4.8
+        </div>
+
+        <button
+          onclick="showBusiness('Top Coffee')"
+        >
           Ko‘rish
         </button>
+
       </div>
 
-      <div class="card">
+
+      <div
+        class="card business-card"
+        data-category="Do‘kon"
+      >
+
         <div class="emoji">🛒</div>
+
         <h3>Baraka Market</h3>
+
         <p>📍 To‘rtko‘l</p>
+
         <p>🛒 Oziq-ovqat do‘koni</p>
-        <div class="rating">★★★★☆ 4.6</div>
-        <button onclick="showBusiness('Baraka Market')">
+
+        <div class="rating">
+          ★★★★☆ 4.6
+        </div>
+
+        <button
+          onclick="showBusiness('Baraka Market')"
+        >
           Ko‘rish
         </button>
+
       </div>
+
+
+      <div
+        class="card business-card"
+        data-category="Xizmatlar"
+      >
+
+        <div class="emoji">🔧</div>
+
+        <h3>Usta Service</h3>
+
+        <p>📍 To‘rtko‘l</p>
+
+        <p>🔧 Xizmatlar</p>
+
+        <div class="rating">
+          ★★★★★ 4.7
+        </div>
+
+        <button
+          onclick="showBusiness('Usta Service')"
+        >
+          Ko‘rish
+        </button>
+
+      </div>
+
+
+      <div
+        class="card business-card"
+        data-category="Restoran"
+      >
+
+        <div class="emoji">🍕</div>
+
+        <h3>To‘rtko‘l Pizza</h3>
+
+        <p>📍 To‘rtko‘l</p>
+
+        <p>🍽️ Restoran</p>
+
+        <div class="rating">
+          ★★★★☆ 4.5
+        </div>
+
+        <button
+          onclick="showBusiness('To‘rtko‘l Pizza')"
+        >
+          Ko‘rish
+        </button>
+
+      </div>
+
+
+      <div
+        class="card business-card"
+        data-category="Kafe"
+      >
+
+        <div class="emoji">🍰</div>
+
+        <h3>Sweet Cafe</h3>
+
+        <p>📍 To‘rtko‘l</p>
+
+        <p>☕ Kafe</p>
+
+        <div class="rating">
+          ★★★★★ 4.9
+        </div>
+
+        <button
+          onclick="showBusiness('Sweet Cafe')"
+        >
+          Ko‘rish
+        </button>
+
+      </div>
+
 
     </div>
 
@@ -318,101 +489,154 @@ footer{
 
 </div>
 
+
 <footer>
+
   © 2026 BIZTOP — Bizneslarni toping va baholang.
+
 </footer>
+
 
 <script>
 
 function normalizeText(text){
+
   return text
     .toLowerCase()
-    .replace(/o‘|o'|ó/g, "o")
-    .replace(/g‘|g'|ǵ/g, "g")
+    .replace(/o‘|o'|ó/g,"o")
+    .replace(/g‘|g'|ǵ/g,"g")
     .trim();
+
 }
+
 
 function searchBusiness(){
 
-  const input = document.getElementById("searchInput").value.trim();
-  const cards = document.querySelectorAll("#businessCards .card");
-  const businessSection = document.querySelector(".businesses");
+  const inputElement =
+    document.getElementById("searchInput");
 
-  let message = document.getElementById("noResults");
-
-  if(message){
-    message.remove();
-  }
-
-  if(input === ""){
-    cards.forEach(card => {
-      card.style.display = "";
-    });
-
-    businessSection.scrollIntoView({
-      behavior: "smooth"
-    });
-
+  if(!inputElement){
     return;
   }
 
-  const searchText = normalizeText(input);
+  const input =
+    normalizeText(inputElement.value);
+
+  const cards =
+    document.querySelectorAll(
+      "#businessCards .business-card"
+    );
+
   let found = 0;
 
-  cards.forEach(card => {
 
-    const cardText = normalizeText(card.innerText);
+  cards.forEach(function(card){
 
-    if(cardText.includes(searchText)){
+    const text =
+      normalizeText(card.innerText);
+
+    const category =
+      normalizeText(
+        card.getAttribute("data-category") || ""
+      );
+
+
+    if(
+      input === "" ||
+      text.includes(input) ||
+      category.includes(input)
+    ){
+
       card.style.display = "";
+
       found++;
+
     }else{
+
       card.style.display = "none";
+
     }
 
   });
 
-  if(found === 0){
 
-    message = document.createElement("p");
+  const oldMessage =
+    document.getElementById("noResults");
+
+  if(oldMessage){
+
+    oldMessage.remove();
+
+  }
+
+
+  if(input !== "" && found === 0){
+
+    const message =
+      document.createElement("div");
 
     message.id = "noResults";
 
-    message.style.textAlign = "center";
-    message.style.padding = "30px";
-    message.style.color = "#b9c7df";
-    message.style.fontSize = "18px";
+    message.className = "no-results";
 
-    message.innerText =
+    message.innerHTML =
       "🔍 Bu qidiruv bo‘yicha biznes topilmadi.";
 
-    document
-      .getElementById("businessCards")
-      .appendChild(message);
+    const container =
+      document.getElementById("businessCards");
+
+    if(container){
+
+      container.appendChild(message);
+
+    }
+
   }
 
-  businessSection.scrollIntoView({
-    behavior: "smooth"
-  });
 }
 
 
 function selectCategory(category){
 
-  document.getElementById("searchInput").value = category;
+  const searchInput =
+    document.getElementById("searchInput");
+
+  if(!searchInput){
+
+    return;
+
+  }
+
+  searchInput.value = category;
 
   searchBusiness();
+
 }
 
 
 function showBusiness(name){
 
   alert(
+    "🏪 " +
     name +
-    "\n\nBu biznes sahifasini keyingi bosqichda yaratamiz."
+    "\n\n" +
+    "Bu biznesning to‘liq sahifasi keyingi bosqichda ochiladi."
   );
 
 }
+
+
+document
+  .getElementById("searchInput")
+  .addEventListener("keydown",function(event){
+
+    if(event.key === "Enter"){
+
+      searchBusiness();
+
+    }
+
+  });
 
 </script>
 
