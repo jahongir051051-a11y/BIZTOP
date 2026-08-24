@@ -234,7 +234,66 @@ footer{
   }
 
 }
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  z-index:1000;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
 
+.modal-content{
+  width:100%;
+  max-width:500px;
+  background:#102b58;
+  border:1px solid #2b5da5;
+  border-radius:20px;
+  padding:28px;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+.modal-close{
+  position:absolute;
+  right:15px;
+  top:10px;
+  background:none;
+  border:0;
+  color:white;
+  font-size:30px;
+  cursor:pointer;
+}
+
+.modal-content h2{
+  margin-bottom:15px;
+}
+
+.modal-info{
+  color:#c5d2e8;
+  font-size:18px;
+  line-height:1.8;
+}
+
+.modal-rating{
+  color:#ffd43b;
+  font-size:22px;
+  margin:15px 0;
+}
+
+.modal-phone{
+  display:block;
+  text-align:center;
+  background:#1685ff;
+  color:white;
+  text-decoration:none;
+  padding:14px;
+  border-radius:10px;
+  font-weight:bold;
+  margin-top:20px;
+}
 </style>
 </head>
 
@@ -614,13 +673,8 @@ function selectCategory(category){
 
 function showBusiness(name){
 
-  alert(
-    "🏪 " +
-    name +
-    "\n\n" +
-    "Bu biznesning to‘liq sahifasi keyingi bosqichda ochiladi."
-  );
-
+ document.getElementById("businessModal").style.display = "flex";
+document.getElementById("modalName").innerText = name; 
 }
 
 
@@ -636,6 +690,35 @@ document
 
 
 </script>
+<div class="modal" id="businessModal">
 
+  <div class="modal-content">
+
+    <button
+      class="modal-close"
+      onclick="closeBusiness()"
+    >
+      ×
+    </button>
+
+    <h2 id="modalName"></h2>
+
+    <div class="modal-info">
+      📍 <span id="modalLocation"></span><br>
+      🏪 <span id="modalCategory"></span>
+    </div>
+
+    <div class="modal-rating" id="modalRating"></div>
+
+    <a
+      class="modal-phone"
+      href="tel:+998900000000"
+    >
+      📞 Telefon qilish
+    </a>
+
+  </div>
+
+</div>
 </body>
 </html>
