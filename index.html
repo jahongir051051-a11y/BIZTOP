@@ -324,25 +324,81 @@ footer{
 
 <script>
 
+function normalizeText(text){
+  return text
+    .toLowerCase()
+    .replace(/o‘|o'|ó/g, "o")
+    .replace(/g‘|g'|ǵ/g, "g")
+    .trim();
+}
+
 function searchBusiness(){
 
   const input =
     document.getElementById("searchInput").value.trim();
 
+  const cards =
+    document.querySelectorAll("#businessCards .card");
+
   if(input === ""){
-    alert("Iltimos, biznes nomi yoki kategoriyasini kiriting.");
+    cards.forEach(card => {
+      card.style.display = "";
+    });
     return;
   }
 
-  alert(
-    "BIZTOP qidiruvi: " + input +
-    "\n\nKeyingi bosqichda bu qidiruvni haqiqiy biznes bazasiga ulaymiz."
-  );
+  const searchText = normalizeText(input);
+
+  let found = 0;
+
+  cards.forEach(card => {
+
+    const cardText =
+      normalizeText(card.innerText);
+
+    if(cardText.includes(searchText)){
+      card.style.display = "";
+      found++;
+    }else{
+      card.style.display = "none";
+    }
+
+  });
+
+  let message =
+    document.getElementById("noResults");
+
+  if(message){
+    message.remove();
+  }
+
+  if(found === 0){
+
+    message =
+      document.createElement("p");
+
+    message.id = "noResults";
+
+    message.style.textAlign = "center";
+    message.style.padding = "30px";
+    message.style.color = "#b9c7df";
+    message.style.fontSize = "18px";
+
+    message.innerText =
+      "🔍 Bu qidiruv bo‘yicha biznes topilmadi.";
+
+    document
+      .getElementById("businessCards")
+      .appendChild(message);
+  }
 }
 
 function selectCategory(category){
 
-  document.getElementById("searchInput").value = category;
+  document.getElementById("searchInput").value =
+    category;
+
+  searchBusiness();
 
   window.scrollTo({
     top:0,
@@ -356,6 +412,7 @@ function showBusiness(name){
     name +
     "\n\nBu biznes sahifasini keyingi bosqichda yaratamiz."
   );
+
 }
 
 </script>
