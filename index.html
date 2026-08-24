@@ -332,19 +332,33 @@ footer {
 </footer>
 
 <script>
-
 function searchBusiness() {
-
     const input = document.querySelector(".search input");
+    const text = input.value.trim().toLowerCase();
 
-    if (input.value.trim() === "") {
+    if (text === "") {
         alert("Iltimos, biznes nomi yoki kategoriyasini kiriting.");
-    } else {
-        alert("BIZTOP qidiruvi: " + input.value);
+        return;
     }
 
-}
+    const businesses = document.querySelectorAll(".business");
+    let found = false;
 
+    businesses.forEach(function(business) {
+        const content = business.innerText.toLowerCase();
+
+        if (content.includes(text)) {
+            business.style.display = "block";
+            found = true;
+        } else {
+            business.style.display = "none";
+        }
+    });
+
+    if (!found) {
+        alert("BIZTOP: \"" + input.value + "\" bo‘yicha biznes topilmadi.");
+    }
+}
 </script>
 
 </body>
