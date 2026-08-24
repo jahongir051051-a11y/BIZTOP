@@ -7,205 +7,208 @@
 <title>BIZTOP — Eng yaxshi bizneslarni toping</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #07152f;
-    color: white;
+body{
+  font-family:Arial,sans-serif;
+  background:#07152f;
+  color:white;
 }
 
-header {
-    background: #061127;
-    padding: 18px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #17315f;
+header{
+  padding:20px 6%;
+  border-bottom:1px solid #17376b;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #1683ff;
+.logo{
+  font-size:32px;
+  font-weight:bold;
 }
 
-.logo span {
-    color: white;
+.logo span{
+  color:#1685ff;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 18px;
-    font-size: 14px;
+.hero{
+  text-align:center;
+  padding:70px 20px 45px;
 }
 
-.hero {
-    text-align: center;
-    padding: 65px 20px 50px;
+.hero h1{
+  font-size:42px;
+  line-height:1.2;
+  margin-bottom:20px;
 }
 
-.hero h1 {
-    font-size: 38px;
-    margin-bottom: 15px;
+.hero h1 span{
+  color:#1685ff;
 }
 
-.hero h1 span {
-    color: #1683ff;
+.hero p{
+  color:#b9c7df;
+  font-size:20px;
+  margin-bottom:30px;
 }
 
-.hero p {
-    color: #b7c5df;
-    font-size: 17px;
-    margin-bottom: 30px;
+.search{
+  max-width:650px;
+  margin:auto;
+  display:flex;
+  gap:10px;
 }
 
-.search {
-    max-width: 650px;
-    margin: auto;
-    display: flex;
-    background: white;
-    border-radius: 12px;
-    padding: 6px;
+.search input{
+  flex:1;
+  padding:18px;
+  border:0;
+  border-radius:12px;
+  font-size:17px;
+  outline:none;
 }
 
-.search input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 8px;
+.search button{
+  padding:18px 28px;
+  border:0;
+  border-radius:12px;
+  background:#1685ff;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
 }
 
-.search button {
-    background: #1683ff;
-    color: white;
-    border: none;
-    padding: 0 25px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
+.search button:active{
+  transform:scale(.97);
 }
 
-.section {
-    padding: 35px 20px;
-    max-width: 1100px;
-    margin: auto;
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:30px 20px 60px;
 }
 
-.section h2 {
-    margin-bottom: 22px;
-    font-size: 25px;
+h2{
+  font-size:30px;
+  margin-bottom:25px;
 }
 
-.categories {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
 }
 
-.category {
-    background: #0d2145;
-    padding: 25px 15px;
-    text-align: center;
-    border-radius: 12px;
-    border: 1px solid #173b72;
-    transition: 0.2s;
+.category{
+  background:#102b58;
+  border:1px solid #214b89;
+  border-radius:16px;
+  padding:28px 15px;
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
 }
 
-.category:hover {
-    transform: translateY(-3px);
-    border-color: #1683ff;
+.category:hover{
+  transform:translateY(-4px);
+  background:#143568;
 }
 
-.category .icon {
-    font-size: 30px;
-    margin-bottom: 10px;
+.category .icon{
+  font-size:38px;
+  margin-bottom:12px;
 }
 
-.businesses {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+.category h3{
+  font-size:18px;
 }
 
-.business {
-    background: #0d2145;
-    border-radius: 14px;
-    padding: 20px;
-    border: 1px solid #173b72;
+.businesses{
+  margin-top:55px;
 }
 
-.business h3 {
-    margin-bottom: 10px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
 
-.rating {
-    color: #ffd43b;
-    margin-bottom: 10px;
+.card{
+  background:#102b58;
+  border:1px solid #214b89;
+  border-radius:16px;
+  padding:22px;
 }
 
-.business p {
-    color: #b7c5df;
-    font-size: 14px;
-    margin-bottom: 8px;
+.card .emoji{
+  font-size:40px;
+  margin-bottom:12px;
 }
 
-.business button {
-    margin-top: 12px;
-    width: 100%;
-    padding: 11px;
-    background: transparent;
-    color: #1683ff;
-    border: 1px solid #1683ff;
-    border-radius: 8px;
+.card h3{
+  font-size:21px;
+  margin-bottom:8px;
 }
 
-footer {
-    margin-top: 40px;
-    padding: 30px 20px;
-    text-align: center;
-    background: #061127;
-    color: #8fa3c4;
+.card p{
+  color:#b9c7df;
+  margin:6px 0;
 }
 
-@media (max-width: 700px) {
+.rating{
+  color:#ffd43b;
+  margin-top:12px;
+}
 
-    .hero h1 {
-        font-size: 30px;
-    }
+.card button{
+  margin-top:15px;
+  width:100%;
+  padding:12px;
+  border:0;
+  border-radius:9px;
+  background:#1685ff;
+  color:white;
+  font-weight:bold;
+}
 
-    nav {
-        display: none;
-    }
+footer{
+  text-align:center;
+  padding:30px 20px;
+  border-top:1px solid #17376b;
+  color:#91a4c5;
+}
 
-    .search {
-        flex-direction: column;
-        background: transparent;
-        gap: 10px;
-    }
+@media(max-width:800px){
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-    .search input {
-        width: 100%;
-    }
+  .cards{
+    grid-template-columns:1fr;
+  }
 
-    .search button {
-        padding: 14px;
-    }
+  .hero h1{
+    font-size:34px;
+  }
+}
 
-    .categories {
-        grid-template-columns: repeat(2, 1fr);
-    }
+@media(max-width:500px){
+  .search{
+    flex-direction:column;
+  }
 
-    .businesses {
-        grid-template-columns: 1fr;
-    }
+  .search button{
+    width:100%;
+  }
+
+  header{
+    padding:18px 20px;
+  }
 }
 </style>
 </head>
@@ -213,152 +216,148 @@ footer {
 <body>
 
 <header>
-    <div class="logo">BIZ<span>TOP</span></div>
-
-    <nav>
-        <a href="#">Bosh sahifa</a>
-        <a href="#">Kategoriyalar</a>
-        <a href="#">Biznes qo‘shish</a>
-    </nav>
+  <div class="logo">
+    <span>BIZ</span>TOP
+  </div>
 </header>
 
 <section class="hero">
 
-    <h1>Eng yaxshi <span>bizneslarni</span> toping</h1>
+  <h1>
+    Eng yaxshi <span>bizneslarni</span> toping
+  </h1>
 
-    <p>
-        BIZTOP — bizneslarni topish, baholash va tanlash platformasi.
-    </p>
+  <p>
+    BIZTOP — bizneslarni topish, baholash va tanlash platformasi.
+  </p>
 
-    <div class="search">
-        <input
-            type="text"
-            placeholder="Restoran, kafe, do‘kon yoki boshqa biznes..."
-        >
+  <div class="search">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Restoran, kafe, do‘kon yoki boshqa biznes..."
+    >
 
-        <button onclick="searchBusiness()">
-            Qidirish
+    <button onclick="searchBusiness()">
+      Qidirish
+    </button>
+  </div>
+
+</section>
+
+<div class="container">
+
+  <h2>Kategoriyalar</h2>
+
+  <div class="categories">
+
+    <div class="category" onclick="selectCategory('Restoran')">
+      <div class="icon">🍽️</div>
+      <h3>Restoran</h3>
+    </div>
+
+    <div class="category" onclick="selectCategory('Kafe')">
+      <div class="icon">☕</div>
+      <h3>Kafe</h3>
+    </div>
+
+    <div class="category" onclick="selectCategory('Do‘kon')">
+      <div class="icon">🛒</div>
+      <h3>Do‘kon</h3>
+    </div>
+
+    <div class="category" onclick="selectCategory('Xizmatlar')">
+      <div class="icon">🔧</div>
+      <h3>Xizmatlar</h3>
+    </div>
+
+  </div>
+
+  <section class="businesses">
+
+    <h2>Mashhur bizneslar</h2>
+
+    <div class="cards" id="businessCards">
+
+      <div class="card">
+        <div class="emoji">🍔</div>
+        <h3>BIZTOP Burger</h3>
+        <p>📍 To‘rtko‘l</p>
+        <p>🍔 Fast food</p>
+        <div class="rating">★★★★★ 4.9</div>
+        <button onclick="showBusiness('BIZTOP Burger')">
+          Ko‘rish
         </button>
-    </div>
+      </div>
 
-</section>
+      <div class="card">
+        <div class="emoji">☕</div>
+        <h3>Top Coffee</h3>
+        <p>📍 To‘rtko‘l</p>
+        <p>☕ Kafe</p>
+        <div class="rating">★★★★★ 4.8</div>
+        <button onclick="showBusiness('Top Coffee')">
+          Ko‘rish
+        </button>
+      </div>
 
-<section class="section">
-
-    <h2>Kategoriyalar</h2>
-
-    <div class="categories">
-
-        <div class="category">
-            <div class="icon">🍽️</div>
-            <b>Restoran</b>
-        </div>
-
-        <div class="category">
-            <div class="icon">☕</div>
-            <b>Kafe</b>
-        </div>
-
-        <div class="category">
-            <div class="icon">🛒</div>
-            <b>Do‘kon</b>
-        </div>
-
-        <div class="category">
-            <div class="icon">🏨</div>
-            <b>Mehmonxona</b>
-        </div>
-
-        <div class="category">
-            <div class="icon">🚗</div>
-            <b>Avtoservis</b>
-        </div>
-
-        <div class="category">
-            <div class="icon">💇</div>
-            <b>Go‘zallik</b>
-        </div>
-
-        <div class="category">
-            <div class="icon">🏗️</div>
-            <b>Qurilish</b>
-        </div>
-
-        <div class="category">
-            <div class="icon">🎓</div>
-            <b>Ta’lim</b>
-        </div>
+      <div class="card">
+        <div class="emoji">🛒</div>
+        <h3>Baraka Market</h3>
+        <p>📍 To‘rtko‘l</p>
+        <p>🛒 Oziq-ovqat do‘koni</p>
+        <div class="rating">★★★★☆ 4.6</div>
+        <button onclick="showBusiness('Baraka Market')">
+          Ko‘rish
+        </button>
+      </div>
 
     </div>
 
-</section>
+  </section>
 
-<section class="section">
-
-    <h2>⭐ Mashhur bizneslar</h2>
-
-    <div class="businesses">
-
-        <div class="business">
-            <h3>Royal Restaurant</h3>
-            <div class="rating">★★★★★ 4.9</div>
-            <p>📍 Toshkent</p>
-            <p>🍽️ Restoran</p>
-            <button>Biznesni ko‘rish</button>
-        </div>
-
-        <div class="business">
-            <h3>Coffee House</h3>
-            <div class="rating">★★★★★ 4.8</div>
-            <p>📍 Nukus</p>
-            <p>☕ Kafe</p>
-            <button>Biznesni ko‘rish</button>
-        </div>
-
-        <div class="business">
-            <h3>Best Auto Service</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <p>📍 Urganch</p>
-            <p>🚗 Avtoservis</p>
-            <button>Biznesni ko‘rish</button>
-        </div>
-
-    </div>
-
-</section>
+</div>
 
 <footer>
-    © 2026 BIZTOP — Bizneslarni toping va baholang.
+  © 2026 BIZTOP — Bizneslarni toping va baholang.
 </footer>
 
 <script>
-function searchBusiness() {
-    const input = document.querySelector(".search input");
-    const text = input.value.trim().toLowerCase();
 
-    if (text === "") {
-        alert("Iltimos, biznes nomi yoki kategoriyasini kiriting.");
-        return;
-    }
+function searchBusiness(){
 
-    const businesses = document.querySelectorAll(".business");
-    let found = false;
+  const input =
+    document.getElementById("searchInput").value.trim();
 
-    businesses.forEach(function(business) {
-        const content = business.innerText.toLowerCase();
+  if(input === ""){
+    alert("Iltimos, biznes nomi yoki kategoriyasini kiriting.");
+    return;
+  }
 
-        if (content.includes(text)) {
-            business.style.display = "block";
-            found = true;
-        } else {
-            business.style.display = "none";
-        }
-    });
-
-    if (!found) {
-        alert("BIZTOP: \"" + input.value + "\" bo‘yicha biznes topilmadi.");
-    }
+  alert(
+    "BIZTOP qidiruvi: " + input +
+    "\n\nKeyingi bosqichda bu qidiruvni haqiqiy biznes bazasiga ulaymiz."
+  );
 }
+
+function selectCategory(category){
+
+  document.getElementById("searchInput").value = category;
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+function showBusiness(name){
+
+  alert(
+    name +
+    "\n\nBu biznes sahifasini keyingi bosqichda yaratamiz."
+  );
+}
+
 </script>
 
 </body>
