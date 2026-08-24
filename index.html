@@ -334,27 +334,34 @@ function normalizeText(text){
 
 function searchBusiness(){
 
-  const input =
-    document.getElementById("searchInput").value.trim();
+  const input = document.getElementById("searchInput").value.trim();
+  const cards = document.querySelectorAll("#businessCards .card");
+  const businessSection = document.querySelector(".businesses");
 
-  const cards =
-    document.querySelectorAll("#businessCards .card");
+  let message = document.getElementById("noResults");
+
+  if(message){
+    message.remove();
+  }
 
   if(input === ""){
     cards.forEach(card => {
       card.style.display = "";
     });
+
+    businessSection.scrollIntoView({
+      behavior: "smooth"
+    });
+
     return;
   }
 
   const searchText = normalizeText(input);
-
   let found = 0;
 
   cards.forEach(card => {
 
-    const cardText =
-      normalizeText(card.innerText);
+    const cardText = normalizeText(card.innerText);
 
     if(cardText.includes(searchText)){
       card.style.display = "";
@@ -365,17 +372,9 @@ function searchBusiness(){
 
   });
 
-  let message =
-    document.getElementById("noResults");
-
-  if(message){
-    message.remove();
-  }
-
   if(found === 0){
 
-    message =
-      document.createElement("p");
+    message = document.createElement("p");
 
     message.id = "noResults";
 
@@ -391,20 +390,20 @@ function searchBusiness(){
       .getElementById("businessCards")
       .appendChild(message);
   }
+
+  businessSection.scrollIntoView({
+    behavior: "smooth"
+  });
 }
+
 
 function selectCategory(category){
 
-  document.getElementById("searchInput").value =
-    category;
+  document.getElementById("searchInput").value = category;
 
   searchBusiness();
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
 }
+
 
 function showBusiness(name){
 
