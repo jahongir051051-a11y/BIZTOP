@@ -24,10 +24,7 @@ body{
     overflow-x:hidden;
 }
 
-button,
-input,
-select,
-textarea{
+button, input, select, textarea{
     font-family:inherit;
 }
 
@@ -578,6 +575,7 @@ footer{
         font-size:15px;
     }
 }
+
 </style>
 </head>
 
@@ -591,7 +589,10 @@ footer{
         <span class="biz">BIZ</span><span class="top">TOP</span>
     </div>
 
-    <button class="add-business-btn" onclick="openModal()">
+    <button
+        class="add-business-btn"
+        onclick="openModal()"
+    >
         ➕ Biznes qo‘shish
     </button>
 
@@ -627,9 +628,13 @@ footer{
         type="text"
         placeholder="Restoran, kafe, do‘kon yoki boshqa."
         onkeydown="handleEnter(event)"
+        oninput="handleSearchInput()"
     >
 
-    <button class="search-btn" onclick="searchBusinesses()">
+    <button
+        class="search-btn"
+        onclick="searchBusinesses()"
+    >
         🔎 Qidirish
     </button>
 
@@ -783,8 +788,13 @@ footer{
 <section class="section">
 
     <h2 class="section-title ranking-title">
+
         <span class="trophy">🏆</span>
-        <span>TOP <span class="blue">10</span></span>
+
+        <span>
+            TOP <span class="blue">10</span>
+        </span>
+
     </h2>
 
     <div class="businesses" id="top10"></div>
@@ -797,8 +807,13 @@ footer{
 <section class="section">
 
     <h2 class="section-title ranking-title">
+
         <span class="trophy">🏆</span>
-        <span>TOP <span class="blue">20</span></span>
+
+        <span>
+            TOP <span class="blue">20</span>
+        </span>
+
     </h2>
 
     <div class="businesses" id="top20"></div>
@@ -845,7 +860,10 @@ footer{
 
                 <label>Kategoriya</label>
 
-                <select id="businessCategory" required>
+                <select
+                    id="businessCategory"
+                    required
+                >
 
                     <option value="">
                         Kategoriyani tanlang
@@ -1167,9 +1185,14 @@ function loadBusinesses(){
 
         if(saved){
 
-            const parsed = JSON.parse(saved);
+            const parsed =
+                JSON.parse(saved);
 
-            if(Array.isArray(parsed) && parsed.length){
+            if(
+                Array.isArray(parsed)
+                &&
+                parsed.length
+            ){
 
                 return parsed;
 
@@ -1179,7 +1202,10 @@ function loadBusinesses(){
 
     }catch(error){
 
-        console.log("Saqlangan ma'lumotni o‘qishda xato:",error);
+        console.log(
+            "Saqlangan ma'lumotni o‘qishda xato:",
+            error
+        );
 
     }
 
@@ -1199,7 +1225,10 @@ function saveBusinesses(){
 
     }catch(error){
 
-        console.log("Saqlashda xato:",error);
+        console.log(
+            "Saqlashda xato:",
+            error
+        );
 
     }
 
@@ -1235,13 +1264,40 @@ function handleEnter(event){
 }
 
 
+/* ================================================= */
+/* ======== SEARCH INPUT AUTO CLEAR RESULT ========= */
+/* ================================================= */
+
+function handleSearchInput(){
+
+    const input =
+        document
+        .getElementById("searchInput")
+        .value
+        .trim();
+
+    const resultsSection =
+        document
+        .getElementById("resultsSection");
+
+    if(!input){
+
+        resultsSection.style.display = "none";
+
+    }
+
+}
+
+
 function searchBusinesses(){
 
     const inputElement =
         document.getElementById("searchInput");
 
     const input =
-        normalizeText(inputElement.value.trim());
+        normalizeText(
+            inputElement.value.trim()
+        );
 
     const resultsSection =
         document.getElementById("resultsSection");
@@ -1260,33 +1316,43 @@ function searchBusinesses(){
 
 
     const filtered =
-        businesses.filter(function(business){
+        businesses.filter(
+            function(business){
 
-            const name =
-                normalizeText(business.name);
+                const name =
+                    normalizeText(
+                        business.name
+                    );
 
-            const category =
-                normalizeText(business.category);
+                const category =
+                    normalizeText(
+                        business.category
+                    );
 
-            const location =
-                normalizeText(business.location);
+                const location =
+                    normalizeText(
+                        business.location
+                    );
 
-            const description =
-                normalizeText(business.description);
+                const description =
+                    normalizeText(
+                        business.description
+                    );
 
-            return (
+                return (
 
-                name.includes(input) ||
+                    name.includes(input) ||
 
-                category.includes(input) ||
+                    category.includes(input) ||
 
-                location.includes(input) ||
+                    location.includes(input) ||
 
-                description.includes(input)
+                    description.includes(input)
 
-            );
+                );
 
-        });
+            }
+        );
 
 
     results.innerHTML = "";
@@ -1295,18 +1361,28 @@ function searchBusinesses(){
     if(filtered.length === 0){
 
         results.innerHTML = `
+
             <div class="no-results">
-                😔 “${inputElement.value}” bo‘yicha biznes topilmadi.
+
+                😔 “${inputElement.value}”
+                bo‘yicha biznes topilmadi.
+
                 <br><br>
+
                 Boshqa so‘z bilan qidirib ko‘ring.
+
             </div>
+
         `;
 
     }else{
 
         filtered
             .sort(function(a,b){
-                return Number(b.rating) - Number(a.rating);
+
+                return Number(b.rating)
+                     - Number(a.rating);
+
             })
             .forEach(function(business){
 
@@ -1320,9 +1396,13 @@ function searchBusinesses(){
 
     resultsSection.style.display = "block";
 
+
     resultsSection.scrollIntoView({
+
         behavior:"smooth",
+
         block:"start"
+
     });
 
 }
@@ -1354,38 +1434,71 @@ function createResultCard(business){
         <div class="result-card">
 
             <h3>
+
                 ${business.icon || "🏢"}
+
                 ${escapeHtml(business.name)}
+
             </h3>
 
-            <p>
-                📁 ${escapeHtml(business.category)}
-            </p>
 
             <p>
-                📍 ${escapeHtml(business.location)}
+
+                📁
+                ${escapeHtml(business.category)}
+
             </p>
 
+
             <p>
+
+                📍
+                ${escapeHtml(business.location)}
+
+            </p>
+
+
+            <p>
+
                 📞
+
                 <a
                     href="tel:${escapeHtml(business.phone)}"
                     class="phone-link"
                 >
+
                     ${formatPhone(business.phone)}
+
                 </a>
+
             </p>
+
 
             ${
                 business.description
+
                 ?
-                `<p>📝 ${escapeHtml(business.description)}</p>`
+
+                `<p>
+                    📝
+                    ${escapeHtml(
+                        business.description
+                    )}
+                </p>`
+
                 :
+
                 ""
             }
 
+
             <div class="business-rating">
-                ⭐ ${Number(business.rating).toFixed(1)}
+
+                ⭐
+                ${Number(
+                    business.rating
+                ).toFixed(1)}
+
             </div>
 
         </div>
@@ -1402,9 +1515,11 @@ function createResultCard(business){
 function renderRankings(){
 
     const sorted =
-        [...businesses].sort(function(a,b){
+        [...businesses]
+        .sort(function(a,b){
 
-            return Number(b.rating) - Number(a.rating);
+            return Number(b.rating)
+                 - Number(a.rating);
 
         });
 
@@ -1456,19 +1571,34 @@ function createBusinessCard(business){
 
                 ${business.icon || "🏢"}
 
-                ${escapeHtml(business.name)}
+                ${escapeHtml(
+                    business.name
+                )}
 
             </div>
+
 
             <div class="business-info">
 
                 <div>
-                    📁 ${escapeHtml(business.category)}
+
+                    📁
+                    ${escapeHtml(
+                        business.category
+                    )}
+
                 </div>
 
+
                 <div>
-                    📍 ${escapeHtml(business.location)}
+
+                    📍
+                    ${escapeHtml(
+                        business.location
+                    )}
+
                 </div>
+
 
                 <div>
 
@@ -1476,18 +1606,28 @@ function createBusinessCard(business){
 
                     <a
                         class="phone-link"
-                        href="tel:${escapeHtml(business.phone)}"
+                        href="tel:${escapeHtml(
+                            business.phone
+                        )}"
                     >
-                        ${formatPhone(business.phone)}
+
+                        ${formatPhone(
+                            business.phone
+                        )}
+
                     </a>
 
                 </div>
 
             </div>
 
+
             <div class="business-rating">
 
-                ⭐ ${Number(business.rating).toFixed(1)}
+                ⭐
+                ${Number(
+                    business.rating
+                ).toFixed(1)}
 
             </div>
 
@@ -1505,7 +1645,8 @@ function createBusinessCard(business){
 function formatPhone(phone){
 
     const clean =
-        String(phone || "").replace(/\D/g,"");
+        String(phone || "")
+        .replace(/\D/g,"");
 
 
     if(clean.length === 12){
@@ -1517,6 +1658,7 @@ function formatPhone(phone){
                 ${clean.slice(10,12)}`;
 
     }
+
 
     return phone || "";
 
@@ -1560,10 +1702,12 @@ function addBusiness(event){
         .value
         .trim();
 
+
     const category =
         document
         .getElementById("businessCategory")
         .value;
+
 
     const location =
         document
@@ -1571,11 +1715,13 @@ function addBusiness(event){
         .value
         .trim();
 
+
     const phone =
         document
         .getElementById("businessPhone")
         .value
         .trim();
+
 
     const description =
         document
@@ -1584,9 +1730,16 @@ function addBusiness(event){
         .trim();
 
 
-    if(!name || !category || !location || !phone){
+    if(
+        !name ||
+        !category ||
+        !location ||
+        !phone
+    ){
 
-        alert("⚠️ Iltimos, barcha kerakli maydonlarni to‘ldiring.");
+        alert(
+            "⚠️ Iltimos, barcha kerakli maydonlarni to‘ldiring."
+        );
 
         return;
 
@@ -1628,17 +1781,21 @@ function addBusiness(event){
         .getElementById("businessName")
         .value = "";
 
+
     document
         .getElementById("businessCategory")
         .value = "";
+
 
     document
         .getElementById("businessLocation")
         .value = "";
 
+
     document
         .getElementById("businessPhone")
         .value = "";
+
 
     document
         .getElementById("businessDescription")
@@ -1650,14 +1807,10 @@ function addBusiness(event){
     );
 
 
-    /*
-       Qo‘shilgan biznesni darhol
-       qidirish orqali ko‘rsatamiz.
-    */
-
     document
         .getElementById("searchInput")
         .value = name;
+
 
     searchBusinesses();
 
@@ -1731,10 +1884,15 @@ function getCategoryIcon(category){
 function escapeHtml(text){
 
     return String(text || "")
+
         .replace(/&/g,"&amp;")
+
         .replace(/</g,"&lt;")
+
         .replace(/>/g,"&gt;")
+
         .replace(/"/g,"&quot;")
+
         .replace(/'/g,"&#039;");
 
 }
