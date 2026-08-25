@@ -462,7 +462,7 @@ footer{
     }
 
     .search-area{
-        padding:0 16px 30px;
+        padding:0 16px 18px;
     }
 
     .search-input{
@@ -477,82 +477,128 @@ footer{
         margin-top:12px;
     }
 
-    /* ===== KATEGORIYALAR KICHIK ===== */
+    /* ================================================= */
+    /* ===== KATEGORIYALAR — KICHIK VA IXCHAM ========== */
+    /* ================================================= */
 
     .section{
-        padding:22px 16px 32px;
+        padding:12px 12px 18px;
     }
 
     .section-title{
-        font-size:31px;
-        margin-bottom:16px;
-    }
-
-    .categories{
-        grid-template-rows:repeat(2, 140px);
-        grid-auto-columns:145px;
-        gap:12px;
-        padding:3px 2px 12px;
-    }
-
-    .category{
-        height:140px;
-        border-width:4px;
-        border-radius:22px;
-        padding:8px 5px;
-    }
-
-    .category .icon{
-        font-size:42px;
-        margin-bottom:8px;
-    }
-
-    .category .name{
-        font-size:16px;
-        line-height:1.1;
-    }
-
-    /* ===== MASHHUR BIZNESLAR KICHIK ===== */
-
-    .popular-title{
-        gap:7px;
-    }
-
-    .popular-title .star{
-        font-size:35px;
-    }
-
-    .businesses{
-        gap:12px;
-        padding-bottom:12px;
-    }
-
-    .business-card{
-        flex:0 0 285px;
-        min-height:190px;
-        border-width:4px;
-        border-radius:22px;
-        padding:14px;
-    }
-
-    .business-name{
-        font-size:20px;
+        font-size:28px;
         margin-bottom:10px;
     }
 
-    .business-info{
+    .categories-wrapper{
+        width:100%;
+    }
+
+    .categories{
+        grid-template-rows:repeat(2, 112px);
+        grid-auto-columns:125px;
+        gap:8px;
+        padding:2px 2px 8px;
+    }
+
+    .category{
+        height:112px;
+        border-width:3px;
+        border-radius:18px;
+        padding:5px 3px;
+    }
+
+    .category:hover{
+        transform:none;
+    }
+
+    .category .icon{
+        font-size:34px;
+        margin-bottom:5px;
+    }
+
+    .category .name{
+        font-size:14px;
+        line-height:1.05;
+    }
+
+    /* ================================================= */
+    /* ===== QIDIRUV NATIJALARI — KICHIK =============== */
+    /* ================================================= */
+
+    #resultsSection{
+        padding-top:8px;
+        padding-bottom:12px;
+    }
+
+    #resultsSection .section-title{
+        font-size:27px;
+        margin-bottom:9px;
+    }
+
+    .results{
+        gap:9px;
+    }
+
+    .result-card{
+        border-width:3px;
+        border-radius:18px;
+        padding:12px;
+    }
+
+    .result-card h3{
+        font-size:19px;
+        margin-bottom:8px;
+    }
+
+    .result-card p{
+        font-size:14px;
+        margin-bottom:4px;
+    }
+
+    /* ================================================= */
+    /* ===== MASHHUR BIZNESLAR — KICHIK ================ */
+    /* ================================================= */
+
+    .popular-title{
         gap:5px;
-        font-size:15px;
+    }
+
+    .popular-title .star{
+        font-size:29px;
+    }
+
+    .businesses{
+        gap:8px;
+        padding:2px 2px 8px;
+    }
+
+    .business-card{
+        flex:0 0 255px;
+        min-height:165px;
+        border-width:3px;
+        border-radius:18px;
+        padding:11px;
+    }
+
+    .business-name{
+        font-size:18px;
+        margin-bottom:7px;
+    }
+
+    .business-info{
+        gap:3px;
+        font-size:14px;
     }
 
     .business-rating{
-        margin-top:10px;
-        font-size:21px;
+        margin-top:7px;
+        font-size:19px;
     }
 
     footer{
-        padding:28px 15px;
-        font-size:15px;
+        padding:25px 15px;
+        font-size:14px;
     }
 
     .modal{
