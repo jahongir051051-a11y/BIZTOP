@@ -7,7 +7,6 @@
 <title>BIZTOP — Eng yaxshi bizneslar</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -20,644 +19,496 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#061b43;
-    color:#fff;
+    background:#061d45;
+    color:white;
     overflow-x:hidden;
 }
 
-/* ================= HEADER ================= */
-
+/* HEADER */
 header{
-    width:100%;
-    min-height:76px;
-    background:#071b40;
-    border-bottom:4px solid #2388ff;
-
+    height:82px;
+    background:#061b40;
+    border-bottom:4px solid #2588ff;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    padding:12px 28px;
-
-    position:relative;
-    z-index:10;
+    padding:0 22px;
 }
 
 .logo{
     font-size:43px;
     font-weight:900;
-    letter-spacing:-3px;
+    letter-spacing:-4px;
 }
 
 .logo span{
-    color:#2388ff;
+    color:#2588ff;
 }
 
 .logo b{
-    color:#fff;
+    color:white;
 }
 
-.add-business{
-    border:none;
-    background:#2388ff;
-    color:#fff;
-
+.add-btn{
+    border:0;
+    background:#2588ff;
+    color:white;
     font-size:17px;
     font-weight:700;
-
-    padding:14px 22px;
-    border-radius:22px;
-
+    padding:14px 20px;
+    border-radius:28px;
     cursor:pointer;
 }
 
-/* ================= HERO ================= */
+/* MAIN */
+.container{
+    width:100%;
+    max-width:1050px;
+    margin:auto;
+    padding:55px 22px 0;
+}
 
+/* HERO */
 .hero{
     text-align:center;
-    padding:62px 20px 42px;
+    max-width:850px;
+    margin:auto;
 }
 
 .hero h1{
-    font-size:58px;
+    font-size:68px;
     line-height:1.02;
     font-weight:900;
-    max-width:720px;
-    margin:0 auto 24px;
+    margin-bottom:25px;
 }
 
 .hero h1 span{
-    color:#2388ff;
+    color:#2588ff;
 }
 
 .hero p{
-    color:#b9cae8;
-    font-size:21px;
-    line-height:1.45;
-
-    max-width:720px;
-    margin:0 auto 30px;
+    color:#b8c9e8;
+    font-size:24px;
+    line-height:1.4;
+    margin-bottom:40px;
 }
 
-/* ================= SEARCH ================= */
-
+/* SEARCH */
 .search-area{
-    width:100%;
-    max-width:650px;
+    max-width:700px;
     margin:auto;
 }
 
 .search-input{
     width:100%;
-    height:64px;
-
-    border:none;
+    height:68px;
+    border:0;
     outline:none;
-
-    background:#fff;
+    border-radius:35px;
+    padding:0 30px;
+    font-size:21px;
+    background:white;
     color:#222;
-
-    border-radius:34px;
-
-    padding:0 25px;
-
-    font-size:19px;
 }
 
-.search-input::placeholder{
-    color:#777;
-}
-
-.search-button{
+.search-btn{
     width:100%;
     height:62px;
-
-    border:none;
+    margin-top:14px;
+    border:0;
     border-radius:32px;
-
-    background:#2388ff;
-    color:#fff;
-
-    font-size:21px;
+    background:#2588ff;
+    color:white;
+    font-size:23px;
     font-weight:800;
-
-    margin-top:13px;
-
     cursor:pointer;
 }
 
-.search-button:active{
-    transform:scale(.98);
-}
-
-/* ================= SECTIONS ================= */
-
+/* SECTION */
 .section{
-    width:100%;
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px;
+    margin-top:75px;
 }
 
 .section-title{
-    font-size:45px;
-    line-height:1.05;
+    font-size:43px;
     font-weight:900;
-
-    margin:45px 0 25px;
+    margin-bottom:25px;
 }
 
 .section-title span{
-    color:#2388ff;
+    color:#ffd21c;
 }
 
-/* ================= HORIZONTAL SCROLL ================= */
-
-.horizontal-scroll{
+/* HORIZONTAL SCROLL */
+.horizontal{
     display:flex;
-    gap:16px;
-
+    gap:18px;
     overflow-x:auto;
     overflow-y:hidden;
-
-    padding:5px 5px 18px;
-
+    padding:5px 5px 15px;
     scroll-snap-type:x mandatory;
-
-    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    direction:ltr;
 }
 
-.horizontal-scroll::-webkit-scrollbar{
+.horizontal::-webkit-scrollbar{
     display:none;
 }
 
-/* ================= CATEGORY ================= */
-
-.category-card{
-    flex:0 0 245px;
-
-    height:175px;
-
-    background:#285889;
-
-    border:4px solid #2388ff;
-    border-radius:27px;
-
+/* CATEGORY */
+.category{
+    flex:0 0 190px;
+    height:170px;
+    background:#28598d;
+    border:4px solid #2588ff;
+    border-radius:30px;
     display:flex;
     flex-direction:column;
-
     align-items:center;
     justify-content:center;
-
+    text-align:center;
     scroll-snap-align:start;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
-.category-card:active{
-    transform:scale(.97);
+.category:hover{
+    transform:translateY(-3px);
 }
 
-.category-icon{
-    font-size:48px;
-    margin-bottom:12px;
+.category .emoji{
+    font-size:52px;
+    margin-bottom:10px;
 }
 
-.category-name{
-    font-size:22px;
-    font-weight:800;
+.category strong{
+    font-size:21px;
 }
 
-/* ================= SEARCH RESULTS ================= */
-
+/* SEARCH RESULTS */
 #resultsSection{
     display:none;
 }
 
-.result-card{
+#resultsSection.show{
+    display:block;
+}
+
+.results-title{
+    font-size:40px;
+    font-weight:900;
+    margin-bottom:22px;
+}
+
+/* BUSINESS CARD */
+.business-card{
     flex:0 0 330px;
-
-    min-height:245px;
-
-    background:#285889;
-
-    border:4px solid #2388ff;
-    border-radius:27px;
-
-    padding:21px;
-
+    min-height:235px;
+    background:#28598d;
+    border:4px solid #2588ff;
+    border-radius:28px;
+    padding:22px;
     scroll-snap-align:start;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.result-card:active{
-    transform:scale(.98);
-}
-
-.business-top{
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    margin-bottom:14px;
-}
-
-.business-icon{
-    font-size:43px;
 }
 
 .business-name{
-    font-size:26px;
+    font-size:27px;
     font-weight:900;
+    margin-bottom:14px;
 }
 
 .business-info{
-    color:#d4e1f5;
-    font-size:17px;
-    line-height:1.7;
+    color:#d5e1f4;
+    font-size:18px;
+    line-height:1.65;
 }
 
 .rating{
-    margin-top:8px;
-
-    color:#ffd62e;
-
-    font-size:22px;
+    color:#ffd21c;
+    font-size:25px;
     font-weight:900;
+    margin-top:8px;
 }
 
-/* ================= POPULAR ================= */
-
-.popular-card{
-    flex:0 0 330px;
-
-    min-height:245px;
-
-    background:#285889;
-
-    border:4px solid #2388ff;
-    border-radius:27px;
-
-    padding:21px;
-
-    scroll-snap-align:start;
-
+.business-btn{
+    width:100%;
+    margin-top:15px;
+    height:45px;
+    border:0;
+    border-radius:24px;
+    background:#2588ff;
+    color:white;
+    font-size:17px;
+    font-weight:800;
     cursor:pointer;
 }
 
-.popular-card .business-top{
+/* POPULAR */
+.popular-card{
+    flex:0 0 330px;
+    min-height:220px;
+    background:#28598d;
+    border:4px solid #2588ff;
+    border-radius:28px;
+    padding:22px;
+}
+
+.popular-card .name{
+    font-size:26px;
+    font-weight:900;
     margin-bottom:12px;
 }
 
-/* ================= EMPTY ================= */
-
-.empty{
-    color:#aebfdd;
+.popular-card p{
+    color:#d5e1f4;
     font-size:18px;
+    line-height:1.55;
+}
+
+.popular-card .rating{
+    margin-top:12px;
+}
+
+/* FOOTER */
+footer{
+    margin-top:80px;
+    background:#051735;
+    padding:35px 20px;
     text-align:center;
+    color:#a9bddf;
+    font-size:16px;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    z-index:1000;
+    align-items:center;
+    justify-content:center;
     padding:20px;
 }
 
-/* ================= MODAL ================= */
-
-.modal{
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.72);
-
-    z-index:100;
-
-    padding:20px;
-
-    overflow-y:auto;
+.modal.show{
+    display:flex;
 }
 
 .modal-box{
     width:100%;
-    max-width:500px;
-
-    margin:25px auto;
-
-    background:#285889;
-
-    border:4px solid #2388ff;
-
-    border-radius:30px;
-
-    padding:28px 22px;
-
+    max-width:480px;
+    max-height:90vh;
+    overflow-y:auto;
+    background:#28598d;
+    border:4px solid #2588ff;
+    border-radius:28px;
+    padding:28px;
     position:relative;
 }
 
 .close{
     position:absolute;
-
-    top:13px;
-    right:18px;
-
-    background:none;
-    border:none;
-
-    color:#fff;
-
-    font-size:35px;
-
+    right:20px;
+    top:12px;
+    font-size:34px;
     cursor:pointer;
 }
 
 .modal-icon{
     text-align:center;
-    font-size:75px;
-    margin:15px 0;
+    font-size:70px;
+    margin-bottom:8px;
 }
 
 .modal-box h2{
     text-align:center;
-
-    font-size:34px;
-
+    font-size:32px;
     margin-bottom:12px;
 }
 
 .modal-rating{
     text-align:center;
-
-    color:#ffd62e;
-
-    font-size:25px;
+    color:#ffd21c;
+    font-size:26px;
     font-weight:900;
-
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
-.info-box{
-    background:#0d3266;
-
-    border:3px solid #216bbd;
-
-    border-radius:22px;
-
-    padding:20px;
-
-    margin-bottom:15px;
+.detail-box{
+    background:#123b6d;
+    border-radius:20px;
+    padding:18px;
+    margin-top:12px;
 }
 
-.info-box h3{
-    font-size:22px;
-    margin-bottom:8px;
-}
-
-.info-box p{
-    color:#d4e1f5;
-
-    font-size:18px;
-
-    line-height:1.6;
-}
-
-.call-button{
-    width:100%;
-
-    height:58px;
-
-    border:none;
-
-    border-radius:29px;
-
-    background:#2388ff;
-
-    color:#fff;
-
+.detail-box h3{
     font-size:20px;
-
-    font-weight:800;
-
-    cursor:pointer;
-
-    margin-top:5px;
+    margin-bottom:7px;
 }
 
-/* ================= ADD BUSINESS ================= */
-
-.form-group{
-    margin-bottom:15px;
+.detail-box p{
+    color:#d5e1f4;
+    font-size:18px;
+    line-height:1.55;
 }
 
-.form-group label{
+.call-btn{
     display:block;
-
-    font-size:16px;
-    font-weight:700;
-
-    margin-bottom:6px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-
     width:100%;
-
-    border:none;
-    outline:none;
-
-    border-radius:15px;
-
-    padding:13px;
-
-    font-size:17px;
-}
-
-.form-group textarea{
-    min-height:100px;
-    resize:vertical;
-}
-
-.submit-button{
-    width:100%;
-
-    height:56px;
-
-    border:none;
-
-    border-radius:28px;
-
-    background:#2388ff;
-
-    color:#fff;
-
-    font-size:19px;
-
-    font-weight:800;
-
-    cursor:pointer;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    margin-top:75px;
-
-    background:#061735;
-
-    padding:35px 20px;
-
     text-align:center;
-
-    color:#9fb4d7;
-
-    font-size:16px;
+    text-decoration:none;
+    background:#2588ff;
+    color:white;
+    font-size:20px;
+    font-weight:800;
+    padding:15px;
+    border-radius:28px;
+    margin-top:18px;
 }
 
-/* ==================================================
-   MOBILE
-   ================================================== */
-
+/* MOBILE */
 @media(max-width:600px){
 
     header{
-        min-height:65px;
-        padding:10px 16px;
+        height:68px;
+        padding:0 14px;
     }
 
     .logo{
-        font-size:36px;
+        font-size:32px;
         letter-spacing:-3px;
     }
 
-    .add-business{
-        font-size:15px;
-        padding:12px 16px;
-        border-radius:20px;
+    .add-btn{
+        font-size:14px;
+        padding:11px 15px;
     }
 
-    .hero{
-        padding:45px 18px 30px;
+    .container{
+        padding:38px 16px 0;
     }
 
     .hero h1{
-        font-size:48px;
-        line-height:1.02;
-        margin-bottom:21px;
+        font-size:47px;
+        line-height:1.03;
+        margin-bottom:20px;
     }
 
     .hero p{
         font-size:18px;
         line-height:1.45;
-        margin-bottom:25px;
+        margin-bottom:28px;
     }
 
     .search-input{
-        height:60px;
+        height:56px;
         font-size:17px;
-        padding:0 21px;
+        padding:0 22px;
     }
 
-    .search-button{
-        height:59px;
-        font-size:20px;
-        margin-top:11px;
+    .search-btn{
+        height:52px;
+        font-size:19px;
+        margin-top:10px;
     }
 
     .section{
-        padding:0 16px;
+        margin-top:55px;
     }
 
     .section-title{
-        font-size:40px;
-        margin:42px 0 23px;
+        font-size:34px;
+        margin-bottom:18px;
     }
 
-    .category-card{
-        flex-basis:230px;
-        height:165px;
+    .results-title{
+        font-size:32px;
+    }
+
+    .category{
+        flex-basis:165px;
+        height:145px;
         border-radius:25px;
     }
 
-    .category-icon{
-        font-size:44px;
+    .category .emoji{
+        font-size:43px;
     }
 
-    .category-name{
-        font-size:21px;
+    .category strong{
+        font-size:18px;
     }
 
-    .result-card,
-    .popular-card{
-        flex-basis:310px;
-        min-height:230px;
-        padding:19px;
-        border-radius:25px;
-    }
-
-    .business-icon{
-        font-size:39px;
+    .business-card{
+        flex-basis:285px;
+        min-height:205px;
+        padding:18px;
+        border-radius:24px;
     }
 
     .business-name{
-        font-size:24px;
+        font-size:22px;
     }
 
     .business-info{
         font-size:16px;
+        line-height:1.55;
     }
 
     .rating{
         font-size:21px;
     }
 
-    .modal{
-        padding:12px;
+    .popular-card{
+        flex-basis:285px;
+        min-height:190px;
+        padding:18px;
     }
 
-    .modal-box{
-        margin:15px auto;
-        padding:25px 18px;
-        border-radius:27px;
+    .popular-card .name{
+        font-size:22px;
     }
 
-    .modal-icon{
-        font-size:65px;
-    }
-
-    .modal-box h2{
-        font-size:30px;
-    }
-
-    .info-box{
-        padding:17px;
-    }
-
-    .info-box h3{
-        font-size:20px;
-    }
-
-    .info-box p{
+    .popular-card p{
         font-size:16px;
     }
 
     footer{
         margin-top:55px;
-        padding:30px 15px;
         font-size:14px;
     }
 }
 
+/* VERY SMALL PHONES */
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .category{
+        flex-basis:150px;
+        height:135px;
+    }
+
+    .business-card,
+    .popular-card{
+        flex-basis:265px;
+    }
+}
 </style>
 </head>
 
 <body>
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -665,297 +516,243 @@ footer{
         <span>BIZ</span><b>TOP</b>
     </div>
 
-    <button class="add-business" onclick="openAddModal()">
+    <button class="add-btn" onclick="addBusiness()">
         ➕ Biznes qo‘shish
     </button>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<main class="container">
 
-<section class="hero">
+    <!-- HERO -->
+    <section class="hero">
 
-    <h1>
-        Eng yaxshi<br>
-        <span>bizneslarni</span><br>
-        toping
-    </h1>
+        <h1>
+            Eng yaxshi<br>
+            <span>bizneslarni</span><br>
+            toping
+        </h1>
 
-    <p>
-        BIZTOP — bizneslarni topish,
-        baholash va tanlash platformasi.
-    </p>
+        <p>
+            BIZTOP — bizneslarni topish, baholash va tanlash platformasi.
+        </p>
 
-    <div class="search-area">
+        <div class="search-area">
 
-        <input
-            id="searchInput"
-            class="search-input"
-            type="text"
-            placeholder="Restoran, kafe, do‘kon yoki boshqa..."
-            autocomplete="off"
-        >
+            <input
+                id="searchInput"
+                class="search-input"
+                type="text"
+                placeholder="Restoran, kafe, do‘kon yoki boshqa."
+                autocomplete="off"
+            >
 
-        <button
-            class="search-button"
-            onclick="searchBusinesses()"
-        >
-            🔎 Qidirish
-        </button>
+            <button
+                class="search-btn"
+                onclick="searchBusiness()"
+            >
+                🔎 Qidirish
+            </button>
 
-    </div>
+        </div>
 
-</section>
+    </section>
 
 
-<!-- ================= SEARCH RESULTS ================= -->
+    <!-- SEARCH RESULTS -->
+    <section
+        id="resultsSection"
+        class="section"
+    >
 
-<section
-    id="resultsSection"
-    class="section"
+        <h2 class="results-title">
+            🔎 Qidiruv natijalari
+        </h2>
+
+        <div
+            id="results"
+            class="horizontal"
+        ></div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="section">
+
+        <h2 class="section-title">
+            Kategoriyalar
+        </h2>
+
+        <div class="horizontal">
+
+            <div
+                class="category"
+                onclick="categorySearch('Go‘zallik')"
+            >
+                <div class="emoji">💇‍♀️</div>
+                <strong>Go‘zallik</strong>
+            </div>
+
+            <div
+                class="category"
+                onclick="categorySearch('Restoran')"
+            >
+                <div class="emoji">🍔</div>
+                <strong>Restoran</strong>
+            </div>
+
+            <div
+                class="category"
+                onclick="categorySearch('Do‘kon')"
+            >
+                <div class="emoji">🛒</div>
+                <strong>Do‘kon</strong>
+            </div>
+
+            <div
+                class="category"
+                onclick="categorySearch('Kafe')"
+            >
+                <div class="emoji">☕</div>
+                <strong>Kafe</strong>
+            </div>
+
+            <div
+                class="category"
+                onclick="categorySearch('Avto')"
+            >
+                <div class="emoji">🚗</div>
+                <strong>Avto xizmat</strong>
+            </div>
+
+            <div
+                class="category"
+                onclick="categorySearch('Mehmonxona')"
+            >
+                <div class="emoji">🏨</div>
+                <strong>Mehmonxona</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR -->
+    <section class="section">
+
+        <h2 class="section-title">
+            <span>⭐</span> Mashhur bizneslar
+        </h2>
+
+        <div class="horizontal">
+
+            <div class="popular-card">
+
+                <div class="name">
+                    🍔 BIZTOP Burger
+                </div>
+
+                <p>
+                    📁 Restoran
+                </p>
+
+                <p>
+                    📍 To‘rtko‘l
+                </p>
+
+                <p>
+                    📞 +998 90 111 11 11
+                </p>
+
+                <div class="rating">
+                    ⭐ 4.9
+                </div>
+
+            </div>
+
+
+            <div class="popular-card">
+
+                <div class="name">
+                    💇‍♀️ Beauty Salon
+                </div>
+
+                <p>
+                    📁 Go‘zallik
+                </p>
+
+                <p>
+                    📍 To‘rtko‘l
+                </p>
+
+                <p>
+                    📞 +998 91 222 22 22
+                </p>
+
+                <div class="rating">
+                    ⭐ 4.8
+                </div>
+
+            </div>
+
+
+            <div class="popular-card">
+
+                <div class="name">
+                    ☕ BIZTOP Coffee
+                </div>
+
+                <p>
+                    📁 Kafe
+                </p>
+
+                <p>
+                    📍 To‘rtko‘l
+                </p>
+
+                <p>
+                    📞 +998 93 333 33 33
+                </p>
+
+                <div class="rating">
+                    ⭐ 4.7
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    © 2026 BIZTOP — Bizneslarni topish va baholash platformasi
+</footer>
+
+
+<!-- MODAL -->
+<div
+    id="modal"
+    class="modal"
+    onclick="closeModal(event)"
 >
-
-    <h2 class="section-title">
-        🔎 Qidiruv natijalari
-    </h2>
 
     <div
-        id="results"
-        class="horizontal-scroll"
-    ></div>
-
-</section>
-
-
-<!-- ================= CATEGORIES ================= -->
-
-<section class="section">
-
-    <h2 class="section-title">
-        Kategoriyalar
-    </h2>
-
-    <div class="horizontal-scroll">
+        class="modal-box"
+        onclick="event.stopPropagation()"
+    >
 
         <div
-            class="category-card"
-            onclick="categorySearch('go‘zallik')"
-        >
-            <div class="category-icon">💇‍♀️</div>
-            <div class="category-name">Go‘zallik</div>
-        </div>
-
-        <div
-            class="category-card"
-            onclick="categorySearch('restoran')"
-        >
-            <div class="category-icon">🍔</div>
-            <div class="category-name">Restoran</div>
-        </div>
-
-        <div
-            class="category-card"
-            onclick="categorySearch('kafe')"
-        >
-            <div class="category-icon">☕</div>
-            <div class="category-name">Kafe</div>
-        </div>
-
-        <div
-            class="category-card"
-            onclick="categorySearch('do‘kon')"
-        >
-            <div class="category-icon">🛒</div>
-            <div class="category-name">Do‘kon</div>
-        </div>
-
-        <div
-            class="category-card"
-            onclick="categorySearch('mehmonxona')"
-        >
-            <div class="category-icon">🏨</div>
-            <div class="category-name">Mehmonxona</div>
-        </div>
-
-        <div
-            class="category-card"
-            onclick="categorySearch('avto')"
-        >
-            <div class="category-icon">🚗</div>
-            <div class="category-name">Avto servis</div>
-        </div>
-
-        <div
-            class="category-card"
-            onclick="categorySearch('qurilish')"
-        >
-            <div class="category-icon">🏗️</div>
-            <div class="category-name">Qurilish</div>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= POPULAR BUSINESSES ================= -->
-
-<section class="section">
-
-    <h2 class="section-title">
-        ⭐ Mashhur<br>bizneslar
-    </h2>
-
-    <div class="horizontal-scroll">
-
-        <!-- BUSINESS 1 -->
-
-        <div
-            class="popular-card"
-            onclick="openBusiness(0)"
-        >
-
-            <div class="business-top">
-
-                <div class="business-icon">
-                    🍔
-                </div>
-
-                <div class="business-name">
-                    BIZTOP Burger
-                </div>
-
-            </div>
-
-            <div class="business-info">
-                📁 Restoran<br>
-                📍 To‘rtko‘l<br>
-                📞 +998 90 111 11 11
-            </div>
-
-            <div class="rating">
-                ⭐ 4.9
-            </div>
-
-        </div>
-
-
-        <!-- BUSINESS 2 -->
-
-        <div
-            class="popular-card"
-            onclick="openBusiness(1)"
-        >
-
-            <div class="business-top">
-
-                <div class="business-icon">
-                    ☕
-                </div>
-
-                <div class="business-name">
-                    BIZTOP Coffee
-                </div>
-
-            </div>
-
-            <div class="business-info">
-                📁 Kafe<br>
-                📍 To‘rtko‘l<br>
-                📞 +998 91 222 22 22
-            </div>
-
-            <div class="rating">
-                ⭐ 4.8
-            </div>
-
-        </div>
-
-
-        <!-- BUSINESS 3 -->
-
-        <div
-            class="popular-card"
-            onclick="openBusiness(2)"
-        >
-
-            <div class="business-top">
-
-                <div class="business-icon">
-                    🛒
-                </div>
-
-                <div class="business-name">
-                    BIZTOP Market
-                </div>
-
-            </div>
-
-            <div class="business-info">
-                📁 Do‘kon<br>
-                📍 To‘rtko‘l<br>
-                📞 +998 93 333 33 33
-            </div>
-
-            <div class="rating">
-                ⭐ 4.7
-            </div>
-
-        </div>
-
-
-        <!-- BUSINESS 4 -->
-
-        <div
-            class="popular-card"
-            onclick="openBusiness(3)"
-        >
-
-            <div class="business-top">
-
-                <div class="business-icon">
-                    💇‍♀️
-                </div>
-
-                <div class="business-name">
-                    Beauty Studio
-                </div>
-
-            </div>
-
-            <div class="business-info">
-                📁 Go‘zallik<br>
-                📍 To‘rtko‘l<br>
-                📞 +998 94 444 44 44
-            </div>
-
-            <div class="rating">
-                ⭐ 4.9
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= MODAL ================= -->
-
-<div
-    id="businessModal"
-    class="modal"
->
-
-    <div class="modal-box">
-
-        <button
             class="close"
             onclick="closeModal()"
         >
             ×
-        </button>
+        </div>
 
         <div
             id="modalIcon"
@@ -975,11 +772,9 @@ footer{
             ⭐ 4.9
         </div>
 
-        <div class="info-box">
+        <div class="detail-box">
 
-            <h3>
-                📍 Manzil
-            </h3>
+            <h3>📍 Manzil</h3>
 
             <p id="modalAddress">
                 To‘rtko‘l
@@ -987,297 +782,320 @@ footer{
 
         </div>
 
-        <div class="info-box">
+        <div class="detail-box">
 
-            <h3>
-                📞 Telefon
-            </h3>
-
-            <p id="modalPhone">
-                +998 90 111 11 11
-            </p>
-
-        </div>
-
-        <div class="info-box">
-
-            <h3>
-                📝 Biznes haqida
-            </h3>
+            <h3>📝 Biznes haqida</h3>
 
             <p id="modalDescription">
-                Mazali taomlar va tez
-                tayyorlanadigan mahsulotlar.
+                Mazali burger va tez tayyorlanadigan taomlar.
             </p>
 
         </div>
 
-        <button
-            id="modalCall"
-            class="call-button"
+        <a
+            id="callButton"
+            class="call-btn"
+            href="tel:+998901111111"
         >
             📞 Telefon qilish
-        </button>
+        </a>
 
     </div>
 
 </div>
-
-
-<!-- ================= ADD BUSINESS MODAL ================= -->
-
-<div
-    id="addModal"
-    class="modal"
->
-
-    <div class="modal-box">
-
-        <button
-            class="close"
-            onclick="closeAddModal()"
-        >
-            ×
-        </button>
-
-        <h2>
-            ➕ Biznes qo‘shish
-        </h2>
-
-        <br>
-
-        <div class="form-group">
-
-            <label>
-                Biznes nomi
-            </label>
-
-            <input
-                id="newName"
-                type="text"
-                placeholder="Masalan: Ali Cafe"
-            >
-
-        </div>
-
-        <div class="form-group">
-
-            <label>
-                Kategoriya
-            </label>
-
-            <select id="newCategory">
-
-                <option>
-                    Restoran
-                </option>
-
-                <option>
-                    Kafe
-                </option>
-
-                <option>
-                    Do‘kon
-                </option>
-
-                <option>
-                    Go‘zallik
-                </option>
-
-                <option>
-                    Mehmonxona
-                </option>
-
-                <option>
-                    Avto servis
-                </option>
-
-                <option>
-                    Qurilish
-                </option>
-
-            </select>
-
-        </div>
-
-        <div class="form-group">
-
-            <label>
-                Manzil
-            </label>
-
-            <input
-                id="newAddress"
-                type="text"
-                placeholder="Masalan: To‘rtko‘l"
-            >
-
-        </div>
-
-        <div class="form-group">
-
-            <label>
-                Telefon
-            </label>
-
-            <input
-                id="newPhone"
-                type="text"
-                placeholder="+998 90 123 45 67"
-            >
-
-        </div>
-
-        <div class="form-group">
-
-            <label>
-                Biznes haqida
-            </label>
-
-            <textarea
-                id="newDescription"
-                placeholder="Biznesingiz haqida qisqacha..."
-            ></textarea>
-
-        </div>
-
-        <button
-            class="submit-button"
-            onclick="addBusiness()"
-        >
-            Biznesni qo‘shish
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    © 2026 BIZTOP — Bizneslarni topish va
-    baholash platformasi
-
-</footer>
 
 
 <script>
-
-/* ============================================
-   BIZNESLAR MA'LUMOTLARI
-   ============================================ */
 
 const businesses = [
 
     {
         name:"BIZTOP Burger",
         category:"Restoran",
-        icon:"🍔",
         address:"To‘rtko‘l",
         phone:"+998 90 111 11 11",
-        rating:4.9,
-        description:
-        "Mazali burger va tez tayyorlanadigan taomlar."
+        rating:"4.9",
+        icon:"🍔",
+        description:"Mazali burger va tez tayyorlanadigan taomlar."
+    },
+
+    {
+        name:"Beauty Salon",
+        category:"Go‘zallik",
+        address:"To‘rtko‘l",
+        phone:"+998 91 222 22 22",
+        rating:"4.8",
+        icon:"💇‍♀️",
+        description:"Zamonaviy go‘zallik va parvarish xizmatlari."
     },
 
     {
         name:"BIZTOP Coffee",
         category:"Kafe",
-        icon:"☕",
         address:"To‘rtko‘l",
-        phone:"+998 91 222 22 22",
-        rating:4.8,
-        description:
-        "Qahva, shirinliklar va qulay muhit."
+        phone:"+998 93 333 33 33",
+        rating:"4.7",
+        icon:"☕",
+        description:"Qahva, shirinliklar va qulay muhit."
     },
 
     {
         name:"BIZTOP Market",
         category:"Do‘kon",
-        icon:"🛒",
         address:"To‘rtko‘l",
-        phone:"+998 93 333 33 33",
-        rating:4.7,
-        description:
-        "Kundalik oziq-ovqat va uy-ro‘zg‘or mahsulotlari."
+        phone:"+998 94 444 44 44",
+        rating:"4.6",
+        icon:"🛒",
+        description:"Kundalik oziq-ovqat va maishiy mahsulotlar."
     },
 
     {
-        name:"Beauty Studio",
-        category:"Go‘zallik",
-        icon:"💇‍♀️",
+        name:"Auto Service",
+        category:"Avto",
         address:"To‘rtko‘l",
-        phone:"+998 94 444 44 44",
-        rating:4.9,
-        description:
-        "Soch turmaklash, kosmetologiya va go‘zallik xizmatlari."
+        phone:"+998 95 555 55 55",
+        rating:"4.8",
+        icon:"🚗",
+        description:"Avtomobillarga texnik xizmat ko‘rsatish."
+    },
+
+    {
+        name:"BIZTOP Hotel",
+        category:"Mehmonxona",
+        address:"To‘rtko‘l",
+        phone:"+998 97 666 66 66",
+        rating:"4.7",
+        icon:"🏨",
+        description:"Qulay va shinam mehmonxona."
     }
 
 ];
 
 
-/* ============================================
-   QIDIRUV
-   ============================================ */
+/* SEARCH */
+function searchBusiness(){
 
-const searchInput =
-document.getElementById("searchInput");
+    const input =
+        document.getElementById("searchInput");
 
-searchInput.addEventListener(
-    "input",
-    function(){
-
-        const value =
-        this.value.trim();
-
-        /*
-          So'z o'chirilsa,
-          qidiruv natijalari ham yo'qoladi.
-        */
-
-        if(value === ""){
-
-            document.getElementById(
-                "resultsSection"
-            ).style.display="none";
-
-            document.getElementById(
-                "results"
-            ).innerHTML="";
-
-            return;
-        }
-
-    }
-);
-
-
-function searchBusinesses(){
-
-    const value =
-    searchInput.value
-    .trim()
-    .toLowerCase();
-
-    const results =
-    document.getElementById("results");
+    const query =
+        input.value.trim().toLowerCase();
 
     const section =
-    document.getElementById("resultsSection");
+        document.getElementById("resultsSection");
+
+    const results =
+        document.getElementById("results");
 
 
     /*
-      Bo'sh qidiruv bo'lsa
-      natijalarni yashiramiz.
+       MUHIM:
+       Qidiruv maydoni bo‘sh bo‘lsa,
+       natijalar butunlay yo‘qoladi.
     */
 
-    if(value === ""){
+    if(query === ""){
 
-        section.style.display="none";
+        section.classList.remove("show");
 
-        results.innerHTML="";
+        results.innerHTML = "";
 
         return;
     }
+
+
+    const found =
+        businesses.filter(function(business){
+
+            return (
+                business.name.toLowerCase().includes(query) ||
+                business.category.toLowerCase().includes(query) ||
+                business.address.toLowerCase().includes(query)
+            );
+
+        });
+
+
+    results.innerHTML = "";
+
+
+    if(found.length === 0){
+
+        results.innerHTML = `
+            <div class="business-card">
+
+                <div class="business-name">
+                    😕 Biznes topilmadi
+                </div>
+
+                <div class="business-info">
+                    Boshqa so‘z bilan qidirib ko‘ring.
+                </div>
+
+            </div>
+        `;
+
+    }else{
+
+        found.forEach(function(business){
+
+            results.innerHTML += createBusinessCard(business);
+
+        });
+
+    }
+
+
+    section.classList.add("show");
+
+}
+
+
+/* CARD */
+function createBusinessCard(business){
+
+    return `
+
+        <div class="business-card">
+
+            <div class="business-name">
+                ${business.icon}
+                ${business.name}
+            </div>
+
+            <div class="business-info">
+                📁 ${business.category}<br>
+                📍 ${business.address}<br>
+                📞 ${business.phone}
+            </div>
+
+            <div class="rating">
+                ⭐ ${business.rating}
+            </div>
+
+            <button
+                class="business-btn"
+                onclick='openBusiness(${JSON.stringify(business)})'
+            >
+                Batafsil
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+/* CATEGORY SEARCH */
+function categorySearch(category){
+
+    const input =
+        document.getElementById("searchInput");
+
+    input.value = category;
+
+    searchBusiness();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ENTER */
+document
+.getElementById("searchInput")
+.addEventListener("keydown",function(event){
+
+    if(event.key === "Enter"){
+
+        searchBusiness();
+
+    }
+
+});
+
+
+/* REAL-TIME CLEAR */
+document
+.getElementById("searchInput")
+.addEventListener("input",function(){
+
+    if(this.value.trim() === ""){
+
+        document
+        .getElementById("resultsSection")
+        .classList.remove("show");
+
+        document
+        .getElementById("results")
+        .innerHTML = "";
+
+    }
+
+});
+
+
+/* OPEN BUSINESS */
+function openBusiness(business){
+
+    document.getElementById("modalIcon")
+        .textContent = business.icon;
+
+    document.getElementById("modalName")
+        .textContent = business.name;
+
+    document.getElementById("modalRating")
+        .textContent = "⭐ " + business.rating;
+
+    document.getElementById("modalAddress")
+        .textContent = business.address;
+
+    document.getElementById("modalDescription")
+        .textContent = business.description;
+
+    document.getElementById("callButton")
+        .href =
+        "tel:" +
+        business.phone.replace(/\s/g,"");
+
+    document
+        .getElementById("modal")
+        .classList.add("show");
+
+}
+
+
+/* CLOSE */
+function closeModal(event){
+
+    if(
+        !event ||
+        event.target.id === "modal"
+    ){
+
+        document
+        .getElementById("modal")
+        .classList.remove("show");
+
+    }
+
+}
+
+
+/* ADD BUSINESS */
+function addBusiness(){
+
+    alert(
+        "Biznes qo‘shish funksiyasi keyingi bosqichda ulanadi."
+    );
+
+}
+
+</script>
+
+</body>
+</html>
