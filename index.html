@@ -554,15 +554,14 @@ footer{
   © 2026 BIZTOP — Bizneslarni toping va baholang.
 
 </footer>
-
-
 <script>
+
 function normalizeText(text){
 
   return text
     .toLowerCase()
-    .replace(/o‘|o'|ó/g,"o")
-    .replace(/g‘|g'|ǵ/g,"g")
+    .replace(/o‘|o'|ó|’/g,"o")
+    .replace(/g‘|g'|ǵ|’/g,"g")
     .trim();
 
 }
@@ -587,7 +586,6 @@ function searchBusiness(){
 
   let found = 0;
 
-
   cards.forEach(function(card){
 
     const text =
@@ -598,7 +596,6 @@ function searchBusiness(){
         card.getAttribute("data-category") || ""
       );
 
-
     if(
       input === "" ||
       text.includes(input) ||
@@ -606,7 +603,6 @@ function searchBusiness(){
     ){
 
       card.style.display = "";
-
       found++;
 
     }else{
@@ -622,9 +618,7 @@ function searchBusiness(){
     document.getElementById("noResults");
 
   if(oldMessage){
-
     oldMessage.remove();
-
   }
 
 
@@ -634,7 +628,6 @@ function searchBusiness(){
       document.createElement("div");
 
     message.id = "noResults";
-
     message.className = "no-results";
 
     message.innerHTML =
@@ -644,7 +637,6 @@ function searchBusiness(){
       document.getElementById("businessCards");
 
     if(container){
-
       container.appendChild(message);
     }
 
@@ -659,21 +651,109 @@ function selectCategory(category){
     document.getElementById("searchInput");
 
   if(!searchInput){
-
     return;
-
   }
 
-  searchInput.value =
-  category
+  searchInput.value = category;
 
-  searchBusiness() ;
-  } 
+  searchBusiness();
+
+}
+
 
 function showBusiness(name){
 
- document.getElementById("businessModal").style.display = "flex";
-document.getElementById("modalName").innerText = name; 
+  const modal =
+    document.getElementById("businessModal");
+
+  const modalName =
+    document.getElementById("modalName");
+
+  const modalLocation =
+    document.getElementById("modalLocation");
+
+  const modalCategory =
+    document.getElementById("modalCategory");
+
+  const modalRating =
+    document.getElementById("modalRating");
+
+
+  const businesses = {
+
+    "BIZTOP Burger": {
+      location: "To‘rtko‘l",
+      category: "Restoran",
+      rating: "★★★★★ 4.9"
+    },
+
+    "Top Coffee": {
+      location: "To‘rtko‘l",
+      category: "Kafe",
+      rating: "★★★★★ 4.8"
+    },
+
+    "Baraka Market": {
+      location: "To‘rtko‘l",
+      category: "Oziq-ovqat do‘koni",
+      rating: "★★★★☆ 4.6"
+    },
+
+    "Usta Service": {
+      location: "To‘rtko‘l",
+      category: "Xizmatlar",
+      rating: "★★★★★ 4.7"
+    },
+
+    "To‘rtko‘l Pizza": {
+      location: "To‘rtko‘l",
+      category: "Restoran",
+      rating: "★★★★☆ 4.5"
+    },
+
+    "Sweet Cafe": {
+      location: "To‘rtko‘l",
+      category: "Kafe",
+      rating: "★★★★★ 4.9"
+    }
+
+  };
+
+
+  const business = businesses[name];
+
+  if(!business){
+    return;
+  }
+
+
+  modalName.innerText =
+    name;
+
+  modalLocation.innerText =
+    business.location;
+
+  modalCategory.innerText =
+    business.category;
+
+  modalRating.innerText =
+    business.rating;
+
+  modal.style.display =
+    "flex";
+
+}
+
+
+function closeBusiness(){
+
+  const modal =
+    document.getElementById("businessModal");
+
+  if(modal){
+    modal.style.display = "none";
+  }
+
 }
 
 
@@ -689,6 +769,8 @@ document
 
 
 </script>
+
+    
 
 <div class="modal" id="businessModal">
 
