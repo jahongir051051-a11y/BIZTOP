@@ -489,26 +489,26 @@ footer{
     }
 
     .categories{
-        grid-template-rows:repeat(2, 140px);
-        grid-auto-columns:145px;
-        gap:12px;
-        padding:3px 2px 12px;
+        grid-template-rows:repeat(2, 120px);
+        grid-auto-columns:125px;
+        gap:10px;
+        padding:3px 2px 10px;
     }
 
     .category{
-        height:140px;
+        height:120px;
         border-width:4px;
-        border-radius:22px;
-        padding:8px 5px;
+        border-radius:20px;
+        padding:6px 4px;
     }
 
     .category .icon{
-        font-size:42px;
-        margin-bottom:8px;
+        font-size:36px;
+        margin-bottom:6px;
     }
 
     .category .name{
-        font-size:16px;
+        font-size:15px;
         line-height:1.1;
     }
 
@@ -523,31 +523,31 @@ footer{
     }
 
     .businesses{
-        gap:12px;
-        padding-bottom:12px;
+        gap:10px;
+        padding-bottom:10px;
     }
 
     .business-card{
-        flex:0 0 285px;
-        min-height:190px;
+        flex:0 0 260px;
+        min-height:175px;
         border-width:4px;
-        border-radius:22px;
-        padding:14px;
+        border-radius:20px;
+        padding:12px;
     }
 
     .business-name{
-        font-size:20px;
-        margin-bottom:10px;
+        font-size:19px;
+        margin-bottom:8px;
     }
 
     .business-info{
-        gap:5px;
-        font-size:15px;
+        gap:4px;
+        font-size:14px;
     }
 
     .business-rating{
-        margin-top:10px;
-        font-size:21px;
+        margin-top:8px;
+        font-size:20px;
     }
 
     footer{
@@ -616,7 +616,6 @@ footer{
         class="search-input"
         type="text"
         placeholder="Restoran, kafe, do‘kon yoki boshqa."
-        oninput="searchBusinesses()"
         onkeydown="handleEnter(event)"
     >
 
@@ -999,575 +998,4 @@ footer{
 
                 <input
                     id="businessName"
-                    type="text"
-                    placeholder="Masalan: BIZTOP Cafe"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Kategoriya
-                </label>
-
-                <select id="businessCategory" required>
-
-                    <option value="">
-                        Kategoriyani tanlang
-                    </option>
-
-                    <option>Go‘zallik</option>
-                    <option>Restoran</option>
-                    <option>Do‘kon</option>
-                    <option>Kafe</option>
-                    <option>Avto xizmat</option>
-                    <option>Mehmonxona</option>
-                    <option>Klinika</option>
-                    <option>Dorixona</option>
-                    <option>Kiyim-kechak</option>
-                    <option>Nonvoyxona</option>
-                    <option>Supermarket</option>
-                    <option>Telefon/texnika</option>
-                    <option>Kompyuter</option>
-                    <option>Qurilish</option>
-                    <option>Mebel</option>
-                    <option>Taksi</option>
-                    <option>O‘quv markazi</option>
-                    <option>Foto/video</option>
-                    <option>Gul do‘koni</option>
-                    <option>Chorvachilik</option>
-                    <option>Qishloq xo‘jaligi</option>
-                    <option>Game Club</option>
-
-                </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Manzil
-                </label>
-
-                <input
-                    id="businessLocation"
-                    type="text"
-                    placeholder="Masalan: To‘rtko‘l"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Telefon
-                </label>
-
-                <input
-                    id="businessPhone"
-                    type="tel"
-                    placeholder="+998 90 123 45 67"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Qisqacha ma’lumot
-                </label>
-
-                <textarea
-                    id="businessDescription"
-                    placeholder="Biznes haqida..."
-                ></textarea>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="submit-btn"
-            >
-                Biznesni qo‘shish
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    © 2026 BIZTOP — Bizneslarni topish va baholash platformasi
-
-</footer>
-
-
-<script>
-
-/* ================================================= */
-/* ================= BUSINESS DATA ================= */
-/* ================================================= */
-
-const businesses = [
-
-    {
-        name:"BIZTOP Burger",
-        category:"Restoran",
-        location:"To‘rtko‘l",
-        phone:"+998901111111",
-        rating:4.9,
-        icon:"🍽️"
-    },
-
-    {
-        name:"Beauty Salon",
-        category:"Go‘zallik",
-        location:"To‘rtko‘l",
-        phone:"+998912222222",
-        rating:4.8,
-        icon:"💇‍♀️"
-    },
-
-    {
-        name:"BIZTOP Coffee",
-        category:"Kafe",
-        location:"To‘rtko‘l",
-        phone:"+998933333333",
-        rating:4.7,
-        icon:"☕"
-    },
-
-    {
-        name:"BIZTOP Game Club",
-        category:"Game Club",
-        location:"To‘rtko‘l",
-        phone:"+998941234567",
-        rating:4.8,
-        icon:"🎮"
-    },
-
-    {
-        name:"BIZTOP Avto",
-        category:"Avto xizmat",
-        location:"To‘rtko‘l",
-        phone:"+998951234567",
-        rating:4.6,
-        icon:"🔧"
-    },
-
-    {
-        name:"BIZTOP Market",
-        category:"Supermarket",
-        location:"To‘rtko‘l",
-        phone:"+998991234567",
-        rating:4.7,
-        icon:"🛒"
-    }
-
-];
-
-
-/* ================================================= */
-/* ================= SEARCH ======================== */
-/* ================================================= */
-
-function handleEnter(event){
-
-    if(event.key === "Enter"){
-        searchBusinesses();
-    }
-
-}
-
-
-function searchBusinesses(){
-
-    const input =
-        document
-        .getElementById("searchInput")
-        .value
-        .trim()
-        .toLowerCase();
-
-    const resultsSection =
-        document.getElementById("resultsSection");
-
-    const results =
-        document.getElementById("results");
-
-
-    /*
-     * MUHIM:
-     * Qidiruv maydoni bo‘sh bo‘lsa,
-     * qidiruv natijalari ham yo‘qoladi.
-     */
-
-    if(!input){
-
-        results.innerHTML = "";
-
-        resultsSection.style.display = "none";
-
-        return;
-    }
-
-
-    const filtered = businesses.filter(business => {
-
-        return (
-
-            business.name.toLowerCase().includes(input) ||
-
-            business.category.toLowerCase().includes(input) ||
-
-            business.location.toLowerCase().includes(input)
-
-        );
-
-    });
-
-
-    results.innerHTML = "";
-
-
-    if(filtered.length === 0){
-
-        results.innerHTML = `
-            <div class="no-results">
-                😔 “${input}” bo‘yicha biznes topilmadi.
-                <br><br>
-                Boshqa so‘z bilan qidirib ko‘ring.
-            </div>
-        `;
-
-    }else{
-
-        filtered.forEach(business => {
-
-            results.innerHTML += createResultCard(business);
-
-        });
-
-    }
-
-
-    resultsSection.style.display = "block";
-
-    resultsSection.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-    });
-
-}
-
-
-/* ================================================= */
-/* ================ CATEGORY SEARCH ================ */
-/* ================================================= */
-
-function selectCategory(category){
-
-    const input =
-        document.getElementById("searchInput");
-
-    input.value = category;
-
-    searchBusinesses();
-
-}
-
-
-/* ================================================= */
-/* ================ RESULT CARD ==================== */
-/* ================================================= */
-
-function createResultCard(business){
-
-    return `
-
-        <div class="result-card">
-
-            <h3>
-                ${business.icon}
-                ${business.name}
-            </h3>
-
-            <p>
-                📁 ${business.category}
-            </p>
-
-            <p>
-                📍 ${business.location}
-            </p>
-
-            <p>
-                📞
-                <a
-                    href="tel:${business.phone}"
-                    class="phone-link"
-                >
-                    ${formatPhone(business.phone)}
-                </a>
-            </p>
-
-            <div class="business-rating">
-                ⭐ ${business.rating}
-            </div>
-
-        </div>
-
-    `;
-
-}
-
-
-/* ================================================= */
-/* ================= PHONE FORMAT ================== */
-/* ================================================= */
-
-function formatPhone(phone){
-
-    const clean =
-        phone.replace(/\D/g,"");
-
-    if(clean.length === 12){
-
-        return `+${clean.slice(0,3)}
-                ${clean.slice(3,5)}
-                ${clean.slice(5,8)}
-                ${clean.slice(8,10)}
-                ${clean.slice(10,12)}`;
-
-    }
-
-    return phone;
-
-}
-
-
-/* ================================================= */
-/* ================= MODAL ========================= */
-/* ================================================= */
-
-function openModal(){
-
-    document
-        .getElementById("businessModal")
-        .classList.add("show");
-
-}
-
-
-function closeModal(){
-
-    document
-        .getElementById("businessModal")
-        .classList.remove("show");
-
-}
-
-
-/* ================================================= */
-/* ================ ADD BUSINESS ================== */
-/* ================================================= */
-
-function addBusiness(event){
-
-    event.preventDefault();
-
-
-    const name =
-        document
-        .getElementById("businessName")
-        .value
-        .trim();
-
-    const category =
-        document
-        .getElementById("businessCategory")
-        .value;
-
-    const location =
-        document
-        .getElementById("businessLocation")
-        .value
-        .trim();
-
-    const phone =
-        document
-        .getElementById("businessPhone")
-        .value
-        .trim();
-
-    const description =
-        document
-        .getElementById("businessDescription")
-        .value
-        .trim();
-
-
-    const newBusiness = {
-
-        name:name,
-
-        category:category,
-
-        location:location,
-
-        phone:phone,
-
-        rating:5.0,
-
-        icon:getCategoryIcon(category),
-
-        description:description
-
-    };
-
-
-    businesses.unshift(newBusiness);
-
-
-    closeModal();
-
-
-    document
-        .getElementById("businessName")
-        .value = "";
-
-    document
-        .getElementById("businessCategory")
-        .value = "";
-
-    document
-        .getElementById("businessLocation")
-        .value = "";
-
-    document
-        .getElementById("businessPhone")
-        .value = "";
-
-    document
-        .getElementById("businessDescription")
-        .value = "";
-
-
-    alert(
-        "✅ Biznes muvaffaqiyatli qo‘shildi!"
-    );
-
-}
-
-
-/* ================================================= */
-/* ================ CATEGORY ICON ================= */
-/* ================================================= */
-
-function getCategoryIcon(category){
-
-    const icons = {
-
-        "Go‘zallik":"💇‍♀️",
-
-        "Restoran":"🍽️",
-
-        "Do‘kon":"🛒",
-
-        "Kafe":"☕",
-
-        "Avto xizmat":"🔧",
-
-        "Mehmonxona":"🏨",
-
-        "Klinika":"🏥",
-
-        "Dorixona":"💊",
-
-        "Kiyim-kechak":"👕",
-
-        "Nonvoyxona":"🥖",
-
-        "Supermarket":"🏪",
-
-        "Telefon/texnika":"📱",
-
-        "Kompyuter":"💻",
-
-        "Qurilish":"🏗️",
-
-        "Mebel":"🪑",
-
-        "Taksi":"🚕",
-
-        "O‘quv markazi":"🎓",
-
-        "Foto/video":"📸",
-
-        "Gul do‘koni":"💐",
-
-        "Chorvachilik":"🐄",
-
-        "Qishloq xo‘jaligi":"🌾",
-
-        "Game Club":"🎮"
-
-    };
-
-
-    return icons[category] || "🏢";
-
-}
-
-
-/* ================================================= */
-/* ================= MODAL OUTSIDE ================= */
-/* ================================================= */
-
-document
-    .getElementById("businessModal")
-    .addEventListener("click", function(event){
-
-        if(event.target === this){
-
-            closeModal();
-
-        }
-
-    });
-
-
-/* ================================================= */
-/* ================= ESC KEY ======================= */
-/* ================================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Escape"){
-
-            closeModal();
-
-        }
-
-    }
-);
-
-</script>
-
-</body>
-</html>
+                   
