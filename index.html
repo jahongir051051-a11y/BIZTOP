@@ -142,7 +142,7 @@ header{
 /* HORIZONTAL SCROLL */
 .horizontal{
     display:flex;
-    gap:14px;
+    gap:18px;
     overflow-x:auto;
     overflow-y:hidden;
     padding:5px 5px 15px;
@@ -155,13 +155,13 @@ header{
     display:none;
 }
 
-/* CATEGORY - KICHIK */
+/* CATEGORY */
 .category{
-    flex:0 0 155px;
-    height:130px;
+    flex:0 0 190px;
+    height:170px;
     background:#28598d;
     border:4px solid #2588ff;
-    border-radius:24px;
+    border-radius:30px;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -177,13 +177,32 @@ header{
 }
 
 .category .emoji{
-    font-size:42px;
-    margin-bottom:7px;
+    font-size:52px;
+    margin-bottom:10px;
 }
 
 .category strong{
-    font-size:18px;
+    font-size:21px;
 }
+
+
+/* ==================================================
+   KATEGORIYALAR 2 QATOR
+   ================================================== */
+
+.category-list{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:12px;
+    overflow:visible;
+}
+
+.category-list .category{
+    width:100%;
+    min-width:0;
+    flex:none;
+}
+
 
 /* SEARCH RESULTS */
 #resultsSection{
@@ -200,73 +219,73 @@ header{
     margin-bottom:22px;
 }
 
-/* BUSINESS CARD - KICHIK */
+/* BUSINESS CARD */
 .business-card{
-    flex:0 0 260px;
-    min-height:190px;
+    flex:0 0 330px;
+    min-height:235px;
     background:#28598d;
     border:4px solid #2588ff;
-    border-radius:24px;
-    padding:17px;
+    border-radius:28px;
+    padding:22px;
     scroll-snap-align:start;
 }
 
 .business-name{
-    font-size:22px;
+    font-size:27px;
     font-weight:900;
-    margin-bottom:10px;
+    margin-bottom:14px;
 }
 
 .business-info{
     color:#d5e1f4;
-    font-size:16px;
-    line-height:1.5;
+    font-size:18px;
+    line-height:1.65;
 }
 
 .rating{
     color:#ffd21c;
-    font-size:21px;
+    font-size:25px;
     font-weight:900;
-    margin-top:7px;
+    margin-top:8px;
 }
 
 .business-btn{
     width:100%;
-    margin-top:12px;
-    height:40px;
+    margin-top:15px;
+    height:45px;
     border:0;
-    border-radius:22px;
+    border-radius:24px;
     background:#2588ff;
     color:white;
-    font-size:15px;
+    font-size:17px;
     font-weight:800;
     cursor:pointer;
 }
 
-/* POPULAR - KICHIK */
+/* POPULAR */
 .popular-card{
-    flex:0 0 260px;
-    min-height:185px;
+    flex:0 0 330px;
+    min-height:220px;
     background:#28598d;
     border:4px solid #2588ff;
-    border-radius:24px;
-    padding:17px;
+    border-radius:28px;
+    padding:22px;
 }
 
 .popular-card .name{
-    font-size:22px;
+    font-size:26px;
     font-weight:900;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .popular-card p{
     color:#d5e1f4;
-    font-size:16px;
-    line-height:1.5;
+    font-size:18px;
+    line-height:1.55;
 }
 
 .popular-card .rating{
-    margin-top:8px;
+    margin-top:12px;
 }
 
 /* FOOTER */
@@ -367,6 +386,7 @@ footer{
     margin-top:18px;
 }
 
+
 /* MOBILE */
 @media(max-width:600px){
 
@@ -426,58 +446,74 @@ footer{
         font-size:32px;
     }
 
-    /* KATEGORIYALAR YANADA KICHIK */
-    .category{
-        flex-basis:140px;
-        height:120px;
+
+    /* KATEGORIYALAR TELEFONDA 2 QATOR */
+    .category-list{
+        grid-template-columns:repeat(3, 1fr);
+        gap:10px;
+    }
+
+    .category-list .category{
+        height:115px;
         border-radius:22px;
+    }
+
+    .category-list .category .emoji{
+        font-size:35px;
+        margin-bottom:6px;
+    }
+
+    .category-list .category strong{
+        font-size:15px;
+    }
+
+
+    .category{
+        flex-basis:165px;
+        height:145px;
+        border-radius:25px;
     }
 
     .category .emoji{
-        font-size:38px;
-        margin-bottom:5px;
+        font-size:43px;
     }
 
     .category strong{
-        font-size:16px;
+        font-size:18px;
     }
 
-    /* BIZNES KARTALARI YANADA KICHIK */
     .business-card{
-        flex-basis:250px;
-        min-height:180px;
-        padding:15px;
-        border-radius:22px;
+        flex-basis:285px;
+        min-height:205px;
+        padding:18px;
+        border-radius:24px;
     }
 
     .business-name{
-        font-size:20px;
+        font-size:22px;
     }
 
     .business-info{
-        font-size:15px;
-        line-height:1.45;
+        font-size:16px;
+        line-height:1.55;
     }
 
     .rating{
-        font-size:20px;
+        font-size:21px;
     }
 
-    /* MASHHUR BIZNES KARTALARI */
     .popular-card{
-        flex-basis:250px;
-        min-height:175px;
-        padding:15px;
-        border-radius:22px;
+        flex-basis:285px;
+        min-height:190px;
+        padding:18px;
     }
 
     .popular-card .name{
-        font-size:20px;
+        font-size:22px;
     }
 
     .popular-card p{
-        font-size:15px;
-        line-height:1.45;
+        font-size:16px;
     }
 
     footer{
@@ -485,6 +521,7 @@ footer{
         font-size:14px;
     }
 }
+
 
 /* VERY SMALL PHONES */
 @media(max-width:380px){
@@ -501,22 +538,35 @@ footer{
         font-size:30px;
     }
 
+
+    /* KATEGORIYALAR KICHIK TELEFONDA HAM 2 QATOR */
+    .category-list{
+        grid-template-columns:repeat(3, 1fr);
+        gap:8px;
+    }
+
+    .category-list .category{
+        height:105px;
+        border-radius:20px;
+    }
+
+    .category-list .category .emoji{
+        font-size:30px;
+    }
+
+    .category-list .category strong{
+        font-size:13px;
+    }
+
+
     .category{
-        flex-basis:130px;
-        height:112px;
-    }
-
-    .category .emoji{
-        font-size:34px;
-    }
-
-    .category strong{
-        font-size:15px;
+        flex-basis:150px;
+        height:135px;
     }
 
     .business-card,
     .popular-card{
-        flex-basis:235px;
+        flex-basis:265px;
     }
 }
 </style>
@@ -599,7 +649,7 @@ footer{
             Kategoriyalar
         </h2>
 
-        <div class="horizontal">
+        <div class="horizontal category-list">
 
             <div
                 class="category"
@@ -901,6 +951,7 @@ function searchBusiness(){
     const results =
         document.getElementById("results");
 
+
     if(query === ""){
 
         section.classList.remove("show");
@@ -909,6 +960,7 @@ function searchBusiness(){
 
         return;
     }
+
 
     const found =
         businesses.filter(function(business){
@@ -921,7 +973,9 @@ function searchBusiness(){
 
         });
 
+
     results.innerHTML = "";
+
 
     if(found.length === 0){
 
@@ -948,6 +1002,7 @@ function searchBusiness(){
         });
 
     }
+
 
     section.classList.add("show");
 
