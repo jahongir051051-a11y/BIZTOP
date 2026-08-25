@@ -142,7 +142,7 @@ header{
 /* HORIZONTAL SCROLL */
 .horizontal{
     display:flex;
-    gap:18px;
+    gap:14px;
     overflow-x:auto;
     overflow-y:hidden;
     padding:5px 5px 15px;
@@ -155,13 +155,13 @@ header{
     display:none;
 }
 
-/* CATEGORY */
+/* CATEGORY - KICHIK */
 .category{
-    flex:0 0 190px;
-    height:170px;
+    flex:0 0 155px;
+    height:130px;
     background:#28598d;
     border:4px solid #2588ff;
-    border-radius:30px;
+    border-radius:24px;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -177,12 +177,12 @@ header{
 }
 
 .category .emoji{
-    font-size:52px;
-    margin-bottom:10px;
+    font-size:42px;
+    margin-bottom:7px;
 }
 
 .category strong{
-    font-size:21px;
+    font-size:18px;
 }
 
 /* SEARCH RESULTS */
@@ -200,73 +200,73 @@ header{
     margin-bottom:22px;
 }
 
-/* BUSINESS CARD */
+/* BUSINESS CARD - KICHIK */
 .business-card{
-    flex:0 0 330px;
-    min-height:235px;
+    flex:0 0 260px;
+    min-height:190px;
     background:#28598d;
     border:4px solid #2588ff;
-    border-radius:28px;
-    padding:22px;
+    border-radius:24px;
+    padding:17px;
     scroll-snap-align:start;
 }
 
 .business-name{
-    font-size:27px;
+    font-size:22px;
     font-weight:900;
-    margin-bottom:14px;
+    margin-bottom:10px;
 }
 
 .business-info{
     color:#d5e1f4;
-    font-size:18px;
-    line-height:1.65;
+    font-size:16px;
+    line-height:1.5;
 }
 
 .rating{
     color:#ffd21c;
-    font-size:25px;
+    font-size:21px;
     font-weight:900;
-    margin-top:8px;
+    margin-top:7px;
 }
 
 .business-btn{
     width:100%;
-    margin-top:15px;
-    height:45px;
+    margin-top:12px;
+    height:40px;
     border:0;
-    border-radius:24px;
+    border-radius:22px;
     background:#2588ff;
     color:white;
-    font-size:17px;
+    font-size:15px;
     font-weight:800;
     cursor:pointer;
 }
 
-/* POPULAR */
+/* POPULAR - KICHIK */
 .popular-card{
-    flex:0 0 330px;
-    min-height:220px;
+    flex:0 0 260px;
+    min-height:185px;
     background:#28598d;
     border:4px solid #2588ff;
-    border-radius:28px;
-    padding:22px;
+    border-radius:24px;
+    padding:17px;
 }
 
 .popular-card .name{
-    font-size:26px;
+    font-size:22px;
     font-weight:900;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .popular-card p{
     color:#d5e1f4;
-    font-size:18px;
-    line-height:1.55;
+    font-size:16px;
+    line-height:1.5;
 }
 
 .popular-card .rating{
-    margin-top:12px;
+    margin-top:8px;
 }
 
 /* FOOTER */
@@ -426,52 +426,58 @@ footer{
         font-size:32px;
     }
 
+    /* KATEGORIYALAR YANADA KICHIK */
     .category{
-        flex-basis:165px;
-        height:145px;
-        border-radius:25px;
+        flex-basis:140px;
+        height:120px;
+        border-radius:22px;
     }
 
     .category .emoji{
-        font-size:43px;
+        font-size:38px;
+        margin-bottom:5px;
     }
 
     .category strong{
-        font-size:18px;
+        font-size:16px;
     }
 
+    /* BIZNES KARTALARI YANADA KICHIK */
     .business-card{
-        flex-basis:285px;
-        min-height:205px;
-        padding:18px;
-        border-radius:24px;
+        flex-basis:250px;
+        min-height:180px;
+        padding:15px;
+        border-radius:22px;
     }
 
     .business-name{
-        font-size:22px;
+        font-size:20px;
     }
 
     .business-info{
-        font-size:16px;
-        line-height:1.55;
+        font-size:15px;
+        line-height:1.45;
     }
 
     .rating{
-        font-size:21px;
+        font-size:20px;
     }
 
+    /* MASHHUR BIZNES KARTALARI */
     .popular-card{
-        flex-basis:285px;
-        min-height:190px;
-        padding:18px;
+        flex-basis:250px;
+        min-height:175px;
+        padding:15px;
+        border-radius:22px;
     }
 
     .popular-card .name{
-        font-size:22px;
+        font-size:20px;
     }
 
     .popular-card p{
-        font-size:16px;
+        font-size:15px;
+        line-height:1.45;
     }
 
     footer{
@@ -496,13 +502,21 @@ footer{
     }
 
     .category{
-        flex-basis:150px;
-        height:135px;
+        flex-basis:130px;
+        height:112px;
+    }
+
+    .category .emoji{
+        font-size:34px;
+    }
+
+    .category strong{
+        font-size:15px;
     }
 
     .business-card,
     .popular-card{
-        flex-basis:265px;
+        flex-basis:235px;
     }
 }
 </style>
@@ -887,13 +901,6 @@ function searchBusiness(){
     const results =
         document.getElementById("results");
 
-
-    /*
-       MUHIM:
-       Qidiruv maydoni bo‘sh bo‘lsa,
-       natijalar butunlay yo‘qoladi.
-    */
-
     if(query === ""){
 
         section.classList.remove("show");
@@ -902,7 +909,6 @@ function searchBusiness(){
 
         return;
     }
-
 
     const found =
         businesses.filter(function(business){
@@ -915,9 +921,7 @@ function searchBusiness(){
 
         });
 
-
     results.innerHTML = "";
-
 
     if(found.length === 0){
 
@@ -944,7 +948,6 @@ function searchBusiness(){
         });
 
     }
-
 
     section.classList.add("show");
 
