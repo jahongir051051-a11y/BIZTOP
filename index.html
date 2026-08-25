@@ -1,1 +1,742 @@
 
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BIZTOP — Eng yaxshi bizneslarni toping</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#07152f;
+  color:white;
+}
+
+header{
+  padding:20px 6%;
+  border-bottom:1px solid #17376b;
+}
+
+.logo{
+  font-size:32px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#1685ff;
+}
+
+.hero{
+  text-align:center;
+  padding:70px 20px 45px;
+}
+
+.hero h1{
+  font-size:42px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#1685ff;
+}
+
+.hero p{
+  color:#b9c7df;
+  font-size:20px;
+  margin-bottom:30px;
+}
+
+.search{
+  max-width:650px;
+  margin:auto;
+  display:flex;
+  gap:10px;
+}
+
+.search input{
+  flex:1;
+  padding:18px;
+  border:0;
+  border-radius:12px;
+  font-size:17px;
+  outline:none;
+}
+
+.search button{
+  padding:18px 28px;
+  border:0;
+  border-radius:12px;
+  background:#1685ff;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:30px 20px 60px;
+}
+
+h2{
+  font-size:30px;
+  margin-bottom:25px;
+}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.category{
+  background:#102b58;
+  border:1px solid #214b89;
+  border-radius:16px;
+  padding:28px 15px;
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.category:hover{
+  transform:translateY(-4px);
+  background:#143568;
+}
+
+.category .icon{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.category h3{
+  font-size:18px;
+}
+
+.businesses{
+  margin-top:55px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:#102b58;
+  border:1px solid #214b89;
+  border-radius:16px;
+  padding:22px;
+}
+
+.card .emoji{
+  font-size:40px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  font-size:21px;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#b9c7df;
+  margin:6px 0;
+}
+
+.rating{
+  color:#ffd43b;
+  margin-top:12px;
+}
+
+.card button{
+  margin-top:15px;
+  width:100%;
+  padding:12px;
+  border:0;
+  border-radius:9px;
+  background:#1685ff;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.no-results{
+  grid-column:1/-1;
+  text-align:center;
+  padding:30px;
+  color:#b9c7df;
+  background:#102b58;
+  border-radius:16px;
+}
+
+footer{
+  text-align:center;
+  padding:30px 20px;
+  border-top:1px solid #17376b;
+  color:#91a4c5;
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.78);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-content{
+  width:100%;
+  max-width:500px;
+  background:#163665;
+  border:2px solid #2b6bc0;
+  border-radius:20px;
+  padding:30px;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+.modal-close{
+  position:absolute;
+  right:15px;
+  top:10px;
+  background:none;
+  border:0;
+  color:white;
+  font-size:35px;
+  cursor:pointer;
+}
+
+.modal-content h2{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+.modal-info{
+  color:#d5e0f2;
+  font-size:19px;
+  line-height:2;
+}
+
+.modal-rating{
+  color:#ffd43b;
+  font-size:24px;
+  margin:15px 0;
+}
+
+.modal-phone{
+  display:block;
+  text-align:center;
+  background:#1685ff;
+  color:white;
+  text-decoration:none;
+  padding:16px;
+  border-radius:12px;
+  font-size:20px;
+  font-weight:bold;
+  margin-top:20px;
+}
+
+@media(max-width:800px){
+
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .search{
+    flex-direction:column;
+  }
+
+  .search button{
+    width:100%;
+  }
+
+  .hero{
+    padding-top:45px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    <span>BIZ</span>TOP
+  </div>
+
+</header>
+
+
+<section class="hero">
+
+  <h1>
+    Eng yaxshi <span>bizneslarni</span> toping
+  </h1>
+
+  <p>
+    BIZTOP — bizneslarni topish, baholash va tanlash platformasi.
+  </p>
+
+  <div class="search">
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Restoran, kafe, do‘kon yoki boshqa biznes..."
+    >
+
+    <button id="searchButton">
+      🔎 Qidirish
+    </button>
+
+  </div>
+
+</section>
+
+
+<div class="container">
+
+  <h2>Kategoriyalar</h2>
+
+  <div class="categories">
+
+    <div class="category" data-category="Restoran">
+      <div class="icon">🍽️</div>
+      <h3>Restoran</h3>
+    </div>
+
+    <div class="category" data-category="Kafe">
+      <div class="icon">☕</div>
+      <h3>Kafe</h3>
+    </div>
+
+    <div class="category" data-category="Do‘kon">
+      <div class="icon">🛒</div>
+      <h3>Do‘kon</h3>
+    </div>
+
+    <div class="category" data-category="Xizmatlar">
+      <div class="icon">🔧</div>
+      <h3>Xizmatlar</h3>
+    </div>
+
+  </div>
+
+
+  <section class="businesses">
+
+    <h2>🏆 Mashhur bizneslar</h2>
+
+    <div class="cards" id="businessCards">
+
+
+      <div class="card business-card"
+           data-category="Restoran"
+           data-name="BIZTOP Burger">
+
+        <div class="emoji">🍔</div>
+
+        <h3>BIZTOP Burger</h3>
+
+        <p>📍 To‘rtko‘l</p>
+
+        <p>🍽️ Restoran</p>
+
+        <div class="rating">
+          ★★★★★ 4.9
+        </div>
+
+        <button class="view-button">
+          Ko‘rish
+        </button>
+
+      </div>
+
+
+      <div class="card business-card"
+           data-category="Kafe"
+           data-name="Top Coffee">
+
+        <div class="emoji">☕</div>
+
+        <h3>Top Coffee</h3>
+
+        <p>📍 To‘rtko‘l</p>
+
+        <p>☕ Kafe</p>
+
+        <div class="rating">
+          ★★★★★ 4.8
+        </div>
+
+        <button class="view-button">
+          Ko‘rish
+        </button>
+
+      </div>
+
+
+      <div class="card business-card"
+           data-category="Do‘kon"
+           data-name="Baraka Market">
+
+        <div class="emoji">🛒</div>
+
+        <h3>Baraka Market</h3>
+
+        <p>📍 To‘rtko‘l</p>
+
+        <p>🛒 Oziq-ovqat do‘koni</p>
+
+        <div class="rating">
+          ★★★★☆ 4.6
+        </div>
+
+        <button class="view-button">
+          Ko‘rish
+        </button>
+
+      </div>
+
+
+      <div class="card business-card"
+           data-category="Xizmatlar"
+           data-name="Usta Service">
+
+        <div class="emoji">🔧</div>
+
+        <h3>Usta Service</h3>
+
+        <p>📍 To‘rtko‘l</p>
+
+        <p>🔧 Xizmatlar</p>
+
+        <div class="rating">
+          ★★★★★ 4.7
+        </div>
+
+        <button class="view-button">
+          Ko‘rish
+        </button>
+
+      </div>
+
+
+      <div class="card business-card"
+           data-category="Restoran"
+           data-name="To‘rtko‘l Pizza">
+
+        <div class="emoji">🍕</div>
+
+        <h3>To‘rtko‘l Pizza</h3>
+
+        <p>📍 To‘rtko‘l</p>
+
+        <p>🍽️ Restoran</p>
+
+        <div class="rating">
+          ★★★★☆ 4.5
+        </div>
+
+        <button class="view-button">
+          Ko‘rish
+        </button>
+
+      </div>
+
+
+      <div class="card business-card"
+           data-category="Kafe"
+           data-name="Sweet Cafe">
+
+        <div class="emoji">🍰</div>
+
+        <h3>Sweet Cafe</h3>
+
+        <p>📍 To‘rtko‘l</p>
+
+        <p>☕ Kafe</p>
+
+        <div class="rating">
+          ★★★★★ 4.9
+        </div>
+
+        <button class="view-button">
+          Ko‘rish
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<footer>
+
+  © 2026 BIZTOP — Bizneslarni toping va baholang.
+
+</footer>
+
+
+<div class="modal" id="businessModal">
+
+  <div class="modal-content">
+
+    <button class="modal-close" id="modalClose">
+      ×
+    </button>
+
+    <h2 id="modalName"></h2>
+
+    <div class="modal-info">
+
+      📍 <span id="modalLocation"></span><br>
+
+      🏪 <span id="modalCategory"></span>
+
+    </div>
+
+    <div class="modal-rating" id="modalRating"></div>
+
+    <a
+      class="modal-phone"
+      href="tel:+998900000000"
+    >
+      📞 Telefon qilish
+    </a>
+
+  </div>
+
+</div>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const searchInput =
+    document.getElementById("searchInput");
+
+  const searchButton =
+    document.getElementById("searchButton");
+
+  const cards =
+    document.querySelectorAll(".business-card");
+
+  const categories =
+    document.querySelectorAll(".category");
+
+  const modal =
+    document.getElementById("businessModal");
+
+  const modalClose =
+    document.getElementById("modalClose");
+
+
+  function normalizeText(text){
+
+    return text
+      .toLowerCase()
+      .replace(/o‘|o'|ó|’|`/g,"o")
+      .replace(/g‘|g'|ǵ/g,"g")
+      .trim();
+
+  }
+
+
+  function searchBusiness(){
+
+    const input =
+      normalizeText(searchInput.value);
+
+    let found = 0;
+
+
+    cards.forEach(function(card){
+
+      const text =
+        normalizeText(card.innerText);
+
+      const category =
+        normalizeText(
+          card.getAttribute("data-category") || ""
+        );
+
+      const name =
+        normalizeText(
+          card.getAttribute("data-name") || ""
+        );
+
+
+      if(
+        input === "" ||
+        text.includes(input) ||
+        category.includes(input) ||
+        name.includes(input)
+      ){
+
+        card.style.display = "";
+
+        found++;
+
+      }else{
+
+        card.style.display = "none";
+
+      }
+
+    });
+
+
+    const oldMessage =
+      document.getElementById("noResults");
+
+    if(oldMessage){
+      oldMessage.remove();
+    }
+
+
+    if(input !== "" && found === 0){
+
+      const message =
+        document.createElement("div");
+
+      message.id = "noResults";
+
+      message.className =
+        "no-results";
+
+      message.innerHTML =
+        "🔍 Bu qidiruv bo‘yicha biznes topilmadi.";
+
+      document
+        .getElementById("businessCards")
+        .appendChild(message);
+
+    }
+
+  }
+
+
+  searchButton.addEventListener(
+    "click",
+    searchBusiness
+  );
+
+
+  searchInput.addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Enter"){
+
+        searchBusiness();
+
+      }
+
+    }
+  );
+
+
+  categories.forEach(function(category){
+
+    category.addEventListener(
+      "click",
+      function(){
+
+        searchInput.value =
+          category.getAttribute("data-category");
+
+        searchBusiness();
+
+      }
+    );
+
+  });
+
+
+  const businessData = {
+
+    "BIZTOP Burger":{
+      location:"To‘rtko‘l",
+      category:"Restoran",
+      rating:"★★★★★ 4.9"
+    },
+
+    "Top Coffee":{
+      location:"To‘rtko‘l",
+      category:"Kafe",
+      rating:"★★★★★ 4.8"
+    },
+
+    "Baraka Market":{
+      location:"To‘rtko‘l",
+      category:"Oziq-ovqat do‘koni",
+      rating:"★★★★☆ 4.6"
+    },
+
+    "Usta Service":{
+      location:"To‘rtko‘l",
+      category:"Xizmatlar",
+      rating:"★★★★★ 4.7"
+    },
+
+    "To‘rtko‘l Pizza":{
+      location:"To‘rtko‘l",
+      category:"Restoran",
+      rating:"★★★★☆ 4.5"
+    },
+
+    "Sweet Cafe":{
+      location:"To‘rtko‘l",
+      category:"Kafe",
+      rating:"★★★★★ 4.9"
+    }
+
+  };
+
+
+  document
+    .querySelectorAll(".view-button")
+    .forEach(function(button){
+
+      button.add
