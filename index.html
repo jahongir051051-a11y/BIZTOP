@@ -27,16 +27,19 @@ body{
 }
 
 header{
-    height:95px;
+    min-height:72px;
     display:flex;
     align-items:center;
-    padding:0 40px;
+    justify-content:space-between;
+    padding:12px 40px;
     border-bottom:2px solid #123d78;
+    gap:20px;
 }
 
 .logo{
-    font-size:48px;
+    font-size:42px;
     font-weight:900;
+    white-space:nowrap;
 }
 
 .logo-blue{
@@ -45,6 +48,21 @@ header{
 
 .logo-white{
     color:#fff;
+}
+
+.add-business-button{
+    border:none;
+    background:#2188ff;
+    color:white;
+    padding:14px 20px;
+    border-radius:13px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.add-business-button:active{
+    transform:scale(.97);
 }
 
 .hero{
@@ -99,12 +117,6 @@ header{
     cursor:pointer;
 }
 
-#searchButton:active,
-.view-button:active,
-.category:active{
-    transform:scale(.98);
-}
-
 .container{
     width:100%;
     max-width:1100px;
@@ -127,7 +139,7 @@ header{
     background:#163663;
     border:2px solid #21589c;
     border-radius:23px;
-    min-height:210px;
+    min-height:180px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -289,17 +301,89 @@ footer{
     font-weight:bold;
 }
 
-/* TELEFON EKRANI */
+/* BIZNES QO‘SHISH FORMASI */
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    border:none;
+    border-radius:12px;
+    padding:14px;
+    font-size:17px;
+    outline:none;
+    font-family:Arial,sans-serif;
+}
+
+.form-group textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.submit-business{
+    width:100%;
+    border:none;
+    border-radius:13px;
+    background:#2188ff;
+    color:white;
+    padding:16px;
+    font-size:19px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:5px;
+}
+
+.cancel-button{
+    width:100%;
+    border:none;
+    border-radius:13px;
+    background:#304f78;
+    color:white;
+    padding:14px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.form-message{
+    display:none;
+    background:#174f38;
+    border:1px solid #35c47c;
+    color:#fff;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:18px;
+    text-align:center;
+}
+
+/* TELEFON */
 
 @media(max-width:700px){
 
     header{
-        height:72px;
-        padding:0 20px;
+        min-height:72px;
+        padding:10px 15px;
     }
 
     .logo{
-        font-size:36px;
+        font-size:34px;
+    }
+
+    .add-business-button{
+        padding:11px 13px;
+        font-size:14px;
     }
 
     .hero{
@@ -397,10 +481,6 @@ footer{
         font-size:19px;
     }
 
-    .results-info{
-        font-size:17px;
-    }
-
     footer{
         padding:32px 15px;
         font-size:16px;
@@ -450,10 +530,20 @@ footer{
 <body>
 
 <header>
+
     <div class="logo">
         <span class="logo-blue">BIZ</span><span class="logo-white">TOP</span>
     </div>
+
+    <button
+        class="add-business-button"
+        id="openAddBusiness"
+    >
+        ➕ Biznes qo‘shish
+    </button>
+
 </header>
+
 
 <section class="hero">
 
@@ -482,6 +572,7 @@ footer{
     </div>
 
 </section>
+
 
 <main class="container">
 
@@ -527,6 +618,7 @@ footer{
 
     </section>
 
+
     <section id="results">
 
         <h2 class="section-title">
@@ -538,6 +630,7 @@ footer{
         <div id="businessList" class="business-list"></div>
 
     </section>
+
 
     <section id="popular">
 
@@ -551,9 +644,13 @@ footer{
 
 </main>
 
+
 <footer>
     © 2026 BIZTOP — Bizneslarni toping va baholang.
 </footer>
+
+
+<!-- BIZNES KO‘RISH MODALI -->
 
 <div id="businessModal" class="modal">
 
@@ -579,6 +676,155 @@ footer{
 
 </div>
 
+
+<!-- BIZNES QO‘SHISH MODALI -->
+
+<div id="addBusinessModal" class="modal">
+
+    <div class="modal-box">
+
+        <span class="close" id="closeAddBusiness">×</span>
+
+        <h2>➕ Biznes qo‘shish</h2>
+
+        <div
+            id="formMessage"
+            class="form-message"
+        >
+            ✅ Biznes muvaffaqiyatli qo‘shildi!
+        </div>
+
+        <form id="businessForm">
+
+            <div class="form-group">
+
+                <label>
+                    Biznes nomi *
+                </label>
+
+                <input
+                    id="newName"
+                    type="text"
+                    placeholder="Masalan: Jahongir Restaurant"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Kategoriya *
+                </label>
+
+                <select
+                    id="newCategory"
+                    required
+                >
+
+                    <option value="">
+                        Kategoriyani tanlang
+                    </option>
+
+                    <option value="Restoran">
+                        🍽️ Restoran
+                    </option>
+
+                    <option value="Kafe">
+                        ☕ Kafe
+                    </option>
+
+                    <option value="Do‘kon">
+                        🛒 Do‘kon
+                    </option>
+
+                    <option value="Mehmonxona">
+                        🏨 Mehmonxona
+                    </option>
+
+                    <option value="Avtoservis">
+                        🚗 Avtoservis
+                    </option>
+
+                    <option value="Qurilish">
+                        🏗️ Qurilish
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Manzil *
+                </label>
+
+                <input
+                    id="newLocation"
+                    type="text"
+                    placeholder="Masalan: To‘rtko‘l"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Telefon *
+                </label>
+
+                <input
+                    id="newPhone"
+                    type="tel"
+                    placeholder="+998 90 123 45 67"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Biznes haqida
+                </label>
+
+                <textarea
+                    id="newDescription"
+                    placeholder="Biznes haqida qisqacha ma'lumot..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-business"
+            >
+                ✅ Biznesni qo‘shish
+            </button>
+
+
+            <button
+                type="button"
+                class="cancel-button"
+                id="cancelAddBusiness"
+            >
+                Bekor qilish
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
 <script>
 
 const businesses = [
@@ -589,7 +835,8 @@ const businesses = [
         location:"To‘rtko‘l",
         category:"Restoran",
         rating:"★★★★★ 4.9",
-        phone:"+998901234567"
+        phone:"+998901234567",
+        description:"Mazali burger va tez tayyorlanadigan taomlar."
     },
 
     {
@@ -598,7 +845,8 @@ const businesses = [
         location:"To‘rtko‘l",
         category:"Kafe",
         rating:"★★★★★ 4.8",
-        phone:"+998901234568"
+        phone:"+998901234568",
+        description:"Qahva, shirinliklar va yoqimli muhit."
     },
 
     {
@@ -607,7 +855,8 @@ const businesses = [
         location:"To‘rtko‘l",
         category:"Restoran",
         rating:"★★★★☆ 4.5",
-        phone:"+998901234569"
+        phone:"+998901234569",
+        description:"Pizza va boshqa mazali taomlar."
     },
 
     {
@@ -616,7 +865,8 @@ const businesses = [
         location:"To‘rtko‘l",
         category:"Kafe",
         rating:"★★★★★ 4.9",
-        phone:"+998901234570"
+        phone:"+998901234570",
+        description:"Shirinliklar va issiq ichimliklar."
     },
 
     {
@@ -625,7 +875,8 @@ const businesses = [
         location:"To‘rtko‘l",
         category:"Do‘kon",
         rating:"★★★★★ 4.7",
-        phone:"+998901234571"
+        phone:"+998901234571",
+        description:"Kundalik oziq-ovqat va uy-ro‘zg‘or mahsulotlari."
     },
 
     {
@@ -634,7 +885,8 @@ const businesses = [
         location:"To‘rtko‘l",
         category:"Mehmonxona",
         rating:"★★★★☆ 4.4",
-        phone:"+998901234572"
+        phone:"+998901234572",
+        description:"Mehmonlar uchun qulay xonalar."
     },
 
     {
@@ -643,7 +895,8 @@ const businesses = [
         location:"To‘rtko‘l",
         category:"Avtoservis",
         rating:"★★★★★ 4.8",
-        phone:"+998901234573"
+        phone:"+998901234573",
+        description:"Avtomobillarga texnik xizmat ko‘rsatish."
     },
 
     {
@@ -652,10 +905,12 @@ const businesses = [
         location:"To‘rtko‘l",
         category:"Qurilish",
         rating:"★★★★☆ 4.6",
-        phone:"+998901234574"
+        phone:"+998901234574",
+        description:"Qurilish materiallari va xizmatlar."
     }
 
 ];
+
 
 const searchInput =
     document.getElementById("searchInput");
@@ -741,11 +996,16 @@ function searchBusiness(){
     if(query === ""){
 
         results.style.display = "none";
-        categorySection.style.display = "block";
-        popularSection.style.display = "block";
+
+        categorySection.style.display =
+            "block";
+
+        popularSection.style.display =
+            "block";
 
         return;
     }
+
 
     const found =
         businesses.filter(function(business){
@@ -773,11 +1033,14 @@ function searchBusiness(){
         });
 
 
-    results.style.display = "block";
+    results.style.display =
+        "block";
 
-    categorySection.style.display = "none";
+    categorySection.style.display =
+        "none";
 
-    popularSection.style.display = "none";
+    popularSection.style.display =
+        "none";
 
 
     resultsInfo.innerHTML =
@@ -813,9 +1076,7 @@ function searchBusiness(){
 
 searchButton.addEventListener(
     "click",
-    function(){
-        searchBusiness();
-    }
+    searchBusiness
 );
 
 
@@ -886,7 +1147,9 @@ function addViewEvents(){
                     return;
                 }
 
-                openModal(business);
+                openBusinessModal(
+                    business
+                );
 
             }
         );
@@ -896,33 +1159,46 @@ function addViewEvents(){
 }
 
 
-const modal =
-    document.getElementById("businessModal");
+const businessModal =
+    document.getElementById(
+        "businessModal"
+    );
 
 const modalName =
-    document.getElementById("modalName");
+    document.getElementById(
+        "modalName"
+    );
 
 const modalInfo =
-    document.getElementById("modalInfo");
+    document.getElementById(
+        "modalInfo"
+    );
 
 const modalRating =
-    document.getElementById("modalRating");
+    document.getElementById(
+        "modalRating"
+    );
 
 const modalPhone =
-    document.getElementById("modalPhone");
+    document.getElementById(
+        "modalPhone"
+    );
 
 const closeModal =
-    document.getElementById("closeModal");
+    document.getElementById(
+        "closeModal"
+    );
 
 
-function openModal(business){
+function openBusinessModal(business){
 
     modalName.innerHTML =
         business.icon + " " + business.name;
 
     modalInfo.innerHTML = `
         📍 ${business.location}<br>
-        🏪 ${business.category}
+        🏪 ${business.category}<br>
+        📝 ${business.description}
     `;
 
     modalRating.innerHTML =
@@ -931,7 +1207,7 @@ function openModal(business){
     modalPhone.href =
         "tel:" + business.phone;
 
-    modal.style.display =
+    businessModal.style.display =
         "block";
 }
 
@@ -940,20 +1216,204 @@ closeModal.addEventListener(
     "click",
     function(){
 
-        modal.style.display =
+        businessModal.style.display =
             "none";
 
     }
 );
 
 
+/* BIZNES QO‘SHISH */
+
+const addBusinessModal =
+    document.getElementById(
+        "addBusinessModal"
+    );
+
+const openAddBusiness =
+    document.getElementById(
+        "openAddBusiness"
+    );
+
+const closeAddBusiness =
+    document.getElementById(
+        "closeAddBusiness"
+    );
+
+const cancelAddBusiness =
+    document.getElementById(
+        "cancelAddBusiness"
+    );
+
+const businessForm =
+    document.getElementById(
+        "businessForm"
+    );
+
+const formMessage =
+    document.getElementById(
+        "formMessage"
+    );
+
+
+openAddBusiness.addEventListener(
+    "click",
+    function(){
+
+        addBusinessModal.style.display =
+            "block";
+
+    }
+);
+
+
+closeAddBusiness.addEventListener(
+    "click",
+    function(){
+
+        addBusinessModal.style.display =
+            "none";
+
+    }
+);
+
+
+cancelAddBusiness.addEventListener(
+    "click",
+    function(){
+
+        addBusinessModal.style.display =
+            "none";
+
+    }
+);
+
+
+businessForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById(
+                "newName"
+            ).value.trim();
+
+        const category =
+            document.getElementById(
+                "newCategory"
+            ).value;
+
+        const location =
+            document.getElementById(
+                "newLocation"
+            ).value.trim();
+
+        const phone =
+            document.getElementById(
+                "newPhone"
+            ).value.trim();
+
+        const description =
+            document.getElementById(
+                "newDescription"
+            ).value.trim();
+
+
+        if(
+            !name ||
+            !category ||
+            !location ||
+            !phone
+        ){
+            return;
+        }
+
+
+        const icons = {
+
+            "Restoran":"🍽️",
+            "Kafe":"☕",
+            "Do‘kon":"🛒",
+            "Mehmonxona":"🏨",
+            "Avtoservis":"🚗",
+            "Qurilish":"🏗️"
+
+        };
+
+
+        const newBusiness = {
+
+            name:name,
+
+            icon:
+                icons[category] || "🏪",
+
+            location:location,
+
+            category:category,
+
+            rating:"★★★★★ Yangi",
+
+            phone:phone,
+
+            description:
+                description ||
+                "Biznes haqida ma’lumot hozircha kiritilmagan."
+
+        };
+
+
+        businesses.unshift(
+            newBusiness
+        );
+
+
+        showPopular();
+
+
+        businessForm.reset();
+
+
+        formMessage.style.display =
+            "block";
+
+
+        setTimeout(
+            function(){
+
+                formMessage.style.display =
+                    "none";
+
+                addBusinessModal.style.display =
+                    "none";
+
+            },
+            1200
+        );
+
+    }
+);
+
+
+/* MODALLARNI TASHQARISIGA BOSGANDA YOPISH */
+
 window.addEventListener(
     "click",
     function(event){
 
-        if(event.target === modal){
+        if(event.target === businessModal){
 
-            modal.style.display =
+            businessModal.style.display =
+                "none";
+
+        }
+
+        if(event.target === addBusinessModal){
+
+            addBusinessModal.style.display =
                 "none";
 
         }
