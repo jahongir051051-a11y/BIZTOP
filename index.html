@@ -7,7 +7,6 @@
 <title>BIZTOP — Eng yaxshi bizneslarni toping</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -199,46 +198,13 @@ footer{
   color:#91a4c5;
 }
 
-@media(max-width:800px){
+/* MODAL */
 
-  .categories{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .hero h1{
-    font-size:34px;
-  }
-
-}
-
-@media(max-width:500px){
-
-  .search{
-    flex-direction:column;
-  }
-
-  .search button{
-    width:100%;
-  }
-
-  header{
-    padding:18px 20px;
-  }
-
-  .hero{
-    padding-top:45px;
-  }
-
-}
 .modal{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.75);
+  background:rgba(0,0,0,.78);
   z-index:1000;
   align-items:center;
   justify-content:center;
@@ -263,18 +229,19 @@ footer{
   background:none;
   border:0;
   color:white;
-  font-size:30px;
+  font-size:34px;
   cursor:pointer;
 }
 
 .modal-content h2{
-  margin-bottom:15px;
+  margin-bottom:20px;
+  padding-right:40px;
 }
 
 .modal-info{
   color:#c5d2e8;
   font-size:18px;
-  line-height:1.8;
+  line-height:2;
 }
 
 .modal-rating{
@@ -289,10 +256,53 @@ footer{
   background:#1685ff;
   color:white;
   text-decoration:none;
-  padding:14px;
-  border-radius:10px;
+  padding:16px;
+  border-radius:12px;
   font-weight:bold;
+  font-size:18px;
   margin-top:20px;
+}
+
+@media(max-width:800px){
+
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+}
+
+@media(max-width:500px){
+
+  .search{
+    flex-direction:column;
+  }
+
+  .search button{
+    width:100%;
+  }
+
+  header{
+    padding:18px 20px;
+  }
+
+  .hero{
+    padding-top:45px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .modal-content{
+    padding:24px;
+  }
 }
 </style>
 </head>
@@ -300,11 +310,9 @@ footer{
 <body>
 
 <header>
-
   <div class="logo">
     <span>BIZ</span>TOP
   </div>
-
 </header>
 
 
@@ -326,7 +334,7 @@ footer{
       placeholder="Restoran, kafe, do‘kon yoki boshqa biznes..."
     >
 
-    <button onclick="searchBusiness()">
+    <button type="button" onclick="searchBusiness()">
       🔎 Qidirish
     </button>
 
@@ -349,7 +357,6 @@ footer{
       <h3>Restoran</h3>
     </div>
 
-
     <div
       class="category"
       onclick="selectCategory('Kafe')"
@@ -358,7 +365,6 @@ footer{
       <h3>Kafe</h3>
     </div>
 
-
     <div
       class="category"
       onclick="selectCategory('Do‘kon')"
@@ -366,7 +372,6 @@ footer{
       <div class="icon">🛒</div>
       <h3>Do‘kon</h3>
     </div>
-
 
     <div
       class="category"
@@ -404,6 +409,7 @@ footer{
         </div>
 
         <button
+          type="button"
           onclick="showBusiness('BIZTOP Burger')"
         >
           Ko‘rish
@@ -430,6 +436,7 @@ footer{
         </div>
 
         <button
+          type="button"
           onclick="showBusiness('Top Coffee')"
         >
           Ko‘rish
@@ -456,6 +463,7 @@ footer{
         </div>
 
         <button
+          type="button"
           onclick="showBusiness('Baraka Market')"
         >
           Ko‘rish
@@ -482,6 +490,7 @@ footer{
         </div>
 
         <button
+          type="button"
           onclick="showBusiness('Usta Service')"
         >
           Ko‘rish
@@ -508,6 +517,7 @@ footer{
         </div>
 
         <button
+          type="button"
           onclick="showBusiness('To‘rtko‘l Pizza')"
         >
           Ko‘rish
@@ -534,13 +544,13 @@ footer{
         </div>
 
         <button
+          type="button"
           onclick="showBusiness('Sweet Cafe')"
         >
           Ko‘rish
         </button>
 
       </div>
-
 
     </div>
 
@@ -550,18 +560,70 @@ footer{
 
 
 <footer>
-
   © 2026 BIZTOP — Bizneslarni toping va baholang.
-
 </footer>
+
+
+<!-- BIZNES MA'LUMOT OYNASI -->
+
+<div
+  class="modal"
+  id="businessModal"
+  onclick="closeModalOutside(event)"
+>
+
+  <div
+    class="modal-content"
+    onclick="event.stopPropagation()"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      onclick="closeBusiness()"
+    >
+      ×
+    </button>
+
+    <h2 id="modalName"></h2>
+
+    <div class="modal-info">
+
+      📍 <span id="modalLocation"></span>
+      <br>
+
+      🏪 <span id="modalCategory"></span>
+
+    </div>
+
+    <div
+      class="modal-rating"
+      id="modalRating"
+    ></div>
+
+    <a
+      class="modal-phone"
+      href="tel:+998900000000"
+    >
+      📞 Telefon qilish
+    </a>
+
+  </div>
+
+</div>
+
+
 <script>
 
 function normalizeText(text){
 
-  return text
+  return String(text)
     .toLowerCase()
-    .replace(/o‘|o'|ó|’/g,"o")
-    .replace(/g‘|g'|ǵ|’/g,"g")
+    .replace(/[‘’'`´]/g,"'")
+    .replace(/o'/g,"o")
+    .replace(/g'/g,"g")
+    .replace(/ó/g,"o")
+    .replace(/ǵ/g,"g")
     .trim();
 
 }
@@ -572,6 +634,11 @@ function searchBusiness(){
   const inputElement =
     document.getElementById("searchInput");
 
+  const cards =
+    document.querySelectorAll(
+      "#businessCards .business-card"
+    );
+
   if(!inputElement){
     return;
   }
@@ -579,12 +646,8 @@ function searchBusiness(){
   const input =
     normalizeText(inputElement.value);
 
-  const cards =
-    document.querySelectorAll(
-      "#businessCards .business-card"
-    );
-
   let found = 0;
+
 
   cards.forEach(function(card){
 
@@ -596,6 +659,7 @@ function searchBusiness(){
         card.getAttribute("data-category") || ""
       );
 
+
     if(
       input === "" ||
       text.includes(input) ||
@@ -603,6 +667,7 @@ function searchBusiness(){
     ){
 
       card.style.display = "";
+
       found++;
 
     }else{
@@ -618,189 +683,4 @@ function searchBusiness(){
     document.getElementById("noResults");
 
   if(oldMessage){
-    oldMessage.remove();
-  }
-
-
-  if(input !== "" && found === 0){
-
-    const message =
-      document.createElement("div");
-
-    message.id = "noResults";
-    message.className = "no-results";
-
-    message.innerHTML =
-      "🔍 Bu qidiruv bo‘yicha biznes topilmadi.";
-
-    const container =
-      document.getElementById("businessCards");
-
-    if(container){
-      container.appendChild(message);
-    }
-
-  }
-
-}
-
-
-function selectCategory(category){
-
-  const searchInput =
-    document.getElementById("searchInput");
-
-  if(!searchInput){
-    return;
-  }
-
-  searchInput.value = category;
-
-  searchBusiness();
-
-}
-function showBusiness(name){
-
-  const modal =
-    document.getElementById("businessModal");
-
-  const modalName =
-    document.getElementById("modalName");
-
-  const modalLocation =
-    document.getElementById("modalLocation");
-
-  const modalCategory =
-    document.getElementById("modalCategory");
-
-  const modalRating =
-    document.getElementById("modalRating");
-
-
-  const businesses = {
-
-    "BIZTOP Burger": {
-      location: "To‘rtko‘l",
-      category: "Restoran",
-      rating: "★★★★★ 4.9"
-    },
-
-    "Top Coffee": {
-      location: "To‘rtko‘l",
-      category: "Kafe",
-      rating: "★★★★★ 4.8"
-    },
-
-    "Baraka Market": {
-      location: "To‘rtko‘l",
-      category: "Oziq-ovqat do‘koni",
-      rating: "★★★★☆ 4.6"
-    },
-
-    "Usta Service": {
-      location: "To‘rtko‘l",
-      category: "Xizmatlar",
-      rating: "★★★★★ 4.7"
-    },
-
-    "To‘rtko‘l Pizza": {
-      location: "To‘rtko‘l",
-      category: "Restoran",
-      rating: "★★★★☆ 4.5"
-    },
-
-    "Sweet Cafe": {
-      location: "To‘rtko‘l",
-      category: "Kafe",
-      rating: "★★★★★ 4.9"
-    }
-
-
-
-  };
-
-
-  const business = businesses[name];
-
-  if(!business){
-    return;
-  }
-
-
-  modalName.innerText =
-    name;
-
-  modalLocation.innerText =
-    business.location;
-
-  modalCategory.innerText =
-    business.category;
-
-  modalRating.innerText =
-    business.rating;
-
-  modal.style.display =
-    "flex";
-
-}
-
-
-function closeBusiness(){
-
-  const modal =
-    document.getElementById("businessModal");
-
-  if(modal){
-    modal.style.display = "none";
-  }
-
-}
-
-
-document
-  .getElementById("searchInput")
-  .addEventListener("keydown", function(event){
-
-    if(event.key === "Enter"){
-      searchBusiness();
-    }
-
-  });
-
-
-</script>
-
-    
-
-<div class="modal" id="businessModal">
-
-  <div class="modal-content">
-
-    <button
-      class="modal-close"
-      onclick="closeBusiness()"
-    >
-      ×
-    </button>
-
-    <h2 id="modalName"></h2>
-
-    <div class="modal-info">
-      📍 <span id="modalLocation"></span><br>
-      🏪 <span id="modalCategory"></span>
-    </div>
-
-    <div class="modal-rating" id="modalRating"></div>
-
-    <a
-      class="modal-phone"
-      href="tel:+998900000000"
-    >
-      📞 Telefon qilish
-    </a>
-
-  </div>
-
-</div>
-</body>
-</html>
+    oldMessage.remove
