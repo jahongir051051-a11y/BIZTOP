@@ -7,7 +7,6 @@
 <title>BIZTOP — Eng yaxshi bizneslar</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -21,32 +20,27 @@ body{
     overflow-x:hidden;
 }
 
-button,
-input,
-textarea,
-select{
+button,input,textarea,select{
     font-family:inherit;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
-    height:105px;
+    height:82px;
     background:#061a3d;
-    border-bottom:4px solid #1765c0;
+    border-bottom:3px solid #1765c0;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 30px;
+    padding:0 22px;
 }
 
 .logo{
-    font-size:52px;
+    font-size:40px;
     font-weight:900;
     color:#2388ff;
-    letter-spacing:-3px;
+    letter-spacing:-2px;
 }
 
 .logo span{
@@ -57,28 +51,25 @@ header{
     background:#2388ff;
     border:0;
     color:white;
-    font-size:20px;
+    font-size:15px;
     font-weight:800;
-    padding:17px 25px;
-    border-radius:18px;
+    padding:12px 15px;
+    border-radius:13px;
     cursor:pointer;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     text-align:center;
-    padding:65px 25px 35px;
+    padding:42px 18px 25px;
 }
 
 .hero h1{
-    font-size:54px;
-    line-height:1.05;
+    font-size:40px;
+    line-height:1.08;
     font-weight:900;
-    margin-bottom:28px;
+    margin-bottom:18px;
 }
 
 .hero h1 span{
@@ -87,111 +78,70 @@ header{
 
 .hero p{
     color:#b6c8e8;
-    font-size:25px;
+    font-size:18px;
     line-height:1.45;
-    margin-bottom:45px;
+    margin-bottom:28px;
 }
 
 .search-box{
-    max-width:900px;
+    max-width:650px;
     margin:auto;
 }
 
 .search-box input{
     width:100%;
-    height:85px;
+    height:60px;
     border:none;
-    border-radius:28px;
-    padding:0 35px;
-    font-size:24px;
+    border-radius:18px;
+    padding:0 20px;
+    font-size:17px;
     outline:none;
     color:#333;
 }
 
 .search-btn{
     width:100%;
-    height:80px;
-    margin-top:18px;
+    height:56px;
+    margin-top:11px;
     border:none;
-    border-radius:27px;
+    border-radius:17px;
     background:#2388ff;
     color:white;
-    font-size:28px;
+    font-size:20px;
     font-weight:800;
     cursor:pointer;
 }
 
-
-/* =========================
-   SECTIONS
-========================= */
+/* SECTIONS */
 
 .section{
-    padding:45px 30px 10px;
+    padding:30px 18px 5px;
+    max-width:1100px;
+    margin:auto;
 }
 
 .section-title{
-    font-size:42px;
+    font-size:30px;
     font-weight:900;
-    margin-bottom:28px;
+    margin-bottom:20px;
 }
 
-
-/* =========================
-   SEARCH RESULTS
-========================= */
-
-#resultsSection{
-    display:none;
-}
-
-.results{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-}
-
-.result-card{
-    background:#183e70;
-    border:3px solid #2466ad;
-    border-radius:22px;
-    padding:22px;
-}
-
-.result-card h3{
-    font-size:26px;
-    margin-bottom:8px;
-}
-
-.result-card p{
-    color:#c7d8f1;
-    font-size:18px;
-    margin:5px 0;
-}
-
-
-/* =========================
-   CATEGORY AREA
-========================= */
-
-.category-wrapper{
-    position:relative;
-}
+/* CATEGORIES */
 
 .category-scroll{
     display:grid;
     grid-auto-flow:column;
-    grid-template-rows:repeat(2,185px);
-    grid-auto-columns:250px;
-    gap:18px;
+    grid-template-rows:repeat(2,125px);
+    grid-auto-columns:190px;
+    gap:12px;
     overflow-x:auto;
     overflow-y:hidden;
-    padding:5px 5px 18px;
+    padding:4px 3px 15px;
     scroll-behavior:smooth;
 }
 
 .category-scroll::-webkit-scrollbar{
-    height:9px;
+    height:7px;
 }
 
 .category-scroll::-webkit-scrollbar-track{
@@ -206,8 +156,8 @@ header{
 
 .category-card{
     background:#183e70;
-    border:4px solid #2466ad;
-    border-radius:28px;
+    border:2px solid #2466ad;
+    border-radius:18px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -216,6 +166,7 @@ header{
     cursor:pointer;
     transition:.2s;
     user-select:none;
+    padding:8px;
 }
 
 .category-card:hover{
@@ -224,45 +175,44 @@ header{
 }
 
 .category-icon{
-    font-size:55px;
-    margin-bottom:15px;
+    font-size:38px;
+    margin-bottom:7px;
 }
 
 .category-name{
-    font-size:22px;
+    font-size:16px;
     font-weight:800;
 }
 
+/* SCROLL INDICATOR */
+
 .scroll-indicator{
-    height:12px;
+    height:7px;
     background:#0b2c5c;
     border-radius:20px;
-    margin:10px 0 20px;
+    margin:7px 0 15px;
     overflow:hidden;
 }
 
 .scroll-indicator div{
-    width:14%;
+    width:15%;
     height:100%;
     background:#2388ff;
     border-radius:20px;
 }
 
-
-/* =========================
-   FAMOUS BUSINESSES
-========================= */
+/* MASHHUR BIZNESLAR */
 
 .famous-scroll{
     display:flex;
-    gap:20px;
+    gap:15px;
     overflow-x:auto;
-    padding:5px 5px 25px;
+    padding:4px 3px 18px;
     scroll-behavior:smooth;
 }
 
 .famous-scroll::-webkit-scrollbar{
-    height:9px;
+    height:7px;
 }
 
 .famous-scroll::-webkit-scrollbar-track{
@@ -276,82 +226,187 @@ header{
 }
 
 .business-card{
-    flex:0 0 390px;
-    min-height:245px;
+    flex:0 0 285px;
+    min-height:220px;
     background:#183e70;
-    border:4px solid #2466ad;
-    border-radius:28px;
-    padding:25px;
+    border:2px solid #2466ad;
+    border-radius:20px;
+    padding:19px;
 }
 
 .business-icon{
-    font-size:65px;
-    margin-bottom:10px;
+    font-size:48px;
+    margin-bottom:7px;
 }
 
 .business-card h3{
-    font-size:30px;
-    margin-bottom:15px;
+    font-size:23px;
+    margin-bottom:9px;
 }
 
 .business-info{
     color:#d5e3fa;
-    font-size:20px;
-    line-height:1.7;
+    font-size:16px;
+    line-height:1.6;
 }
 
 .rating{
     color:#ffd23f;
     font-weight:800;
+    margin-top:5px;
 }
 
+/* KO'RISH TUGMASI */
 
-/* =========================
-   MODAL
-========================= */
+.view-business{
+    width:100%;
+    border:none;
+    background:#2388ff;
+    color:white;
+    font-size:16px;
+    font-weight:800;
+    padding:11px;
+    border-radius:12px;
+    margin-top:13px;
+    cursor:pointer;
+}
+
+.view-business:active{
+    transform:scale(.98);
+}
+
+/* SEARCH RESULTS */
+
+#resultsSection{
+    display:none;
+}
+
+.results{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.result-card{
+    background:#183e70;
+    border:2px solid #2466ad;
+    border-radius:20px;
+    padding:19px;
+}
+
+.result-card h3{
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.result-card p{
+    color:#c7d8f1;
+    font-size:16px;
+    margin:5px 0;
+}
+
+/* MODAL */
 
 .modal{
     display:none;
     position:fixed;
     z-index:9999;
     inset:0;
-    background:rgba(0,0,0,.75);
-    padding:20px;
+    background:rgba(0,0,0,.78);
+    padding:12px;
     overflow-y:auto;
 }
 
 .modal-box{
-    max-width:650px;
-    margin:30px auto;
+    width:100%;
+    max-width:600px;
+    margin:20px auto;
     background:#214b82;
-    border:4px solid #2388ff;
-    border-radius:30px;
-    padding:30px;
+    border:3px solid #2388ff;
+    border-radius:23px;
+    padding:23px;
     position:relative;
 }
 
 .close{
     position:absolute;
-    right:20px;
-    top:15px;
+    right:14px;
+    top:8px;
     border:none;
     background:none;
     color:white;
-    font-size:40px;
+    font-size:36px;
     cursor:pointer;
 }
 
 .modal-title{
-    font-size:38px;
+    font-size:29px;
     font-weight:900;
-    margin-bottom:30px;
+    margin-bottom:22px;
+    padding-right:35px;
 }
+
+.profile-icon{
+    font-size:65px;
+    text-align:center;
+    margin:5px 0 12px;
+}
+
+.profile-name{
+    text-align:center;
+    font-size:28px;
+    font-weight:900;
+    margin-bottom:17px;
+}
+
+.profile-rating{
+    text-align:center;
+    color:#ffd23f;
+    font-size:23px;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.profile-info{
+    background:#183e70;
+    border-radius:15px;
+    padding:17px;
+    font-size:17px;
+    line-height:1.8;
+    color:#e0eafa;
+}
+
+.profile-description{
+    margin-top:15px;
+    background:#183e70;
+    border-radius:15px;
+    padding:17px;
+    font-size:16px;
+    line-height:1.6;
+    color:#d5e3fa;
+}
+
+.phone-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    text-decoration:none;
+    background:#2388ff;
+    color:white;
+    font-size:18px;
+    font-weight:900;
+    padding:15px;
+    border-radius:14px;
+    margin-top:17px;
+}
+
+/* FORM */
 
 .form-label{
     display:block;
-    font-size:20px;
+    font-size:17px;
     font-weight:800;
-    margin:18px 0 8px;
+    margin:15px 0 7px;
 }
 
 .form-input,
@@ -359,14 +414,14 @@ header{
 .form-textarea{
     width:100%;
     border:none;
-    border-radius:17px;
-    padding:18px;
-    font-size:18px;
+    border-radius:13px;
+    padding:14px;
+    font-size:16px;
     outline:none;
 }
 
 .form-textarea{
-    min-height:120px;
+    min-height:100px;
     resize:vertical;
 }
 
@@ -375,11 +430,11 @@ header{
     border:none;
     background:#2388ff;
     color:white;
-    font-size:21px;
+    font-size:18px;
     font-weight:900;
-    padding:19px;
-    border-radius:18px;
-    margin-top:25px;
+    padding:15px;
+    border-radius:14px;
+    margin-top:20px;
     cursor:pointer;
 }
 
@@ -388,323 +443,81 @@ header{
     border:none;
     background:#315986;
     color:white;
-    font-size:20px;
+    font-size:17px;
     font-weight:800;
-    padding:18px;
-    border-radius:18px;
-    margin-top:12px;
+    padding:14px;
+    border-radius:14px;
+    margin-top:10px;
     cursor:pointer;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     text-align:center;
     color:#8fa8cc;
-    padding:60px 20px 30px;
-    font-size:16px;
+    padding:45px 15px 25px;
+    font-size:14px;
+    line-height:1.5;
 }
 
+/* DESKTOP */
 
-/* =====================================================
-   TELEFON — IXCHAM VA QULAY KO‘RINISH
-===================================================== */
-
-@media(max-width:600px){
-
-    /* HEADER */
+@media(min-width:601px){
 
     header{
-        height:72px;
-        padding:0 14px;
+        height:90px;
+        padding:0 35px;
     }
 
     .logo{
-        font-size:32px;
-        letter-spacing:-2px;
+        font-size:46px;
     }
 
     .add-business{
-        font-size:13px;
-        padding:10px 12px;
-        border-radius:12px;
+        font-size:17px;
+        padding:14px 20px;
     }
 
-
-    /* HERO */
-
     .hero{
-        padding:35px 16px 15px;
+        padding:50px 20px 30px;
     }
 
     .hero h1{
-        font-size:35px;
-        line-height:1.08;
-        margin-bottom:20px;
+        font-size:48px;
     }
 
     .hero p{
-        font-size:17px;
-        line-height:1.4;
-        margin-bottom:28px;
-    }
-
-
-    /* SEARCH */
-
-    .search-box{
-        max-width:100%;
-    }
-
-    .search-box input{
-        height:62px;
-        font-size:17px;
-        padding:0 20px;
-        border-radius:20px;
-    }
-
-    .search-btn{
-        height:58px;
-        margin-top:12px;
-        font-size:20px;
-        border-radius:19px;
-    }
-
-
-    /* SECTIONS */
-
-    .section{
-        padding:30px 20px 5px;
-    }
-
-    .section-title{
-        font-size:30px;
-        margin-bottom:20px;
-    }
-
-
-    /* KATEGORIYALAR */
-
-    .category-scroll{
-        display:grid;
-        grid-auto-flow:column;
-
-        grid-template-rows:repeat(2,125px);
-
-        grid-auto-columns:180px;
-
-        gap:10px;
-
-        overflow-x:auto;
-        overflow-y:hidden;
-
-        padding:4px 3px 12px;
-    }
-
-    .category-card{
-        border:3px solid #2466ad;
-        border-radius:20px;
-    }
-
-    .category-icon{
-        font-size:36px;
-        margin-bottom:6px;
-    }
-
-    .category-name{
-        font-size:16px;
-        line-height:1.15;
-        padding:0 5px;
-    }
-
-
-    /* CATEGORY SCROLL CHIZIG‘I */
-
-    .scroll-indicator{
-        height:8px;
-        margin:7px 0 15px;
-    }
-
-
-    /* MASHHUR BIZNESLAR */
-
-    .famous-scroll{
-        display:flex;
-        gap:12px;
-        overflow-x:auto;
-        padding:4px 3px 18px;
-    }
-
-    .business-card{
-        flex:0 0 270px;
-        min-height:190px;
-        padding:17px;
-        border:3px solid #2466ad;
-        border-radius:20px;
-    }
-
-    .business-icon{
-        font-size:45px;
-        margin-bottom:5px;
-    }
-
-    .business-card h3{
-        font-size:22px;
-        margin-bottom:8px;
-    }
-
-    .business-info{
-        font-size:16px;
-        line-height:1.5;
-    }
-
-
-    /* QIDIRUV NATIJALARI */
-
-    .result-card{
-        border:2px solid #2466ad;
-        border-radius:18px;
-        padding:17px;
-    }
-
-    .result-card h3{
         font-size:21px;
     }
 
-    .result-card p{
-        font-size:16px;
-    }
-
-
-    /* MODAL */
-
-    .modal{
-        padding:12px;
-    }
-
-    .modal-box{
-        padding:20px 16px;
-        margin:8px auto;
-        border-radius:22px;
-    }
-
-    .modal-title{
-        font-size:27px;
-        margin-bottom:20px;
-    }
-
-    .close{
-        font-size:34px;
-        right:15px;
-        top:10px;
-    }
-
-    .form-label{
-        font-size:17px;
-        margin:14px 0 7px;
-    }
-
-    .form-input,
-    .form-select,
-    .form-textarea{
-        padding:14px;
-        font-size:16px;
-        border-radius:14px;
-    }
-
-    .submit-btn{
-        font-size:18px;
-        padding:16px;
-        border-radius:15px;
-    }
-
-    .cancel-btn{
-        font-size:17px;
-        padding:15px;
-        border-radius:15px;
-    }
-
-
-    /* FOOTER */
-
-    footer{
-        padding:40px 15px 25px;
-        font-size:14px;
-    }
-
-}
-
-
-/* =====================================================
-   JUDA KICHIK TELEFONLAR
-===================================================== */
-
-@media(max-width:380px){
-
-    .logo{
-        font-size:29px;
-    }
-
-    .add-business{
-        font-size:12px;
-        padding:9px 10px;
-    }
-
-    .hero h1{
-        font-size:31px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
     .section{
-        padding-left:15px;
-        padding-right:15px;
-    }
-
-    .section-title{
-        font-size:27px;
+        padding-left:30px;
+        padding-right:30px;
     }
 
     .category-scroll{
-        grid-template-rows:repeat(2,115px);
-        grid-auto-columns:160px;
-        gap:8px;
+        grid-template-rows:repeat(2,145px);
+        grid-auto-columns:215px;
+        gap:15px;
     }
 
     .category-icon{
-        font-size:32px;
+        font-size:45px;
     }
 
     .category-name{
-        font-size:14px;
+        font-size:18px;
     }
 
     .business-card{
-        flex-basis:250px;
-        min-height:180px;
+        flex:0 0 310px;
     }
-
 }
-
-
-/* =====================================================
-   JAVASCRIPT UCHUN KERAKLI QISMLAR
-===================================================== */
-
 </style>
 </head>
 
 <body>
-
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
@@ -712,19 +525,12 @@ footer{
         BIZ<span>TOP</span>
     </div>
 
-    <button
-        class="add-business"
-        onclick="openModal()"
-    >
+    <button class="add-business" onclick="openAddModal()">
         ➕ Biznes qo‘shish
     </button>
 
 </header>
 
-
-<!-- =========================
-     HERO
-========================= -->
 
 <section class="hero">
 
@@ -758,30 +564,20 @@ footer{
 </section>
 
 
-<!-- =========================
-     SEARCH RESULTS
-========================= -->
+<!-- QIDIRUV NATIJALARI -->
 
-<section
-    class="section"
-    id="resultsSection"
->
+<section class="section" id="resultsSection">
 
     <div class="section-title">
         🔎 Qidiruv natijalari
     </div>
 
-    <div
-        id="results"
-        class="results"
-    ></div>
+    <div id="results" class="results"></div>
 
 </section>
 
 
-<!-- =========================
-     CATEGORIES
-========================= -->
+<!-- KATEGORIYALAR -->
 
 <section class="section">
 
@@ -789,412 +585,198 @@ footer{
         Kategoriyalar
     </div>
 
-    <div class="category-wrapper">
-
-        <div
-            class="category-scroll"
-            id="categoryScroll"
-        >
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Restoran')"
-            >
-                <div class="category-icon">🍽️</div>
-                <div class="category-name">Restoran</div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Do‘kon')"
-            >
-                <div class="category-icon">🛒</div>
-                <div class="category-name">Do‘kon</div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Kafe')"
-            >
-                <div class="category-icon">☕</div>
-                <div class="category-name">Kafe</div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Kiyim-kechak')"
-            >
-                <div class="category-icon">👕</div>
-                <div class="category-name">Kiyim-kechak</div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Poyabzal')"
-            >
-                <div class="category-icon">👟</div>
-                <div class="category-name">Poyabzal</div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Telefon va elektronika')"
-            >
-                <div class="category-icon">📱</div>
-                <div class="category-name">
-                    Telefon va elektronika
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Mebel')"
-            >
-                <div class="category-icon">🛋️</div>
-                <div class="category-name">Mebel</div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Go‘sht do‘koni')"
-            >
-                <div class="category-icon">🥩</div>
-                <div class="category-name">
-                    Go‘sht do‘koni
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Nonvoyxona')"
-            >
-                <div class="category-icon">🥖</div>
-                <div class="category-name">
-                    Nonvoyxona
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Qishloq xo‘jaligi')"
-            >
-                <div class="category-icon">🌾</div>
-                <div class="category-name">
-                    Qishloq xo‘jaligi
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Chorvachilik')"
-            >
-                <div class="category-icon">🐄</div>
-                <div class="category-name">
-                    Chorvachilik
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Game klub')"
-            >
-                <div class="category-icon">🎮</div>
-                <div class="category-name">
-                    Game klub
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Sport markazi')"
-            >
-                <div class="category-icon">⚽</div>
-                <div class="category-name">
-                    Sport markazi
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Tozalash xizmatlari')"
-            >
-                <div class="category-icon">🧹</div>
-                <div class="category-name">
-                    Tozalash xizmatlari
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Maishiy xizmatlar')"
-            >
-                <div class="category-icon">🔧</div>
-                <div class="category-name">
-                    Maishiy xizmatlar
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Yetkazib berish')"
-            >
-                <div class="category-icon">📦</div>
-                <div class="category-name">
-                    Yetkazib berish
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Qurilish')"
-            >
-                <div class="category-icon">🏗️</div>
-                <div class="category-name">
-                    Qurilish
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Qurilish materiallari')"
-            >
-                <div class="category-icon">🧱</div>
-                <div class="category-name">
-                    Qurilish materiallari
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Deraza va eshiklar')"
-            >
-                <div class="category-icon">🪟</div>
-                <div class="category-name">
-                    Deraza va eshiklar
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Elektr xizmatlari')"
-            >
-                <div class="category-icon">🔌</div>
-                <div class="category-name">
-                    Elektr xizmatlari
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Santexnika')"
-            >
-                <div class="category-icon">🚿</div>
-                <div class="category-name">
-                    Santexnika
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Remont va dizayn')"
-            >
-                <div class="category-icon">🎨</div>
-                <div class="category-name">
-                    Remont va dizayn
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('O‘quv markazi')"
-            >
-                <div class="category-icon">🎓</div>
-                <div class="category-name">
-                    O‘quv markazi
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('IT kurslari')"
-            >
-                <div class="category-icon">💻</div>
-                <div class="category-name">
-                    IT kurslari
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Til kurslari')"
-            >
-                <div class="category-icon">🗣️</div>
-                <div class="category-name">
-                    Til kurslari
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Dorixona')"
-            >
-                <div class="category-icon">💊</div>
-                <div class="category-name">
-                    Dorixona
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Klinika')"
-            >
-                <div class="category-icon">🏥</div>
-                <div class="category-name">
-                    Klinika
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Stomatologiya')"
-            >
-                <div class="category-icon">🦷</div>
-                <div class="category-name">
-                    Stomatologiya
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Optika')"
-            >
-                <div class="category-icon">👓</div>
-                <div class="category-name">
-                    Optika
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('IT xizmatlari')"
-            >
-                <div class="category-icon">💻</div>
-                <div class="category-name">
-                    IT xizmatlari
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Foto/video xizmatlari')"
-            >
-                <div class="category-icon">📸</div>
-                <div class="category-name">
-                    Foto/video xizmatlari
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Huquqiy xizmatlar')"
-            >
-                <div class="category-icon">⚖️</div>
-                <div class="category-name">
-                    Huquqiy xizmatlar
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Buxgalteriya')"
-            >
-                <div class="category-icon">📊</div>
-                <div class="category-name">
-                    Buxgalteriya
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Moliya xizmatlari')"
-            >
-                <div class="category-icon">💰</div>
-                <div class="category-name">
-                    Moliya xizmatlari
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Reklama xizmatlari')"
-            >
-                <div class="category-icon">📢</div>
-                <div class="category-name">
-                    Reklama xizmatlari
-                </div>
-            </div>
-
-
-            <div
-                class="category-card"
-                onclick="categorySearch('Poligrafiya')"
-            >
-                <div class="category-icon">🖨️</div>
-                <div class="category-name">
-                    Poligrafiya
-                </div>
-            </div>
-
+    <div class="category-scroll" id="categoryScroll">
+
+        <div class="category-card" onclick="categorySearch('Restoran')">
+            <div class="category-icon">🍽️</div>
+            <div class="category-name">Restoran</div>
         </div>
 
-
-        <div class="scroll-indicator">
-            <div id="categoryIndicator"></div>
+        <div class="category-card" onclick="categorySearch('Do‘kon')">
+            <div class="category-icon">🛒</div>
+            <div class="category-name">Do‘kon</div>
         </div>
 
+        <div class="category-card" onclick="categorySearch('Kafe')">
+            <div class="category-icon">☕</div>
+            <div class="category-name">Kafe</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Kiyim-kechak')">
+            <div class="category-icon">👕</div>
+            <div class="category-name">Kiyim-kechak</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Poyabzal')">
+            <div class="category-icon">👟</div>
+            <div class="category-name">Poyabzal</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Telefon va elektronika')">
+            <div class="category-icon">📱</div>
+            <div class="category-name">Telefon va elektronika</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Mebel')">
+            <div class="category-icon">🛋️</div>
+            <div class="category-name">Mebel</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Go‘sht do‘koni')">
+            <div class="category-icon">🥩</div>
+            <div class="category-name">Go‘sht do‘koni</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Nonvoyxona')">
+            <div class="category-icon">🥖</div>
+            <div class="category-name">Nonvoyxona</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Qishloq xo‘jaligi')">
+            <div class="category-icon">🌾</div>
+            <div class="category-name">Qishloq xo‘jaligi</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Chorvachilik')">
+            <div class="category-icon">🐄</div>
+            <div class="category-name">Chorvachilik</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Game klub')">
+            <div class="category-icon">🎮</div>
+            <div class="category-name">Game klub</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Sport markazi')">
+            <div class="category-icon">⚽</div>
+            <div class="category-name">Sport markazi</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Tozalash xizmatlari')">
+            <div class="category-icon">🧹</div>
+            <div class="category-name">Tozalash xizmatlari</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Maishiy xizmatlar')">
+            <div class="category-icon">🔧</div>
+            <div class="category-name">Maishiy xizmatlar</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Yetkazib berish')">
+            <div class="category-icon">📦</div>
+            <div class="category-name">Yetkazib berish</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Qurilish')">
+            <div class="category-icon">🏗️</div>
+            <div class="category-name">Qurilish</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Qurilish materiallari')">
+            <div class="category-icon">🧱</div>
+            <div class="category-name">Qurilish materiallari</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Deraza va eshiklar')">
+            <div class="category-icon">🪟</div>
+            <div class="category-name">Deraza va eshiklar</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Elektr xizmatlari')">
+            <div class="category-icon">🔌</div>
+            <div class="category-name">Elektr xizmatlari</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Santexnika')">
+            <div class="category-icon">🚿</div>
+            <div class="category-name">Santexnika</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Remont va dizayn')">
+            <div class="category-icon">🎨</div>
+            <div class="category-name">Remont va dizayn</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('O‘quv markazi')">
+            <div class="category-icon">🎓</div>
+            <div class="category-name">O‘quv markazi</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('IT kurslari')">
+            <div class="category-icon">💻</div>
+            <div class="category-name">IT kurslari</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Til kurslari')">
+            <div class="category-icon">🗣️</div>
+            <div class="category-name">Til kurslari</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Dorixona')">
+            <div class="category-icon">💊</div>
+            <div class="category-name">Dorixona</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Klinika')">
+            <div class="category-icon">🏥</div>
+            <div class="category-name">Klinika</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Stomatologiya')">
+            <div class="category-icon">🦷</div>
+            <div class="category-name">Stomatologiya</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Optika')">
+            <div class="category-icon">👓</div>
+            <div class="category-name">Optika</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('IT xizmatlari')">
+            <div class="category-icon">💻</div>
+            <div class="category-name">IT xizmatlari</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Foto/video xizmatlari')">
+            <div class="category-icon">📸</div>
+            <div class="category-name">Foto/video xizmatlari</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Huquqiy xizmatlar')">
+            <div class="category-icon">⚖️</div>
+            <div class="category-name">Huquqiy xizmatlar</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Buxgalteriya')">
+            <div class="category-icon">📊</div>
+            <div class="category-name">Buxgalteriya</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Moliya xizmatlari')">
+            <div class="category-icon">💰</div>
+            <div class="category-name">Moliya xizmatlari</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Reklama xizmatlari')">
+            <div class="category-icon">📢</div>
+            <div class="category-name">Reklama xizmatlari</div>
+        </div>
+
+        <div class="category-card" onclick="categorySearch('Poligrafiya')">
+            <div class="category-icon">🖨️</div>
+            <div class="category-name">Poligrafiya</div>
+        </div>
+
+    </div>
+
+    <div class="scroll-indicator">
+        <div id="categoryIndicator"></div>
     </div>
 
 </section>
 
 
-<!-- =========================
-     FAMOUS BUSINESSES
-========================= -->
+<!-- MASHHUR BIZNESLAR -->
 
 <section class="section">
 
@@ -1202,141 +784,53 @@ footer{
         🏆 Mashhur bizneslar
     </div>
 
-    <div class="famous-scroll">
-
-
-        <div class="business-card">
-
-            <div class="business-icon">
-                🍔
-            </div>
-
-            <h3>
-                BIZTOP Burger
-            </h3>
-
-            <div class="business-info">
-                📍 To‘rtko‘l<br>
-                🍽️ Restoran<br>
-                <span class="rating">
-                    ⭐ 4.9
-                </span>
-            </div>
-
-        </div>
-
-
-        <div class="business-card">
-
-            <div class="business-icon">
-                ☕
-            </div>
-
-            <h3>
-                BIZTOP Coffee
-            </h3>
-
-            <div class="business-info">
-                📍 To‘rtko‘l<br>
-                ☕ Kafe<br>
-                <span class="rating">
-                    ⭐ 4.8
-                </span>
-            </div>
-
-        </div>
-
-
-        <div class="business-card">
-
-            <div class="business-icon">
-                🎮
-            </div>
-
-            <h3>
-                BIZTOP Game Club
-            </h3>
-
-            <div class="business-info">
-                📍 To‘rtko‘l<br>
-                🎮 Game klub<br>
-                <span class="rating">
-                    ⭐ 4.9
-                </span>
-            </div>
-
-        </div>
-
-
-        <div class="business-card">
-
-            <div class="business-icon">
-                🛒
-            </div>
-
-            <h3>
-                BIZTOP Market
-            </h3>
-
-            <div class="business-info">
-                📍 To‘rtko‘l<br>
-                🛒 Do‘kon<br>
-                <span class="rating">
-                    ⭐ 4.7
-                </span>
-            </div>
-
-        </div>
-
-
-        <div class="business-card">
-
-            <div class="business-icon">
-                👕
-            </div>
-
-            <h3>
-                Fashion Center
-            </h3>
-
-            <div class="business-info">
-                📍 To‘rtko‘l<br>
-                👕 Kiyim-kechak<br>
-                <span class="rating">
-                    ⭐ 4.8
-                </span>
-            </div>
-
-        </div>
-
-    </div>
+    <div class="famous-scroll" id="famousScroll"></div>
 
 </section>
 
 
-<!-- =========================
-     ADD BUSINESS MODAL
-========================= -->
+<!-- BIZNES PROFILI -->
 
-<div
-    class="modal"
-    id="businessModal"
->
+<div class="modal" id="profileModal">
 
     <div class="modal-box">
 
-        <button
-            class="close"
-            onclick="closeModal()"
-        >
+        <button class="close" onclick="closeProfile()">
             ×
         </button>
 
+        <div id="profileIcon" class="profile-icon"></div>
+
+        <div id="profileName" class="profile-name"></div>
+
+        <div id="profileRating" class="profile-rating"></div>
+
+        <div id="profileInfo" class="profile-info"></div>
+
+        <div id="profileDescription" class="profile-description"></div>
+
+        <a id="profilePhone" class="phone-btn" href="#">
+            📞 Telefon qilish
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- BIZNES QO‘SHISH -->
+
+<div class="modal" id="addBusinessModal">
+
+    <div class="modal-box">
+
+        <button class="close" onclick="closeAddModal()">
+            ×
+        </button>
 
         <div class="modal-title">
             ➕ Biznes qo‘shish
         </div>
-
 
         <label class="form-label">
             Biznes nomi *
@@ -1348,15 +842,11 @@ footer{
             placeholder="Masalan: Jahongir Restaurant"
         >
 
-
         <label class="form-label">
             Kategoriya *
         </label>
 
-        <select
-            id="businessCategory"
-            class="form-select"
-        >
+        <select id="businessCategory" class="form-select">
 
             <option value="">
                 Kategoriyani tanlang
@@ -1371,19 +861,10 @@ footer{
             <option>Mebel</option>
             <option>Go‘sht do‘koni</option>
             <option>Nonvoyxona</option>
-            <option>Qishloq xo‘jaligi</option>
-            <option>Chorvachilik</option>
             <option>Game klub</option>
             <option>Sport markazi</option>
-            <option>Tozalash xizmatlari</option>
-            <option>Maishiy xizmatlar</option>
-            <option>Yetkazib berish</option>
             <option>Qurilish</option>
             <option>Qurilish materiallari</option>
-            <option>Deraza va eshiklar</option>
-            <option>Elektr xizmatlari</option>
-            <option>Santexnika</option>
-            <option>Remont va dizayn</option>
             <option>O‘quv markazi</option>
             <option>IT kurslari</option>
             <option>Til kurslari</option>
@@ -1395,13 +876,11 @@ footer{
             <option>Foto/video xizmatlari</option>
             <option>Huquqiy xizmatlar</option>
             <option>Buxgalteriya</option>
-            <option>Moliya xizmatlari</option>
             <option>Reklama xizmatlari</option>
             <option>Poligrafiya</option>
             <option>Boshqa</option>
 
         </select>
-
 
         <label class="form-label">
             Manzil *
@@ -1413,7 +892,6 @@ footer{
             placeholder="Masalan: To‘rtko‘l"
         >
 
-
         <label class="form-label">
             Telefon *
         </label>
@@ -1423,7 +901,6 @@ footer{
             class="form-input"
             placeholder="+998 90 123 45 67"
         >
-
 
         <label class="form-label">
             Biznes haqida
@@ -1435,19 +912,11 @@ footer{
             placeholder="Biznes haqida qisqacha ma'lumot..."
         ></textarea>
 
-
-        <button
-            class="submit-btn"
-            onclick="addBusiness()"
-        >
+        <button class="submit-btn" onclick="addBusiness()">
             ✅ Biznesni qo‘shish
         </button>
 
-
-        <button
-            class="cancel-btn"
-            onclick="closeModal()"
-        >
+        <button class="cancel-btn" onclick="closeAddModal()">
             Bekor qilish
         </button>
 
@@ -1455,10 +924,6 @@ footer{
 
 </div>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
     © 2026 BIZTOP — Bizneslarni topish va tanlash platformasi
@@ -1475,106 +940,268 @@ let businesses = [
 
     {
         name:"BIZTOP Burger",
+        icon:"🍔",
         category:"Restoran",
         address:"To‘rtko‘l",
-        phone:"+998 90 111 11 11"
+        phone:"+998901111111",
+        rating:"⭐ 4.9",
+        description:"Mazali burgerlar va tez tayyorlanadigan taomlar."
     },
 
     {
         name:"BIZTOP Coffee",
+        icon:"☕",
         category:"Kafe",
         address:"To‘rtko‘l",
-        phone:"+998 90 222 22 22"
+        phone:"+998902222222",
+        rating:"⭐ 4.8",
+        description:"Qahva, shirinliklar va yoqimli muhit."
     },
 
     {
         name:"BIZTOP Game Club",
+        icon:"🎮",
         category:"Game klub",
         address:"To‘rtko‘l",
-        phone:"+998 90 333 33 33"
+        phone:"+998903333333",
+        rating:"⭐ 4.9",
+        description:"Zamonaviy kompyuterlar va PlayStation o‘yinlari."
     },
 
     {
         name:"BIZTOP Market",
+        icon:"🛒",
         category:"Do‘kon",
         address:"To‘rtko‘l",
-        phone:"+998 90 444 44 44"
+        phone:"+998904444444",
+        rating:"⭐ 4.7",
+        description:"Kundalik oziq-ovqat va uy-ro‘zg‘or mahsulotlari."
     },
 
     {
         name:"Fashion Center",
+        icon:"👕",
         category:"Kiyim-kechak",
         address:"To‘rtko‘l",
-        phone:"+998 90 555 55 55"
+        phone:"+998905555555",
+        rating:"⭐ 4.8",
+        description:"Erkaklar, ayollar va bolalar uchun kiyimlar."
     }
 
 ];
 
 
 /* =========================
-   MODAL
+   IKONKALAR
 ========================= */
 
-function openModal(){
+const categoryIcons = {
 
-    document
-        .getElementById("businessModal")
-        .style.display="block";
+    "Restoran":"🍽️",
+    "Do‘kon":"🛒",
+    "Kafe":"☕",
+    "Kiyim-kechak":"👕",
+    "Poyabzal":"👟",
+    "Telefon va elektronika":"📱",
+    "Mebel":"🛋️",
+    "Go‘sht do‘koni":"🥩",
+    "Nonvoyxona":"🥖",
+    "Qishloq xo‘jaligi":"🌾",
+    "Chorvachilik":"🐄",
+    "Game klub":"🎮",
+    "Sport markazi":"⚽",
+    "Tozalash xizmatlari":"🧹",
+    "Maishiy xizmatlar":"🔧",
+    "Yetkazib berish":"📦",
+    "Qurilish":"🏗️",
+    "Qurilish materiallari":"🧱",
+    "Deraza va eshiklar":"🪟",
+    "Elektr xizmatlari":"🔌",
+    "Santexnika":"🚿",
+    "Remont va dizayn":"🎨",
+    "O‘quv markazi":"🎓",
+    "IT kurslari":"💻",
+    "Til kurslari":"🗣️",
+    "Dorixona":"💊",
+    "Klinika":"🏥",
+    "Stomatologiya":"🦷",
+    "Optika":"👓",
+    "IT xizmatlari":"💻",
+    "Foto/video xizmatlari":"📸",
+    "Huquqiy xizmatlar":"⚖️",
+    "Buxgalteriya":"📊",
+    "Moliya xizmatlari":"💰",
+    "Reklama xizmatlari":"📢",
+    "Poligrafiya":"🖨️"
 
-}
+};
 
 
-function closeModal(){
+/* =========================
+   MASHHUR BIZNESLARNI CHIQARISH
+========================= */
 
-    document
-        .getElementById("businessModal")
-        .style.display="none";
+function showFamousBusinesses(){
+
+    const famous =
+        document.getElementById("famousScroll");
+
+    famous.innerHTML="";
+
+    businesses.forEach(function(business,index){
+
+        famous.innerHTML += `
+
+            <div class="business-card">
+
+                <div class="business-icon">
+                    ${business.icon || categoryIcons[business.category] || "🏪"}
+                </div>
+
+                <h3>
+                    ${business.name}
+                </h3>
+
+                <div class="business-info">
+
+                    📍 ${business.address}<br>
+
+                    📂 ${business.category}<br>
+
+                    <span class="rating">
+                        ${business.rating || "⭐ Yangi"}
+                    </span>
+
+                </div>
+
+                <button
+                    class="view-business"
+                    onclick="openProfile(${index})"
+                >
+                    👁️ Ko‘rish
+                </button>
+
+            </div>
+
+        `;
+
+    });
 
 }
 
 
 /* =========================
-   ADD BUSINESS
+   PROFILNI OCHISH
+========================= */
+
+function openProfile(index){
+
+    const business =
+        businesses[index];
+
+    if(!business){
+        return;
+    }
+
+    document.getElementById("profileIcon").innerHTML =
+        business.icon ||
+        categoryIcons[business.category] ||
+        "🏪";
+
+    document.getElementById("profileName").innerHTML =
+        business.name;
+
+    document.getElementById("profileRating").innerHTML =
+        business.rating || "⭐ Yangi";
+
+    document.getElementById("profileInfo").innerHTML = `
+
+        📂 <b>Kategoriya:</b>
+        ${business.category}<br>
+
+        📍 <b>Manzil:</b>
+        ${business.address}<br>
+
+        📞 <b>Telefon:</b>
+        ${business.phone}
+
+    `;
+
+    document.getElementById("profileDescription").innerHTML = `
+
+        📝 <b>Biznes haqida</b><br><br>
+
+        ${
+            business.description ||
+            "Bu biznes haqida ma’lumot hozircha kiritilmagan."
+        }
+
+    `;
+
+    document.getElementById("profilePhone").href =
+        "tel:" + business.phone.replace(/\s/g,"");
+
+    document.getElementById("profileModal").style.display =
+        "block";
+
+}
+
+
+/* =========================
+   PROFILNI YOPISH
+========================= */
+
+function closeProfile(){
+
+    document.getElementById("profileModal").style.display =
+        "none";
+
+}
+
+
+/* =========================
+   BIZNES QO‘SHISH MODALI
+========================= */
+
+function openAddModal(){
+
+    document.getElementById("addBusinessModal").style.display =
+        "block";
+
+}
+
+
+function closeAddModal(){
+
+    document.getElementById("addBusinessModal").style.display =
+        "none";
+
+}
+
+
+/* =========================
+   BIZNES QO‘SHISH
 ========================= */
 
 function addBusiness(){
 
     const name =
-        document
-        .getElementById("businessName")
-        .value
-        .trim();
+        document.getElementById("businessName").value.trim();
 
     const category =
-        document
-        .getElementById("businessCategory")
-        .value;
+        document.getElementById("businessCategory").value;
 
     const address =
-        document
-        .getElementById("businessAddress")
-        .value
-        .trim();
+        document.getElementById("businessAddress").value.trim();
 
     const phone =
-        document
-        .getElementById("businessPhone")
-        .value
-        .trim();
+        document.getElementById("businessPhone").value.trim();
 
     const description =
-        document
-        .getElementById("businessDescription")
-        .value
-        .trim();
+        document.getElementById("businessDescription").value.trim();
 
 
-    if(
-        !name ||
-        !category ||
-        !address ||
-        !phone
-    ){
+    if(!name || !category || !address || !phone){
 
         alert(
             "Iltimos, * bilan belgilangan maydonlarni to‘ldiring."
@@ -1588,13 +1215,20 @@ function addBusiness(){
 
         name:name,
 
+        icon:
+            categoryIcons[category] || "🏪",
+
         category:category,
 
         address:address,
 
         phone:phone,
 
-        description:description
+        rating:"⭐ Yangi",
+
+        description:
+            description ||
+            "Biznes haqida ma’lumot hozircha kiritilmagan."
 
     });
 
@@ -1604,99 +1238,82 @@ function addBusiness(){
     );
 
 
-    document
-        .getElementById("businessName")
-        .value="";
-
-    document
-        .getElementById("businessCategory")
-        .value="";
-
-    document
-        .getElementById("businessAddress")
-        .value="";
-
-    document
-        .getElementById("businessPhone")
-        .value="";
-
-    document
-        .getElementById("businessDescription")
-        .value="";
+    document.getElementById("businessName").value="";
+    document.getElementById("businessCategory").value="";
+    document.getElementById("businessAddress").value="";
+    document.getElementById("businessPhone").value="";
+    document.getElementById("businessDescription").value="";
 
 
-    closeModal();
+    closeAddModal();
+
+    showFamousBusinesses();
 
 }
 
 
 /* =========================
-   SEARCH
+   QIDIRUV
 ========================= */
 
 function searchBusinesses(){
 
     const input =
-        document
-        .getElementById("searchInput")
+        document.getElementById("searchInput")
         .value
         .trim()
         .toLowerCase();
 
 
     const resultsSection =
-        document.getElementById(
-            "resultsSection"
-        );
+        document.getElementById("resultsSection");
 
     const results =
-        document.getElementById(
-            "results"
-        );
+        document.getElementById("results");
 
 
     if(!input){
 
-        resultsSection.style.display="none";
+        resultsSection.style.display =
+            "none";
 
         return;
+
     }
 
 
     const filtered =
-        businesses.filter(
-            function(business){
+        businesses.filter(function(business){
 
-                return(
+            return (
 
-                    business.name
-                        .toLowerCase()
-                        .includes(input)
+                business.name
+                    .toLowerCase()
+                    .includes(input)
 
-                    ||
+                ||
 
-                    business.category
-                        .toLowerCase()
-                        .includes(input)
+                business.category
+                    .toLowerCase()
+                    .includes(input)
 
-                    ||
+                ||
 
-                    business.address
-                        .toLowerCase()
-                        .includes(input)
+                business.address
+                    .toLowerCase()
+                    .includes(input)
 
-                );
+            );
 
-            }
-        );
+        });
 
 
     results.innerHTML="";
 
 
-    if(filtered.length===0){
+    if(filtered.length === 0){
 
-        results.innerHTML=`
+        results.innerHTML = `
 
             <div class="result-card">
 
@@ -1705,8 +1322,8 @@ function searchBusinesses(){
                 </h3>
 
                 <p>
-                    Boshqa nom yoki kategoriya bilan
-                    qidirib ko‘ring.
+                    Boshqa nom yoki kategoriya
+                    bilan qidirib ko‘ring.
                 </p>
 
             </div>
@@ -1717,84 +1334,61 @@ function searchBusinesses(){
 
     else{
 
-        filtered.forEach(
-            function(business){
+        filtered.forEach(function(business){
 
-                results.innerHTML+=`
+            const originalIndex =
+                businesses.indexOf(business);
 
-                    <div class="result-card">
+            results.innerHTML += `
 
-                        <h3>
-                            ${business.name}
-                        </h3>
+                <div class="result-card">
 
-                        <p>
-                            📂 ${business.category}
-                        </p>
+                    <h3>
+                        ${
+                            business.icon ||
+                            categoryIcons[business.category] ||
+                            "🏪"
+                        }
 
-                        <p>
-                            📍 ${business.address}
-                        </p>
+                        ${business.name}
+                    </h3>
 
-                        <p>
-                            📞 ${business.phone}
-                        </p>
+                    <p>
+                        📂 ${business.category}
+                    </p>
 
-                    </div>
+                    <p>
+                        📍 ${business.address}
+                    </p>
 
-                `;
+                    <p>
+                        ⭐ ${business.rating || "Yangi"}
+                    </p>
 
-            }
-        );
+                    <button
+                        class="view-business"
+                        onclick="openProfile(${originalIndex})"
+                    >
+                        👁️ Biznes profilini ko‘rish
+                    </button>
+
+                </div>
+
+            `;
+
+        });
 
     }
 
 
-    resultsSection.style.display="block";
-
-}
-
-
-/* =========================
-   ENTER BOSILGANDA
-========================= */
-
-document
-    .getElementById("searchInput")
-    .addEventListener(
-        "keydown",
-        function(event){
-
-            if(event.key==="Enter"){
-
-                searchBusinesses();
-
-            }
-
-        }
-    );
-
-
-/* =========================
-   CATEGORY SEARCH
-========================= */
-
-function categorySearch(category){
-
-    document
-        .getElementById("searchInput")
-        .value=category;
-
-
-    searchBusinesses();
+    resultsSection.style.display =
+        "block";
 
 
     window.scrollTo({
 
         top:
-            document
-            .getElementById("resultsSection")
-            .offsetTop - 20,
+            resultsSection.offsetTop - 15,
 
         behavior:"smooth"
 
@@ -1804,18 +1398,48 @@ function categorySearch(category){
 
 
 /* =========================
-   CATEGORY SCROLL INDICATOR
+   ENTER ORQALI QIDIRUV
+========================= */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            searchBusinesses();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   KATEGORIYA QIDIRUVI
+========================= */
+
+function categorySearch(category){
+
+    document.getElementById("searchInput").value =
+        category;
+
+    searchBusinesses();
+
+}
+
+
+/* =========================
+   KATEGORIYA SCROLL
 ========================= */
 
 const categoryScroll =
-    document.getElementById(
-        "categoryScroll"
-    );
+    document.getElementById("categoryScroll");
 
 const categoryIndicator =
-    document.getElementById(
-        "categoryIndicator"
-    );
+    document.getElementById("categoryIndicator");
 
 
 categoryScroll.addEventListener(
@@ -1827,9 +1451,10 @@ categoryScroll.addEventListener(
             categoryScroll.clientWidth;
 
 
-        if(maxScroll<=0){
+        if(maxScroll <= 0){
 
-            categoryIndicator.style.width="100%";
+            categoryIndicator.style.width =
+                "100%";
 
             return;
 
@@ -1843,7 +1468,7 @@ categoryScroll.addEventListener(
 
         const width =
             Math.max(
-                14,
+                15,
                 (
                     categoryScroll.clientWidth /
                     categoryScroll.scrollWidth
@@ -1853,44 +1478,61 @@ categoryScroll.addEventListener(
 
         const left =
             percentage *
-            (100-width);
+            (100 - width);
 
 
         categoryIndicator.style.width =
-            width+"%";
+            width + "%";
 
 
         categoryIndicator.style.transform =
-            "translateX("+left+"%)";
+            "translateX(" +
+            left +
+            "%)";
 
     }
 );
 
 
 /* =========================
-   MODAL TASHQARISINI BOSISH
+   MODAL TASHQARISIGA BOSISH
 ========================= */
 
 window.addEventListener(
     "click",
     function(event){
 
-        const modal =
-            document.getElementById(
-                "businessModal"
-            );
+        const profileModal =
+            document.getElementById("profileModal");
+
+        const addModal =
+            document.getElementById("addBusinessModal");
 
 
-        if(event.target===modal){
+        if(event.target === profileModal){
 
-            closeModal();
+            closeProfile();
+
+        }
+
+
+        if(event.target === addModal){
+
+            closeAddModal();
 
         }
 
     }
 );
 
+
+/* =========================
+   BOSHLANG‘ICH YUKLASH
+========================= */
+
+showFamousBusinesses();
+
 </script>
 
 </body>
-    </html>
+            </html>
