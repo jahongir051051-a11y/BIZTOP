@@ -462,7 +462,7 @@ footer{
     }
 
     .search-area{
-        padding:0 16px 18px;
+        padding:0 16px 30px;
     }
 
     .search-input{
@@ -477,128 +477,82 @@ footer{
         margin-top:12px;
     }
 
-    /* ================================================= */
-    /* ===== KATEGORIYALAR — KICHIK VA IXCHAM ========== */
-    /* ================================================= */
+    /* ===== KATEGORIYALAR KICHIK ===== */
 
     .section{
-        padding:12px 12px 18px;
+        padding:22px 16px 32px;
     }
 
     .section-title{
-        font-size:28px;
-        margin-bottom:10px;
-    }
-
-    .categories-wrapper{
-        width:100%;
+        font-size:31px;
+        margin-bottom:16px;
     }
 
     .categories{
-        grid-template-rows:repeat(2, 112px);
-        grid-auto-columns:125px;
-        gap:8px;
-        padding:2px 2px 8px;
+        grid-template-rows:repeat(2, 140px);
+        grid-auto-columns:145px;
+        gap:12px;
+        padding:3px 2px 12px;
     }
 
     .category{
-        height:112px;
-        border-width:3px;
-        border-radius:18px;
-        padding:5px 3px;
-    }
-
-    .category:hover{
-        transform:none;
+        height:140px;
+        border-width:4px;
+        border-radius:22px;
+        padding:8px 5px;
     }
 
     .category .icon{
-        font-size:34px;
-        margin-bottom:5px;
-    }
-
-    .category .name{
-        font-size:14px;
-        line-height:1.05;
-    }
-
-    /* ================================================= */
-    /* ===== QIDIRUV NATIJALARI — KICHIK =============== */
-    /* ================================================= */
-
-    #resultsSection{
-        padding-top:8px;
-        padding-bottom:12px;
-    }
-
-    #resultsSection .section-title{
-        font-size:27px;
-        margin-bottom:9px;
-    }
-
-    .results{
-        gap:9px;
-    }
-
-    .result-card{
-        border-width:3px;
-        border-radius:18px;
-        padding:12px;
-    }
-
-    .result-card h3{
-        font-size:19px;
+        font-size:42px;
         margin-bottom:8px;
     }
 
-    .result-card p{
-        font-size:14px;
-        margin-bottom:4px;
+    .category .name{
+        font-size:16px;
+        line-height:1.1;
     }
 
-    /* ================================================= */
-    /* ===== MASHHUR BIZNESLAR — KICHIK ================ */
-    /* ================================================= */
+    /* ===== MASHHUR BIZNESLAR KICHIK ===== */
 
     .popular-title{
-        gap:5px;
+        gap:7px;
     }
 
     .popular-title .star{
-        font-size:29px;
+        font-size:35px;
     }
 
     .businesses{
-        gap:8px;
-        padding:2px 2px 8px;
+        gap:12px;
+        padding-bottom:12px;
     }
 
     .business-card{
-        flex:0 0 255px;
-        min-height:165px;
-        border-width:3px;
-        border-radius:18px;
-        padding:11px;
+        flex:0 0 285px;
+        min-height:190px;
+        border-width:4px;
+        border-radius:22px;
+        padding:14px;
     }
 
     .business-name{
-        font-size:18px;
-        margin-bottom:7px;
+        font-size:20px;
+        margin-bottom:10px;
     }
 
     .business-info{
-        gap:3px;
-        font-size:14px;
+        gap:5px;
+        font-size:15px;
     }
 
     .business-rating{
-        margin-top:7px;
-        font-size:19px;
+        margin-top:10px;
+        font-size:21px;
     }
 
     footer{
-        padding:25px 15px;
-        font-size:14px;
+        padding:28px 15px;
+        font-size:15px;
     }
 
     .modal{
@@ -662,6 +616,7 @@ footer{
         class="search-input"
         type="text"
         placeholder="Restoran, kafe, do‘kon yoki boshqa."
+        oninput="searchBusinesses()"
         onkeydown="handleEnter(event)"
     >
 
@@ -684,133 +639,111 @@ footer{
 
         <div class="categories" id="categories">
 
-            <!-- 1 -->
             <div class="category" onclick="selectCategory('Go‘zallik')">
                 <div class="icon">💇‍♀️</div>
                 <div class="name">Go‘zallik</div>
             </div>
 
-            <!-- 2 -->
             <div class="category" onclick="selectCategory('Restoran')">
                 <div class="icon">🍽️</div>
                 <div class="name">Restoran</div>
             </div>
 
-            <!-- 3 -->
             <div class="category" onclick="selectCategory('Do‘kon')">
                 <div class="icon">🛒</div>
                 <div class="name">Do‘kon</div>
             </div>
 
-            <!-- 4 -->
             <div class="category" onclick="selectCategory('Kafe')">
                 <div class="icon">☕</div>
                 <div class="name">Kafe</div>
             </div>
 
-            <!-- 5 -->
             <div class="category" onclick="selectCategory('Avto xizmat')">
                 <div class="icon">🔧</div>
                 <div class="name">Avto xizmat</div>
             </div>
 
-            <!-- 6 -->
             <div class="category" onclick="selectCategory('Mehmonxona')">
                 <div class="icon">🏨</div>
                 <div class="name">Mehmonxona</div>
             </div>
 
-            <!-- 7 -->
             <div class="category" onclick="selectCategory('Klinika')">
                 <div class="icon">🏥</div>
                 <div class="name">Klinika</div>
             </div>
 
-            <!-- 8 -->
             <div class="category" onclick="selectCategory('Dorixona')">
                 <div class="icon">💊</div>
                 <div class="name">Dorixona</div>
             </div>
 
-            <!-- 9 -->
             <div class="category" onclick="selectCategory('Kiyim-kechak')">
                 <div class="icon">👕</div>
                 <div class="name">Kiyim-kechak</div>
             </div>
 
-            <!-- 10 -->
             <div class="category" onclick="selectCategory('Nonvoyxona')">
                 <div class="icon">🥖</div>
                 <div class="name">Nonvoyxona</div>
             </div>
 
-            <!-- 11 -->
             <div class="category" onclick="selectCategory('Supermarket')">
                 <div class="icon">🏪</div>
                 <div class="name">Supermarket</div>
             </div>
 
-            <!-- 12 -->
             <div class="category" onclick="selectCategory('Telefon/texnika')">
                 <div class="icon">📱</div>
                 <div class="name">Telefon/texnika</div>
             </div>
 
-            <!-- 13 -->
             <div class="category" onclick="selectCategory('Kompyuter')">
                 <div class="icon">💻</div>
                 <div class="name">Kompyuter</div>
             </div>
 
-            <!-- 14 -->
             <div class="category" onclick="selectCategory('Qurilish')">
                 <div class="icon">🏗️</div>
                 <div class="name">Qurilish</div>
             </div>
 
-            <!-- 15 -->
             <div class="category" onclick="selectCategory('Mebel')">
                 <div class="icon">🪑</div>
                 <div class="name">Mebel</div>
             </div>
 
-            <!-- 16 -->
             <div class="category" onclick="selectCategory('Taksi')">
                 <div class="icon">🚕</div>
                 <div class="name">Taksi</div>
             </div>
 
-            <!-- 17 -->
             <div class="category" onclick="selectCategory('O‘quv markazi')">
                 <div class="icon">🎓</div>
                 <div class="name">O‘quv markazi</div>
             </div>
 
-            <!-- 18 -->
             <div class="category" onclick="selectCategory('Foto/video')">
                 <div class="icon">📸</div>
                 <div class="name">Foto/video</div>
             </div>
 
-            <!-- 19 -->
             <div class="category" onclick="selectCategory('Gul do‘koni')">
                 <div class="icon">💐</div>
                 <div class="name">Gul do‘koni</div>
             </div>
 
-            <!-- 20 -->
             <div class="category" onclick="selectCategory('Chorvachilik')">
                 <div class="icon">🐄</div>
                 <div class="name">Chorvachilik</div>
             </div>
 
-            <!-- 21 -->
             <div class="category" onclick="selectCategory('Qishloq xo‘jaligi')">
                 <div class="icon">🌾</div>
                 <div class="name">Qishloq xo‘jaligi</div>
             </div>
 
-            <!-- 22 -->
             <div class="category" onclick="selectCategory('Game Club')">
                 <div class="icon">🎮</div>
                 <div class="name">Game Club</div>
@@ -847,8 +780,6 @@ footer{
 
     <div class="businesses">
 
-        <!-- BUSINESS 1 -->
-
         <div class="business-card">
 
             <div class="business-name">
@@ -879,8 +810,6 @@ footer{
 
         </div>
 
-
-        <!-- BUSINESS 2 -->
 
         <div class="business-card">
 
@@ -913,8 +842,6 @@ footer{
         </div>
 
 
-        <!-- BUSINESS 3 -->
-
         <div class="business-card">
 
             <div class="business-name">
@@ -945,8 +872,6 @@ footer{
 
         </div>
 
-
-        <!-- BUSINESS 4 -->
 
         <div class="business-card">
 
@@ -979,8 +904,6 @@ footer{
         </div>
 
 
-        <!-- BUSINESS 5 -->
-
         <div class="business-card">
 
             <div class="business-name">
@@ -1011,8 +934,6 @@ footer{
 
         </div>
 
-
-        <!-- BUSINESS 6 -->
 
         <div class="business-card">
 
@@ -1289,7 +1210,15 @@ function searchBusinesses(){
         document.getElementById("results");
 
 
+    /*
+     * MUHIM:
+     * Qidiruv maydoni bo‘sh bo‘lsa,
+     * qidiruv natijalari ham yo‘qoladi.
+     */
+
     if(!input){
+
+        results.innerHTML = "";
 
         resultsSection.style.display = "none";
 
