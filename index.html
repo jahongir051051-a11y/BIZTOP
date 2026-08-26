@@ -2,1109 +2,3702 @@
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BIZTOP — Eng yaxshi brendlarni toping</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#06132f">
+<title>BIZTOP — Bizneslarni topish va baholash</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#06245a;
-color:#fff;
-min-height:100vh;
-padding-bottom:100px;
+:root{
+  --bg:#061737;
+  --bg2:#081f49;
+  --panel:#0a234d;
+  --panel2:#0d2c5d;
+  --blue:#1685ff;
+  --blue2:#2d94ff;
+  --blue3:#4da6ff;
+  --white:#f7f9ff;
+  --muted:#aebfe0;
+  --line:#1b5fae;
+  --yellow:#ffd21f;
+  --green:#22c55e;
+  --danger:#ff4d4d;
+  --shadow:0 12px 35px rgba(0,0,0,.22);
 }
-button,input{font:inherit}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:#020c20;
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif
+}
+
+body{min-height:100vh}
+
+button,input,textarea,select{font:inherit}
 button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+
+.app{
+  width:100%;
+  max-width:1180px;
+  margin:auto;
+  min-height:100vh;
+  background:linear-gradient(180deg,#071b42 0%,#061737 65%,#04122d 100%);
+  box-shadow:0 0 70px rgba(0,0,0,.35)
+}
+
 .header{
-background:#071f50;
-padding:28px 18px 24px;
-border-bottom:6px solid #1687ff;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
-position:sticky;
-top:0;
-z-index:50;
+  height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 30px;
+  background:#030d22;
+  border-bottom:3px solid var(--blue);
+  position:sticky;
+  top:0;
+  z-index:50
 }
+
 .logo{
-font-size:42px;
-font-weight:900;
-letter-spacing:-3px;
+  font-weight:900;
+  font-size:46px;
+  letter-spacing:-3px
 }
-.logo span{color:#1687ff}
+
+.logo .biz{color:#147cff}
+.logo .top{color:#fff}
+
 .add-btn{
-border:0;
-background:#278cff;
-color:#fff;
-font-weight:800;
-font-size:18px;
-padding:16px 23px;
-border-radius:40px;
+  border:0;
+  border-radius:38px;
+  background:linear-gradient(135deg,#2c91ff,#167af2);
+  color:#fff;
+  font-weight:800;
+  padding:16px 26px;
+  font-size:22px;
+  box-shadow:0 8px 22px rgba(22,133,255,.25)
 }
-.container{
-max-width:1100px;
-margin:auto;
-padding:0 18px;
+
+.add-btn span{
+  font-size:30px;
+  vertical-align:-2px;
+  margin-right:8px
 }
-.page{display:none}
+
+.page{
+  display:none;
+  padding-bottom:110px;
+  min-height:calc(100vh - 88px)
+}
+
 .page.active{display:block}
-.hero{
-text-align:center;
-padding:70px 10px 45px;
+
+.container{padding:24px 30px}
+
+.search-wrap{
+  display:flex;
+  gap:12px;
+  margin-bottom:24px
 }
-.hero-icon{font-size:70px}
-.hero h1{
-font-size:58px;
-line-height:1;
-margin:10px 0;
-font-weight:900;
-}
-.hero h1 span{color:#278cff}
-.hero p{
-font-size:23px;
-color:#b9cff0;
-margin-top:25px;
-}
+
 .search-box{
-display:flex;
-gap:10px;
-margin:25px auto;
-max-width:750px;
+  flex:1;
+  display:flex;
+  align-items:center;
+  background:#173968;
+  border:1px solid #2d568a;
+  border-radius:22px;
+  padding:0 18px;
+  height:58px
 }
+
+.search-box .icon{
+  font-size:25px;
+  margin-right:10px
+}
+
 .search-box input{
-flex:1;
-border:3px solid #1687ff;
-border-radius:18px;
-padding:17px;
-background:#123d76;
-color:#fff;
-outline:none;
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:#fff;
+  font-size:21px
 }
-.search-box button{
-border:0;
-border-radius:18px;
-background:#1687ff;
-color:#fff;
-padding:0 25px;
-font-weight:800;
+
+.search-box input::placeholder{color:#b8c7df}
+
+.search-btn{
+  width:150px;
+  border:0;
+  border-radius:22px;
+  background:var(--blue);
+  color:#fff;
+  font-size:20px;
+  font-weight:800
 }
+
 .section-title{
-display:flex;
-align-items:center;
-gap:14px;
-font-size:35px;
-font-weight:900;
-margin:40px 0 20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:29px;
+  font-weight:900;
+  margin:22px 0 14px
 }
-.section-title span{color:#278cff}
-.categories{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
+
+.section-title .ico{font-size:32px}
+.section-title .accent{color:var(--blue2)}
+
+.section-title .link{
+  margin-left:auto;
+  color:#2290ff;
+  font-size:17px;
+  font-weight:700
 }
-.category{
-background:#28679c;
-border:3px solid #1687ff;
-border-radius:18px;
-padding:20px;
-text-align:center;
-font-weight:800;
+
+.result-card{
+  display:grid;
+  grid-template-columns:120px 1fr auto;
+  gap:20px;
+  align-items:center;
+  padding:20px;
+  border:1px solid #315b91;
+  border-radius:24px;
+  background:linear-gradient(120deg,#0b2550,#071d40);
+  box-shadow:var(--shadow);
+  transition:.2s
 }
-.category-icon{font-size:38px;margin-bottom:8px}
-.business-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
+
+.result-card:hover,
+.rank-card:hover,
+.list-row:hover{
+  border-color:#208cff;
+  transform:translateY(-1px)
 }
-.business-card{
-background:#2b679b;
-border:4px solid #1687ff;
-border-radius:28px;
-padding:25px;
-transition:.2s;
-cursor:pointer;
+
+.avatar{
+  width:104px;
+  height:104px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at 35% 30%,#314f75,#050f22 72%);
+  border:3px solid #2a80ea;
+  font-size:47px;
+  overflow:hidden
 }
-.business-card:hover{transform:translateY(-3px)}
-.business-card h3{
-font-size:27px;
-margin-bottom:14px;
+
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover
 }
-.business-card p{
-font-size:18px;
-margin:8px 0;
-color:#f2f6ff;
+
+.business-name{
+  font-size:27px;
+  font-weight:900
 }
+
+.verify{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:21px;
+  height:21px;
+  border-radius:50%;
+  background:#1685ff;
+  color:white;
+  font-size:14px;
+  margin-left:5px
+}
+
+.meta{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7
+}
+
 .rating{
-font-size:28px;
-color:#ffd21c;
-font-weight:900;
-margin-top:14px;
+  color:var(--yellow);
+  font-size:24px;
+  font-weight:900;
+  white-space:nowrap
 }
-.top-tabs{
-display:flex;
-gap:10px;
-margin:20px 0;
+
+.rating small{
+  color:#fff;
+  font-size:17px
 }
-.top-tab{
-flex:1;
-padding:15px;
-border:2px solid #1687ff;
-border-radius:15px;
-background:#123d76;
-color:#fff;
-font-weight:900;
+
+.hero-home{
+  text-align:center;
+  padding:34px 20px 22px
 }
-.top-tab.active{background:#1687ff}
-.top-section{
-margin-top:35px;
+
+.hero-home h1{
+  font-size:54px;
+  line-height:1.05;
+  margin:10px 0;
+  font-weight:900
 }
-.top-list{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
+
+.hero-home h1 .blue{color:var(--blue2)}
+
+.hero-home p{
+  color:#b4c7e7;
+  font-size:22px;
+  margin:12px 0 24px
 }
-.top-card{
-background:#2b679b;
-border:4px solid #1687ff;
-border-radius:28px;
-padding:23px;
-cursor:pointer;
+
+.category-wrap{margin-top:24px}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:12px
 }
-.top-number{
-font-size:38px;
-font-weight:900;
-color:#1687ff;
+
+.category{
+  border:1px solid #2768a9;
+  background:#0c2a59;
+  border-radius:20px;
+  padding:18px 8px;
+  text-align:center;
+  min-height:115px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:8px
 }
-.top-card h3{
-font-size:25px;
-margin:8px 0;
+
+.category .ci{font-size:35px}
+.category b{font-size:15px}
+
+.carousel{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  padding:3px 2px 12px;
+  scrollbar-width:none
 }
-.top-card .rating{font-size:25px}
-.profile-page{
-padding-top:30px;
+
+.carousel::-webkit-scrollbar{display:none}
+
+.rank-card{
+  min-width:285px;
+  width:285px;
+  border:2px solid #1c67bc;
+  border-radius:23px;
+  background:linear-gradient(160deg,#0b2b5b,#061b3e);
+  overflow:hidden;
+  transition:.2s;
+  box-shadow:var(--shadow);
+  position:relative
 }
-.profile-head{
-background:#071d4b;
-border:3px solid #1687ff;
-border-radius:25px;
-overflow:hidden;
+
+.rank-photo{
+  height:150px;
+  background:linear-gradient(135deg,#5d351f,#b57b42 45%,#1c2c20);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:64px
 }
+
+.rank-photo.cafe{
+  background:linear-gradient(135deg,#4c2b1a,#a56e3a 45%,#162a20)
+}
+
+.rank-photo.rest{
+  background:linear-gradient(135deg,#332617,#8a6844 48%,#263c2e)
+}
+
+.rank-photo.coffee{
+  background:linear-gradient(135deg,#9b613d,#e2b27d 48%,#5b321e)
+}
+
+.rank-photo.cafe{
+  background-image:url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=85');
+  background-size:cover;
+  background-position:center
+}
+
+.rank-photo.rest{
+  background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85');
+  background-size:cover;
+  background-position:center
+}
+
+.rank-photo.coffee{
+  background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85');
+  background-size:cover;
+  background-position:center
+}
+
+.rank-num{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:#1168d8;
+  color:#fff;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:900
+}
+
+.rank-body{padding:15px}
+
+.rank-body .business-name{font-size:20px}
+
+.rank-body .meta{
+  font-size:15px;
+  line-height:1.65
+}
+
+.rank-rating{
+  color:var(--yellow);
+  font-weight:900;
+  font-size:19px;
+  margin-top:5px
+}
+
+.list-box{
+  border:1px solid #28558a;
+  border-radius:22px;
+  overflow:hidden;
+  background:#071c3c
+}
+
+.list-row{
+  display:grid;
+  grid-template-columns:55px 62px 1fr 190px 80px 28px;
+  gap:12px;
+  align-items:center;
+  min-height:105px;
+  padding:12px 18px;
+  border-bottom:1px solid #21456f;
+  transition:.2s
+}
+
+.list-row:last-child{border-bottom:0}
+
+.rank-large{
+  font-size:34px;
+  color:#1982ff;
+  font-weight:900;
+  text-align:center
+}
+
+.small-avatar{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  border:2px solid #2d7fdc;
+  background:#162e55;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:27px;
+  overflow:hidden
+}
+
+.small-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+
+.row-name{
+  font-weight:900;
+  font-size:19px
+}
+
+.row-meta{
+  color:#afc0dc;
+  font-size:15px;
+  margin-top:3px
+}
+
+.row-contact{
+  color:#b9c9e2;
+  font-size:15px;
+  line-height:1.7
+}
+
+.arrow{
+  font-size:27px;
+  color:#a8b9d6
+}
+
+.top-one-label{
+  text-align:center;
+  color:#fff;
+  font-size:22px;
+  font-weight:900;
+  margin:4px 0 10px
+}
+
+.top-one-section-label{
+  text-align:left;
+  color:#fff;
+  font-size:30px;
+  font-weight:900;
+  margin:0 0 12px
+}
+
+.tabs{
+  display:flex;
+  max-width:570px;
+  margin:20px auto 35px;
+  border:1px solid #1c65b6;
+  border-radius:25px;
+  overflow:hidden
+}
+
+.tab{
+  flex:1;
+  background:#071a3a;
+  color:#fff;
+  border:0;
+  padding:14px;
+  font-size:20px;
+  font-weight:900
+}
+
+.tab.active{
+  background:linear-gradient(135deg,#1789ff,#146fe0)
+}
+
+.top-hero{
+  text-align:center;
+  padding:28px 20px 0
+}
+
+.top-hero .trophy{font-size:70px}
+
+.top-hero h1{
+  font-size:54px;
+  margin:4px 0;
+  font-weight:900
+}
+
+.top-hero p{
+  color:#b6c8e7;
+  font-size:21px;
+  margin:12px 0
+}
+
+.top-section{margin:0 0 35px}
+.top-one-card-section{margin-bottom:24px}
+
+.top-section-head{
+  display:flex;
+  align-items:center;
+  margin-bottom:14px
+}
+
+.top-section-head h2{
+  margin:0;
+  font-size:29px
+}
+
+.top-section-head .more{
+  margin-left:auto;
+  color:#1687ff;
+  font-weight:800
+}
+
+.profile-head{padding:16px 0 0}
+
+.profile-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:10px
+}
+
+.back{
+  border:0;
+  background:transparent;
+  color:#fff;
+  font-size:34px
+}
+
+.share{font-size:29px}
+
 .profile-cover{
-height:210px;
-background:
-linear-gradient(#0005,#0008),
-url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1400&q=80")
-center/cover;
-position:relative;
+  border:2px solid #286db5;
+  border-radius:25px;
+  overflow:hidden;
+  background:linear-gradient(120deg,#091b39,#071b3e);
+  box-shadow:var(--shadow)
 }
-.profile-logo{
-position:absolute;
-left:30px;
-bottom:-60px;
-width:130px;
-height:130px;
-border-radius:50%;
-border:5px solid #1687ff;
-background:#29689d;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:55px;
+
+.cover{
+  min-height:230px;
+  padding:38px 35px 28px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  background:
+  radial-gradient(circle at 70% 30%,rgba(205,141,75,.25),transparent 32%),
+  linear-gradient(120deg,rgba(6,19,43,.93),rgba(8,30,57,.68)),
+  linear-gradient(135deg,#5d3a23,#9c744a 45%,#1e2d21)
 }
-.profile-title{
-padding:75px 30px 25px;
+
+.profile-avatar{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  border:4px solid #1685ff;
+  background:#071329;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:74px;
+  flex:none
 }
-.profile-title h2{
-font-size:38px;
+
+.profile-title h1{
+  font-size:38px;
+  margin:0 0 10px
 }
-.profile-title p{
-font-size:20px;
-color:#bcd0ef;
-margin-top:8px;
+
+.profile-title .line{
+  font-size:20px;
+  color:#d2def2;
+  line-height:1.7
 }
+
+.open{
+  color:#21d16b;
+  font-weight:900
+}
+
 .info-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:0;
-background:#0b2d64;
-border:2px solid #286ca8;
-border-radius:20px;
-margin:20px;
-overflow:hidden;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  margin:0 18px 18px;
+  border:1px solid #245b96;
+  border-radius:20px;
+  overflow:hidden
 }
+
 .info-item{
-padding:22px 10px;
-text-align:center;
-border-right:1px solid #6682aa;
+  padding:17px 10px;
+  text-align:center;
+  border-right:1px solid #2d527d
 }
+
 .info-item:last-child{border-right:0}
-.info-icon{font-size:34px}
-.info-item strong{
-display:block;
-font-size:17px;
-margin-top:8px;
+
+.info-item .ii{font-size:32px}
+
+.info-item span{
+  display:block;
+  color:#b8c7de;
+  margin-top:6px
 }
-.about{
-margin:20px;
-background:#09265a;
-border:2px solid #286ca8;
-border-radius:20px;
-padding:22px;
+
+.info-item b{
+  display:block;
+  margin-top:5px
 }
-.about h3{font-size:24px;margin-bottom:12px}
-.about p{line-height:1.6;color:#d5e0f2}
+
+.profile-box{
+  margin:14px 18px;
+  border:1px solid #245b96;
+  border-radius:20px;
+  padding:20px;
+  background:rgba(7,26,56,.72)
+}
+
+.profile-box h3{
+  margin:0 0 8px;
+  font-size:23px
+}
+
+.profile-box p{
+  margin:0;
+  color:#d0daeb;
+  line-height:1.7;
+  font-size:17px
+}
+
 .gallery{
-margin:20px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  scrollbar-width:none
 }
-.gallery img{
-width:100%;
-height:120px;
-object-fit:cover;
-border-radius:15px;
-border:2px solid #1687ff;
+
+.gallery::-webkit-scrollbar{display:none}
+
+.gallery-item{
+  min-width:220px;
+  height:160px;
+  border-radius:16px;
+  border:2px solid #235d9e;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:60px;
+  background:linear-gradient(135deg,#7d4c2d,#c38b51)
 }
-.reviews{
-margin:20px;
-background:#09265a;
-border:2px solid #286ca8;
-border-radius:20px;
-padding:20px;
+
+.rating-summary{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:20px;
+  align-items:center
 }
+
+.big-score{
+  font-size:48px;
+  color:var(--yellow);
+  font-weight:900
+}
+
+.stars{
+  color:var(--yellow);
+  font-size:27px;
+  letter-spacing:3px
+}
+
+.bar{
+  display:grid;
+  grid-template-columns:30px 1fr 30px;
+  gap:8px;
+  align-items:center;
+  margin:6px 0;
+  color:#b7c7df
+}
+
+.barline{
+  height:9px;
+  border-radius:9px;
+  background:#102a50;
+  overflow:hidden
+}
+
+.barline i{
+  display:block;
+  height:100%;
+  background:var(--yellow);
+  border-radius:9px
+}
+
+.actions{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:18px
+}
+
+.action{
+  border:0;
+  border-radius:15px;
+  padding:15px;
+  font-weight:900;
+  color:#fff;
+  font-size:16px;
+  background:#1485ff
+}
+
+.action.telegram{background:#19b969}
+.action.map{background:#245fb5}
+
 .review{
-border:2px solid #214f83;
-border-radius:15px;
-padding:15px;
-margin-top:12px;
+  border:1px solid #245b96;
+  border-radius:17px;
+  padding:14px;
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:48px 1fr auto;
+  gap:12px
 }
-.review-top{
-display:flex;
-justify-content:space-between;
+
+.review-avatar{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#1d7edc;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:22px
 }
-.review-stars{color:#ffd21c}
-.action-row{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-margin:20px;
+
+.review .date{
+  color:#9db0ce;
+  font-size:13px
 }
-.action-btn{
-border:0;
-border-radius:15px;
-padding:17px;
-color:#fff;
-font-weight:900;
-background:#1687ff;
+
+.review .comment{
+  color:#d6dfed;
+  margin-top:5px
 }
-.action-btn.telegram{background:#1dbd67}
-.action-btn.map{background:#245fc2}
-.modal{
-position:fixed;
-inset:0;
-background:#000b;
-display:none;
-align-items:center;
-justify-content:center;
-z-index:100;
-padding:20px;
-}
-.modal.show{display:flex}
-.modal-box{
-width:min(650px,100%);
-max-height:90vh;
-overflow:auto;
-background:#09275b;
-border:5px solid #1687ff;
-border-radius:30px;
-padding:30px;
-position:relative;
-}
-.close{
-position:absolute;
-right:20px;
-top:15px;
-border:0;
-background:none;
-color:#fff;
-font-size:40px;
-}
-.modal-icon{
-font-size:70px;
-text-align:center;
-}
-.modal-box h2{
-text-align:center;
-font-size:38px;
-margin:10px 0;
-}
-.modal-rating{
-text-align:center;
-font-size:35px;
-color:#ffd21c;
-font-weight:900;
-}
-.modal-info{
-background:#2b679b;
-border-radius:20px;
-padding:20px;
-margin:25px 0;
-}
-.modal-info p{
-font-size:19px;
-margin:10px 0;
-}
-.modal-buttons{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-.modal-buttons button{
-border:0;
-border-radius:17px;
-padding:18px;
-font-weight:900;
-color:#fff;
-background:#1687ff;
-}
-.detail-btn{background:#315fc1!important}
+
 .bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-height:95px;
-background:#061d4d;
-border-top:5px solid #1687ff;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-z-index:80;
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(1180px,100%);
+  height:92px;
+  background:#03132e;
+  border-top:3px solid var(--blue);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  z-index:60;
+  padding-bottom:env(safe-area-inset-bottom)
 }
+
 .nav-btn{
-border:0;
-background:none;
-color:#b5c9e8;
-font-weight:900;
-font-size:16px;
+  border:0;
+  background:transparent;
+  color:#aebbd2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  font-weight:900
 }
-.nav-icon{
-font-size:35px;
-display:block;
-margin-bottom:4px;
+
+.nav-btn .ni{font-size:34px}
+.nav-btn.active{color:#1685ff}
+
+/* KATEGORIYALAR */
+
+.home-category-section{
+  margin-top:22px;
+  margin-bottom:4px
 }
-.nav-btn.active{color:#1687ff}
-.empty{
-text-align:center;
-padding:50px;
-color:#bcd0ef;
-font-size:22px;
+
+.home-category-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:26px;
+  font-weight:900;
+  margin:0 0 12px
 }
-@media(max-width:700px){
-.header{padding:20px 12px}
-.logo{font-size:34px}
-.add-btn{font-size:14px;padding:13px 15px}
-.hero h1{font-size:48px}
-.categories{grid-template-columns:repeat(2,1fr)}
-.business-grid,.top-list{grid-template-columns:1fr}
-.info-grid{grid-template-columns:1fr 1fr 1fr}
-.gallery{grid-template-columns:repeat(2,1fr)}
-.gallery img{height:110px}
-.action-row{grid-template-columns:1fr}
-.profile-cover{height:180px}
-.profile-logo{width:110px;height:110px;font-size:45px}
-.profile-title h2{font-size:30px}
-.modal-buttons{grid-template-columns:1fr}
+
+.home-category-title .cat-icon{font-size:30px}
+
+.home-category-slider{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:2px 2px 12px;
+  scrollbar-width:none;
+  overscroll-behavior-x:contain;
+  scroll-snap-type:x proximity
+}
+
+.home-category-slider::-webkit-scrollbar{display:none}
+
+.home-category-item{
+  flex:0 0 112px;
+  min-width:112px;
+  height:92px;
+  border:2px solid #205fa8;
+  border-radius:17px;
+  background:linear-gradient(145deg,#0d2d5d,#071b3d);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  text-align:center;
+  scroll-snap-align:start;
+  box-shadow:0 5px 14px rgba(0,0,0,.16);
+  transition:.2s
+}
+
+.home-category-item:active{
+  transform:scale(.97);
+  border-color:#1685ff
+}
+
+.home-category-item .emoji{
+  font-size:29px;
+  line-height:1
+}
+
+.home-category-item b{
+  font-size:12px;
+  line-height:1.15;
+  color:#f4f7ff
+}
+
+/* MODAL */
+
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  z-index:100;
+  padding:12px
+}
+
+.modal-backdrop.show{display:flex}
+
+.modal{
+  width:min(650px,100%);
+  max-height:92vh;
+  overflow:auto;
+  background:#08234f;
+  border:3px solid #1685ff;
+  border-radius:28px;
+  padding:25px;
+  position:relative;
+  box-shadow:0 30px 90px rgba(0,0,0,.55)
+}
+
+.close{
+  position:absolute;
+  right:20px;
+  top:12px;
+  background:transparent;
+  border:0;
+  color:#fff;
+  font-size:40px
+}
+
+.modal h2{
+  font-size:29px;
+  margin:8px 0 20px
+}
+
+.form-grid{
+  display:grid;
+  gap:12px
+}
+
+.field label{
+  display:block;
+  color:#b6c7e0;
+  margin-bottom:6px;
+  font-weight:700
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid #3b6fa7;
+  border-radius:14px;
+  background:#0c2d5e;
+  color:#fff;
+  padding:13px;
+  outline:none
+}
+
+.field textarea{
+  min-height:110px;
+  resize:vertical
+}
+
+.save{
+  width:100%;
+  border:0;
+  border-radius:16px;
+  background:#1685ff;
+  color:#fff;
+  padding:15px;
+  font-size:18px;
+  font-weight:900;
+  margin-top:5px
+}
+
+.detail-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:18px
+}
+
+.detail-actions button{
+  border:0;
+  border-radius:14px;
+  padding:14px;
+  font-weight:900;
+  color:#fff;
+  background:#1685ff
+}
+
+.footer{
+  text-align:center;
+  color:#758bad;
+  font-size:13px;
+  padding:20px
+}
+
+/* MOBILE */
+
+@media(max-width:760px){
+
+  :root{
+    --mobile-bg:#031432;
+    --mobile-panel:#081f49;
+    --mobile-line:#1e5fa9
+  }
+
+  html,body{background:#020c20}
+
+  body{overflow-x:hidden}
+
+  .app{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+    background:linear-gradient(180deg,#061737 0%,#04132e 100%)
+  }
+
+  .header{
+    height:68px;
+    padding:0 16px;
+    background:#020d22;
+    border-bottom:2px solid var(--blue);
+    position:sticky;
+    top:0
+  }
+
+  .logo{
+    font-size:31px;
+    letter-spacing:-2px;
+    padding:0;
+    line-height:1
+  }
+
+  .add-btn{
+    height:46px;
+    padding:0 15px;
+    border-radius:25px;
+    font-size:14px;
+    box-shadow:none;
+    white-space:nowrap
+  }
+
+  .add-btn span{
+    font-size:20px;
+    margin-right:5px
+  }
+
+  .page{
+    padding-bottom:82px;
+    min-height:calc(100vh - 68px)
+  }
+
+  .container{
+    padding:14px 16px
+  }
+
+  #home .hero-home,
+  #home .category-wrap,
+  #home .home-popular-section{
+    display:none
+  }
+
+  #home .container{padding-top:14px}
+
+  .search-wrap{
+    display:flex;
+    gap:9px;
+    margin:0 0 16px;
+    width:100%;
+    min-width:0
+  }
+
+  .search-box{
+    flex:1;
+    min-width:0;
+    width:auto;
+    height:52px;
+    border-radius:17px;
+    padding:0 13px;
+    background:#183866;
+    border:1px solid #315b91
+  }
+
+  .search-box .icon{
+    font-size:25px;
+    margin-right:7px;
+    flex:none
+  }
+
+  .search-box input{
+    font-size:16px;
+    min-width:0;
+    width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+  }
+
+  .search-btn{
+    flex:0 0 92px;
+    width:92px;
+    height:52px;
+    border-radius:17px;
+    font-size:15px
+  }
+
+  .section-title{
+    font-size:24px;
+    gap:8px;
+    margin:17px 0 11px;
+    line-height:1.15
+  }
+
+  .section-title .ico{font-size:28px}
+
+  .section-title .link{
+    font-size:14px;
+    white-space:nowrap
+  }
+
+  .result-card{
+    grid-template-columns:58px minmax(0,1fr) auto;
+    gap:10px;
+    padding:10px 12px;
+    border-radius:17px;
+    min-height:100px;
+    margin-bottom:10px
+  }
+
+  .avatar{
+    width:56px;
+    height:56px;
+    border-width:2px;
+    font-size:27px
+  }
+
+  .business-name{
+    font-size:17px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+
+  .meta{
+    font-size:12px;
+    line-height:1.55
+  }
+
+  .rating{
+    font-size:17px;
+    align-self:start;
+    padding-top:3px
+  }
+
+  .rating small{font-size:11px}
+
+  #home .carousel{
+    gap:12px;
+    padding:1px 1px 10px;
+    overflow-x:auto;
+    overscroll-behavior-x:contain;
+    scroll-snap-type:x proximity
+  }
+
+  #home .rank-card{
+    flex:0 0 286px;
+    min-width:286px;
+    width:286px;
+    border-radius:18px;
+    border:2px solid #1e66bb;
+    scroll-snap-align:start
+  }
+
+  #home .rank-photo{
+    height:132px;
+    font-size:55px;
+    background-size:cover;
+    background-position:center
+  }
+
+  #home .rank-num{
+    top:8px;
+    left:8px;
+    width:40px;
+    height:40px;
+    font-size:20px
+  }
+
+  #home .rank-body{
+    padding:11px 13px 13px
+  }
+
+  .rank-body .business-name{
+    font-size:18px;
+    line-height:1.2
+  }
+
+  .rank-body .meta{
+    font-size:13px;
+    line-height:1.45
+  }
+
+  .rank-rating{
+    font-size:17px;
+    margin-top:5px
+  }
+
+  .rank-rating span{
+    font-size:12px!important
+  }
+
+  .list-box{
+    border-radius:17px;
+    border:1px solid #28558a;
+    width:100%;
+    overflow:hidden
+  }
+
+  .list-row{
+    grid-template-columns:30px 50px minmax(0,1fr) 46px 14px;
+    grid-template-rows:auto auto;
+    column-gap:7px;
+    row-gap:2px;
+    min-height:78px;
+    padding:8px 10px;
+    align-items:center
+  }
+
+  .rank-large{
+    font-size:28px;
+    grid-column:1;
+    grid-row:1 / span 2
+  }
+
+  .small-avatar{
+    width:48px;
+    height:48px;
+    font-size:23px;
+    grid-column:2;
+    grid-row:1 / span 2
+  }
+
+  .list-row>div:nth-child(3){
+    min-width:0;
+    grid-column:3;
+    grid-row:1
+  }
+
+  .row-name{
+    font-size:14px;
+    line-height:1.15;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+
+  .row-meta{
+    font-size:11px;
+    margin-top:3px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+
+  .row-contact{
+    grid-column:3;
+    grid-row:2;
+    font-size:10px;
+    line-height:1.25;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color:#aebfdb
+  }
+
+  .list-row .rating{
+    grid-column:4;
+    grid-row:1 / span 2;
+    font-size:14px;
+    padding:0;
+    align-self:center;
+    justify-self:end;
+    white-space:nowrap
+  }
+
+  .arrow{
+    grid-column:5;
+    grid-row:1 / span 2;
+    font-size:23px;
+    justify-self:end
+  }
+
+  .top-hero{
+    padding:7px 4px 0
+  }
+
+  .top-hero .trophy{
+    font-size:50px;
+    line-height:1
+  }
+
+  .top-hero h1{
+    font-size:34px;
+    margin:4px 0 5px
+  }
+
+  .top-hero p{
+    font-size:15px;
+    margin:0 0 16px
+  }
+
+  .tabs{
+    width:100%;
+    max-width:none;
+    margin:0 auto 22px;
+    border-radius:23px
+  }
+
+  .tab{
+    font-size:15px;
+    padding:10px 6px
+  }
+
+  .top-section{
+    margin:0 0 24px
+  }
+
+  .top-section-head{
+    margin-bottom:10px
+  }
+
+  .top-section-head h2{
+    font-size:23px
+  }
+
+  .top-section-head .more{
+    font-size:13px
+  }
+
+  #top .carousel{
+    gap:10px;
+    padding:1px 1px 9px;
+    overflow-x:auto;
+    scroll-snap-type:x proximity
+  }
+
+  #top .rank-card{
+    flex:0 0 274px;
+    min-width:274px;
+    width:274px;
+    border-radius:17px;
+    scroll-snap-align:start
+  }
+
+  #top .rank-photo{height:148px}
+
+  #top .rank-num{
+    width:38px;
+    height:38px;
+    font-size:19px
+  }
+
+  #top .rank-body{
+    padding:10px 12px 12px
+  }
+
+  #top .rank-body .business-name{
+    font-size:18px
+  }
+
+  #top .rank-body .meta{
+    font-size:13px
+  }
+
+  #top .rank-rating{
+    font-size:17px
+  }
+
+  .profile-head{padding:5px 0 0}
+
+  .profile-topbar{
+    margin:0 16px 8px
+  }
+
+  .profile-topbar strong{
+    font-size:22px!important
+  }
+
+  .back{
+    font-size:35px;
+    line-height:1
+  }
+
+  .profile-cover{
+    margin:0 16px;
+    border-radius:19px;
+    border:2px solid #286db5
+  }
+
+  .cover{
+    min-height:170px;
+    padding:18px 15px;
+    gap:13px;
+    align-items:center;
+    background:
+      linear-gradient(90deg,rgba(4,15,34,.86),rgba(4,15,34,.40)),
+      url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85') center/cover
+  }
+
+  .profile-avatar{
+    width:88px;
+    height:88px;
+    font-size:41px;
+    border-width:3px
+  }
+
+  .profile-title{
+    min-width:0
+  }
+
+  .profile-title h1{
+    font-size:22px;
+    margin-bottom:6px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+
+  .profile-title .line{
+    font-size:12px;
+    line-height:1.45;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+
+  .info-grid{
+    grid-template-columns:repeat(4,1fr);
+    margin:0 10px 10px;
+    border-radius:16px
+  }
+
+  .info-item{
+    padding:9px 3px;
+    border-right:1px solid #2d527d!important;
+    border-bottom:0!important;
+    min-width:0
+  }
+
+  .info-item:last-child{
+    border-right:0!important
+  }
+
+  .info-item .ii{font-size:23px}
+
+  .info-item span{
+    font-size:10px;
+    margin-top:4px
+  }
+
+  .info-item b{
+    font-size:10px;
+    margin-top:4px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+
+  .profile-box{
+    margin:8px 10px;
+    padding:11px;
+    border-radius:16px
+  }
+
+  .profile-box h3{
+    font-size:17px;
+    margin-bottom:6px
+  }
+
+  .profile-box p{
+    font-size:12px;
+    line-height:1.5
+  }
+
+  .gallery{gap:8px}
+
+  .gallery-item{
+    min-width:145px;
+    height:95px;
+    border-radius:12px;
+    font-size:42px;
+    background-size:cover;
+    background-position:center
+  }
+
+  .rating-summary{
+    grid-template-columns:1fr;
+    gap:12px
+  }
+
+  .big-score{font-size:38px}
+  .stars{font-size:23px}
+
+  .actions{
+    grid-template-columns:1fr;
+    gap:8px;
+    margin:10px
+  }
+
+  .action{
+    padding:11px 8px;
+    font-size:13px;
+    border-radius:12px
+  }
+
+  .review{
+    padding:10px;
+    margin-top:7px;
+    grid-template-columns:40px minmax(0,1fr) auto;
+    gap:8px
+  }
+
+  .review-avatar{
+    width:40px;
+    height:40px;
+    font-size:18px
+  }
+
+  .review .date{font-size:11px}
+  .review .comment{font-size:12px}
+
+  .bottom-nav{
+    height:72px;
+    width:100%;
+    background:#03132e;
+    border-top:3px solid var(--blue);
+    padding-bottom:env(safe-area-inset-bottom)
+  }
+
+  .nav-btn{
+    font-size:12px;
+    gap:1px
+  }
+
+  .nav-btn .ni{font-size:28px}
+
+  .modal{
+    border-radius:20px 20px 0 0;
+    padding:18px
+  }
+
+  .home-category-section{
+    margin-top:17px
+  }
+
+  .home-category-title{
+    font-size:22px;
+    margin-bottom:9px
+  }
+
+  .home-category-title .cat-icon{
+    font-size:26px
+  }
+
+  .home-category-slider{
+    gap:9px;
+    padding-bottom:9px
+  }
+
+  .home-category-item{
+    flex:0 0 94px;
+    min-width:94px;
+    height:78px;
+    border-radius:15px
+  }
+
+  .home-category-item .emoji{font-size:25px}
+  .home-category-item b{font-size:10px}
+}
+
+@media(max-width:430px){
+
+  .header{padding:0 12px}
+
+  .logo{
+    font-size:29px
+  }
+
+  .add-btn{
+    font-size:13px;
+    padding:0 11px;
+    height:44px
+  }
+
+  .container{
+    padding-left:12px;
+    padding-right:12px
+  }
+
+  .search-wrap{gap:8px}
+
+  .search-box{
+    height:50px;
+    padding:0 12px
+  }
+
+  .search-btn{
+    height:50px;
+    flex-basis:84px;
+    width:84px;
+    font-size:14px
+  }
+
+  .section-title{font-size:22px}
+
+  .section-title .ico{font-size:26px}
+
+  .result-card{
+    grid-template-columns:52px minmax(0,1fr) auto;
+    gap:8px;
+    padding:9px
+  }
+
+  .avatar{
+    width:50px;
+    height:50px;
+    font-size:25px
+  }
+
+  .business-name{font-size:16px}
+  .meta{font-size:11px}
+  .rating{font-size:15px}
+
+  #home .rank-card{
+    flex-basis:278px;
+    min-width:278px;
+    width:278px
+  }
+
+  .rank-photo{height:128px}
+
+  .rank-body .business-name{font-size:17px}
+
+  .list-row{
+    grid-template-columns:28px 46px minmax(0,1fr) 43px 12px;
+    column-gap:6px;
+    min-height:76px;
+    padding:7px 8px
+  }
+
+  .small-avatar{
+    width:44px;
+    height:44px
+  }
+
+  .rank-large{font-size:26px}
+  .row-name{font-size:13px}
+  .row-meta{font-size:10px}
+  .row-contact{font-size:9px}
+  .list-row .rating{font-size:13px}
+  .arrow{font-size:21px}
+
+  .top-hero .trophy{font-size:46px}
+  .top-hero h1{font-size:32px}
+  .top-hero p{font-size:14px}
+
+  .tabs{margin-bottom:20px}
+
+  .tab{
+    font-size:14px;
+    padding:9px 4px
+  }
+
+  #top .rank-card{
+    flex-basis:268px;
+    min-width:268px;
+    width:268px
+  }
+
+  #top .rank-photo{height:142px}
+
+  .profile-topbar{
+    margin:0 12px 7px
+  }
+
+  .profile-topbar strong{
+    font-size:21px!important
+  }
+
+  .profile-cover{margin:0 12px}
+
+  .cover{
+    padding:15px 11px;
+    gap:9px;
+    min-height:145px
+  }
+
+  .profile-avatar{
+    width:76px;
+    height:76px;
+    font-size:36px
+  }
+
+  .profile-title h1{font-size:20px}
+  .profile-title .line{font-size:11px}
+
+  .info-grid{margin:0 8px 8px}
+
+  .info-item{padding:8px 2px}
+
+  .info-item .ii{font-size:21px}
+  .info-item span{font-size:10px}
+  .info-item b{font-size:10px}
+
+  .profile-box{
+    margin:7px 8px;
+    padding:10px
+  }
+
+  .profile-box h3{font-size:16px}
+  .profile-box p{font-size:11px}
+
+  .gallery-item{
+    min-width:138px;
+    height:92px
+  }
+
+  .actions{margin:8px}
+  .action{font-size:12px}
+
+  .bottom-nav{height:70px}
+
+  .nav-btn{
+    font-size:11px
+  }
+
+  .nav-btn .ni{font-size:27px}
+
+  .home-category-slider{gap:8px}
+
+  .home-category-item{
+    flex-basis:88px;
+    min-width:88px;
+    height:74px
+  }
+
+  .home-category-item .emoji{font-size:23px}
+  .home-category-item b{font-size:9px}
 }
 </style>
 </head>
 
 <body>
 
+<div class="app">
+
 <header class="header">
-<div class="logo"><span>BIZ</span>TOP</div>
-<button class="add-btn" onclick="openAddBusiness()">➕ Biznes qo‘shish</button>
+  <button class="logo" style="background:none;border:0" onclick="showPage('home')">
+    <span class="biz">BIZ</span><span class="top">TOP</span>
+  </button>
+
+  <button class="add-btn" onclick="openAdd()">
+    <span>＋</span>Biznes qo‘shish
+  </button>
 </header>
 
-<main>
 
-<section id="homePage" class="page active">
-<div class="container">
+<!-- BIZTOP -->
+<main id="home" class="page active">
 
-<div class="hero">
-<div class="hero-icon">🏆</div>
-<h1>TOP <span>brendlar</span></h1>
-<p>Eng yuqori baholangan brendlar</p>
+  <div class="container">
 
-<div class="search-box">
-<input id="searchInput" type="text" placeholder="Biznes yoki brend qidiring...">
-<button onclick="searchBusinesses()">Qidirish</button>
-</div>
-</div>
+    <div class="search-wrap">
 
-<h2 class="section-title">📁 Kategoriyalar</h2>
+      <div class="search-box">
+        <span class="icon">⌕</span>
+        <input
+          id="searchInput"
+          placeholder="Restoran, do‘kon, avto xizmat..."
+          oninput="searchBusinesses()">
+      </div>
 
-<div class="categories">
-<div class="category" onclick="filterCategory('Kafe')"><div class="category-icon">☕</div>Kafe</div>
-<div class="category" onclick="filterCategory('Restoran')"><div class="category-icon">🍽️</div>Restoran</div>
-<div class="category" onclick="filterCategory('Do‘kon')"><div class="category-icon">🛒</div>Do‘kon</div>
-<div class="category" onclick="filterCategory('Mehmonxona')"><div class="category-icon">🏨</div>Mehmonxona</div>
-<div class="category" onclick="filterCategory('Avtoservis')"><div class="category-icon">🚗</div>Avtoservis</div>
-<div class="category" onclick="filterCategory('Qurilish')"><div class="category-icon">🏗️</div>Qurilish</div>
-<div class="category" onclick="filterCategory('Go‘zallik')"><div class="category-icon">💇</div>Go‘zallik</div>
-<div class="category" onclick="filterCategory('Boshqa')"><div class="category-icon">📦</div>Boshqa</div>
-</div>
+      <button class="search-btn" onclick="searchBusinesses()">
+        Qidirish
+      </button>
 
-<h2 class="section-title">⭐ Mashhur brendlar</h2>
-<div id="homeBusinesses" class="business-grid"></div>
+    </div>
 
-</div>
-</section>
 
-<section id="topPage" class="page">
-<div class="container">
+    <section id="searchResults" style="display:none">
 
-<div class="hero">
-<div class="hero-icon">🏆</div>
-<h1>TOP <span>brendlar</span></h1>
-<p>Eng yuqori baholangan brendlar</p>
-</div>
+      <div class="section-title">
+        <span class="ico">⌕</span>
+        Qidiruv natijalari
+      </div>
 
-<div class="top-tabs">
-<button class="top-tab active" onclick="showTop(3,this)">TOP 3</button>
-<button class="top-tab" onclick="showTop(10,this)">TOP 10</button>
-<button class="top-tab" onclick="showTop(20,this)">TOP 20</button>
-</div>
+      <div id="resultsList"></div>
 
-<div id="topContent"></div>
+    </section>
 
-</div>
-</section>
 
-<section id="profilePage" class="page">
-<div class="container">
-<div class="profile-page">
+    <div class="hero-home">
 
-<div class="profile-head">
+      <h1>
+        Eng yaxshi
+        <span class="blue">brendlarni</span>
+        <br>
+        toping
+      </h1>
 
-<div class="profile-cover"></div>
+      <p>
+        BIZTOP — bizneslarni topish, baholash va tanlash platformasi.
+      </p>
 
-<div class="profile-logo">☕</div>
+    </div>
 
-<div class="profile-title">
-<h2>Salom kafe ✓</h2>
-<p>⭐ 5.0 (23 ta baho) · Kafe</p>
-<p>🟢 Ochiq · 09:00 – 21:00</p>
-</div>
 
-<div class="info-grid">
-<div class="info-item">
-<div class="info-icon">📍</div>
-<strong>Manzil</strong>
-<span>Turtkul</span>
-</div>
+    <!-- Eski kategoriyalar -->
+    <section class="category-wrap">
 
-<div class="info-item">
-<div class="info-icon">🕐</div>
-<strong>Ish vaqti</strong>
-<span>09:00 – 21:00</span>
-</div>
+      <div class="section-title">
+        Kategoriyalar
+      </div>
 
-<div class="info-item">
-<div class="info-icon">📞</div>
-<strong>Telefon</strong>
-<span>+998 91 123 45 67</span>
-</div>
-</div>
+      <div class="category-grid">
 
-<div class="about">
-<h3>Biznes haqida</h3>
-<p>
-Salom kafe — mazali qahva, shirinliklar va qulay muhit.
-Do‘stlaringiz bilan yoqimli vaqt o‘tkazish uchun eng yaxshi joy!
-</p>
-</div>
+        <div class="category">
+          <div class="ci">💇</div>
+          <b>Go‘zallik</b>
+        </div>
 
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80">
-<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80">
-<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80">
-</div>
+        <div class="category">
+          <div class="ci">🛒</div>
+          <b>Do‘kon</b>
+        </div>
 
-<div class="reviews">
-<h3>Mijozlar fikri</h3>
+        <div class="category">
+          <div class="ci">🍽️</div>
+          <b>Restoran</b>
+        </div>
 
-<div class="review">
-<div class="review-top">
-<strong>Ali</strong>
-<span class="review-stars">★★★★★</span>
-</div>
-<p>Juda yaxshi xizmat va mazali qahva! 😊</p>
-</div>
+        <div class="category">
+          <div class="ci">☕</div>
+          <b>Kafe</b>
+        </div>
 
-<div class="review">
-<div class="review-top">
-<strong>Vali</strong>
-<span class="review-stars">★★★★★</span>
-</div>
-<p>Muhit juda yaxshi, xodimlar ham juda mehribon.</p>
-</div>
-</div>
+        <div class="category">
+          <div class="ci">🚗</div>
+          <b>Avto xizmat</b>
+        </div>
 
-<div class="action-row">
-<button class="action-btn" onclick="callBusiness()">📞 Qo‘ng‘iroq qilish</button>
-<button class="action-btn telegram" onclick="telegramBusiness()">➤ Telegram orqali yozish</button>
-<button class="action-btn map" onclick="openMap()">🗺️ Xaritada ko‘rish</button>
-</div>
+        <div class="category">
+          <div class="ci">🏨</div>
+          <b>Mehmonxona</b>
+        </div>
 
-</div>
-</div>
-</div>
-</section>
+        <div class="category">
+          <div class="ci">🏥</div>
+          <b>Klinika</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">💊</div>
+          <b>Dorixona</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">👕</div>
+          <b>Kiyim-kechak</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">🥖</div>
+          <b>Nonvoyxona</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">🏪</div>
+          <b>Supermarket</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">📱</div>
+          <b>Telefon/texnika</b>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Mashhur brendlar -->
+    <section class="home-popular-section">
+
+      <div class="section-title">
+
+        <span class="ico">⭐</span>
+
+        Mashhur brendlar
+
+        <span
+          class="link"
+          onclick="showPage('top')">
+          Barchasini ko‘rish ›
+        </span>
+
+      </div>
+
+      <div
+        class="carousel"
+        id="popularCarousel">
+      </div>
+
+    </section>
+
+
+    <!-- TOP brendlar -->
+    <section>
+
+      <div class="section-title">
+
+        <span class="ico">🏆</span>
+
+        TOP
+        <span class="accent">brendlar</span>
+
+      </div>
+
+      <div
+        class="carousel"
+        id="homeTopCarousel">
+      </div>
+
+    </section>
+
+
+    <!-- 40+ kategoriya -->
+    <section class="home-category-section">
+
+      <div class="home-category-title">
+
+        <span class="cat-icon">📂</span>
+        Kategoriyalar
+
+      </div>
+
+      <div
+        class="home-category-slider"
+        id="homeCategorySlider">
+      </div>
+
+    </section>
+
+
+    <!-- Barcha brendlar -->
+    <section>
+
+      <div class="section-title">
+
+        <span class="ico">🏆</span>
+
+        Brendlar
+
+        <span
+          class="link"
+          onclick="showPage('top')">
+          Barchasini ko‘rish ›
+        </span>
+
+      </div>
+
+      <div
+        class="list-box"
+        id="homeTop10">
+      </div>
+
+    </section>
+
+
+    <!-- Barcha brendlar -->
+    <section>
+
+      <div class="section-title">
+
+        <span class="ico">🏆</span>
+
+        Brendlar
+
+        <span
+          class="link"
+          onclick="showPage('top')">
+          Barchasini ko‘rish ›
+        </span>
+
+      </div>
+
+      <div
+        class="list-box"
+        id="homeTop20">
+      </div>
+
+    </section>
+
+
+    <div class="footer">
+      © 2026 BIZTOP — Bizneslarni topish va baholash platformasi
+    </div>
+
+  </div>
 
 </main>
 
-<div id="businessModal" class="modal">
-<div class="modal-box">
 
-<button class="close" onclick="closeModal()">×</button>
+<!-- TOP -->
+<main id="top" class="page">
 
-<div class="modal-icon" id="modalIcon">☕</div>
-<h2 id="modalName">Salom kafe</h2>
+  <div class="container">
 
-<div class="modal-rating" id="modalRating">⭐ 5.0</div>
+    <div class="top-hero">
 
-<div class="modal-info">
-<p>📍 <strong>Manzil:</strong> <span id="modalAddress">Turtkul</span></p>
-<p>🕐 <strong>Ish vaqti:</strong> <span id="modalHours">09:00 – 21:00</span></p>
-<p>📞 <strong>Telefon:</strong> <span id="modalPhone">+998 91 123 45 67</span></p>
-</div>
+      <div class="trophy">🏆</div>
 
-<div class="modal-buttons">
-<button onclick="callBusiness()">📞 Qo‘ng‘iroq qilish</button>
-<button class="detail-btn" onclick="openBusinessProfile()">📋 Batafsil</button>
-</div>
+      <h1>TOP brendlar</h1>
 
-</div>
-</div>
+      <p>
+        Eng yuqori baholangan brendlar
+      </p>
 
-<div id="addModal" class="modal">
-<div class="modal-box">
-<button class="close" onclick="closeAddBusiness()">×</button>
+    </div>
 
-<h2>Biznes qo‘shish</h2>
 
-<div class="modal-info">
-<p><input id="newName" placeholder="Biznes nomi" style="width:100%;padding:15px;border-radius:12px;border:0"></p>
-<p><input id="newCategory" placeholder="Kategoriya" style="width:100%;padding:15px;border-radius:12px;border:0"></p>
-<p><input id="newAddress" placeholder="Manzil" style="width:100%;padding:15px;border-radius:12px;border:0"></p>
-<p><input id="newPhone" placeholder="Telefon" style="width:100%;padding:15px;border-radius:12px;border:0"></p>
-</div>
+    <div class="top-one-label">
+      🏆 TOP 1
+    </div>
 
-<button class="action-btn" style="width:100%" onclick="saveBusiness()">Biznesni saqlash</button>
 
-</div>
-</div>
+    <div class="tabs">
 
+      <button
+        class="tab active"
+        onclick="scrollTopSection('top3',this)">
+        TOP 3
+      </button>
+
+      <button
+        class="tab"
+        onclick="scrollTopSection('top10',this)">
+        TOP 10
+      </button>
+
+      <button
+        class="tab"
+        onclick="scrollTopSection('top30',this)">
+        TOP 30
+      </button>
+
+      <button
+        class="tab"
+        onclick="scrollTopSection('top100',this)">
+        TOP 100
+      </button>
+
+    </div>
+
+
+    <div class="top-one-section-label">
+      🏆 TOP 1
+    </div>
+
+
+    <section
+      class="top-section top-one-card-section"
+      id="top1">
+
+      <div
+        class="carousel"
+        id="top1Cards">
+      </div>
+
+    </section>
+
+
+    <section
+      class="top-section"
+      id="top3">
+
+      <div class="top-section-head">
+
+        <h2>🏅 TOP 3</h2>
+
+        <span class="more">
+          Barchasini ko‘rish ›
+        </span>
+
+      </div>
+
+      <div
+        class="carousel"
+        id="top3Cards">
+      </div>
+
+    </section>
+
+
+    <section
+      class="top-section"
+      id="top10">
+
+      <div class="top-section-head">
+
+        <h2>🏆 TOP 10</h2>
+
+        <span class="more">
+          Barchasini ko‘rish ›
+        </span>
+
+      </div>
+
+      <div
+        class="carousel"
+        id="top10Cards">
+      </div>
+
+    </section>
+
+
+    <section
+      class="top-section"
+      id="top30">
+
+      <div class="top-section-head">
+
+        <h2>🏆 TOP 30</h2>
+
+        <span class="more">
+          Barchasini ko‘rish ›
+        </span>
+
+      </div>
+
+      <div
+        class="carousel"
+        id="top30Cards">
+      </div>
+
+    </section>
+
+
+    <section
+      class="top-section"
+      id="top100">
+
+      <div class="top-section-head">
+
+        <h2>🏆 TOP 100</h2>
+
+        <span class="more">
+          Barchasini ko‘rish ›
+        </span>
+
+      </div>
+
+      <div
+        class="carousel"
+        id="top100Cards">
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<!-- PROFIL -->
+<main id="profile" class="page">
+
+  <div class="container profile-head">
+
+    <div class="profile-topbar">
+
+      <button
+        class="back"
+        onclick="showPage('top')">
+        ‹
+      </button>
+
+      <strong style="font-size:24px">
+        Biznes profili
+      </strong>
+
+      <button
+        class="back"
+        onclick="shareProfile()">
+        ⌯
+      </button>
+
+    </div>
+
+    <div
+      class="profile-cover"
+      id="profileContent">
+    </div>
+
+  </div>
+
+</main>
+
+
+<!-- PASTKI NAVIGATSIYA -->
 <nav class="bottom-nav">
 
-<button class="nav-btn active" id="homeNav" onclick="showPage('homePage',this)">
-<span class="nav-icon">🏠</span>
-BIZTOP
-</button>
+  <button
+    class="nav-btn active"
+    id="navHome"
+    onclick="showPage('home')">
 
-<button class="nav-btn" id="topNav" onclick="showPage('topPage',this)">
-<span class="nav-icon">🏆</span>
-TOP
-</button>
+    <span class="ni">⌂</span>
+    <span>BIZTOP</span>
 
-<button class="nav-btn" id="profileNav" onclick="showPage('profilePage',this)">
-<span class="nav-icon">👤</span>
-Profil
-</button>
+  </button>
+
+
+  <button
+    class="nav-btn"
+    id="navTop"
+    onclick="showPage('top')">
+
+    <span class="ni">🏆</span>
+    <span>TOP</span>
+
+  </button>
+
+
+  <button
+    class="nav-btn"
+    id="navProfile"
+    onclick="showPage('profile')">
+
+    <span class="ni">♟</span>
+    <span>Profil</span>
+
+  </button>
 
 </nav>
 
+
+<!-- BIZNES QO‘SHISH -->
+<div
+  class="modal-backdrop"
+  id="addModal">
+
+  <div class="modal">
+
+    <button
+      class="close"
+      onclick="closeAdd()">
+      ×
+    </button>
+
+    <h2>Biznes qo‘shish</h2>
+
+    <div class="form-grid">
+
+      <div class="field">
+
+        <label>Biznes nomi</label>
+
+        <input
+          id="newName"
+          placeholder="Masalan: BIZTOP Restaurant">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Kategoriya</label>
+
+        <select id="newCategory"></select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Manzil</label>
+
+        <input
+          id="newAddress"
+          placeholder="Masalan: To‘rtko‘l">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Telefon raqami</label>
+
+        <input
+          id="newPhone"
+          placeholder="+998 90 123 45 67">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Ish vaqti</label>
+
+        <input
+          id="newHours"
+          value="09:00 – 21:00">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Biznes haqida</label>
+
+        <textarea
+          id="newAbout"
+          placeholder="Biznesingiz haqida qisqacha ma’lumot..."></textarea>
+
+      </div>
+
+
+      <button
+        class="save"
+        onclick="addBusiness()">
+
+        ✅ Biznesni qo‘shish
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- DETAIL -->
+<div
+  class="modal-backdrop"
+  id="detailModal">
+
+  <div
+    class="modal"
+    id="detailBox">
+  </div>
+
+</div>
+
+</div>
+
+
 <script>
+
+/* =========================
+   BIZNESLAR
+========================= */
 
 const businesses = [
 
-{
-id:1,
-name:"Salom kafe",
-category:"Kafe",
-address:"Turtkul",
-phone:"+998 91 123 45 67",
-hours:"09:00 – 21:00",
-rating:5.0,
-reviews:23,
-icon:"☕",
-description:"Mazali qahva, shirinliklar va qulay muhit."
-},
+ {
+  id:1,
+  name:"Salom kafe",
+  category:"Kafe",
+  address:"To‘rtko‘l",
+  phone:"+998 91 123 45 67",
+  hours:"09:00 – 21:00",
+  rating:5.0,
+  reviews:23,
+  icon:"☕",
+  photo:"cafe",
+  about:"Salom kafe – mazali qahva, shirinliklar va qulay muhit. Do‘stlaringiz bilan yoqimli vaqt o‘tkazish uchun eng yaxshi joy!",
+  verified:true
+ },
 
-{
-id:2,
-name:"Elita restoran",
-category:"Restoran",
-address:"Turtkul",
-phone:"+998 90 555 44 33",
-hours:"10:00 – 23:00",
-rating:4.9,
-reviews:18,
-icon:"🍽️",
-description:"Oilaviy va do‘stlar bilan ovqatlanish uchun qulay restoran."
-},
+ {
+  id:2,
+  name:"BIZTOP Restoran",
+  category:"Restoran",
+  address:"To‘rtko‘l",
+  phone:"+998 90 111 11 11",
+  hours:"09:00 – 23:00",
+  rating:4.9,
+  reviews:18,
+  icon:"🍽️",
+  photo:"rest",
+  about:"Mazali taomlar, oilaviy muhit va sifatli xizmat.",
+  verified:true
+ },
 
-{
-id:3,
-name:"Mega Market",
-category:"Do‘kon",
-address:"Turtkul",
-phone:"+998 93 222 33 44",
-hours:"08:00 – 22:00",
-rating:4.8,
-reviews:15,
-icon:"🛒",
-description:"Kundalik mahsulotlar va oziq-ovqatlar."
-},
+ {
+  id:3,
+  name:"BIZTOP Coffee",
+  category:"Kafe",
+  address:"To‘rtko‘l",
+  phone:"+998 93 111 22 33",
+  hours:"08:00 – 22:00",
+  rating:4.8,
+  reviews:15,
+  icon:"☕",
+  photo:"coffee",
+  about:"Qahva va shirinliklar uchun zamonaviy joy.",
+  verified:true
+ },
 
-{
-id:4,
-name:"Grand Hotel",
-category:"Mehmonxona",
-address:"Turtkul",
-phone:"+998 95 444 55 66",
-hours:"24/7",
-rating:4.8,
-reviews:12,
-icon:"🏨",
-description:"Qulay va zamonaviy mehmonxona."
-},
+ {
+  id:4,
+  name:"Beauty Star",
+  category:"Go‘zallik",
+  address:"To‘rtko‘l",
+  phone:"+998 90 222 22 22",
+  hours:"09:00 – 20:00",
+  rating:4.8,
+  reviews:12,
+  icon:"💇",
+  photo:"beauty",
+  about:"Go‘zallik va parvarish xizmatlari.",
+  verified:true
+ },
 
-{
-id:5,
-name:"Auto Lux",
-category:"Avtoservis",
-address:"Turtkul",
-phone:"+998 97 111 22 33",
-hours:"08:00 – 20:00",
-rating:4.7,
-reviews:10,
-icon:"🚗",
-description:"Avtomobillar uchun professional servis."
-},
+ {
+  id:5,
+  name:"Grand Hotel",
+  category:"Mehmonxona",
+  address:"To‘rtko‘l",
+  phone:"+998 90 333 33 33",
+  hours:"24/7",
+  rating:4.8,
+  reviews:12,
+  icon:"🏨",
+  photo:"hotel",
+  about:"Qulay xonalar va mehmondo‘st xizmat.",
+  verified:true
+ },
 
-{
-id:6,
-name:"Beauty Star",
-category:"Go‘zallik",
-address:"Turtkul",
-phone:"+998 99 888 77 66",
-hours:"09:00 – 20:00",
-rating:4.7,
-reviews:9,
-icon:"💇",
-description:"Go‘zallik va parvarish xizmatlari."
-},
+ {
+  id:6,
+  name:"Mega Market",
+  category:"Supermarket",
+  address:"To‘rtko‘l",
+  phone:"+998 90 444 44 44",
+  hours:"08:00 – 23:00",
+  rating:4.7,
+  reviews:11,
+  icon:"🛒",
+  photo:"market",
+  about:"Kundalik xaridlar uchun katta tanlov.",
+  verified:true
+ },
 
-{
-id:7,
-name:"Comfort Build",
-category:"Qurilish",
-address:"Turtkul",
-phone:"+998 91 777 66 55",
-hours:"08:00 – 19:00",
-rating:4.6,
-reviews:8,
-icon:"🏗️",
-description:"Qurilish va ta'mirlash xizmatlari."
-},
+ {
+  id:7,
+  name:"BIZTOP Burger",
+  category:"Restoran",
+  address:"To‘rtko‘l",
+  phone:"+998 90 555 55 55",
+  hours:"10:00 – 23:00",
+  rating:4.7,
+  reviews:83,
+  icon:"🍔",
+  photo:"burger",
+  about:"Mazali burger va tez tayyorlanadigan taomlar.",
+  verified:true
+ },
 
-{
-id:8,
-name:"Shirin Uy",
-category:"Boshqa",
-address:"Turtkul",
-phone:"+998 90 333 22 11",
-hours:"09:00 – 19:00",
-rating:4.6,
-reviews:7,
-icon:"🏠",
-description:"Uy-ro‘zg‘or mahsulotlari va xizmatlar."
-},
+ {
+  id:8,
+  name:"Auto Pro",
+  category:"Avto xizmat",
+  address:"To‘rtko‘l",
+  phone:"+998 90 666 66 66",
+  hours:"08:00 – 19:00",
+  rating:4.6,
+  reviews:31,
+  icon:"🚗",
+  photo:"auto",
+  about:"Avtomobil ta’mirlash va servis.",
+  verified:true
+ },
 
-{
-id:9,
-name:"Navbahor kafe",
-category:"Kafe",
-address:"Turtkul",
-phone:"+998 93 555 66 77",
-hours:"09:00 – 22:00",
-rating:4.5,
-reviews:6,
-icon:"☕",
-description:"Qulay muhit va mazali taomlar."
-},
+ {
+  id:9,
+  name:"Smart Tech",
+  category:"Telefon/texnika",
+  address:"To‘rtko‘l",
+  phone:"+998 90 777 77 77",
+  hours:"09:00 – 20:00",
+  rating:4.6,
+  reviews:27,
+  icon:"📱",
+  photo:"tech",
+  about:"Telefon va texnika mahsulotlari.",
+  verified:true
+ },
 
-{
-id:10,
-name:"Baraka Market",
-category:"Do‘kon",
-address:"Turtkul",
-phone:"+998 95 222 11 00",
-hours:"08:00 – 22:00",
-rating:4.5,
-reviews:5,
-icon:"🛒",
-description:"Mahsulotlar va kundalik xaridlar."
-}
+ {
+  id:10,
+  name:"Shirin Non",
+  category:"Nonvoyxona",
+  address:"To‘rtko‘l",
+  phone:"+998 90 888 88 88",
+  hours:"06:00 – 21:00",
+  rating:4.5,
+  reviews:25,
+  icon:"🥖",
+  photo:"bread",
+  about:"Issiq non va mazali pishiriqlar.",
+  verified:true
+ }
 
 ];
 
+
 let selectedBusiness = businesses[0];
 
-function showPage(pageId,button){
 
-document.querySelectorAll(".page").forEach(page=>{
-page.classList.remove("active");
-});
+/* =========================
+   KATEGORIYALAR
+========================= */
 
-document.getElementById(pageId).classList.add("active");
+const categories = [
 
-document.querySelectorAll(".nav-btn").forEach(btn=>{
-btn.classList.remove("active");
-});
+ {name:"Restoran",icon:"🍽️"},
+ {name:"Kafe",icon:"☕"},
+ {name:"Do‘kon",icon:"🛒"},
+ {name:"Supermarket",icon:"🏪"},
+ {name:"Fast food",icon:"🍔"},
+ {name:"Kiyim-kechak",icon:"👕"},
+ {name:"Oyoq kiyim",icon:"👟"},
+ {name:"Telefon",icon:"📱"},
+ {name:"Kompyuter",icon:"💻"},
+ {name:"Elektronika",icon:"💻"},
+ {name:"Avto xizmat",icon:"🚗"},
+ {name:"Shinomontaj",icon:"🛞"},
+ {name:"AYoQSh",icon:"⛽"},
+ {name:"Avtosalon",icon:"🚘"},
+ {name:"Avto ehtiyot qismlar",icon:"🔧"},
+ {name:"Mehmonxona",icon:"🏨"},
+ {name:"Go‘zallik",icon:"💇"},
+ {name:"Barbershop",icon:"💈"},
+ {name:"Manikyur",icon:"💅"},
+ {name:"Klinika",icon:"🏥"},
+ {name:"Dorixona",icon:"💊"},
+ {name:"Stomatologiya",icon:"🦷"},
+ {name:"Sport zal",icon:"🏋️"},
+ {name:"Sport",icon:"⚽"},
+ {name:"O‘quv markazi",icon:"🎓"},
+ {name:"Bog‘cha",icon:"🧒"},
+ {name:"Kitob do‘koni",icon:"📚"},
+ {name:"Nonvoyxona",icon:"🥖"},
+ {name:"Qandolat",icon:"🍰"},
+ {name:"Go‘sht do‘koni",icon:"🥩"},
+ {name:"Oziq-ovqat",icon:"🥫"},
+ {name:"Gul do‘koni",icon:"🌸"},
+ {name:"Mebel",icon:"🛋️"},
+ {name:"Qurilish",icon:"🔨"},
+ {name:"Qurilish materiallari",icon:"🧱"},
+ {name:"Uy-joy",icon:"🏠"},
+ {name:"Xizmatlar",icon:"💼"},
+ {name:"Foto/video",icon:"📸"},
+ {name:"Sayohat",icon:"✈️"},
+ {name:"Yetkazib berish",icon:"🚚"},
+ {name:"Tozalash",icon:"🧹"},
+ {name:"Usta xizmatlari",icon:"🔑"},
+ {name:"Veterinariya",icon:"🐾"},
+ {name:"Bank va moliya",icon:"🏦"},
+ {name:"Sug‘urta",icon:"🛡️"},
+ {name:"Boshqa",icon:"📦"}
 
-if(button) button.classList.add("active");
+];
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
 
-if(pageId==="homePage"){
-renderHome(businesses);
+/* =========================
+   KATEGORIYALARNI CHIQARISH
+========================= */
+
+function renderCategories(){
+
+ const slider =
+   document.getElementById("homeCategorySlider");
+
+ if(slider){
+
+   slider.innerHTML =
+     categories.map(c => `
+
+       <button
+         type="button"
+         class="home-category-item"
+         onclick="filterByCategory(${JSON.stringify(c.name)})">
+
+         <span class="emoji">
+           ${c.icon}
+         </span>
+
+         <b>
+           ${escapeHtml(c.name)}
+         </b>
+
+       </button>
+
+     `).join("");
+
+ }
+
+
+ const select =
+   document.getElementById("newCategory");
+
+ if(select){
+
+   select.innerHTML =
+     '<option value="">Kategoriyani tanlang</option>' +
+
+     categories.map(c => `
+
+       <option value="${escapeHtml(c.name)}">
+         ${escapeHtml(c.name)}
+       </option>
+
+     `).join("");
+
+ }
+
 }
 
-if(pageId==="topPage"){
-showTop(3,document.querySelector(".top-tab"));
-}
+
+/* =========================
+   KATEGORIYA FILTRI
+========================= */
+
+function filterByCategory(category){
+
+ const input =
+   document.getElementById("searchInput");
+
+ if(input)
+   input.value = category;
+
+ searchBusinesses();
+
+ window.scrollTo({
+   top:0,
+   behavior:"smooth"
+ });
 
 }
 
-function renderHome(list){
 
-const container=document.getElementById("homeBusinesses");
+/* =========================
+   BARCHA BIZNESLAR
+========================= */
 
-if(!list.length){
-container.innerHTML='<div class="empty">Biznes topilmadi.</div>';
-return;
-}
+function getAll(){
 
-container.innerHTML=list.map((b,index)=>`
+ const saved =
+   JSON.parse(
+     localStorage.getItem("biztopBusinesses") || "[]"
+   );
 
-<div class="business-card" onclick="openBusiness(${b.id})">
-
-<h3>${b.icon} ${b.name}</h3>
-
-<p>📁 ${b.category}</p>
-<p>📍 ${b.address}</p>
-<p>🕐 ${b.hours}</p>
-<p>📞 ${b.phone}</p>
-
-<div class="rating">
-⭐ ${b.rating}
-</div>
-
-</div>
-
-`).join("");
+ return businesses.concat(saved);
 
 }
+
+
+/* =========================
+   TASDIQLANGAN
+========================= */
+
+function verify(b){
+
+ return b.verified
+   ? '<span class="verify">✓</span>'
+   : '';
+
+}
+
+
+/* =========================
+   RASM CLASS
+========================= */
+
+function photoClass(b){
+
+ return b.photo || "cafe";
+
+}
+
+
+/* =========================
+   KARTA
+========================= */
+
+function card(b,index){
+
+ return `
+
+ <article
+   class="rank-card"
+   onclick="openBusiness(${b.id})">
+
+   <div class="rank-num">
+     ${index+1}
+   </div>
+
+   <div class="rank-photo ${photoClass(b)}">
+     ${b.icon}
+   </div>
+
+   <div class="rank-body">
+
+     <div class="business-name">
+       ${escapeHtml(b.name)}
+       ${verify(b)}
+     </div>
+
+     <div class="rank-rating">
+
+       ★ ${b.rating.toFixed(1)}
+
+       <span
+         style="color:#d0d9e8;font-size:14px">
+
+         (${b.reviews} ta baho)
+
+       </span>
+
+     </div>
+
+     <div class="meta">
+       📍 ${escapeHtml(b.address)}
+     </div>
+
+   </div>
+
+ </article>
+
+ `;
+
+}
+
+
+/* =========================
+   RO‘YXAT QATORI
+========================= */
+
+function row(b,index){
+
+ return `
+
+ <div
+   class="list-row"
+   onclick="openBusiness(${b.id})">
+
+   <div class="rank-large">
+     ${index+1}
+   </div>
+
+   <div class="small-avatar">
+     ${b.icon}
+   </div>
+
+   <div>
+
+     <div class="row-name">
+       ${escapeHtml(b.name)}
+       ${verify(b)}
+     </div>
+
+     <div class="row-meta">
+       📍 ${escapeHtml(b.address)}
+     </div>
+
+   </div>
+
+   <div class="row-contact">
+
+     ${escapeHtml(b.hours)}
+     <br>
+     ${escapeHtml(b.phone)}
+
+   </div>
+
+   <div class="rating">
+     ★ ${b.rating.toFixed(1)}
+   </div>
+
+   <div class="arrow">
+     ›
+   </div>
+
+ </div>
+
+ `;
+
+}
+
+
+/* =========================
+   REYTING BO‘YICHA SARALASH
+========================= */
+
+function topSorted(){
+
+ return getAll().sort(
+
+   (a,b) =>
+     b.rating-a.rating ||
+     b.reviews-a.reviews
+
+ );
+
+}
+
+
+/* =========================
+   RENDER
+========================= */
+
+function render(){
+
+ const all = topSorted();
+
+
+ document.getElementById(
+   "popularCarousel"
+ ).innerHTML =
+
+   all.slice(0,6)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "homeTopCarousel"
+ ).innerHTML =
+
+   all.slice(0,5)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "homeTop10"
+ ).innerHTML =
+
+   all.slice(0,10)
+      .map((b,i)=>row(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "homeTop20"
+ ).innerHTML =
+
+   all.map((b,i)=>row(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "top1Cards"
+ ).innerHTML =
+
+   all.slice(0,1)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "top3Cards"
+ ).innerHTML =
+
+   all.slice(0,3)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "top10Cards"
+ ).innerHTML =
+
+   all.slice(0,10)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "top30Cards"
+ ).innerHTML =
+
+   all.slice(0,30)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "top100Cards"
+ ).innerHTML =
+
+   all.slice(0,100)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+}
+
+
+/* =========================
+   XAVFSIZ HTML
+========================= */
+
+function escapeHtml(s){
+
+ return String(s).replace(
+
+   /[&<>"']/g,
+
+   m => ({
+
+     "&":"&amp;",
+     "<":"&lt;",
+     ">":"&gt;",
+     '"':"&quot;",
+     "'":"&#039;"
+
+   }[m])
+
+ );
+
+}
+
+
+/* =========================
+   SAHIFA ALMASHTIRISH
+========================= */
+
+function showPage(id){
+
+ document
+   .querySelectorAll(".page")
+   .forEach(
+     p=>p.classList.remove("active")
+   );
+
+
+ document
+   .getElementById(id)
+   .classList.add("active");
+
+
+ document
+   .getElementById("navHome")
+   .classList.toggle(
+     "active",
+     id==="home"
+   );
+
+
+ document
+   .getElementById("navTop")
+   .classList.toggle(
+     "active",
+     id==="top"
+   );
+
+
+ document
+   .getElementById("navProfile")
+   .classList.toggle(
+     "active",
+     id==="profile"
+   );
+
+
+ window.scrollTo({
+   top:0,
+   behavior:"smooth"
+ });
+
+}
+
+
+/* =========================
+   BIZNES PROFILI
+========================= */
 
 function openBusiness(id){
 
-selectedBusiness=businesses.find(b=>b.id===id)||businesses[0];
+ selectedBusiness =
+   getAll().find(
+     b=>String(b.id)===String(id)
+   ) || businesses[0];
 
-document.getElementById("modalIcon").textContent=selectedBusiness.icon;
-document.getElementById("modalName").textContent=selectedBusiness.name;
-document.getElementById("modalRating").textContent="⭐ "+selectedBusiness.rating;
-document.getElementById("modalAddress").textContent=selectedBusiness.address;
-document.getElementById("modalHours").textContent=selectedBusiness.hours;
-document.getElementById("modalPhone").textContent=selectedBusiness.phone;
 
-document.getElementById("businessModal").classList.add("show");
+ renderProfile(selectedBusiness);
 
-}
-
-function closeModal(){
-document.getElementById("businessModal").classList.remove("show");
-}
-
-function openBusinessProfile(){
-
-closeModal();
-
-showPage("profilePage",document.getElementById("profileNav"));
-
-updateProfile(selectedBusiness);
+ showPage("profile");
 
 }
 
-function updateProfile(b){
 
-document.querySelector(".profile-logo").textContent=b.icon;
+/* =========================
+   PROFILNI CHIQARISH
+========================= */
 
-document.querySelector(".profile-title h2").textContent=b.name+" ✓";
+function renderProfile(b){
 
-document.querySelector(".profile-title p:nth-of-type(1)").textContent=
-"⭐ "+b.rating+" ("+b.reviews+" ta baho) · "+b.category;
+ document.getElementById(
+   "profileContent"
+ ).innerHTML = `
 
-document.querySelector(".profile-title p:nth-of-type(2)").textContent=
-"🟢 Ochiq · "+b.hours;
+ <div class="cover">
 
-const info=document.querySelectorAll(".info-item");
+   <div class="profile-avatar">
+     ${b.icon}
+   </div>
 
-info[0].querySelector("span").textContent=b.address;
-info[1].querySelector("span").textContent=b.hours;
-info[2].querySelector("span").textContent=b.phone;
+   <div class="profile-title">
 
-document.querySelector(".about p").textContent=
-b.name+" — "+b.description;
+     <h1>
+
+       ${escapeHtml(b.name)}
+       ${verify(b)}
+
+     </h1>
+
+     <div class="line">
+
+       <span
+         style="color:#ffd21f;font-weight:900">
+
+         ★ ${b.rating.toFixed(1)}
+
+       </span>
+
+       (${b.reviews} ta baho)
+
+       ·
+
+       ${escapeHtml(b.category)}
+
+     </div>
+
+     <div class="line">
+
+       <span class="open">
+         ● Ochiq
+       </span>
+
+       ·
+
+       ${escapeHtml(b.hours)}
+
+     </div>
+
+   </div>
+
+ </div>
+
+
+ <div class="info-grid">
+
+   <div class="info-item">
+
+     <div class="ii">📍</div>
+
+     <span>Manzil</span>
+
+     <b>
+       ${escapeHtml(b.address)}
+     </b>
+
+   </div>
+
+
+   <div class="info-item">
+
+     <div class="ii">🕘</div>
+
+     <span>Ish vaqti</span>
+
+     <b>
+       ${escapeHtml(b.hours)}
+     </b>
+
+   </div>
+
+
+   <div class="info-item">
+
+     <div class="ii">📞</div>
+
+     <span>Telefon</span>
+
+     <b>
+       ${escapeHtml(b.phone)}
+     </b>
+
+   </div>
+
+
+   <div class="info-item">
+
+     <div class="ii">🏷️</div>
+
+     <span>Brend</span>
+
+     <b>
+       ${escapeHtml(b.name)}
+     </b>
+
+   </div>
+
+ </div>
+
+
+ <div class="profile-box">
+
+   <h3>
+     Biznes haqida
+   </h3>
+
+   <p>
+     ${escapeHtml(b.about)}
+   </p>
+
+ </div>
+
+
+ <div class="profile-box">
+
+   <div
+     style="
+       display:flex;
+       justify-content:space-between;
+       align-items:center
+     ">
+
+     <h3>
+       Rasmlar
+     </h3>
+
+     <span
+       style="
+         color:#1685ff;
+         font-weight:800
+       ">
+
+       Barchasini ko‘rish ›
+
+     </span>
+
+   </div>
+
+
+   <div class="gallery">
+
+     <div
+       class="gallery-item ${photoClass(b)}">
+
+       ${b.icon}
+
+     </div>
+
+     <div class="gallery-item rest">
+       🍽️
+     </div>
+
+     <div class="gallery-item coffee">
+       ☕
+     </div>
+
+     <div class="gallery-item">
+       🍰
+     </div>
+
+   </div>
+
+ </div>
+
+
+ <div class="profile-box">
+
+   <div class="rating-summary">
+
+     <div>
+
+       <h3>
+         Mijozlar bahosi
+       </h3>
+
+       <div class="big-score">
+         ${b.rating.toFixed(1)} / 5
+       </div>
+
+       <div class="stars">
+         ★★★★★
+       </div>
+
+       <div style="color:#b8c7df">
+         ${b.reviews} ta baho
+       </div>
+
+     </div>
+
+
+     <div>
+
+       <div class="bar">
+
+         <span>5 ★</span>
+
+         <div class="barline">
+           <i style="width:95%"></i>
+         </div>
+
+         <span>
+           ${Math.max(1,b.reviews-1)}
+         </span>
+
+       </div>
+
+
+       <div class="bar">
+
+         <span>4 ★</span>
+
+         <div class="barline">
+           <i style="width:12%"></i>
+         </div>
+
+         <span>1</span>
+
+       </div>
+
+
+       <div class="bar">
+
+         <span>3 ★</span>
+
+         <div class="barline">
+           <i style="width:0%"></i>
+         </div>
+
+         <span>0</span>
+
+       </div>
+
+
+       <div class="bar">
+
+         <span>2 ★</span>
+
+         <div class="barline">
+           <i style="width:0%"></i>
+         </div>
+
+         <span>0</span>
+
+       </div>
+
+
+       <div class="bar">
+
+         <span>1 ★</span>
+
+         <div class="barline">
+           <i style="width:0%"></i>
+         </div>
+
+         <span>0</span>
+
+       </div>
+
+     </div>
+
+   </div>
+
+ </div>
+
+
+ <div class="actions">
+
+   <button
+     class="action"
+     onclick="
+       location.href='tel:${b.phone.replace(/[^0-9+]/g,'')}'
+     ">
+
+     📞 Qo‘ng‘iroq qilish
+
+   </button>
+
+
+   <button
+     class="action telegram"
+     onclick="
+       alert(
+         'Telegram orqali yozish keyingi bosqichda ulanadi.'
+       )
+     ">
+
+     ➤ Telegram orqali yozish
+
+   </button>
+
+
+   <button
+     class="action map"
+     onclick="
+       alert(
+         'Xarita funksiyasi keyingi bosqichda ulanadi.'
+       )
+     ">
+
+     🗺️ Xaritada ko‘rish
+
+   </button>
+
+ </div>
+
+
+ <div class="profile-box">
+
+   <div
+     style="
+       display:flex;
+       justify-content:space-between;
+       align-items:center
+     ">
+
+     <h3>
+       Mijozlar fikri
+     </h3>
+
+     <span
+       style="
+         color:#1685ff;
+         font-weight:800
+       ">
+
+       Barchasini ko‘rish ›
+
+     </span>
+
+   </div>
+
+
+   <div class="review">
+
+     <div class="review-avatar">
+       A
+     </div>
+
+     <div>
+
+       <b>Ali</b>
+
+       <div class="date">
+         12.05.2024
+       </div>
+
+       <div style="color:#ffd21f">
+         ★★★★★
+       </div>
+
+       <div class="comment">
+         Juda yaxshi xizmat va mazali qahva! 😊
+       </div>
+
+     </div>
+
+     <b>⋮</b>
+
+   </div>
+
+
+   <div class="review">
+
+     <div
+       class="review-avatar"
+       style="background:#26a65b">
+
+       V
+
+     </div>
+
+     <div>
+
+       <b>Vali</b>
+
+       <div class="date">
+         10.05.2024
+       </div>
+
+       <div style="color:#ffd21f">
+         ★★★★★
+       </div>
+
+       <div class="comment">
+         Muhit juda yaxshi, xodimlar ham juda mehribon.
+       </div>
+
+     </div>
+
+     <b>⋮</b>
+
+   </div>
+
+ </div>
+
+ `;
 
 }
 
-function callBusiness(){
 
-if(selectedBusiness && selectedBusiness.phone){
-window.location.href="tel:"+selectedBusiness.phone.replace(/\s/g,"");
-}
+/* =========================
+   DETAIL
+========================= */
 
-}
+function openDetailFromCard(id){
 
-function telegramBusiness(){
-
-alert("Telegram orqali yozish funksiyasi biznes egasining Telegram username'i qo‘shilgandan keyin ishlaydi.");
+ openBusiness(id);
 
 }
 
-function openMap(){
 
-const address=encodeURIComponent(selectedBusiness.address);
-
-window.open(
-"https://www.google.com/maps/search/?api=1&query="+address,
-"_blank"
-);
-
-}
+/* =========================
+   QIDIRUV
+========================= */
 
 function searchBusinesses(){
 
-const query=document
-.getElementById("searchInput")
-.value
-.toLowerCase()
-.trim();
+ const q =
+   document
+     .getElementById("searchInput")
+     .value
+     .trim()
+     .toLowerCase();
 
-if(!query){
 
-renderHome(businesses);
-return;
+ const box =
+   document.getElementById(
+     "searchResults"
+   );
 
-}
 
-const result=businesses.filter(b=>
-b.name.toLowerCase().includes(query)||
-b.category.toLowerCase().includes(query)||
-b.address.toLowerCase().includes(query)
-);
+ const list =
+   document.getElementById(
+     "resultsList"
+   );
 
-renderHome(result);
 
-}
+ if(!q){
 
-function filterCategory(category){
+   box.style.display="none";
 
-const result=businesses.filter(b=>b.category===category);
+   return;
 
-showPage("homePage",document.getElementById("homeNav"));
+ }
 
-renderHome(result);
 
-}
+ const found =
+   getAll().filter(
 
-function showTop(limit,button){
+     b =>
+       (
+         b.name +
+         " " +
+         b.category +
+         " " +
+         b.address +
+         " " +
+         b.about
+       )
+       .toLowerCase()
+       .includes(q)
 
-document.querySelectorAll(".top-tab")
-.forEach(btn=>btn.classList.remove("active"));
+   );
 
-if(button)button.classList.add("active");
 
-const sorted=[...businesses]
-.sort((a,b)=>b.rating-a.rating);
+ box.style.display="block";
 
-const list=sorted.slice(0,limit);
 
-const container=document.getElementById("topContent");
+ list.innerHTML = found.length
 
-container.innerHTML=`
+ ? found.map(b=>`
 
-<div class="top-section">
+   <div
+     class="result-card"
+     onclick="openBusiness(${b.id})"
+     style="margin-bottom:12px">
 
-<h2 class="section-title">
-🏆 TOP <span>${limit}</span>
-</h2>
+     <div class="avatar">
+       ${b.icon}
+     </div>
 
-<div class="top-list">
 
-${list.map((b,index)=>`
+     <div>
 
-<div class="top-card" onclick="openBusiness(${b.id})">
+       <div class="business-name">
 
-<div class="top-number">#${index+1}</div>
+         ${escapeHtml(b.name)}
+         ${verify(b)}
 
-<h3>${b.icon} ${b.name}</h3>
+       </div>
 
-<p>📁 ${b.category}</p>
-<p>📍 ${b.address}</p>
+       <div class="meta">
 
-<div class="rating">
-⭐ ${b.rating}
-</div>
+         📍 ${escapeHtml(b.address)}
+         <br>
 
-</div>
+         🕘 ${escapeHtml(b.hours)}
+         <br>
 
-`).join("")}
+         📞 ${escapeHtml(b.phone)}
 
-</div>
+       </div>
 
-</div>
+     </div>
 
-`;
 
-}
+     <div class="rating">
 
-function openAddBusiness(){
+       ★ ${b.rating.toFixed(1)}
 
-document.getElementById("addModal").classList.add("show");
+       <small>
+         <br>
+         ${b.reviews} ta baho
+       </small>
 
-}
+     </div>
 
-function closeAddBusiness(){
+   </div>
 
-document.getElementById("addModal").classList.remove("show");
+ `).join("")
 
-}
-
-function saveBusiness(){
-
-const name=document.getElementById("newName").value.trim();
-const category=document.getElementById("newCategory").value.trim();
-const address=document.getElementById("newAddress").value.trim();
-const phone=document.getElementById("newPhone").value.trim();
-
-if(!name||!category||!address||!phone){
-
-alert("Iltimos, barcha maydonlarni to‘ldiring.");
-
-return;
+ : '<div class="profile-box">Hech narsa topilmadi.</div>';
 
 }
 
-const newBusiness={
 
-id:businesses.length+1,
-name:name,
-category:category,
-address:address,
-phone:phone,
-hours:"09:00 – 21:00",
-rating:0,
-reviews:0,
-icon:"🏢",
-description:"Yangi qo‘shilgan biznes."
+/* =========================
+   TOP TAB
+========================= */
 
-};
+function scrollTopSection(id,btn){
 
-businesses.push(newBusiness);
+ document
+   .querySelectorAll(".tab")
+   .forEach(
+     x=>x.classList.remove("active")
+   );
 
-localStorage.setItem(
-"biztopBusinesses",
-JSON.stringify(businesses)
-);
 
-closeAddBusiness();
+ btn.classList.add("active");
 
-document.getElementById("newName").value="";
-document.getElementById("newCategory").value="";
-document.getElementById("newAddress").value="";
-document.getElementById("newPhone").value="";
 
-renderHome(businesses);
-
-alert("Biznes muvaffaqiyatli qo‘shildi!");
+ document
+   .getElementById(id)
+   .scrollIntoView({
+     behavior:"smooth",
+     block:"start"
+   });
 
 }
 
-function loadBusinesses(){
 
-const saved=localStorage.getItem("biztopBusinesses");
+/* =========================
+   BIZNES QO‘SHISH MODAL
+========================= */
 
-if(!saved)return;
+function openAdd(){
 
-try{
-
-const parsed=JSON.parse(saved);
-
-if(Array.isArray(parsed)){
-
-businesses.length=0;
-
-parsed.forEach(b=>businesses.push(b));
+ document
+   .getElementById("addModal")
+   .classList.add("show");
 
 }
 
-}catch(e){}
+
+function closeAdd(){
+
+ document
+   .getElementById("addModal")
+   .classList.remove("show");
 
 }
 
-document.getElementById("searchInput")
-.addEventListener("keydown",function(e){
 
-if(e.key==="Enter"){
-searchBusinesses();
+/* =========================
+   BIZNES QO‘SHISH
+========================= */
+
+function addBusiness(){
+
+ const name =
+   document
+     .getElementById("newName")
+     .value
+     .trim();
+
+
+ if(!name){
+
+   alert(
+     "Biznes nomini kiriting."
+   );
+
+   return;
+
+ }
+
+
+ const saved =
+   JSON.parse(
+     localStorage.getItem(
+       "biztopBusinesses"
+     ) || "[]"
+   );
+
+
+ const b = {
+
+   id:"local-"+Date.now(),
+
+   name:name,
+
+   category:
+     document.getElementById(
+       "newCategory"
+     ).value,
+
+   address:
+     document.getElementById(
+       "newAddress"
+     ).value ||
+     "To‘rtko‘l",
+
+   phone:
+     document.getElementById(
+       "newPhone"
+     ).value ||
+     "+998 90 000 00 00",
+
+   hours:
+     document.getElementById(
+       "newHours"
+     ).value ||
+     "09:00 – 21:00",
+
+   rating:5.0,
+
+   reviews:0,
+
+   icon:"🏪",
+
+   photo:"market",
+
+   about:
+     document.getElementById(
+       "newAbout"
+     ).value ||
+     "BIZTOP platformasiga yangi qo‘shilgan biznes.",
+
+   verified:false
+
+ };
+
+
+ saved.push(b);
+
+
+ localStorage.setItem(
+   "biztopBusinesses",
+   JSON.stringify(saved)
+ );
+
+
+ closeAdd();
+
+ render();
+
+
+ alert(
+   "Biznes muvaffaqiyatli qo‘shildi."
+ );
+
+
+ showPage("home");
+
 }
 
-});
 
-document.getElementById("businessModal")
-.addEventListener("click",function(e){
+/* =========================
+   PROFILNI ULASHISH
+========================= */
 
-if(e.target===this){
-closeModal();
+function shareProfile(){
+
+ if(navigator.share){
+
+   navigator.share({
+
+     title:selectedBusiness.name,
+
+     text:
+       "BIZTOP biznes profili: " +
+       selectedBusiness.name
+
+   });
+
+ }else{
+
+   navigator.clipboard
+     ?.writeText(location.href)
+     .then(
+       () =>
+         alert(
+           "Profil havolasi nusxalandi."
+         )
+     );
+
+ }
+
 }
 
-});
 
-document.getElementById("addModal")
-.addEventListener("click",function(e){
+/* =========================
+   START
+========================= */
 
-if(e.target===this){
-closeAddBusiness();
-}
+renderCategories();
 
-});
+render();
 
-loadBusinesses();
-renderHome(businesses);
-showTop(3,document.querySelector(".top-tab"));
+renderProfile(selectedBusiness);
 
 </script>
 
 </body>
 </html>
-```0
