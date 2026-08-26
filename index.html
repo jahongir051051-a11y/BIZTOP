@@ -2039,6 +2039,19 @@ function createResultCard(
 }
 
 
+/*
+    MUHIM:
+    Biznes profil oynasida faqat:
+    - Manzil
+    - Telefon
+    - Ish vaqti
+
+    ko‘rsatiladi.
+
+    Kategoriya va "Biznes haqida"
+    profil oynasidan olib tashlangan.
+*/
+
 function openBusinessDetail(index){
 
     const business =
@@ -2053,6 +2066,19 @@ function openBusinessDetail(index){
         document.getElementById(
             "businessDetail"
         );
+
+
+    /*
+        Hozircha barcha bizneslar uchun
+        standart ish vaqti.
+
+        Keyinchalik biznes qo‘shish oynasiga
+        alohida "Ish vaqti" maydoni qo‘shamiz.
+    */
+
+    const workHours =
+        business.workHours ||
+        "09:00 – 22:00";
 
 
     detail.innerHTML = `
@@ -2086,20 +2112,6 @@ function openBusinessDetail(index){
 
         <div class="business-detail-info">
 
-            <div class="business-detail-row">
-
-                📁
-
-                <strong>
-                    Kategoriya:
-                </strong>
-
-                ${escapeHtml(
-                    business.category
-                )}
-
-            </div>
-
 
             <div class="business-detail-row">
 
@@ -2131,29 +2143,20 @@ function openBusinessDetail(index){
             </div>
 
 
-            ${
-                business.description
-                ?
-                `
-                <div class="business-detail-row">
+            <div class="business-detail-row">
 
-                    📝
+                🕐
 
-                    <strong>
-                        Biznes haqida:
-                    </strong>
+                <strong>
+                    Ish vaqti:
+                </strong>
 
-                    <br><br>
+                ${escapeHtml(
+                    workHours
+                )}
 
-                    ${escapeHtml(
-                        business.description
-                    )}
+            </div>
 
-                </div>
-                `
-                :
-                ""
-            }
 
         </div>
 
@@ -2498,7 +2501,9 @@ function addBusiness(event){
             category
         ),
 
-        description:description
+        description:description,
+
+        workHours:"09:00 – 22:00"
 
     };
 
