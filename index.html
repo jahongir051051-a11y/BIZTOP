@@ -45,6 +45,8 @@ header{
     align-items:center;
     justify-content:space-between;
     gap:20px;
+    position:relative;
+    z-index:50;
 }
 
 .logo{
@@ -76,6 +78,17 @@ header{
 .add-business-btn:hover{
     background:#0877ee;
     transform:translateY(-2px);
+}
+
+
+/* ================= PAGES ================= */
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
 }
 
 
@@ -374,6 +387,170 @@ main{
 }
 
 
+/* ================= TOP PAGE ================= */
+
+.top-page-header{
+    text-align:center;
+    padding:45px 20px 15px;
+}
+
+.top-page-header h1{
+    font-size:55px;
+    font-weight:900;
+}
+
+.top-page-header h1 span{
+    color:#258aff;
+}
+
+.top-page-header p{
+    margin-top:12px;
+    color:#b7c9e8;
+    font-size:19px;
+}
+
+.top-section{
+    padding-top:25px;
+}
+
+.top-empty{
+    background:#102d5b;
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+    color:#c5d5ee;
+    font-size:18px;
+}
+
+
+/* ================= PROFILE PAGE ================= */
+
+.profile-page{
+    padding:45px 20px;
+    max-width:800px;
+    margin:auto;
+}
+
+.profile-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.profile-icon{
+    width:110px;
+    height:110px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    background:#285f92;
+    border:5px solid #1684ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+}
+
+.profile-header h1{
+    font-size:42px;
+    font-weight:900;
+}
+
+.profile-header p{
+    margin-top:10px;
+    color:#b7c9e8;
+    font-size:18px;
+}
+
+.profile-card{
+    background:#285f92;
+    border:4px solid #1684ff;
+    border-radius:25px;
+    padding:25px;
+    margin-bottom:18px;
+}
+
+.profile-card h2{
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.profile-card p{
+    color:#dbeaff;
+    line-height:1.5;
+    font-size:17px;
+}
+
+.profile-action{
+    width:100%;
+    border:none;
+    background:#1684ff;
+    color:white;
+    padding:16px;
+    border-radius:18px;
+    font-size:19px;
+    font-weight:900;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.profile-action:hover{
+    background:#0878ef;
+}
+
+
+/* ================= BOTTOM NAVIGATION ================= */
+
+.bottom-nav{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:82px;
+    background:#061b46;
+    border-top:5px solid #1684ff;
+    display:flex;
+    align-items:stretch;
+    justify-content:space-around;
+    z-index:2000;
+    box-shadow:0 -5px 20px rgba(0,0,0,.25);
+}
+
+.nav-item{
+    flex:1;
+    border:none;
+    background:transparent;
+    color:#9db7df;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    transition:.2s;
+}
+
+.nav-item .nav-icon{
+    font-size:32px;
+    line-height:1;
+}
+
+.nav-item .nav-text{
+    font-size:17px;
+    font-weight:900;
+}
+
+.nav-item.active{
+    color:white;
+}
+
+.nav-item.active .nav-text{
+    color:#258aff;
+}
+
+.nav-item:hover{
+    background:#092653;
+}
+
+
 /* ================= MODAL ================= */
 
 .modal{
@@ -381,7 +558,7 @@ main{
     position:fixed;
     inset:0;
     background:rgba(0,0,0,.72);
-    z-index:1000;
+    z-index:3000;
     padding:25px;
     overflow-y:auto;
 }
@@ -535,53 +712,13 @@ footer{
 }
 
 
-/* ================= BOTTOM NAVIGATION ================= */
-
-.bottom-nav{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background:#061b46;
-    border-top:3px solid #1684ff;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    padding:10px 0;
-    z-index:999;
-}
-
-.nav-item{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    min-width:100px;
-    color:#9ecbff;
-    font-size:13px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.nav-icon{
-    font-size:24px;
-    margin-bottom:4px;
-}
-
-.nav-text{
-    font-size:14px;
-}
-
-.nav-item.active,
-.nav-item:hover{
-    color:#ffffff;
-}
-
-
 /* ================= MOBILE ================= */
 
 @media(max-width:600px){
+
+    body{
+        padding-bottom:82px;
+    }
 
     header{
         padding:13px 18px;
@@ -663,14 +800,6 @@ footer{
         line-height:1.1;
     }
 
-    .ranking-title{
-        gap:7px;
-    }
-
-    .ranking-title .trophy{
-        font-size:35px;
-    }
-
     .businesses{
         gap:10px;
         padding-bottom:10px;
@@ -711,6 +840,48 @@ footer{
         font-size:22px;
     }
 
+    .top-page-header{
+        padding:30px 16px 10px;
+    }
+
+    .top-page-header h1{
+        font-size:39px;
+    }
+
+    .top-page-header p{
+        font-size:16px;
+    }
+
+    .top-section{
+        padding-top:20px;
+    }
+
+    .profile-page{
+        padding:35px 16px;
+    }
+
+    .profile-header h1{
+        font-size:32px;
+    }
+
+    .profile-icon{
+        width:90px;
+        height:90px;
+        font-size:45px;
+    }
+
+    .profile-card{
+        padding:20px;
+    }
+
+    .nav-item .nav-icon{
+        font-size:29px;
+    }
+
+    .nav-item .nav-text{
+        font-size:15px;
+    }
+
     .modal{
         padding:15px;
     }
@@ -741,22 +912,6 @@ footer{
         font-size:15px;
     }
 
-    .bottom-nav{
-        padding:8px 0;
-    }
-
-    .nav-item{
-        min-width:80px;
-    }
-
-    .nav-icon{
-        font-size:22px;
-    }
-
-    .nav-text{
-        font-size:12px;
-    }
-
 }
 
 </style>
@@ -784,10 +939,16 @@ footer{
 </header>
 
 
-<!-- ================= MAIN ================= -->
+<!-- ===================================================== -->
+<!-- ================= BIZTOP PAGE ======================= -->
+<!-- ===================================================== -->
+
+<div
+    id="homePage"
+    class="page active"
+>
 
 <main>
-
 
 <section class="hero">
 
@@ -1064,54 +1225,174 @@ footer{
 </section>
 
 
-<!-- ================= TOP 10 ================= -->
+<footer>
 
-<section class="section" id="top10Section">
+    © 2026 BIZTOP — Bizneslarni topish va baholash platformasi
 
-    <h2 class="section-title ranking-title">
-
-        <span class="trophy">🏆</span>
-
-        <span>
-            TOP <span class="blue">10</span>
-        </span>
-
-    </h2>
-
-    <div
-        class="businesses"
-        id="top10"
-    ></div>
-
-</section>
-
-
-<!-- ================= TOP 20 ================= -->
-
-<section class="section">
-
-    <h2 class="section-title ranking-title">
-
-        <span class="trophy">🏆</span>
-
-        <span>
-            TOP <span class="blue">20</span>
-        </span>
-
-    </h2>
-
-    <div
-        class="businesses"
-        id="top20"
-    ></div>
-
-</section>
-
+</footer>
 
 </main>
 
+</div>
 
-<!-- ================= ADD BUSINESS MODAL ================= -->
+
+<!-- ===================================================== -->
+<!-- ================= TOP PAGE ========================== -->
+<!-- ===================================================== -->
+
+<div
+    id="topPage"
+    class="page"
+>
+
+    <div class="top-page-header">
+
+        <h1>
+            🏆 TOP <span>REYTING</span>
+        </h1>
+
+        <p>
+            Eng yuqori baholangan bizneslar
+        </p>
+
+    </div>
+
+
+    <!-- ================= TOP 10 ================= -->
+
+    <section class="section top-section">
+
+        <h2 class="section-title ranking-title">
+
+            <span class="trophy">
+                🏆
+            </span>
+
+            <span>
+                TOP <span class="blue">10</span>
+            </span>
+
+        </h2>
+
+        <div
+            class="businesses"
+            id="top10"
+        ></div>
+
+    </section>
+
+
+    <!-- ================= TOP 20 ================= -->
+
+    <section class="section top-section">
+
+        <h2 class="section-title ranking-title">
+
+            <span class="trophy">
+                🏆
+            </span>
+
+            <span>
+                TOP <span class="blue">20</span>
+            </span>
+
+        </h2>
+
+        <div
+            class="businesses"
+            id="top20"
+        ></div>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 BIZTOP — Bizneslarni topish va baholash platformasi
+
+    </footer>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- ================= PROFILE PAGE ====================== -->
+<!-- ===================================================== -->
+
+<div
+    id="profilePage"
+    class="page"
+>
+
+    <div class="profile-page">
+
+        <div class="profile-header">
+
+            <div class="profile-icon">
+                👤
+            </div>
+
+            <h1>
+                Profil
+            </h1>
+
+            <p>
+                BIZTOP profilingiz
+            </p>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <h2>
+                🏢 Biznes egasimisiz?
+            </h2>
+
+            <p>
+                Biznesingizni BIZTOP platformasiga qo‘shing
+                va mijozlar sizni oson topishiga yordam bering.
+            </p>
+
+            <button
+                class="profile-action"
+                onclick="openModal()"
+            >
+                ➕ Biznes qo‘shish
+            </button>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <h2>
+                🏆 BIZTOP haqida
+            </h2>
+
+            <p>
+                BIZTOP — foydalanuvchilarga eng yaxshi
+                bizneslarni topish, baholash va tanlash
+                imkonini beruvchi platforma.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        © 2026 BIZTOP — Bizneslarni topish va baholash platformasi
+
+    </footer>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- ================= ADD BUSINESS MODAL =============== -->
+<!-- ===================================================== -->
 
 <div
     class="modal"
@@ -1256,7 +1537,9 @@ footer{
 </div>
 
 
-<!-- ================= BUSINESS DETAIL MODAL ================= -->
+<!-- ===================================================== -->
+<!-- ================= BUSINESS DETAIL MODAL ============ -->
+<!-- ===================================================== -->
 
 <div
     class="modal"
@@ -1284,66 +1567,16 @@ footer{
 </div>
 
 
-<!-- ================= PROFILE MODAL ================= -->
-
-<div
-    class="modal"
-    id="profileModal"
->
-
-    <div class="modal-box">
-
-        <button
-            class="close-btn"
-            onclick="closeProfile()"
-        >
-            ×
-        </button>
-
-        <div class="business-detail">
-
-            <div class="business-detail-icon">
-                👤
-            </div>
-
-            <div class="business-detail-name">
-                Profil
-            </div>
-
-            <div class="business-detail-info">
-
-                <div class="business-detail-row">
-                    👤 <strong>Foydalanuvchi</strong>
-                </div>
-
-                <div class="business-detail-row">
-                    📊 <strong>BIZTOP profilingiz</strong>
-                </div>
-
-                <div class="business-detail-row">
-                    ⭐ Baholagan bizneslaringiz
-                </div>
-
-                <div class="business-detail-row">
-                    ❤️ Sevimli bizneslar
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
+<!-- ===================================================== -->
 <!-- ================= BOTTOM NAVIGATION ================= -->
+<!-- ===================================================== -->
 
 <nav class="bottom-nav">
 
-    <div
+    <button
         class="nav-item active"
-        onclick="goBiztop()"
+        id="navHome"
+        onclick="showPage('home')"
     >
 
         <div class="nav-icon">
@@ -1354,12 +1587,13 @@ footer{
             BIZTOP
         </div>
 
-    </div>
+    </button>
 
 
-    <div
+    <button
         class="nav-item"
-        onclick="goTop()"
+        id="navTop"
+        onclick="showPage('top')"
     >
 
         <div class="nav-icon">
@@ -1370,12 +1604,13 @@ footer{
             TOP
         </div>
 
-    </div>
+    </button>
 
 
-    <div
+    <button
         class="nav-item"
-        onclick="goProfile()"
+        id="navProfile"
+        onclick="showPage('profile')"
     >
 
         <div class="nav-icon">
@@ -1386,18 +1621,9 @@ footer{
             Profil
         </div>
 
-    </div>
+    </button>
 
 </nav>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    © 2026 BIZTOP — Bizneslarni topish va baholash platformasi
-
-</footer>
 
 
 <script>
@@ -1436,71 +1662,4 @@ const defaultBusinesses = [
         phone:"+998933333333",
         rating:4.7,
         icon:"☕",
-        description:"Qahva, shirinliklar va qulay muhit."
-    },
-
-    {
-        name:"BIZTOP Game Club",
-        category:"Game Club",
-        location:"To‘rtko‘l",
-        phone:"+998941234567",
-        rating:4.8,
-        icon:"🎮",
-        description:"Zamonaviy kompyuter va PlayStation o‘yinlari."
-    },
-
-    {
-        name:"BIZTOP Avto",
-        category:"Avto xizmat",
-        location:"To‘rtko‘l",
-        phone:"+998951234567",
-        rating:4.6,
-        icon:"🔧",
-        description:"Avtomobillarga texnik xizmat ko‘rsatish."
-    },
-
-    {
-        name:"BIZTOP Market",
-        category:"Supermarket",
-        location:"To‘rtko‘l",
-        phone:"+998991234567",
-        rating:4.7,
-        icon:"🏪",
-        description:"Kundalik oziq-ovqat va maishiy mahsulotlar."
-    },
-
-    {
-        name:"BIZTOP Do‘kon",
-        category:"Do‘kon",
-        location:"To‘rtko‘l",
-        phone:"+998901234567",
-        rating:4.8,
-        icon:"🛒",
-        description:"Turli xil mahsulotlar."
-    },
-
-    {
-        name:"BIZTOP Hotel",
-        category:"Mehmonxona",
-        location:"To‘rtko‘l",
-        phone:"+998911234567",
-        rating:4.5,
-        icon:"🏨",
-        description:"Mehmonlar uchun qulay xonalar."
-    },
-
-    {
-        name:"BIZTOP Clinic",
-        category:"Klinika",
-        location:"To‘rtko‘l",
-        phone:"+998921234567",
-        rating:4.7,
-        icon:"🏥",
-        description:"Tibbiy xizmatlar."
-    },
-
-    {
-        name:"BIZTOP Pharmacy",
-        category:"Dorixona",
-        location:"To‘rtko‘l",
-        phone:"+998931234567",
+        description:"Qah
