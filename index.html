@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>BIZTOP — Eng yaxshi brendlarni toping</title>
 
 <style>
@@ -26,14 +25,9 @@ body{
     padding-bottom:95px;
 }
 
-button,
-input,
-select,
-textarea{
+button,input,select,textarea{
     font-family:inherit;
 }
-
-/* ================= HEADER ================= */
 
 header{
     width:100%;
@@ -77,8 +71,6 @@ header{
     transform:translateY(-2px);
 }
 
-/* ================= PAGES ================= */
-
 .page{
     display:none;
     width:100%;
@@ -87,8 +79,6 @@ header{
 .page.active{
     display:block;
 }
-
-/* ================= HERO ================= */
 
 .hero{
     text-align:center;
@@ -113,8 +103,6 @@ header{
     font-size:24px;
     line-height:1.5;
 }
-
-/* ================= SEARCH ================= */
 
 .search-area{
     max-width:900px;
@@ -145,14 +133,11 @@ header{
     font-size:28px;
     font-weight:900;
     cursor:pointer;
-    transition:.2s;
 }
 
 .search-btn:hover{
     background:#0878ef;
 }
-
-/* ================= SECTIONS ================= */
 
 .section{
     width:100%;
@@ -165,8 +150,6 @@ header{
     margin-bottom:28px;
 }
 
-/* ================= CATEGORIES ================= */
-
 .categories-wrapper{
     width:100%;
     overflow:hidden;
@@ -178,14 +161,10 @@ header{
     grid-auto-flow:column;
     grid-auto-columns:180px;
     gap:18px;
-
     overflow-x:auto;
     overflow-y:hidden;
-
     padding:8px 5px 18px;
-
     scroll-behavior:smooth;
-
     scrollbar-width:thin;
     scrollbar-color:#1684ff #102d5b;
 }
@@ -206,35 +185,22 @@ header{
 
 .category{
     height:170px;
-
     border:5px solid #1684ff;
     border-radius:28px;
-
     background:#285f92;
-
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-
     cursor:pointer;
-
     transition:.2s;
-
     padding:10px;
-
-    user-select:none;
 }
 
 .category:hover{
     transform:translateY(-4px);
     background:#3372a9;
-}
-
-.category:active{
-    transform:scale(.96);
 }
 
 .category .icon{
@@ -248,8 +214,6 @@ header{
     font-weight:800;
     line-height:1.15;
 }
-
-/* ================= RESULTS ================= */
 
 #resultsSection{
     display:none;
@@ -302,8 +266,6 @@ header{
     color:#c5d5ee;
 }
 
-/* ================= TOP ================= */
-
 .ranking-title{
     display:flex;
     align-items:center;
@@ -321,13 +283,9 @@ header{
 .businesses{
     display:flex;
     gap:20px;
-
     overflow-x:auto;
-
     padding:5px 5px 20px;
-
     scroll-behavior:smooth;
-
     scrollbar-width:thin;
     scrollbar-color:#1684ff #102d5b;
 }
@@ -348,28 +306,18 @@ header{
 
 .business-card{
     flex:0 0 430px;
-
     min-height:260px;
-
     background:#285f92;
-
     border:5px solid #1684ff;
     border-radius:28px;
-
     padding:22px;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
 .business-card:hover{
     transform:translateY(-4px);
     background:#3372a9;
-}
-
-.business-card:active{
-    transform:scale(.98);
 }
 
 .business-name{
@@ -382,17 +330,13 @@ header{
     display:flex;
     flex-direction:column;
     gap:9px;
-
     color:#e4efff;
-
     font-size:20px;
 }
 
 .business-rating{
     margin-top:18px;
-
     color:#ffd21c;
-
     font-size:27px;
     font-weight:900;
 }
@@ -405,8 +349,6 @@ header{
 .phone-link:hover{
     color:#54a7ff;
 }
-
-/* ================= TOP PAGE ================= */
 
 .top-page-header{
     text-align:center;
@@ -432,8 +374,6 @@ header{
     padding-top:15px;
 }
 
-/* ================= PROFILE ================= */
-
 .profile-page{
     padding:40px 20px 60px;
     text-align:center;
@@ -442,19 +382,13 @@ header{
 .profile-header-icon{
     width:120px;
     height:120px;
-
     margin:0 auto 20px;
-
     border-radius:50%;
-
     background:#285f92;
-
     border:5px solid #1684ff;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     font-size:65px;
 }
 
@@ -472,22 +406,16 @@ header{
 .profile-box{
     max-width:600px;
     margin:auto;
-
     background:#285f92;
-
     border:4px solid #1684ff;
     border-radius:25px;
-
     padding:25px;
-
     text-align:left;
 }
 
 .profile-row{
     padding:17px 5px;
-
     border-bottom:1px solid #4d79a8;
-
     font-size:19px;
 }
 
@@ -497,23 +425,14 @@ header{
 
 .profile-action{
     width:100%;
-
     border:none;
-
     border-radius:18px;
-
     padding:16px;
-
     margin-top:15px;
-
     background:#1684ff;
-
     color:white;
-
     font-size:19px;
-
     font-weight:900;
-
     cursor:pointer;
 }
 
@@ -521,45 +440,120 @@ header{
     background:#0878ef;
 }
 
-/* ================= MODAL ================= */
+/* ============================= */
+/* BIZNES PROFIL SAHIFASI */
+/* ============================= */
+
+.business-profile-page{
+    padding:35px 20px 60px;
+    max-width:800px;
+    margin:auto;
+}
+
+.business-profile-back{
+    border:none;
+    background:#1684ff;
+    color:white;
+    padding:13px 22px;
+    border-radius:15px;
+    font-size:18px;
+    font-weight:800;
+    cursor:pointer;
+    margin-bottom:25px;
+}
+
+.business-profile-back:hover{
+    background:#0878ef;
+}
+
+.business-profile-card{
+    background:#285f92;
+    border:5px solid #1684ff;
+    border-radius:30px;
+    padding:30px;
+    text-align:center;
+}
+
+.business-profile-icon{
+    font-size:90px;
+    margin-bottom:15px;
+}
+
+.business-profile-name{
+    font-size:38px;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.business-profile-rating{
+    color:#ffd21c;
+    font-size:32px;
+    font-weight:900;
+    margin-bottom:25px;
+}
+
+.business-profile-info{
+    background:#092653;
+    border-radius:22px;
+    padding:22px;
+    text-align:left;
+}
+
+.business-profile-row{
+    font-size:20px;
+    padding:14px 0;
+    border-bottom:1px solid #4d79a8;
+}
+
+.business-profile-row:last-child{
+    border-bottom:none;
+}
+
+.business-profile-call{
+    display:block;
+    width:100%;
+    margin-top:22px;
+    padding:17px;
+    border-radius:18px;
+    background:#1684ff;
+    color:white;
+    text-decoration:none;
+    font-size:21px;
+    font-weight:900;
+    text-align:center;
+}
+
+.business-profile-call:hover{
+    background:#0878ef;
+}
+
+/* ============================= */
+/* ESKI MODAL */
+/* ============================= */
 
 .modal{
     display:none;
-
     position:fixed;
-
     inset:0;
-
     background:rgba(0,0,0,.72);
-
     z-index:1000;
-
     padding:25px;
-
     overflow-y:auto;
 }
 
 .modal.show{
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 }
 
 .modal-box{
     width:100%;
-
     max-width:600px;
-
     background:#092653;
-
     border:4px solid #1684ff;
-
     border-radius:30px;
-
     padding:30px;
-
     position:relative;
 }
 
@@ -570,18 +564,12 @@ header{
 
 .close-btn{
     position:absolute;
-
     top:14px;
     right:18px;
-
     border:none;
-
     background:none;
-
     color:white;
-
     font-size:35px;
-
     cursor:pointer;
 }
 
@@ -591,11 +579,8 @@ header{
 
 .form-group label{
     display:block;
-
     font-size:17px;
-
     font-weight:700;
-
     margin-bottom:7px;
 }
 
@@ -603,15 +588,10 @@ header{
 .form-group select,
 .form-group textarea{
     width:100%;
-
     border:none;
-
     outline:none;
-
     border-radius:15px;
-
     padding:14px;
-
     font-size:17px;
 }
 
@@ -622,29 +602,15 @@ header{
 
 .submit-btn{
     width:100%;
-
     border:none;
-
     border-radius:18px;
-
     padding:16px;
-
     background:#258aff;
-
     color:white;
-
     font-size:20px;
-
     font-weight:900;
-
     cursor:pointer;
 }
-
-.submit-btn:hover{
-    background:#0878ef;
-}
-
-/* ================= BUSINESS DETAIL ================= */
 
 .business-detail{
     text-align:center;
@@ -663,21 +629,15 @@ header{
 
 .business-detail-info{
     text-align:left;
-
     background:#285f92;
-
     border-radius:20px;
-
     padding:20px;
-
     margin-top:15px;
 }
 
 .business-detail-row{
     font-size:19px;
-
     margin-bottom:14px;
-
     color:#e7f1ff;
 }
 
@@ -687,37 +647,23 @@ header{
 
 .detail-rating{
     color:#ffd21c;
-
     font-size:30px;
-
     font-weight:900;
-
     margin:20px 0;
 }
 
 .call-btn{
     display:block;
-
     width:100%;
-
     border:none;
-
     border-radius:18px;
-
     background:#1684ff;
-
     color:white;
-
     text-decoration:none;
-
     padding:16px;
-
     font-size:20px;
-
     font-weight:900;
-
     margin-top:20px;
-
     text-align:center;
 }
 
@@ -725,55 +671,33 @@ header{
     background:#0878ef;
 }
 
-/* ================= BOTTOM NAV ================= */
-
 .bottom-nav{
     position:fixed;
-
     left:0;
     right:0;
     bottom:0;
-
     height:92px;
-
     background:#061b46;
-
     border-top:5px solid #1684ff;
-
     z-index:900;
-
     display:flex;
-
     justify-content:space-around;
-
     align-items:center;
-
     box-shadow:0 -5px 20px rgba(0,0,0,.25);
 }
 
 .nav-btn{
     width:33.333%;
-
     height:100%;
-
     border:none;
-
     background:transparent;
-
     color:#9eb7dc;
-
     cursor:pointer;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
-
     gap:3px;
-
     transition:.2s;
 }
 
@@ -795,23 +719,14 @@ header{
     color:#258aff;
 }
 
-/* ================= FOOTER ================= */
-
 footer{
     background:#061735;
-
     padding:40px 20px;
-
     text-align:center;
-
     color:#a9bddf;
-
     font-size:18px;
-
     line-height:1.5;
 }
-
-/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
@@ -1002,6 +917,35 @@ footer{
         font-size:16px;
     }
 
+    .business-profile-page{
+        padding:25px 16px 45px;
+    }
+
+    .business-profile-card{
+        padding:22px 16px;
+        border-width:4px;
+    }
+
+    .business-profile-icon{
+        font-size:70px;
+    }
+
+    .business-profile-name{
+        font-size:29px;
+    }
+
+    .business-profile-rating{
+        font-size:27px;
+    }
+
+    .business-profile-row{
+        font-size:17px;
+    }
+
+    .business-profile-call{
+        font-size:18px;
+    }
+
     .bottom-nav{
         height:88px;
     }
@@ -1025,8 +969,6 @@ footer{
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header>
 
     <div class="logo">
@@ -1034,7 +976,6 @@ footer{
     </div>
 
     <button
-        type="button"
         class="add-business-btn"
         onclick="openModal()"
     >
@@ -1042,8 +983,6 @@ footer{
     </button>
 
 </header>
-
-<!-- ================= MAIN ================= -->
 
 <main>
 
@@ -1066,20 +1005,18 @@ footer{
 
     </section>
 
-    <!-- SEARCH -->
-
     <section class="search-area">
 
         <input
             id="searchInput"
             class="search-input"
             type="text"
-            placeholder="Restoran, kafe, do‘kon yoki boshqa"
+            placeholder="Restoran, kafe, do‘kon yoki boshqa."
             onkeydown="handleEnter(event)"
+            oninput="handleSearchInput()"
         >
 
         <button
-            type="button"
             class="search-btn"
             onclick="searchBusinesses()"
         >
@@ -1087,8 +1024,6 @@ footer{
         </button>
 
     </section>
-
-    <!-- CATEGORIES -->
 
     <section class="section">
 
@@ -1100,134 +1035,112 @@ footer{
 
             <div class="categories">
 
-                <div class="category"
-                     onclick="selectCategory('Go‘zallik saloni')">
+                <div class="category" onclick="selectCategory('Go‘zallik saloni')">
                     <div class="icon">💇‍♀️</div>
                     <div class="name">Go‘zallik saloni</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Restoran')">
+                <div class="category" onclick="selectCategory('Restoran')">
                     <div class="icon">🍽️</div>
                     <div class="name">Restoran</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Do‘kon')">
+                <div class="category" onclick="selectCategory('Do‘kon')">
                     <div class="icon">🛒</div>
                     <div class="name">Do‘kon</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Kafe')">
+                <div class="category" onclick="selectCategory('Kafe')">
                     <div class="icon">☕</div>
                     <div class="name">Kafe</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Avto xizmat')">
+                <div class="category" onclick="selectCategory('Avto xizmat')">
                     <div class="icon">🔧</div>
                     <div class="name">Avto xizmat</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Mehmonxona')">
+                <div class="category" onclick="selectCategory('Mehmonxona')">
                     <div class="icon">🏨</div>
                     <div class="name">Mehmonxona</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Klinika')">
+                <div class="category" onclick="selectCategory('Klinika')">
                     <div class="icon">🏥</div>
                     <div class="name">Klinika</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Dorixona')">
+                <div class="category" onclick="selectCategory('Dorixona')">
                     <div class="icon">💊</div>
                     <div class="name">Dorixona</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Kiyim-kechak')">
+                <div class="category" onclick="selectCategory('Kiyim-kechak')">
                     <div class="icon">👕</div>
                     <div class="name">Kiyim-kechak</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Nonvoyxona')">
+                <div class="category" onclick="selectCategory('Nonvoyxona')">
                     <div class="icon">🥖</div>
                     <div class="name">Nonvoyxona</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Supermarket')">
+                <div class="category" onclick="selectCategory('Supermarket')">
                     <div class="icon">🏪</div>
                     <div class="name">Supermarket</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Telefon/texnika')">
+                <div class="category" onclick="selectCategory('Telefon/texnika')">
                     <div class="icon">📱</div>
                     <div class="name">Telefon/texnika</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Kompyuter')">
+                <div class="category" onclick="selectCategory('Kompyuter')">
                     <div class="icon">💻</div>
                     <div class="name">Kompyuter</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Qurilish')">
+                <div class="category" onclick="selectCategory('Qurilish')">
                     <div class="icon">🏗️</div>
                     <div class="name">Qurilish</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Mebel')">
+                <div class="category" onclick="selectCategory('Mebel')">
                     <div class="icon">🪑</div>
                     <div class="name">Mebel</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Taksi')">
+                <div class="category" onclick="selectCategory('Taksi')">
                     <div class="icon">🚕</div>
                     <div class="name">Taksi</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('O‘quv markazi')">
+                <div class="category" onclick="selectCategory('O‘quv markazi')">
                     <div class="icon">🎓</div>
                     <div class="name">O‘quv markazi</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Foto/video')">
+                <div class="category" onclick="selectCategory('Foto/video')">
                     <div class="icon">📸</div>
                     <div class="name">Foto/video</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Gul do‘koni')">
+                <div class="category" onclick="selectCategory('Gul do‘koni')">
                     <div class="icon">💐</div>
                     <div class="name">Gul do‘koni</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Chorvachilik')">
+                <div class="category" onclick="selectCategory('Chorvachilik')">
                     <div class="icon">🐄</div>
                     <div class="name">Chorvachilik</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Qishloq xo‘jaligi')">
+                <div class="category" onclick="selectCategory('Qishloq xo‘jaligi')">
                     <div class="icon">🌾</div>
                     <div class="name">Qishloq xo‘jaligi</div>
                 </div>
 
-                <div class="category"
-                     onclick="selectCategory('Game Club')">
+                <div class="category" onclick="selectCategory('Game Club')">
                     <div class="icon">🎮</div>
                     <div class="name">Game Club</div>
                 </div>
@@ -1238,25 +1151,18 @@ footer{
 
     </section>
 
-    <!-- RESULTS -->
-
-    <section
-        class="section"
-        id="resultsSection"
-    >
+    <section class="section" id="resultsSection">
 
         <h2 class="section-title">
             🔎 Qidiruv natijalari
         </h2>
 
-        <div
-            class="results"
-            id="results"
-        ></div>
+        <div class="results" id="results"></div>
 
     </section>
 
 </div>
+
 
 <!-- ================= TOP PAGE ================= -->
 
@@ -1265,11 +1171,11 @@ footer{
     <section class="top-page-header">
 
         <h1>
-            🏆 TOP <span>brendlar</span>
+            🏆 TOP <span>bizneslar</span>
         </h1>
 
         <p>
-            Eng yuqori baholangan brendlar
+            Eng yuqori baholangan bizneslar
         </p>
 
     </section>
@@ -1278,9 +1184,7 @@ footer{
 
         <h2 class="section-title ranking-title">
 
-            <span class="trophy">
-                🏆
-            </span>
+            <span class="trophy">🏆</span>
 
             <span>
                 TOP <span class="blue">10</span>
@@ -1288,10 +1192,7 @@ footer{
 
         </h2>
 
-        <div
-            class="businesses"
-            id="top10"
-        ></div>
+        <div class="businesses" id="top10"></div>
 
     </section>
 
@@ -1299,9 +1200,7 @@ footer{
 
         <h2 class="section-title ranking-title">
 
-            <span class="trophy">
-                🏆
-            </span>
+            <span class="trophy">🏆</span>
 
             <span>
                 TOP <span class="blue">20</span>
@@ -1309,16 +1208,14 @@ footer{
 
         </h2>
 
-        <div
-            class="businesses"
-            id="top20"
-        ></div>
+        <div class="businesses" id="top20"></div>
 
     </section>
 
 </div>
 
-<!-- ================= PROFILE ================= -->
+
+<!-- ================= USER PROFILE ================= -->
 
 <div id="profilePage" class="page">
 
@@ -1357,7 +1254,6 @@ footer{
             </div>
 
             <button
-                type="button"
                 class="profile-action"
                 onclick="openModal()"
             >
@@ -1370,9 +1266,31 @@ footer{
 
 </div>
 
+
+<!-- ================= BUSINESS PROFILE ================= -->
+
+<div id="businessProfilePage" class="page">
+
+    <section class="business-profile-page">
+
+        <button
+            class="business-profile-back"
+            onclick="showPage('home')"
+        >
+            ← Orqaga
+        </button>
+
+        <div
+            id="businessProfileContent"
+            class="business-profile-card"
+        ></div>
+
+    </section>
+
+</div>
+
 </main>
 
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1381,17 +1299,14 @@ footer{
 
 </footer>
 
+
 <!-- ================= ADD BUSINESS MODAL ================= -->
 
-<div
-    class="modal"
-    id="businessModal"
->
+<div class="modal" id="businessModal">
 
     <div class="modal-box">
 
         <button
-            type="button"
             class="close-btn"
             onclick="closeModal()"
         >
@@ -1402,10 +1317,7 @@ footer{
             ➕ Biznes qo‘shish
         </h2>
 
-        <form
-            id="businessForm"
-            onsubmit="addBusiness(event)"
-        >
+        <form onsubmit="addBusiness(event)">
 
             <div class="form-group">
 
@@ -1520,17 +1432,14 @@ footer{
 
 </div>
 
-<!-- ================= DETAIL MODAL ================= -->
 
-<div
-    class="modal"
-    id="businessDetailModal"
->
+<!-- ================= OLD DETAIL MODAL ================= -->
+
+<div class="modal" id="businessDetailModal">
 
     <div class="modal-box">
 
         <button
-            type="button"
             class="close-btn"
             onclick="closeBusinessDetail()"
         >
@@ -1546,12 +1455,12 @@ footer{
 
 </div>
 
+
 <!-- ================= BOTTOM NAV ================= -->
 
 <nav class="bottom-nav">
 
     <button
-        type="button"
         id="navHome"
         class="nav-btn active"
         onclick="showPage('home')"
@@ -1567,8 +1476,8 @@ footer{
 
     </button>
 
+
     <button
-        type="button"
         id="navTop"
         class="nav-btn"
         onclick="showPage('top')"
@@ -1584,8 +1493,8 @@ footer{
 
     </button>
 
+
     <button
-        type="button"
         id="navProfile"
         class="nav-btn"
         onclick="showPage('profile')"
@@ -1603,11 +1512,12 @@ footer{
 
 </nav>
 
+
 <script>
 
-/* ================================================= */
-/* ================= DATA ========================== */
-/* ================================================= */
+/* ============================= */
+/* DEFAULT BIZNESLAR */
+/* ============================= */
 
 const defaultBusinesses = [
 
@@ -1833,18 +1743,22 @@ const defaultBusinesses = [
 
 ];
 
-/* ================================================= */
-/* ================= STORAGE ======================= */
-/* ================================================= */
+
+/* ============================= */
+/* LOCAL STORAGE */
+/* ============================= */
 
 let businesses = loadBusinesses();
+
 
 function loadBusinesses(){
 
     try{
 
         const saved =
-            localStorage.getItem("biztop_businesses");
+            localStorage.getItem(
+                "biztop_businesses"
+            );
 
         if(saved){
 
@@ -1852,9 +1766,32 @@ function loadBusinesses(){
                 JSON.parse(saved);
 
             if(
-                Array.isArray(parsed) &&
-                parsed.length > 0
+                Array.isArray(parsed)
+                &&
+                parsed.length
             ){
+
+                parsed.forEach(function(business){
+
+                    if(
+                        business.category === "Go‘zallik"
+                    ){
+
+                        business.category =
+                            "Go‘zallik saloni";
+
+                    }
+
+                    if(
+                        business.category === "Go'zallik"
+                    ){
+
+                        business.category =
+                            "Go‘zallik saloni";
+
+                    }
+
+                });
 
                 return parsed;
 
@@ -1874,6 +1811,7 @@ function loadBusinesses(){
     return [...defaultBusinesses];
 
 }
+
 
 function saveBusinesses(){
 
@@ -1895,100 +1833,100 @@ function saveBusinesses(){
 
 }
 
-/* ================================================= */
-/* ================= PAGE BUTTONS ================== */
-/* ================================================= */
+
+/* ============================= */
+/* SAHIFA ALMASHTIRISH */
+/* ============================= */
 
 function showPage(page){
 
-    const pages = [
-        "homePage",
-        "topPage",
-        "profilePage"
-    ];
+    const homePage =
+        document.getElementById("homePage");
 
-    pages.forEach(function(id){
+    const topPage =
+        document.getElementById("topPage");
 
-        const element =
-            document.getElementById(id);
+    const profilePage =
+        document.getElementById("profilePage");
 
-        if(element){
+    const businessProfilePage =
+        document.getElementById(
+            "businessProfilePage"
+        );
 
-            element.classList.remove("active");
+    const navHome =
+        document.getElementById("navHome");
 
-        }
+    const navTop =
+        document.getElementById("navTop");
 
-    });
+    const navProfile =
+        document.getElementById("navProfile");
 
-    const navs = [
-        "navHome",
-        "navTop",
-        "navProfile"
-    ];
 
-    navs.forEach(function(id){
+    homePage.classList.remove("active");
 
-        const element =
-            document.getElementById(id);
+    topPage.classList.remove("active");
 
-        if(element){
+    profilePage.classList.remove("active");
 
-            element.classList.remove("active");
+    businessProfilePage.classList.remove(
+        "active"
+    );
 
-        }
 
-    });
+    navHome.classList.remove("active");
+
+    navTop.classList.remove("active");
+
+    navProfile.classList.remove("active");
+
 
     if(page === "home"){
 
-        document
-            .getElementById("homePage")
-            .classList.add("active");
+        homePage.classList.add("active");
 
-        document
-            .getElementById("navHome")
-            .classList.add("active");
+        navHome.classList.add("active");
 
     }
 
+
     if(page === "top"){
 
-        document
-            .getElementById("topPage")
-            .classList.add("active");
+        topPage.classList.add("active");
 
-        document
-            .getElementById("navTop")
-            .classList.add("active");
+        navTop.classList.add("active");
 
         renderRankings();
 
     }
 
+
     if(page === "profile"){
 
-        document
-            .getElementById("profilePage")
-            .classList.add("active");
+        profilePage.classList.add("active");
 
-        document
-            .getElementById("navProfile")
-            .classList.add("active");
+        navProfile.classList.add("active");
 
         updateProfile();
 
     }
 
+
     window.scrollTo({
+
         top:0,
+
         behavior:"smooth"
+
     });
 
 }
 
-/* ================================================= */
-/* ================= SEARCH ======================== */
-/* ================================================= */
+
+/* ============================= */
+/* TEXT NORMALIZE */
+/* ============================= */
 
 function normalizeText(text){
 
@@ -2000,6 +1938,11 @@ function normalizeText(text){
         .replace(/`/g,"'");
 
 }
+
+
+/* ============================= */
+/* SEARCH */
+/* ============================= */
 
 function handleEnter(event){
 
@@ -2013,56 +1956,103 @@ function handleEnter(event){
 
 }
 
+
+function handleSearchInput(){
+
+    const input =
+        document
+        .getElementById("searchInput")
+        .value
+        .trim();
+
+    const resultsSection =
+        document.getElementById(
+            "resultsSection"
+        );
+
+    if(!input){
+
+        resultsSection.style.display =
+            "none";
+
+    }
+
+}
+
+
 function searchBusinesses(){
 
     const inputElement =
-        document.getElementById("searchInput");
+        document.getElementById(
+            "searchInput"
+        );
 
     const originalInput =
         inputElement.value.trim();
 
     const input =
-        normalizeText(originalInput);
+        normalizeText(
+            originalInput
+        );
 
     const resultsSection =
-        document.getElementById("resultsSection");
+        document.getElementById(
+            "resultsSection"
+        );
 
     const results =
-        document.getElementById("results");
+        document.getElementById(
+            "results"
+        );
+
 
     if(!input){
 
-        resultsSection.style.display = "none";
+        resultsSection.style.display =
+            "none";
 
         return;
 
     }
 
+
     const filtered =
-        businesses.filter(function(business){
+        businesses.filter(
+            function(business){
 
-            const name =
-                normalizeText(business.name);
+                const name =
+                    normalizeText(
+                        business.name
+                    );
 
-            const category =
-                normalizeText(business.category);
+                const category =
+                    normalizeText(
+                        business.category
+                    );
 
-            const location =
-                normalizeText(business.location);
+                const location =
+                    normalizeText(
+                        business.location
+                    );
 
-            const description =
-                normalizeText(business.description);
+                const description =
+                    normalizeText(
+                        business.description
+                    );
 
-            return(
-                name.includes(input) ||
-                category.includes(input) ||
-                location.includes(input) ||
-                description.includes(input)
-            );
+                return(
+                    name.includes(input) ||
+                    category.includes(input) ||
+                    location.includes(input) ||
+                    description.includes(input)
+                );
 
-        });
+            }
+        );
+
 
     results.innerHTML = "";
+
 
     if(filtered.length === 0){
 
@@ -2087,13 +2077,16 @@ function searchBusinesses(){
             .sort(function(a,b){
 
                 return Number(b.rating)
-                    - Number(a.rating);
+                    -
+                    Number(a.rating);
 
             })
             .forEach(function(business){
 
                 const index =
-                    businesses.indexOf(business);
+                    businesses.indexOf(
+                        business
+                    );
 
                 results.innerHTML +=
                     createResultCard(
@@ -2105,39 +2098,42 @@ function searchBusinesses(){
 
     }
 
-    resultsSection.style.display = "block";
 
-    setTimeout(function(){
+    resultsSection.style.display =
+        "block";
 
-        resultsSection.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
 
-    },100);
+    resultsSection.scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"start"
+
+    });
 
 }
 
-/* ================================================= */
-/* ================= CATEGORY BUTTONS ============= */
-/* ================================================= */
+
+/* ============================= */
+/* CATEGORY SEARCH */
+/* ============================= */
 
 function selectCategory(category){
 
     showPage("home");
 
-    const input =
-        document.getElementById("searchInput");
-
-    input.value = category;
+    document
+        .getElementById("searchInput")
+        .value = category;
 
     searchBusinesses();
 
 }
 
-/* ================================================= */
-/* ================= RESULT CARD =================== */
-/* ================================================= */
+
+/* ============================= */
+/* SEARCH CARD */
+/* ============================= */
 
 function createResultCard(
     business,
@@ -2205,14 +2201,12 @@ function createResultCard(
             ${
                 business.description
                 ?
-                `
-                <p>
+                `<p>
                     📝
                     ${escapeHtml(
                         business.description
                     )}
-                </p>
-                `
+                </p>`
                 :
                 ""
             }
@@ -2229,7 +2223,7 @@ function createResultCard(
 
             <div class="click-hint">
 
-                👆 Batafsil ma’lumot uchun bosing
+                👆 Batafsil profil uchun bosing
 
             </div>
 
@@ -2239,14 +2233,16 @@ function createResultCard(
 
 }
 
-/* ================================================= */
-/* ================= BUSINESS DETAIL =============== */
-/* ================================================= */
+
+/* ============================= */
+/* BIZNES PROFILI */
+/* ============================= */
 
 function openBusinessDetail(index){
 
     const business =
         businesses[index];
+
 
     if(!business){
 
@@ -2254,20 +2250,23 @@ function openBusinessDetail(index){
 
     }
 
-    const detail =
+
+    const content =
         document.getElementById(
-            "businessDetail"
+            "businessProfileContent"
         );
 
-    detail.innerHTML = `
 
-        <div class="business-detail-icon">
+    content.innerHTML = `
+
+        <div class="business-profile-icon">
 
             ${business.icon || "🏢"}
 
         </div>
 
-        <div class="business-detail-name">
+
+        <div class="business-profile-name">
 
             ${escapeHtml(
                 business.name
@@ -2275,7 +2274,8 @@ function openBusinessDetail(index){
 
         </div>
 
-        <div class="detail-rating">
+
+        <div class="business-profile-rating">
 
             ⭐
 
@@ -2285,9 +2285,11 @@ function openBusinessDetail(index){
 
         </div>
 
-        <div class="business-detail-info">
 
-            <div class="business-detail-row">
+        <div class="business-profile-info">
+
+
+            <div class="business-profile-row">
 
                 📁
 
@@ -2301,7 +2303,8 @@ function openBusinessDetail(index){
 
             </div>
 
-            <div class="business-detail-row">
+
+            <div class="business-profile-row">
 
                 📍
 
@@ -2315,7 +2318,8 @@ function openBusinessDetail(index){
 
             </div>
 
-            <div class="business-detail-row">
+
+            <div class="business-profile-row">
 
                 📞
 
@@ -2329,11 +2333,12 @@ function openBusinessDetail(index){
 
             </div>
 
+
             ${
                 business.description
                 ?
                 `
-                <div class="business-detail-row">
+                <div class="business-profile-row">
 
                     📝
 
@@ -2353,10 +2358,12 @@ function openBusinessDetail(index){
                 ""
             }
 
+
         </div>
 
+
         <a
-            class="call-btn"
+            class="business-profile-call"
             href="tel:${escapeHtml(
                 business.phone
             )}"
@@ -2368,13 +2375,69 @@ function openBusinessDetail(index){
 
     `;
 
-    document
-        .getElementById(
-            "businessDetailModal"
-        )
-        .classList.add("show");
+
+    showBusinessProfilePage();
 
 }
+
+
+/* ============================= */
+/* BIZNES PROFILINI OCHISH */
+/* ============================= */
+
+function showBusinessProfilePage(){
+
+    document
+        .getElementById("homePage")
+        .classList.remove("active");
+
+
+    document
+        .getElementById("topPage")
+        .classList.remove("active");
+
+
+    document
+        .getElementById("profilePage")
+        .classList.remove("active");
+
+
+    document
+        .getElementById(
+            "businessProfilePage"
+        )
+        .classList.add("active");
+
+
+    document
+        .getElementById("navHome")
+        .classList.remove("active");
+
+
+    document
+        .getElementById("navTop")
+        .classList.remove("active");
+
+
+    document
+        .getElementById("navProfile")
+        .classList.remove("active");
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* ============================= */
+/* OLD DETAIL MODAL CLOSE */
+/* ============================= */
 
 function closeBusinessDetail(){
 
@@ -2386,9 +2449,10 @@ function closeBusinessDetail(){
 
 }
 
-/* ================================================= */
-/* ================= TOP RANKINGS ================== */
-/* ================================================= */
+
+/* ============================= */
+/* RANKING */
+/* ============================= */
 
 function renderRankings(){
 
@@ -2397,9 +2461,11 @@ function renderRankings(){
         .sort(function(a,b){
 
             return Number(b.rating)
-                - Number(a.rating);
+                -
+                Number(a.rating);
 
         });
+
 
     const top10 =
         sorted.slice(0,10);
@@ -2407,26 +2473,40 @@ function renderRankings(){
     const top20 =
         sorted.slice(0,20);
 
+
     const top10Element =
-        document.getElementById("top10");
+        document.getElementById(
+            "top10"
+        );
 
     const top20Element =
-        document.getElementById("top20");
+        document.getElementById(
+            "top20"
+        );
 
-    if(!top10Element || !top20Element){
+
+    if(
+        !top10Element ||
+        !top20Element
+    ){
 
         return;
 
     }
 
+
     top10Element.innerHTML = "";
 
     top20Element.innerHTML = "";
 
+
     top10.forEach(function(business){
 
         const index =
-            businesses.indexOf(business);
+            businesses.indexOf(
+                business
+            );
+
 
         top10Element.innerHTML +=
             createBusinessCard(
@@ -2436,10 +2516,14 @@ function renderRankings(){
 
     });
 
+
     top20.forEach(function(business){
 
         const index =
-            businesses.indexOf(business);
+            businesses.indexOf(
+                business
+            );
+
 
         top20Element.innerHTML +=
             createBusinessCard(
@@ -2450,6 +2534,11 @@ function renderRankings(){
     });
 
 }
+
+
+/* ============================= */
+/* TOP BIZNES CARD */
+/* ============================= */
 
 function createBusinessCard(
     business,
@@ -2473,6 +2562,7 @@ function createBusinessCard(
 
             </div>
 
+
             <div class="business-info">
 
                 <div>
@@ -2485,6 +2575,7 @@ function createBusinessCard(
 
                 </div>
 
+
                 <div>
 
                     📍
@@ -2494,6 +2585,7 @@ function createBusinessCard(
                     )}
 
                 </div>
+
 
                 <div
                     onclick="event.stopPropagation()"
@@ -2518,6 +2610,7 @@ function createBusinessCard(
 
             </div>
 
+
             <div class="business-rating">
 
                 ⭐
@@ -2534,9 +2627,10 @@ function createBusinessCard(
 
 }
 
-/* ================================================= */
-/* ================= PROFILE ======================= */
-/* ================================================= */
+
+/* ============================= */
+/* PROFILE */
+/* ============================= */
 
 function updateProfile(){
 
@@ -2544,6 +2638,7 @@ function updateProfile(){
         document.getElementById(
             "profileBusinessCount"
         );
+
 
     if(counter){
 
@@ -2554,15 +2649,17 @@ function updateProfile(){
 
 }
 
-/* ================================================= */
-/* ================= PHONE ========================== */
-/* ================================================= */
+
+/* ============================= */
+/* PHONE FORMAT */
+/* ============================= */
 
 function formatPhone(phone){
 
     const clean =
         String(phone || "")
         .replace(/\D/g,"");
+
 
     if(clean.length === 12){
 
@@ -2574,72 +2671,90 @@ function formatPhone(phone){
 
     }
 
+
     return phone || "";
 
 }
 
-/* ================================================= */
-/* ================= MODAL ========================= */
-/* ================================================= */
+
+/* ============================= */
+/* ADD BUSINESS MODAL */
+/* ============================= */
 
 function openModal(){
 
-    const modal =
-        document.getElementById(
+    document
+        .getElementById(
             "businessModal"
-        );
-
-    modal.classList.add("show");
+        )
+        .classList.add("show");
 
 }
+
 
 function closeModal(){
 
-    const modal =
-        document.getElementById(
+    document
+        .getElementById(
             "businessModal"
-        );
-
-    modal.classList.remove("show");
+        )
+        .classList.remove("show");
 
 }
 
-/* ================================================= */
-/* ================= ADD BUSINESS ================== */
-/* ================================================= */
+
+/* ============================= */
+/* ADD BUSINESS */
+/* ============================= */
 
 function addBusiness(event){
 
     event.preventDefault();
 
+
     const name =
         document
-        .getElementById("businessName")
+        .getElementById(
+            "businessName"
+        )
         .value
         .trim();
+
 
     const category =
         document
-        .getElementById("businessCategory")
+        .getElementById(
+            "businessCategory"
+        )
         .value;
+
 
     const location =
         document
-        .getElementById("businessLocation")
+        .getElementById(
+            "businessLocation"
+        )
         .value
         .trim();
+
 
     const phone =
         document
-        .getElementById("businessPhone")
+        .getElementById(
+            "businessPhone"
+        )
         .value
         .trim();
 
+
     const description =
         document
-        .getElementById("businessDescription")
+        .getElementById(
+            "businessDescription"
+        )
         .value
         .trim();
+
 
     if(
         !name ||
@@ -2655,6 +2770,7 @@ function addBusiness(event){
         return;
 
     }
+
 
     const newBusiness = {
 
@@ -2676,9 +2792,11 @@ function addBusiness(event){
 
     };
 
+
     businesses.unshift(
         newBusiness
     );
+
 
     saveBusinesses();
 
@@ -2688,30 +2806,65 @@ function addBusiness(event){
 
     closeModal();
 
+
     document
-        .getElementById("businessForm")
-        .reset();
+        .getElementById(
+            "businessName"
+        )
+        .value = "";
+
+
+    document
+        .getElementById(
+            "businessCategory"
+        )
+        .value = "";
+
+
+    document
+        .getElementById(
+            "businessLocation"
+        )
+        .value = "";
+
+
+    document
+        .getElementById(
+            "businessPhone"
+        )
+        .value = "";
+
+
+    document
+        .getElementById(
+            "businessDescription"
+        )
+        .value = "";
+
 
     alert(
         "✅ Biznes muvaffaqiyatli qo‘shildi!"
     );
 
+
     showPage("home");
 
-    const searchInput =
-        document.getElementById(
-            "searchInput"
-        );
 
-    searchInput.value = name;
+    document
+        .getElementById(
+            "searchInput"
+        )
+        .value = name;
+
 
     searchBusinesses();
 
 }
 
-/* ================================================= */
-/* ================= CATEGORY ICON ================= */
-/* ================================================= */
+
+/* ============================= */
+/* CATEGORY ICON */
+/* ============================= */
 
 function getCategoryIcon(category){
 
@@ -2765,13 +2918,15 @@ function getCategoryIcon(category){
 
     };
 
+
     return icons[category] || "🏢";
 
 }
 
-/* ================================================= */
-/* ================= SECURITY ====================== */
-/* ================================================= */
+
+/* ============================= */
+/* SECURITY */
+/* ============================= */
 
 function escapeHtml(text){
 
@@ -2789,12 +2944,15 @@ function escapeHtml(text){
 
 }
 
-/* ================================================= */
-/* ================= MODAL EVENTS ================== */
-/* ================================================= */
+
+/* ============================= */
+/* MODAL CLICK */
+/* ============================= */
 
 document
-    .getElementById("businessModal")
+    .getElementById(
+        "businessModal"
+    )
     .addEventListener(
         "click",
         function(event){
@@ -2808,8 +2966,11 @@ document
         }
     );
 
+
 document
-    .getElementById("businessDetailModal")
+    .getElementById(
+        "businessDetailModal"
+    )
     .addEventListener(
         "click",
         function(event){
@@ -2823,9 +2984,10 @@ document
         }
     );
 
-/* ================================================= */
-/* ================= ESCAPE ========================= */
-/* ================================================= */
+
+/* ============================= */
+/* ESCAPE */
+/* ============================= */
 
 document.addEventListener(
     "keydown",
@@ -2842,9 +3004,10 @@ document.addEventListener(
     }
 );
 
-/* ================================================= */
-/* ================= START ========================== */
-/* ================================================= */
+
+/* ============================= */
+/* START */
+/* ============================= */
 
 renderRankings();
 
