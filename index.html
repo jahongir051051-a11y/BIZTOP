@@ -23,6 +23,7 @@ body{
     background:#071d49;
     color:white;
     overflow-x:hidden;
+    padding-bottom:85px;
 }
 
 button,
@@ -534,6 +535,50 @@ footer{
 }
 
 
+/* ================= BOTTOM NAVIGATION ================= */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#061b46;
+    border-top:3px solid #1684ff;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:10px 0;
+    z-index:999;
+}
+
+.nav-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-width:100px;
+    color:#9ecbff;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.nav-icon{
+    font-size:24px;
+    margin-bottom:4px;
+}
+
+.nav-text{
+    font-size:14px;
+}
+
+.nav-item.active,
+.nav-item:hover{
+    color:#ffffff;
+}
+
+
 /* ================= MOBILE ================= */
 
 @media(max-width:600px){
@@ -694,6 +739,22 @@ footer{
     footer{
         padding:28px 15px;
         font-size:15px;
+    }
+
+    .bottom-nav{
+        padding:8px 0;
+    }
+
+    .nav-item{
+        min-width:80px;
+    }
+
+    .nav-icon{
+        font-size:22px;
+    }
+
+    .nav-text{
+        font-size:12px;
     }
 
 }
@@ -1005,7 +1066,7 @@ footer{
 
 <!-- ================= TOP 10 ================= -->
 
-<section class="section">
+<section class="section" id="top10Section">
 
     <h2 class="section-title ranking-title">
 
@@ -1223,6 +1284,113 @@ footer{
 </div>
 
 
+<!-- ================= PROFILE MODAL ================= -->
+
+<div
+    class="modal"
+    id="profileModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closeProfile()"
+        >
+            ×
+        </button>
+
+        <div class="business-detail">
+
+            <div class="business-detail-icon">
+                👤
+            </div>
+
+            <div class="business-detail-name">
+                Profil
+            </div>
+
+            <div class="business-detail-info">
+
+                <div class="business-detail-row">
+                    👤 <strong>Foydalanuvchi</strong>
+                </div>
+
+                <div class="business-detail-row">
+                    📊 <strong>BIZTOP profilingiz</strong>
+                </div>
+
+                <div class="business-detail-row">
+                    ⭐ Baholagan bizneslaringiz
+                </div>
+
+                <div class="business-detail-row">
+                    ❤️ Sevimli bizneslar
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= BOTTOM NAVIGATION ================= -->
+
+<nav class="bottom-nav">
+
+    <div
+        class="nav-item active"
+        onclick="goBiztop()"
+    >
+
+        <div class="nav-icon">
+            🏠
+        </div>
+
+        <div class="nav-text">
+            BIZTOP
+        </div>
+
+    </div>
+
+
+    <div
+        class="nav-item"
+        onclick="goTop()"
+    >
+
+        <div class="nav-icon">
+            🏆
+        </div>
+
+        <div class="nav-text">
+            TOP
+        </div>
+
+    </div>
+
+
+    <div
+        class="nav-item"
+        onclick="goProfile()"
+    >
+
+        <div class="nav-icon">
+            👤
+        </div>
+
+        <div class="nav-text">
+            Profil
+        </div>
+
+    </div>
+
+</nav>
+
+
 <!-- ================= FOOTER ================= -->
 
 <footer>
@@ -1336,1182 +1504,3 @@ const defaultBusinesses = [
         category:"Dorixona",
         location:"To‘rtko‘l",
         phone:"+998931234567",
-        rating:4.6,
-        icon:"💊",
-        description:"Dori-darmon va tibbiy mahsulotlar."
-    },
-
-    {
-        name:"BIZTOP Fashion",
-        category:"Kiyim-kechak",
-        location:"To‘rtko‘l",
-        phone:"+998941111111",
-        rating:4.5,
-        icon:"👕",
-        description:"Zamonaviy kiyim-kechaklar."
-    },
-
-    {
-        name:"BIZTOP Non",
-        category:"Nonvoyxona",
-        location:"To‘rtko‘l",
-        phone:"+998951111111",
-        rating:4.8,
-        icon:"🥖",
-        description:"Issiq non va non mahsulotlari."
-    },
-
-    {
-        name:"BIZTOP Tech",
-        category:"Telefon/texnika",
-        location:"To‘rtko‘l",
-        phone:"+998961111111",
-        rating:4.6,
-        icon:"📱",
-        description:"Telefonlar va texnika mahsulotlari."
-    },
-
-    {
-        name:"BIZTOP Computer",
-        category:"Kompyuter",
-        location:"To‘rtko‘l",
-        phone:"+998971111111",
-        rating:4.5,
-        icon:"💻",
-        description:"Kompyuterlar va aksessuarlar."
-    },
-
-    {
-        name:"BIZTOP Build",
-        category:"Qurilish",
-        location:"To‘rtko‘l",
-        phone:"+998981111111",
-        rating:4.7,
-        icon:"🏗️",
-        description:"Qurilish xizmatlari."
-    },
-
-    {
-        name:"BIZTOP Mebel",
-        category:"Mebel",
-        location:"To‘rtko‘l",
-        phone:"+998991111111",
-        rating:4.4,
-        icon:"🪑",
-        description:"Uy va ofis uchun mebellar."
-    },
-
-    {
-        name:"BIZTOP Taxi",
-        category:"Taksi",
-        location:"To‘rtko‘l",
-        phone:"+998901122233",
-        rating:4.7,
-        icon:"🚕",
-        description:"Shahar ichida taksi xizmati."
-    },
-
-    {
-        name:"BIZTOP Education",
-        category:"O‘quv markazi",
-        location:"To‘rtko‘l",
-        phone:"+998911122233",
-        rating:4.8,
-        icon:"🎓",
-        description:"Ta’lim va o‘quv kurslari."
-    },
-
-    {
-        name:"BIZTOP Photo",
-        category:"Foto/video",
-        location:"To‘rtko‘l",
-        phone:"+998921122233",
-        rating:4.6,
-        icon:"📸",
-        description:"Foto va video xizmatlari."
-    },
-
-    {
-        name:"BIZTOP Flowers",
-        category:"Gul do‘koni",
-        location:"To‘rtko‘l",
-        phone:"+998931122233",
-        rating:4.5,
-        icon:"💐",
-        description:"Gullar va sovg‘alar."
-    },
-
-    {
-        name:"BIZTOP Agro",
-        category:"Qishloq xo‘jaligi",
-        location:"To‘rtko‘l",
-        phone:"+998941122233",
-        rating:4.7,
-        icon:"🌾",
-        description:"Qishloq xo‘jaligi mahsulotlari."
-    },
-
-    {
-        name:"BIZTOP Chorva",
-        category:"Chorvachilik",
-        location:"To‘rtko‘l",
-        phone:"+998951122233",
-        rating:4.6,
-        icon:"🐄",
-        description:"Chorvachilik mahsulotlari."
-    }
-
-];
-
-
-/* ================================================= */
-/* ================= LOAD DATA ===================== */
-/* ================================================= */
-
-let businesses = loadBusinesses();
-
-
-function loadBusinesses(){
-
-    try{
-
-        const saved =
-            localStorage.getItem("biztop_businesses");
-
-        if(saved){
-
-            const parsed =
-                JSON.parse(saved);
-
-            if(
-                Array.isArray(parsed)
-                &&
-                parsed.length
-            ){
-
-                /* Eski "Go‘zallik" nomini yangi nomga
-                   avtomatik o‘zgartiramiz */
-
-                parsed.forEach(function(business){
-
-                    if(
-                        business.category === "Go‘zallik"
-                    ){
-
-                        business.category =
-                            "Go‘zallik saloni";
-
-                    }
-
-                    if(
-                        business.category === "Go'zallik"
-                    ){
-
-                        business.category =
-                            "Go‘zallik saloni";
-
-                    }
-
-                });
-
-                return parsed;
-
-            }
-
-        }
-
-    }catch(error){
-
-        console.log(
-            "Saqlangan ma'lumotni o‘qishda xato:",
-            error
-        );
-
-    }
-
-    return [...defaultBusinesses];
-
-}
-
-
-function saveBusinesses(){
-
-    try{
-
-        localStorage.setItem(
-            "biztop_businesses",
-            JSON.stringify(businesses)
-        );
-
-    }catch(error){
-
-        console.log(
-            "Saqlashda xato:",
-            error
-        );
-
-    }
-
-}
-
-
-/* ================================================= */
-/* ================= SEARCH ======================== */
-/* ================================================= */
-
-function normalizeText(text){
-
-    return String(text || "")
-        .toLowerCase()
-        .replace(/ʻ/g,"'")
-        .replace(/’/g,"'")
-        .replace(/‘/g,"'")
-        .replace(/`/g,"'");
-
-}
-
-
-function handleEnter(event){
-
-    if(event.key === "Enter"){
-
-        event.preventDefault();
-
-        searchBusinesses();
-
-    }
-
-}
-
-
-/* ================================================= */
-/* =========== SEARCH INPUT AUTO CLEAR ============= */
-/* ================================================= */
-
-function handleSearchInput(){
-
-    const input =
-        document
-        .getElementById("searchInput")
-        .value
-        .trim();
-
-    const resultsSection =
-        document
-        .getElementById("resultsSection");
-
-    if(!input){
-
-        resultsSection.style.display = "none";
-
-    }
-
-}
-
-
-/* ================================================= */
-/* ================= SEARCH ======================== */
-/* ================================================= */
-
-function searchBusinesses(){
-
-    const inputElement =
-        document.getElementById("searchInput");
-
-    const originalInput =
-        inputElement.value.trim();
-
-    const input =
-        normalizeText(originalInput);
-
-    const resultsSection =
-        document.getElementById("resultsSection");
-
-    const results =
-        document.getElementById("results");
-
-
-    if(!input){
-
-        resultsSection.style.display = "none";
-
-        return;
-
-    }
-
-
-    const filtered =
-        businesses.filter(
-            function(business){
-
-                const name =
-                    normalizeText(
-                        business.name
-                    );
-
-                const category =
-                    normalizeText(
-                        business.category
-                    );
-
-                const location =
-                    normalizeText(
-                        business.location
-                    );
-
-                const description =
-                    normalizeText(
-                        business.description
-                    );
-
-
-                return (
-
-                    name.includes(input) ||
-
-                    category.includes(input) ||
-
-                    location.includes(input) ||
-
-                    description.includes(input)
-
-                );
-
-            }
-        );
-
-
-    results.innerHTML = "";
-
-
-    if(filtered.length === 0){
-
-        results.innerHTML = `
-
-            <div class="no-results">
-
-                😔 “${escapeHtml(originalInput)}”
-                bo‘yicha biznes topilmadi.
-
-                <br><br>
-
-                Boshqa so‘z bilan qidirib ko‘ring.
-
-            </div>
-
-        `;
-
-    }else{
-
-        filtered
-            .sort(function(a,b){
-
-                return Number(b.rating)
-                     - Number(a.rating);
-
-            })
-            .forEach(function(business){
-
-                const index =
-                    businesses.indexOf(business);
-
-                results.innerHTML +=
-                    createResultCard(
-                        business,
-                        index
-                    );
-
-            });
-
-    }
-
-
-    resultsSection.style.display = "block";
-
-
-    resultsSection.scrollIntoView({
-
-        behavior:"smooth",
-
-        block:"start"
-
-    });
-
-}
-
-
-/* ================================================= */
-/* ================= CATEGORY SEARCH ============== */
-/* ================================================= */
-
-function selectCategory(category){
-
-    document
-        .getElementById("searchInput")
-        .value = category;
-
-    searchBusinesses();
-
-}
-
-
-/* ================================================= */
-/* ================= RESULT CARD ================== */
-/* ================================================= */
-
-function createResultCard(
-    business,
-    index
-){
-
-    return `
-
-        <div
-            class="result-card"
-            onclick="openBusinessDetail(${index})"
-        >
-
-            <h3>
-
-                ${business.icon || "🏢"}
-
-                ${escapeHtml(
-                    business.name
-                )}
-
-            </h3>
-
-
-            <p>
-
-                📁
-                ${escapeHtml(
-                    business.category
-                )}
-
-            </p>
-
-
-            <p>
-
-                📍
-                ${escapeHtml(
-                    business.location
-                )}
-
-            </p>
-
-
-            <p
-                onclick="event.stopPropagation()"
-            >
-
-                📞
-
-                <a
-                    href="tel:${escapeHtml(
-                        business.phone
-                    )}"
-                    class="phone-link"
-                >
-
-                    ${formatPhone(
-                        business.phone
-                    )}
-
-                </a>
-
-            </p>
-
-
-            ${
-                business.description
-
-                ?
-
-                `<p>
-                    📝
-                    ${escapeHtml(
-                        business.description
-                    )}
-                </p>`
-
-                :
-
-                ""
-            }
-
-
-            <div class="business-rating">
-
-                ⭐
-                ${Number(
-                    business.rating
-                ).toFixed(1)}
-
-            </div>
-
-
-            <div class="click-hint">
-
-                👆 Batafsil ma’lumot uchun bosing
-
-            </div>
-
-        </div>
-
-    `;
-
-}
-
-
-/* ================================================= */
-/* ============== BUSINESS DETAIL ================== */
-/* ================================================= */
-
-function openBusinessDetail(index){
-
-    const business =
-        businesses[index];
-
-
-    if(!business){
-
-        return;
-
-    }
-
-
-    const detail =
-        document.getElementById(
-            "businessDetail"
-        );
-
-
-    detail.innerHTML = `
-
-        <div class="business-detail-icon">
-
-            ${business.icon || "🏢"}
-
-        </div>
-
-
-        <div class="business-detail-name">
-
-            ${escapeHtml(
-                business.name
-            )}
-
-        </div>
-
-
-        <div class="detail-rating">
-
-            ⭐
-            ${Number(
-                business.rating
-            ).toFixed(1)}
-
-        </div>
-
-
-        <div class="business-detail-info">
-
-            <div class="business-detail-row">
-
-                📁
-
-                <strong>
-                    Kategoriya:
-                </strong>
-
-                ${escapeHtml(
-                    business.category
-                )}
-
-            </div>
-
-
-            <div class="business-detail-row">
-
-                📍
-
-                <strong>
-                    Manzil:
-                </strong>
-
-                ${escapeHtml(
-                    business.location
-                )}
-
-            </div>
-
-
-            <div class="business-detail-row">
-
-                📞
-
-                <strong>
-                    Telefon:
-                </strong>
-
-                ${formatPhone(
-                    business.phone
-                )}
-
-            </div>
-
-
-            ${
-                business.description
-
-                ?
-
-                `
-
-                <div class="business-detail-row">
-
-                    📝
-
-                    <strong>
-                        Biznes haqida:
-                    </strong>
-
-                    <br><br>
-
-                    ${escapeHtml(
-                        business.description
-                    )}
-
-                </div>
-
-                `
-
-                :
-
-                ""
-
-            }
-
-        </div>
-
-
-        <a
-            class="call-btn"
-            href="tel:${escapeHtml(
-                business.phone
-            )}"
-        >
-
-            📞 Biznesga qo‘ng‘iroq qilish
-
-        </a>
-
-    `;
-
-
-    document
-        .getElementById(
-            "businessDetailModal"
-        )
-        .classList.add("show");
-
-}
-
-
-function closeBusinessDetail(){
-
-    document
-        .getElementById(
-            "businessDetailModal"
-        )
-        .classList.remove("show");
-
-}
-
-
-/* ================================================= */
-/* ================= RANKINGS ====================== */
-/* ================================================= */
-
-function renderRankings(){
-
-    const sorted =
-        [...businesses]
-        .sort(function(a,b){
-
-            return Number(b.rating)
-                 - Number(a.rating);
-
-        });
-
-
-    const top10 =
-        sorted.slice(0,10);
-
-    const top20 =
-        sorted.slice(0,20);
-
-
-    const top10Element =
-        document.getElementById("top10");
-
-    const top20Element =
-        document.getElementById("top20");
-
-
-    top10Element.innerHTML = "";
-
-    top20Element.innerHTML = "";
-
-
-    top10.forEach(function(business){
-
-        const index =
-            businesses.indexOf(business);
-
-        top10Element.innerHTML +=
-            createBusinessCard(
-                business,
-                index
-            );
-
-    });
-
-
-    top20.forEach(function(business){
-
-        const index =
-            businesses.indexOf(business);
-
-        top20Element.innerHTML +=
-            createBusinessCard(
-                business,
-                index
-            );
-
-    });
-
-}
-
-
-/* ================================================= */
-/* ================= BUSINESS CARD ================= */
-/* ================================================= */
-
-function createBusinessCard(
-    business,
-    index
-){
-
-    return `
-
-        <div
-            class="business-card"
-            onclick="openBusinessDetail(${index})"
-        >
-
-            <div class="business-name">
-
-                ${business.icon || "🏢"}
-
-                ${escapeHtml(
-                    business.name
-                )}
-
-            </div>
-
-
-            <div class="business-info">
-
-                <div>
-
-                    📁
-                    ${escapeHtml(
-                        business.category
-                    )}
-
-                </div>
-
-
-                <div>
-
-                    📍
-                    ${escapeHtml(
-                        business.location
-                    )}
-
-                </div>
-
-
-                <div
-                    onclick="event.stopPropagation()"
-                >
-
-                    📞
-
-                    <a
-                        class="phone-link"
-                        href="tel:${escapeHtml(
-                            business.phone
-                        )}"
-                    >
-
-                        ${formatPhone(
-                            business.phone
-                        )}
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="business-rating">
-
-                ⭐
-                ${Number(
-                    business.rating
-                ).toFixed(1)}
-
-            </div>
-
-        </div>
-
-    `;
-
-}
-
-
-/* ================================================= */
-/* ================= PHONE FORMAT ================== */
-/* ================================================= */
-
-function formatPhone(phone){
-
-    const clean =
-        String(phone || "")
-        .replace(/\D/g,"");
-
-
-    if(clean.length === 12){
-
-        return `+${clean.slice(0,3)}
-                ${clean.slice(3,5)}
-                ${clean.slice(5,8)}
-                ${clean.slice(8,10)}
-                ${clean.slice(10,12)}`;
-
-    }
-
-
-    return phone || "";
-
-}
-
-
-/* ================================================= */
-/* ================= ADD MODAL ===================== */
-/* ================================================= */
-
-function openModal(){
-
-    document
-        .getElementById("businessModal")
-        .classList.add("show");
-
-}
-
-
-function closeModal(){
-
-    document
-        .getElementById("businessModal")
-        .classList.remove("show");
-
-}
-
-
-/* ================================================= */
-/* ================= ADD BUSINESS ================= */
-/* ================================================= */
-
-function addBusiness(event){
-
-    event.preventDefault();
-
-
-    const name =
-        document
-        .getElementById("businessName")
-        .value
-        .trim();
-
-
-    const category =
-        document
-        .getElementById("businessCategory")
-        .value;
-
-
-    const location =
-        document
-        .getElementById("businessLocation")
-        .value
-        .trim();
-
-
-    const phone =
-        document
-        .getElementById("businessPhone")
-        .value
-        .trim();
-
-
-    const description =
-        document
-        .getElementById("businessDescription")
-        .value
-        .trim();
-
-
-    if(
-        !name ||
-        !category ||
-        !location ||
-        !phone
-    ){
-
-        alert(
-            "⚠️ Iltimos, barcha kerakli maydonlarni to‘ldiring."
-        );
-
-        return;
-
-    }
-
-
-    const newBusiness = {
-
-        name:name,
-
-        category:category,
-
-        location:location,
-
-        phone:phone,
-
-        rating:5.0,
-
-        icon:getCategoryIcon(category),
-
-        description:description
-
-    };
-
-
-    businesses.unshift(
-        newBusiness
-    );
-
-
-    saveBusinesses();
-
-
-    renderRankings();
-
-
-    closeModal();
-
-
-    document
-        .getElementById("businessName")
-        .value = "";
-
-
-    document
-        .getElementById("businessCategory")
-        .value = "";
-
-
-    document
-        .getElementById("businessLocation")
-        .value = "";
-
-
-    document
-        .getElementById("businessPhone")
-        .value = "";
-
-
-    document
-        .getElementById("businessDescription")
-        .value = "";
-
-
-    alert(
-        "✅ Biznes muvaffaqiyatli qo‘shildi!"
-    );
-
-
-    document
-        .getElementById("searchInput")
-        .value = name;
-
-
-    searchBusinesses();
-
-}
-
-
-/* ================================================= */
-/* ================= CATEGORY ICON ================= */
-/* ================================================= */
-
-function getCategoryIcon(category){
-
-    const icons = {
-
-        "Go‘zallik saloni":"💇‍♀️",
-
-        "Go‘zallik":"💇‍♀️",
-
-        "Restoran":"🍽️",
-
-        "Do‘kon":"🛒",
-
-        "Kafe":"☕",
-
-        "Avto xizmat":"🔧",
-
-        "Mehmonxona":"🏨",
-
-        "Klinika":"🏥",
-
-        "Dorixona":"💊",
-
-        "Kiyim-kechak":"👕",
-
-        "Nonvoyxona":"🥖",
-
-        "Supermarket":"🏪",
-
-        "Telefon/texnika":"📱",
-
-        "Kompyuter":"💻",
-
-        "Qurilish":"🏗️",
-
-        "Mebel":"🪑",
-
-        "Taksi":"🚕",
-
-        "O‘quv markazi":"🎓",
-
-        "Foto/video":"📸",
-
-        "Gul do‘koni":"💐",
-
-        "Chorvachilik":"🐄",
-
-        "Qishloq xo‘jaligi":"🌾",
-
-        "Game Club":"🎮"
-
-    };
-
-
-    return icons[category] || "🏢";
-
-}
-
-
-/* ================================================= */
-/* ================= SECURITY ====================== */
-/* ================================================= */
-
-function escapeHtml(text){
-
-    return String(text || "")
-
-        .replace(/&/g,"&amp;")
-
-        .replace(/</g,"&lt;")
-
-        .replace(/>/g,"&gt;")
-
-        .replace(/"/g,"&quot;")
-
-        .replace(/'/g,"&#039;");
-
-}
-
-
-/* ================================================= */
-/* ================= MODAL OUTSIDE ================= */
-/* ================================================= */
-
-document
-    .getElementById("businessModal")
-    .addEventListener(
-        "click",
-        function(event){
-
-            if(event.target === this){
-
-                closeModal();
-
-            }
-
-        }
-    );
-
-
-document
-    .getElementById("businessDetailModal")
-    .addEventListener(
-        "click",
-        function(event){
-
-            if(event.target === this){
-
-                closeBusinessDetail();
-
-            }
-
-        }
-    );
-
-
-/* ================================================= */
-/* ================= ESC KEY ======================= */
-/* ================================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Escape"){
-
-            closeModal();
-
-            closeBusinessDetail();
-
-        }
-
-    }
-);
-
-
-/* ================================================= */
-/* ================= START ========================= */
-/* ================================================= */
-
-renderRankings();
-
-</script>
-
-</body>
-</html>
