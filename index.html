@@ -1733,7 +1733,7 @@ a{color:inherit;text-decoration:none}
         <input
           id="searchInput"
           placeholder="Restoran, do‘kon, avto xizmat..."
-          oninput="searchBusinesses()">
+          oninput="searchBusinesses">
       </div>
 
       <button class="search-btn" onclick="searchBusinesses()">
@@ -1928,31 +1928,6 @@ a{color:inherit;text-decoration:none}
       <div
         class="list-box"
         id="homeTop10">
-      </div>
-
-    </section>
-
-
-    <!-- Barcha brendlar -->
-    <section>
-
-      <div class="section-title">
-
-        <span class="ico">🏆</span>
-
-        Brendlar
-
-        <span
-          class="link"
-          onclick="showPage('top')">
-          Barchasini ko‘rish ›
-        </span>
-
-      </div>
-
-      <div
-        class="list-box"
-        id="homeTop20">
       </div>
 
     </section>
@@ -2808,14 +2783,6 @@ function render(){
 
    all.slice(0,10)
       .map((b,i)=>row(b,i))
-      .join("");
-
-
- document.getElementById(
-   "homeTop20"
- ).innerHTML =
-
-   all.map((b,i)=>row(b,i))
       .join("");
 
 
