@@ -2461,14 +2461,14 @@ function render(){
  const all = topSorted();
 
  // Ikki marta takrorlash (cheksiz aylanish effekti uchun)
- const doubleAll = [...all, ...all];
+ const doubleAll = [...all, ...all, ...all];
 
 
  document.getElementById(
    "popularCarouselInner"
  ).innerHTML =
 
-   doubleAll.slice(0,12)
+   doubleAll.slice(0,18)
       .map((b,i)=>card(b,i))
       .join("");
 
@@ -2477,7 +2477,7 @@ function render(){
    "homeTopCarouselInner"
  ).innerHTML =
 
-   doubleAll.slice(0,10)
+   doubleAll.slice(0,15)
       .map((b,i)=>card(b,i))
       .join("");
 
@@ -2504,7 +2504,7 @@ function render(){
    "top3CardsInner"
  ).innerHTML =
 
-   doubleAll.slice(0,6)
+   doubleAll.slice(0,9)
       .map((b,i)=>card(b,i))
       .join("");
 
@@ -2513,7 +2513,7 @@ function render(){
    "top10CardsInner"
  ).innerHTML =
 
-   doubleAll.slice(0,20)
+   doubleAll.slice(0,30)
       .map((b,i)=>card(b,i))
       .join("");
 
@@ -2522,7 +2522,7 @@ function render(){
    "top30CardsInner"
  ).innerHTML =
 
-   doubleAll.slice(0,60)
+   doubleAll.slice(0,90)
       .map((b,i)=>card(b,i))
       .join("");
 
@@ -2531,7 +2531,7 @@ function render(){
    "top100CardsInner"
  ).innerHTML =
 
-   doubleAll.slice(0,200)
+   doubleAll.slice(0,300)
       .map((b,i)=>card(b,i))
       .join("");
 
