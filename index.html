@@ -309,12 +309,12 @@ a{color:inherit;text-decoration:none}
 
 .carousel::-webkit-scrollbar{display:none}
 
-/* TOP SAHIFASIDAGI CAROUSEL AYLANMAYDI - CHAPDAN O'NGGA */
+/* TOP SAHIFASIDAGI CAROUSEL AYLANMAYDI */
 #top .carousel-inner{
   animation: none !important;
   width: 100% !important;
   flex-wrap: wrap !important;
-  justify-content: flex-start !important;
+  justify-content: center !important;
   gap: 16px !important;
 }
 
@@ -1314,7 +1314,7 @@ a{color:inherit;text-decoration:none}
     animation: none !important;
     width: 100% !important;
     flex-wrap: wrap !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
   }
 
   #top .carousel{
@@ -1672,7 +1672,7 @@ a{color:inherit;text-decoration:none}
     animation: none !important;
     width: 100% !important;
     flex-wrap: wrap !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
   }
 
   #top .carousel{
@@ -1863,7 +1863,7 @@ a{color:inherit;text-decoration:none}
 </main>
 
 
-<!-- TOP (AYLANMAYDI - CHAPDAN O'NGGA) -->
+<!-- TOP (AYLANMAYDI) -->
 <main id="top" class="page">
 
   <div class="container">
@@ -1881,47 +1881,50 @@ a{color:inherit;text-decoration:none}
       <button class="tab" onclick="scrollTopSection('top100',this)">TOP 100</button>
     </div>
 
-    <div class="top-one-section-label" id="top1Label">🏆 TOP 1</div>
+    <div class="top-one-section-label">🏆 TOP 1</div>
 
-    <!-- TOP 1 -->
     <section class="top-section top-one-card-section" id="top1">
-      <div class="rank-card-wrapper" style="display:flex;justify-content:center;padding:10px 0;" id="top1Cards"></div>
+      <div class="carousel" id="top1Cards" style="justify-content:center;"></div>
     </section>
 
-    <!-- TOP 3 -->
     <section class="top-section" id="top3">
       <div class="top-section-head">
         <h2>🏅 TOP 3</h2>
-        <span class="more" onclick="alert('Barcha TOP 3 bizneslar')">Barchasini ko‘rish ›</span>
+        <span class="more">Barchasini ko‘rish ›</span>
       </div>
-      <div class="top-list" id="top3Cards"></div>
+      <div class="carousel" id="top3Cards">
+        <div class="carousel-inner" id="top3CardsInner"></div>
+      </div>
     </section>
 
-    <!-- TOP 10 -->
     <section class="top-section" id="top10">
       <div class="top-section-head">
         <h2>🏆 TOP 10</h2>
-        <span class="more" onclick="alert('Barcha TOP 10 bizneslar')">Barchasini ko‘rish ›</span>
+        <span class="more">Barchasini ko‘rish ›</span>
       </div>
-      <div class="top-list" id="top10Cards"></div>
+      <div class="carousel" id="top10Cards">
+        <div class="carousel-inner" id="top10CardsInner"></div>
+      </div>
     </section>
 
-    <!-- TOP 30 -->
     <section class="top-section" id="top30">
       <div class="top-section-head">
         <h2>🏆 TOP 30</h2>
-        <span class="more" onclick="alert('Barcha TOP 30 bizneslar')">Barchasini ko‘rish ›</span>
+        <span class="more">Barchasini ko‘rish ›</span>
       </div>
-      <div class="top-list" id="top30Cards"></div>
+      <div class="carousel" id="top30Cards">
+        <div class="carousel-inner" id="top30CardsInner"></div>
+      </div>
     </section>
 
-    <!-- TOP 100 -->
     <section class="top-section" id="top100">
       <div class="top-section-head">
         <h2>🏆 TOP 100</h2>
-        <span class="more" onclick="alert('Barcha TOP 100 bizneslar')">Barchasini ko‘rish ›</span>
+        <span class="more">Barchasini ko‘rish ›</span>
       </div>
-      <div class="top-list" id="top100Cards"></div>
+      <div class="carousel" id="top100Cards">
+        <div class="carousel-inner" id="top100CardsInner"></div>
+      </div>
     </section>
 
   </div>
@@ -2381,39 +2384,51 @@ function card(b,index){
 
 
 /* =========================
-   TOP LIST (CHAPDAN O'NGGA - AYLANMAYDI)
+   RO‘YXAT QATORI
 ========================= */
 
-function topList(b,index){
+function row(b,index){
+
  return `
 
  <div
    class="list-row"
-   onclick="openBusiness(${b.id})"
-   style="display:flex; align-items:center; gap:12px; padding:12px 15px; border-bottom:1px solid #21456f; cursor:pointer;">
+   onclick="openBusiness(${b.id})">
 
-   <div class="rank-large" style="font-size:28px; color:#1982ff; font-weight:900; min-width:40px;">
+   <div class="rank-large">
      ${index+1}
    </div>
 
-   <div class="small-avatar" style="width:48px; height:48px; border-radius:50%; border:2px solid #2d7fdc; background:#162e55; display:flex; align-items:center; justify-content:center; font-size:24px; overflow:hidden;">
+   <div class="small-avatar">
      ${b.icon}
    </div>
 
-   <div style="flex:1; min-width:0;">
-     <div class="row-name" style="font-weight:900; font-size:16px; color:#fff;">
-       ${escapeHtml(b.name)} ${verify(b)}
+   <div>
+
+     <div class="row-name">
+       ${escapeHtml(b.name)}
+       ${verify(b)}
      </div>
-     <div class="row-meta" style="color:#afc0dc; font-size:13px; margin-top:2px;">
+
+     <div class="row-meta">
        📍 ${escapeHtml(b.address)}
      </div>
+
    </div>
 
-   <div class="rating" style="color:#ffd21f; font-weight:900; font-size:16px; white-space:nowrap;">
+   <div class="row-contact">
+
+     ${escapeHtml(b.hours)}
+     <br>
+     ${escapeHtml(b.phone)}
+
+   </div>
+
+   <div class="rating">
      ★ ${b.rating.toFixed(1)}
    </div>
 
-   <div class="arrow" style="font-size:22px; color:#a8b9d6;">
+   <div class="arrow">
      ›
    </div>
 
@@ -2480,7 +2495,6 @@ function render(){
       .join("");
 
 
- // TOP 1 - faqat 1 ta markazda
  document.getElementById(
    "top1Cards"
  ).innerHTML =
@@ -2490,40 +2504,40 @@ function render(){
       .join("");
 
 
- // TOP SAHIFASI - CHAPDAN O'NGGA (AYLANMAYDI)
+ // TOP SAHIFASI - AYLANMAYDI, FAQAT BARCHA KARTALAR
  document.getElementById(
-   "top3Cards"
+   "top3CardsInner"
  ).innerHTML =
 
    all.slice(0,3)
-      .map((b,i)=>topList(b,i))
+      .map((b,i)=>card(b,i))
       .join("");
 
 
  document.getElementById(
-   "top10Cards"
+   "top10CardsInner"
  ).innerHTML =
 
    all.slice(0,10)
-      .map((b,i)=>topList(b,i))
+      .map((b,i)=>card(b,i))
       .join("");
 
 
  document.getElementById(
-   "top30Cards"
+   "top30CardsInner"
  ).innerHTML =
 
    all.slice(0,30)
-      .map((b,i)=>topList(b,i))
+      .map((b,i)=>card(b,i))
       .join("");
 
 
  document.getElementById(
-   "top100Cards"
+   "top100CardsInner"
  ).innerHTML =
 
    all.slice(0,100)
-      .map((b,i)=>topList(b,i))
+      .map((b,i)=>card(b,i))
       .join("");
 
 }
