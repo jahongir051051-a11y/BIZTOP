@@ -1770,7 +1770,7 @@ a{color:inherit;text-decoration:none}
     </div>
 
 
-    <!-- KATEGORIYALAR -->
+    <!-- KATEGORIYALAR (JOYIGA QAYTARILDI) -->
     <section class="category-wrap">
       <div class="section-title">Kategoriyalar</div>
       <div class="category-grid">
@@ -1811,7 +1811,7 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
-    <!-- BARCHA BRENDLAR - REYTING BO'YICHA SARALANGAN -->
+    <!-- BARCHA BRENDLAR - REYTING BO'YICHA SARALANGAN (CHEKSIZ) -->
     <section>
       <div class="section-title">
         <span class="ico">🏆</span>
@@ -2209,12 +2209,11 @@ function filterByCategory(category){
 
 
 /* =========================
-   BARCHA BIZNESLAR - REYTING BO'YICHA SARALASH
+   BARCHA BIZNESLAR - REYTING BO'YICHA SARALASH (CHEKSIZ)
 ========================= */
 
 function getAll(){
  const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
- // Barcha bizneslarni birlashtirish
  let all = businesses.concat(saved);
  // Reyting bo'yicha saralash (yuqoridan pastga)
  all.sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
@@ -2260,7 +2259,7 @@ function card(b,index){
 
 
 /* =========================
-   RO‘YXAT QATORI
+   RO‘YXAT QATORI - BARCHA BIZNESLAR (CHEKSIZ)
 ========================= */
 
 function row(b,index){
@@ -2281,7 +2280,7 @@ function row(b,index){
 
 
 /* =========================
-   REYTING BO‘YICHA SARALASH (getAll ichida)
+   REYTING BO‘YICHA SARALASH
 ========================= */
 
 function topSorted(){
@@ -2295,10 +2294,17 @@ function topSorted(){
 
 function render(){
  const all = topSorted();
- // Barcha brendlar ro'yxati (cheksiz - hammasi)
+ 
+ // Mashhur brendlar (6 ta)
  document.getElementById("popularCarousel").innerHTML = all.slice(0,6).map((b,i)=>card(b,i)).join("");
+ 
+ // TOP brendlar (5 ta)
  document.getElementById("homeTopCarousel").innerHTML = all.slice(0,5).map((b,i)=>card(b,i)).join("");
- document.getElementById("homeTop10").innerHTML = all.slice(0, all.length).map((b,i)=>row(b,i)).join(""); // CHEKSIZ - HAMMASI
+ 
+ // Barcha brendlar - CHEKSIZ (hammasi)
+ document.getElementById("homeTop10").innerHTML = all.slice(0, all.length).map((b,i)=>row(b,i)).join("");
+ 
+ // TOP sahifalari
  document.getElementById("top1Cards").innerHTML = all.slice(0,1).map((b,i)=>card(b,i)).join("");
  document.getElementById("top3Cards").innerHTML = all.slice(0,3).map((b,i)=>card(b,i)).join("");
  document.getElementById("top10Cards").innerHTML = all.slice(0,10).map((b,i)=>card(b,i)).join("");
@@ -2473,7 +2479,7 @@ function addBusiness(){
    address: document.getElementById("newAddress").value || "To‘rtko‘l",
    phone: document.getElementById("newPhone").value || "+998 90 000 00 00",
    hours: document.getElementById("newHours").value || "09:00 – 21:00",
-   rating: parseFloat(document.getElementById("newRating").value) || 5.0,
+   rating: 5.0,
    reviews:0,
    icon:"🏪",
    photo:"market",
