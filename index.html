@@ -154,7 +154,6 @@ a{color:inherit;text-decoration:none}
   cursor:pointer
 }
 
-/* SHAHAR TUGMASI */
 .city-selector{
   display:flex;
   gap:10px;
@@ -196,7 +195,6 @@ a{color:inherit;text-decoration:none}
   transform:rotate(180deg);
 }
 
-/* VILOYATLAR DROPDOWN - KENGAYTIRILGAN */
 .city-dropdown{
   display:none;
   position:absolute;
@@ -264,7 +262,6 @@ a{color:inherit;text-decoration:none}
   color:#fff;
 }
 
-/* TUMANLAR DROPDOWN - KENGAYTIRILGAN */
 .district-dropdown{
   display:none;
   position:absolute;
@@ -343,6 +340,10 @@ a{color:inherit;text-decoration:none}
 .selected-city-display.show{
   display:inline-block;
 }
+
+/* =========================
+   BRENDLAR SAHIFASI (HOME TOP 10)
+========================= */
 
 .section-title{
   display:flex;
@@ -438,6 +439,82 @@ a{color:inherit;text-decoration:none}
 .rating small{
   color:#fff;
   font-size:17px
+}
+
+/* LIST BOX - BRENDLAR RO'YXATI (TO'LIQ KO'RINADI) */
+.list-box{
+  border:1px solid #28558a;
+  border-radius:22px;
+  overflow:hidden;
+  background:#071c3c;
+  width:100%;
+}
+
+.list-row{
+  display:grid;
+  grid-template-columns:55px 62px 1fr 190px 80px 28px;
+  gap:12px;
+  align-items:center;
+  min-height:105px;
+  padding:12px 18px;
+  border-bottom:1px solid #21456f;
+  transition:.2s;
+  cursor:pointer
+}
+
+.list-row:last-child{border-bottom:0}
+
+.list-row:hover{
+  background:#0a234d;
+  border-color:#208cff;
+}
+
+.rank-large{
+  font-size:34px;
+  color:#1982ff;
+  font-weight:900;
+  text-align:center
+}
+
+.small-avatar{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  border:2px solid #2d7fdc;
+  background:#162e55;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:27px;
+  overflow:hidden
+}
+
+.small-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+
+.row-name{
+  font-weight:900;
+  font-size:19px
+}
+
+.row-meta{
+  color:#afc0dc;
+  font-size:15px;
+  margin-top:3px
+}
+
+.row-contact{
+  color:#b9c9e2;
+  font-size:15px;
+  line-height:1.7
+}
+
+.arrow{
+  font-size:27px;
+  color:#a8b9d6
 }
 
 .hero-home{
@@ -613,75 +690,6 @@ a{color:inherit;text-decoration:none}
   font-weight:900;
   font-size:19px;
   margin-top:5px
-}
-
-.list-box{
-  border:1px solid #28558a;
-  border-radius:22px;
-  overflow:hidden;
-  background:#071c3c
-}
-
-.list-row{
-  display:grid;
-  grid-template-columns:55px 62px 1fr 190px 80px 28px;
-  gap:12px;
-  align-items:center;
-  min-height:105px;
-  padding:12px 18px;
-  border-bottom:1px solid #21456f;
-  transition:.2s;
-  cursor:pointer
-}
-
-.list-row:last-child{border-bottom:0}
-
-.rank-large{
-  font-size:34px;
-  color:#1982ff;
-  font-weight:900;
-  text-align:center
-}
-
-.small-avatar{
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  border:2px solid #2d7fdc;
-  background:#162e55;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:27px;
-  overflow:hidden
-}
-
-.small-avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover
-}
-
-.row-name{
-  font-weight:900;
-  font-size:19px
-}
-
-.row-meta{
-  color:#afc0dc;
-  font-size:15px;
-  margin-top:3px
-}
-
-.row-contact{
-  color:#b9c9e2;
-  font-size:15px;
-  line-height:1.7
-}
-
-.arrow{
-  font-size:27px;
-  color:#a8b9d6
 }
 
 .top-one-label{
@@ -1372,6 +1380,46 @@ a{color:inherit;text-decoration:none}
 
   .rating small{font-size:10px}
 
+  /* MOBILDA BRENDLAR RO'YXATI */
+  .list-row{
+    grid-template-columns:28px 44px minmax(0,1fr) 40px 12px;
+    gap:6px;
+    min-height:72px;
+    padding:7px 10px;
+  }
+
+  .rank-large{
+    font-size:24px;
+  }
+
+  .small-avatar{
+    width:40px;
+    height:40px;
+    font-size:20px;
+  }
+
+  .row-name{
+    font-size:13px;
+  }
+
+  .row-meta{
+    font-size:10px;
+    margin-top:2px;
+  }
+
+  .row-contact{
+    font-size:9px;
+    line-height:1.2;
+  }
+
+  .list-row .rating{
+    font-size:12px;
+  }
+
+  .arrow{
+    font-size:18px;
+  }
+
   #home .carousel{
     gap:10px;
     padding:1px 1px 10px;
@@ -1420,49 +1468,6 @@ a{color:inherit;text-decoration:none}
   #top .rank-card{
     min-width:200px !important;
     width:200px !important;
-  }
-
-  .list-box{
-    border-radius:17px;
-  }
-
-  .list-row{
-    grid-template-columns:28px 44px minmax(0,1fr) 40px 12px;
-    gap:6px;
-    min-height:72px;
-    padding:7px 10px;
-  }
-
-  .rank-large{
-    font-size:24px;
-  }
-
-  .small-avatar{
-    width:40px;
-    height:40px;
-    font-size:20px;
-  }
-
-  .row-name{
-    font-size:13px;
-  }
-
-  .row-meta{
-    font-size:10px;
-    margin-top:2px;
-  }
-
-  .row-contact{
-    font-size:9px;
-    line-height:1.2;
-  }
-
-  .list-row .rating{
-    font-size:12px;
-  }
-
-  .arrow{
-    font-size:18px;
   }
 
   .top-hero{
@@ -1733,14 +1738,35 @@ a{color:inherit;text-decoration:none}
   .business-name{font-size:14px}
   .meta{font-size:10px}
   .rating{font-size:13px}
-  .list-row{grid-template-columns:24px 38px minmax(0,1fr) 36px 10px;padding:6px 8px}
-  .rank-large{font-size:20px}
-  .small-avatar{width:34px;height:34px;font-size:16px}
-  .row-name{font-size:12px}
-  .row-meta{font-size:9px}
-  .row-contact{font-size:8px}
-  .list-row .rating{font-size:11px}
-  .arrow{font-size:16px}
+
+  /* KICHIK MOBILDA BRENDLAR RO'YXATI */
+  .list-row{
+    grid-template-columns:24px 38px minmax(0,1fr) 36px 10px;
+    padding:6px 8px;
+  }
+  .rank-large{
+    font-size:20px;
+  }
+  .small-avatar{
+    width:34px;
+    height:34px;
+    font-size:16px;
+  }
+  .row-name{
+    font-size:12px;
+  }
+  .row-meta{
+    font-size:9px;
+  }
+  .row-contact{
+    font-size:8px;
+  }
+  .list-row .rating{
+    font-size:11px;
+  }
+  .arrow{
+    font-size:16px;
+  }
   .top-hero .trophy{font-size:40px}
   .top-hero h1{font-size:28px}
   .top-hero p{font-size:13px}
@@ -1790,7 +1816,6 @@ a{color:inherit;text-decoration:none}
 
     <div class="search-wrap">
       
-      <!-- SHAHAR TUGMASI -->
       <div class="city-selector">
         <div class="city-selector-wrapper">
           <button class="city-btn" onclick="toggleCityDropdown()" id="cityDropdownBtn">
@@ -1798,7 +1823,6 @@ a{color:inherit;text-decoration:none}
             <span class="arrow" id="cityArrow">▼</span>
           </button>
           
-          <!-- VILOYATLAR DROPDOWN -->
           <div class="city-dropdown" id="cityDropdown">
             <div class="region-title">📍 Viloyatlar</div>
             <div class="city-grid">
@@ -2049,11 +2073,9 @@ a{color:inherit;text-decoration:none}
             </div>
           </div>
         </div>
-        
         <span class="selected-city-display" id="selectedCityDisplay"></span>
       </div>
       
-      <!-- QIDIRUV SATRI -->
       <div class="search-row">
         <div class="search-box">
           <span class="icon">⌕</span>
@@ -2131,6 +2153,7 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
+    <!-- BRENDLAR SAHIFASI - TO'LIQ RO'YXAT -->
     <section>
       <div class="section-title">
         <span class="ico">🏆</span>
@@ -2349,7 +2372,7 @@ let selectedDistrict = "";
 
 
 /* =========================
-   LOCALSTORAGE DAN YUKLASH
+   LOCALSTORAGE
 ========================= */
 
 function loadSelectedCity() {
@@ -2360,7 +2383,6 @@ function loadSelectedCity() {
             selectedCity = data.city || "";
             selectedDistrict = data.district || "";
             
-            // Agar shahar tanlangan bo'lsa, UI ni yangilash
             if (selectedCity) {
                 const cityDisplay = CITY_DATA[selectedCity]?.name || selectedCity;
                 let fullDisplay = cityDisplay;
@@ -2377,11 +2399,6 @@ function loadSelectedCity() {
         console.log('LocalStorage dan yuklashda xatolik');
     }
 }
-
-
-/* =========================
-   LOCALSTORAGE GA SAQLASH
-========================= */
 
 function saveSelectedCity() {
     try {
@@ -3068,7 +3085,7 @@ function topCard(b,index){
 
 
 /* =========================
-   RO‘YXAT QATORI
+   RO‘YXAT QATORI - BRENDLAR (TO'LIQ)
 ========================= */
 
 function row(b,index){
@@ -3163,8 +3180,9 @@ function render(){
  document.getElementById("homeTopCarouselInner").innerHTML = 
      filtered.slice(0,5).map((b,i) => card(b,i)).join("");
 
+ // BRENDLAR RO'YXATI - HAMMASI (cheksiz)
  document.getElementById("homeTop10").innerHTML = 
-     filtered.slice(0,10).map((b,i) => row(b,i)).join("");
+     filtered.map((b,i) => row(b,i)).join("");
 
  document.getElementById("top1Cards").innerHTML = 
      all.slice(0,1).map((b,i) => topCard(b,i)).join("");
@@ -3877,12 +3895,11 @@ function shareProfile(){
 
 
 /* =========================
-   START - LocalStorage dan yuklash
+   START
 ========================= */
 
 renderCategories();
 
-// LocalStorage dan shahar ma'lumotlarini yuklash
 loadSelectedCity();
 
 render();
