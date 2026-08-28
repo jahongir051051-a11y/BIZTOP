@@ -313,13 +313,15 @@ a{color:inherit;text-decoration:none}
 #top .carousel-inner{
   animation: none !important;
   width: 100% !important;
-  flex-wrap: wrap !important;
+  flex-wrap: nowrap !important;
   justify-content: flex-start !important;
   gap: 16px !important;
+  overflow-x: auto !important;
 }
 
 #top .carousel{
-  overflow: visible !important;
+  overflow-x: auto !important;
+  padding-bottom: 10px !important;
 }
 
 #top .rank-card{
@@ -1313,12 +1315,13 @@ a{color:inherit;text-decoration:none}
   #top .carousel-inner{
     animation: none !important;
     width: 100% !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     justify-content: flex-start !important;
+    overflow-x: auto !important;
   }
 
   #top .carousel{
-    overflow: visible !important;
+    overflow-x: auto !important;
   }
 
   .top-hero{
@@ -1466,7 +1469,8 @@ a{color:inherit;text-decoration:none}
 
   .profile-box h3{
     font-size:17px;
-    margin-bottom:6px  }
+    margin-bottom:6px
+  }
 
   .profile-box p{
     font-size:12px;
@@ -1670,12 +1674,13 @@ a{color:inherit;text-decoration:none}
   #top .carousel-inner{
     animation: none !important;
     width: 100% !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     justify-content: flex-start !important;
+    overflow-x: auto !important;
   }
 
   #top .carousel{
-    overflow: visible !important;
+    overflow-x: auto !important;
   }
 
   .profile-topbar{
@@ -1862,7 +1867,7 @@ a{color:inherit;text-decoration:none}
 </main>
 
 
-<!-- TOP (AYLANMAYDI - CHAPDAN O'NGGA) -->
+<!-- TOP (CHAPDAN O'NGGA - AYLANMAYDI) -->
 <main id="top" class="page">
 
   <div class="container">
@@ -2335,7 +2340,7 @@ function photoClass(b){
 
 
 /* =========================
-   KARTA (KARUSEL UCHUN)
+   KARTA (KARUSEL UCHUN - AYLANADI)
 ========================= */
 
 function card(b,index){
@@ -2839,8 +2844,7 @@ function renderProfile(b){
 
    <div class="gallery">
 
-     <div
-       class="gallery-item ${photoClass(b)}">
+     <div       class="gallery-item ${photoClass(b)}">
 
        ${b.icon}
 
