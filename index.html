@@ -196,7 +196,7 @@ a{color:inherit;text-decoration:none}
   transform:rotate(180deg);
 }
 
-/* VILOYATLAR DROPDOWN - KENGAYTIRILDI */
+/* VILOYATLAR DROPDOWN - KENGAYTIRILGAN */
 .city-dropdown{
   display:none;
   position:absolute;
@@ -226,7 +226,6 @@ a{color:inherit;text-decoration:none}
   margin-bottom:6px;
 }
 
-/* VILOYATLAR 2 KOLONKA QILIB */
 .city-dropdown .city-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -265,7 +264,7 @@ a{color:inherit;text-decoration:none}
   color:#fff;
 }
 
-/* TUMANLAR DROPDOWN - KENGAYTIRILDI */
+/* TUMANLAR DROPDOWN - KENGAYTIRILGAN */
 .district-dropdown{
   display:none;
   position:absolute;
@@ -1799,13 +1798,12 @@ a{color:inherit;text-decoration:none}
             <span class="arrow" id="cityArrow">▼</span>
           </button>
           
-          <!-- VILOYATLAR DROPDOWN - KENGAYTIRILGAN -->
+          <!-- VILOYATLAR DROPDOWN -->
           <div class="city-dropdown" id="cityDropdown">
             <div class="region-title">📍 Viloyatlar</div>
             <div class="city-grid">
               <div class="city-item" onclick="selectCity('')">🌍 Barchasi</div>
               
-              <!-- Toshkent -->
               <div class="city-item has-children" onclick="toggleDistricts('toshkent')">
                 📍 Toshkent <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-toshkent">
@@ -1823,7 +1821,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Samarqand -->
               <div class="city-item has-children" onclick="toggleDistricts('samarqand')">
                 📍 Samarqand <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-samarqand">
@@ -1839,7 +1836,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Buxoro -->
               <div class="city-item has-children" onclick="toggleDistricts('buxoro')">
                 📍 Buxoro <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-buxoro">
@@ -1855,7 +1851,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Namangan -->
               <div class="city-item has-children" onclick="toggleDistricts('namangan')">
                 📍 Namangan <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-namangan">
@@ -1874,7 +1869,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Andijon -->
               <div class="city-item has-children" onclick="toggleDistricts('andijon')">
                 📍 Andijon <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-andijon">
@@ -1895,7 +1889,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Farg'ona -->
               <div class="city-item has-children" onclick="toggleDistricts('fargona')">
                 📍 Farg‘ona <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-fargona">
@@ -1917,7 +1910,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Qo'qon -->
               <div class="city-item has-children" onclick="toggleDistricts('qoqon')">
                 📍 Qo‘qon <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-qoqon">
@@ -1927,7 +1919,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Jizzax -->
               <div class="city-item has-children" onclick="toggleDistricts('jizzax')">
                 📍 Jizzax <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-jizzax">
@@ -1946,7 +1937,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Sirdaryo -->
               <div class="city-item has-children" onclick="toggleDistricts('sirdaryo')">
                 📍 Sirdaryo <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-sirdaryo">
@@ -1962,7 +1952,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Navoiy -->
               <div class="city-item has-children" onclick="toggleDistricts('navoiy')">
                 📍 Navoiy <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-navoiy">
@@ -1979,7 +1968,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Qarshi -->
               <div class="city-item has-children" onclick="toggleDistricts('qarshi')">
                 📍 Qarshi <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-qarshi">
@@ -1999,7 +1987,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Termiz -->
               <div class="city-item has-children" onclick="toggleDistricts('termiz')">
                 📍 Termiz <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-termiz">
@@ -2019,7 +2006,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Urganch -->
               <div class="city-item has-children" onclick="toggleDistricts('urganch')">
                 📍 Urganch <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-urganch">
@@ -2038,7 +2024,6 @@ a{color:inherit;text-decoration:none}
                 </div>
               </div>
               
-              <!-- Qoraqalpog'iston -->
               <div class="city-item has-children" onclick="toggleDistricts('qoraqalpogiston')">
                 📍 Qoraqalpog‘iston <span class="sub-arrow">▶</span>
                 <div class="district-dropdown" id="districts-qoraqalpogiston">
@@ -2065,7 +2050,6 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
         
-        <!-- TANLANGAN SHAHAR KO'RINADI -->
         <span class="selected-city-display" id="selectedCityDisplay"></span>
       </div>
       
@@ -2365,6 +2349,53 @@ let selectedDistrict = "";
 
 
 /* =========================
+   LOCALSTORAGE DAN YUKLASH
+========================= */
+
+function loadSelectedCity() {
+    try {
+        const saved = localStorage.getItem('biztop_selected_city');
+        if (saved) {
+            const data = JSON.parse(saved);
+            selectedCity = data.city || "";
+            selectedDistrict = data.district || "";
+            
+            // Agar shahar tanlangan bo'lsa, UI ni yangilash
+            if (selectedCity) {
+                const cityDisplay = CITY_DATA[selectedCity]?.name || selectedCity;
+                let fullDisplay = cityDisplay;
+                if (selectedDistrict) {
+                    fullDisplay = cityDisplay + ' › ' + selectedDistrict;
+                }
+                document.getElementById('selectedCityName').textContent = fullDisplay;
+                const display = document.getElementById('selectedCityDisplay');
+                display.textContent = '📍 ' + fullDisplay;
+                display.classList.add('show');
+            }
+        }
+    } catch (e) {
+        console.log('LocalStorage dan yuklashda xatolik');
+    }
+}
+
+
+/* =========================
+   LOCALSTORAGE GA SAQLASH
+========================= */
+
+function saveSelectedCity() {
+    try {
+        localStorage.setItem('biztop_selected_city', JSON.stringify({
+            city: selectedCity,
+            district: selectedDistrict
+        }));
+    } catch (e) {
+        console.log('LocalStorage ga saqlashda xatolik');
+    }
+}
+
+
+/* =========================
    DROPDOWN FUNKSIYALARI
 ========================= */
 
@@ -2409,6 +2440,7 @@ function selectCity(city) {
     selectedCity = city;
     selectedDistrict = "";
     closeCityDropdown();
+    saveSelectedCity();
     
     const displayName = city ? CITY_DATA[city]?.name || city.charAt(0).toUpperCase() + city.slice(1) : 'Shahar';
     document.getElementById('selectedCityName').textContent = displayName;
@@ -2442,6 +2474,7 @@ function selectDistrict(cityKey, districtName) {
     selectedCity = cityKey;
     selectedDistrict = districtName;
     closeCityDropdown();
+    saveSelectedCity();
     
     document.querySelectorAll('.district-dropdown').forEach(d => d.classList.remove('show'));
     
@@ -3267,7 +3300,6 @@ function renderProfile(b){
 
        ${escapeHtml(b.name)}
        ${verify(b)}
-
      </h1>
 
      <div class="line">
@@ -3845,10 +3877,13 @@ function shareProfile(){
 
 
 /* =========================
-   START
+   START - LocalStorage dan yuklash
 ========================= */
 
 renderCategories();
+
+// LocalStorage dan shahar ma'lumotlarini yuklash
+loadSelectedCity();
 
 render();
 
