@@ -105,8 +105,15 @@ a{color:inherit;text-decoration:none}
 
 .search-wrap{
   display:flex;
-  gap:12px;
+  flex-direction:column;
+  gap:10px;
   margin-bottom:24px
+}
+
+.search-row{
+  display:flex;
+  gap:12px;
+  width:100%;
 }
 
 .search-box{
@@ -145,6 +152,38 @@ a{color:inherit;text-decoration:none}
   font-size:20px;
   font-weight:800;
   cursor:pointer
+}
+
+/* SHAHAR TUGMALARI */
+.city-tabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:4px;
+}
+
+.city-btn{
+  background:#0c2a59;
+  border:1px solid #2768a9;
+  border-radius:20px;
+  padding:8px 16px;
+  color:#aebfe0;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+  white-space:nowrap;
+}
+
+.city-btn:hover{
+  border-color:#1685ff;
+  color:#fff;
+}
+
+.city-btn.active{
+  background:#1685ff;
+  border-color:#1685ff;
+  color:#fff;
 }
 
 .section-title{
@@ -288,7 +327,6 @@ a{color:inherit;text-decoration:none}
 .category .ci{font-size:35px}
 .category b{font-size:15px}
 
-/* AYLANMA FAQAT MASHHUR BRENDLAR VA TOP BRENDLAR UCHUN (HOME SAHIFASI) */
 .carousel{
   display:flex;
   gap:16px;
@@ -309,7 +347,6 @@ a{color:inherit;text-decoration:none}
 
 .carousel::-webkit-scrollbar{display:none}
 
-/* TOP SAHIFASIDAGI CAROUSEL AYLANMAYDI - CHAPDAN O'NGGA */
 #top .carousel-inner{
   animation: none !important;
   width: 100% !important;
@@ -832,8 +869,6 @@ a{color:inherit;text-decoration:none}
 .nav-btn .ni{font-size:34px}
 .nav-btn.active{color:#1685ff}
 
-/* KATEGORIYALAR */
-
 .home-category-section{
   margin-top:22px;
   margin-bottom:4px
@@ -896,8 +931,6 @@ a{color:inherit;text-decoration:none}
   line-height:1.15;
   color:#f4f7ff
 }
-
-/* MODAL */
 
 .modal-backdrop{
   position:fixed;
@@ -1006,8 +1039,6 @@ a{color:inherit;text-decoration:none}
   padding:20px
 }
 
-/* MOBILE */
-
 @media(max-width:760px){
 
   :root{
@@ -1075,103 +1106,92 @@ a{color:inherit;text-decoration:none}
   #home .container{padding-top:14px}
 
   .search-wrap{
-    display:flex;
-    gap:9px;
-    margin:0 0 16px;
-    width:100%;
-    min-width:0
+    gap:8px;
+  }
+
+  .search-row{
+    gap:8px;
   }
 
   .search-box{
-    flex:1;
-    min-width:0;
-    width:auto;
-    height:52px;
+    height:48px;
     border-radius:17px;
     padding:0 13px;
-    background:#183866;
-    border:1px solid #315b91
   }
 
   .search-box .icon{
-    font-size:25px;
-    margin-right:7px;
-    flex:none
+    font-size:22px;
+    margin-right:6px;
   }
 
   .search-box input{
-    font-size:16px;
-    min-width:0;
-    width:100%;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap
+    font-size:15px;
   }
 
   .search-btn{
-    flex:0 0 92px;
-    width:92px;
-    height:52px;
+    height:48px;
+    flex:0 0 85px;
+    width:85px;
     border-radius:17px;
-    font-size:15px
+    font-size:14px;
+  }
+
+  .city-tabs{
+    gap:6px;
+  }
+
+  .city-btn{
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:16px;
   }
 
   .section-title{
-    font-size:24px;
+    font-size:22px;
     gap:8px;
     margin:17px 0 11px;
-    line-height:1.15
   }
 
-  .section-title .ico{font-size:28px}
-
-  .section-title .link{
-    font-size:14px;
-    white-space:nowrap
-  }
+  .section-title .ico{font-size:26px}
+  .section-title .link{font-size:13px}
 
   .result-card{
-    grid-template-columns:58px minmax(0,1fr) auto;
-    gap:10px;
+    grid-template-columns:52px minmax(0,1fr) auto;
+    gap:8px;
     padding:10px 12px;
     border-radius:17px;
-    min-height:100px;
+    min-height:90px;
     margin-bottom:10px
   }
 
   .avatar{
-    width:56px;
-    height:56px;
+    width:48px;
+    height:48px;
     border-width:2px;
-    font-size:27px
+    font-size:24px
   }
 
   .business-name{
-    font-size:17px;
+    font-size:15px;
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis
   }
 
   .meta{
-    font-size:12px;
-    line-height:1.55
+    font-size:11px;
+    line-height:1.5
   }
 
   .rating{
-    font-size:17px;
-    align-self:start;
-    padding-top:3px
+    font-size:15px;
   }
 
-  .rating small{font-size:11px}
+  .rating small{font-size:10px}
 
   #home .carousel{
-    gap:12px;
+    gap:10px;
     padding:1px 1px 10px;
-    overflow:hidden;
-    overscroll-behavior-x:contain;
-    scroll-snap-type:x proximity;
   }
 
   #home .carousel-inner{
@@ -1179,577 +1199,384 @@ a{color:inherit;text-decoration:none}
   }
 
   #home .rank-card{
-    flex:0 0 286px;
-    min-width:286px;
-    width:286px;
+    flex:0 0 260px;
+    min-width:260px;
+    width:260px;
     border-radius:18px;
-    border:2px solid #1e66bb;
-    scroll-snap-align:start
   }
 
   #home .rank-photo{
-    height:132px;
-    font-size:55px;
-    background-size:cover;
-    background-position:center
+    height:120px;
+    font-size:50px;
   }
 
   #home .rank-num{
     top:8px;
     left:8px;
-    width:40px;
-    height:40px;
-    font-size:20px
+    width:36px;
+    height:36px;
+    font-size:18px;
   }
 
   #home .rank-body{
-    padding:11px 13px 13px
+    padding:10px 12px 12px;
   }
 
   .rank-body .business-name{
-    font-size:18px;
-    line-height:1.2
+    font-size:17px;
   }
 
   .rank-body .meta{
-    font-size:13px;
-    line-height:1.45
+    font-size:12px;
   }
 
   .rank-rating{
-    font-size:17px;
-    margin-top:5px
+    font-size:16px;
   }
 
-  .rank-rating span{
-    font-size:12px!important
+  #top .rank-card{
+    min-width:200px !important;
+    width:200px !important;
   }
 
   .list-box{
     border-radius:17px;
-    border:1px solid #28558a;
-    width:100%;
-    overflow:hidden
   }
 
   .list-row{
-    grid-template-columns:30px 50px minmax(0,1fr) 46px 14px;
-    grid-template-rows:auto auto;
-    column-gap:7px;
-    row-gap:2px;
-    min-height:78px;
-    padding:8px 10px;
-    align-items:center
+    grid-template-columns:28px 44px minmax(0,1fr) 40px 12px;
+    gap:6px;
+    min-height:72px;
+    padding:7px 10px;
   }
 
   .rank-large{
-    font-size:28px;
-    grid-column:1;
-    grid-row:1 / span 2
+    font-size:24px;
   }
 
   .small-avatar{
-    width:48px;
-    height:48px;
-    font-size:23px;
-    grid-column:2;
-    grid-row:1 / span 2
-  }
-
-  .list-row>div:nth-child(3){
-    min-width:0;
-    grid-column:3;
-    grid-row:1
+    width:40px;
+    height:40px;
+    font-size:20px;
   }
 
   .row-name{
-    font-size:14px;
-    line-height:1.15;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis
+    font-size:13px;
   }
 
   .row-meta{
-    font-size:11px;
-    margin-top:3px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis
+    font-size:10px;
+    margin-top:2px;
   }
 
   .row-contact{
-    grid-column:3;
-    grid-row:2;
-    font-size:10px;
-    line-height:1.25;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    color:#aebfdb
+    font-size:9px;
+    line-height:1.2;
   }
 
   .list-row .rating{
-    grid-column:4;
-    grid-row:1 / span 2;
-    font-size:14px;
-    padding:0;
-    align-self:center;
-    justify-self:end;
-    white-space:nowrap
+    font-size:12px;
   }
 
   .arrow{
-    grid-column:5;
-    grid-row:1 / span 2;
-    font-size:23px;
-    justify-self:end
-  }
-
-  /* TOP SAHIFASI MOBIL */
-  #top .rank-card{
-    min-width: 220px !important;
-    width: 220px !important;
-  }
-
-  #top .carousel-inner{
-    animation: none !important;
-    width: 100% !important;
-    flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
-    overflow-x: auto !important;
-  }
-
-  #top .carousel{
-    overflow-x: auto !important;
+    font-size:18px;
   }
 
   .top-hero{
-    padding:7px 4px 0
+    padding:7px 4px 0;
   }
 
   .top-hero .trophy{
     font-size:50px;
-    line-height:1
+    line-height:1;
   }
 
   .top-hero h1{
-    font-size:34px;
-    margin:4px 0 5px
+    font-size:32px;
+    margin:4px 0 5px;
   }
 
   .top-hero p{
-    font-size:15px;
-    margin:0 0 16px
+    font-size:14px;
+    margin:0 0 14px;
   }
 
   .tabs{
     width:100%;
     max-width:none;
-    margin:0 auto 22px;
-    border-radius:23px
+    margin:0 auto 18px;
+    border-radius:20px;
   }
 
   .tab{
-    font-size:13px;
-    padding:8px 4px
+    font-size:12px;
+    padding:8px 4px;
   }
 
   .top-section{
-    margin:0 0 24px
+    margin:0 0 20px;
   }
 
   .top-section-head{
-    margin-bottom:10px
+    margin-bottom:8px;
   }
 
   .top-section-head h2{
-    font-size:23px
+    font-size:20px;
   }
 
   .top-section-head .more{
-    font-size:13px
+    font-size:12px;
+  }
+
+  #top .carousel-inner{
+    gap:10px !important;
   }
 
   .profile-head{padding:5px 0 0}
 
   .profile-topbar{
-    margin:0 16px 8px
+    margin:0 14px 6px;
   }
 
   .profile-topbar strong{
-    font-size:22px!important
+    font-size:20px!important;
   }
 
   .back{
-    font-size:35px;
-    line-height:1
+    font-size:30px;
   }
 
   .profile-cover{
-    margin:0 16px;
-    border-radius:19px;
-    border:2px solid #286db5
+    margin:0 14px;
+    border-radius:18px;
   }
 
   .cover{
-    min-height:170px;
-    padding:18px 15px;
-    gap:13px;
-    align-items:center;
-    background:
-      linear-gradient(90deg,rgba(4,15,34,.86),rgba(4,15,34,.40)),
-      url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85') center/cover
+    min-height:150px;
+    padding:15px 12px;
+    gap:12px;
   }
 
   .profile-avatar{
-    width:88px;
-    height:88px;
-    font-size:41px;
-    border-width:3px
-  }
-
-  .profile-title{
-    min-width:0
+    width:72px;
+    height:72px;
+    font-size:34px;
+    border-width:3px;
   }
 
   .profile-title h1{
-    font-size:22px;
-    margin-bottom:6px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis
+    font-size:19px;
+    margin-bottom:4px;
   }
 
   .profile-title .line{
-    font-size:12px;
-    line-height:1.45;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis
+    font-size:11px;
+    line-height:1.4;
   }
 
   .info-grid{
     grid-template-columns:repeat(3,1fr);
     margin:0 10px 10px;
-    border-radius:16px
+    border-radius:14px;
   }
 
   .info-item{
-    padding:9px 3px;
+    padding:8px 3px;
     border-right:1px solid #2d527d!important;
-    border-bottom:0!important;
-    min-width:0
   }
 
   .info-item:last-child{
-    border-right:0!important
+    border-right:0!important;
   }
 
-  .info-item .ii{font-size:23px}
+  .info-item .ii{
+    font-size:20px;
+  }
 
   .info-item span{
-    font-size:10px;
-    margin-top:4px
+    font-size:9px;
+    margin-top:3px;
   }
 
   .info-item b{
-    font-size:10px;
-    margin-top:4px;
+    font-size:9px;
+    margin-top:3px;
     white-space:nowrap;
     overflow:hidden;
-    text-overflow:ellipsis
+    text-overflow:ellipsis;
   }
 
   .profile-box{
     margin:8px 10px;
-    padding:11px;
-    border-radius:16px
+    padding:10px;
+    border-radius:14px;
   }
 
   .profile-box h3{
-    font-size:17px;
-    margin-bottom:6px
+    font-size:15px;
+    margin-bottom:5px;
   }
 
   .profile-box p{
-    font-size:12px;
-    line-height:1.5
+    font-size:11px;
+    line-height:1.4;
   }
 
-  .gallery{gap:8px}
+  .gallery{
+    gap:6px;
+  }
 
   .gallery-item{
-    min-width:145px;
-    height:95px;
-    border-radius:12px;
-    font-size:42px;
-    background-size:cover;
-    background-position:center
+    min-width:120px;
+    height:80px;
+    border-radius:10px;
+    font-size:34px;
   }
 
   .rating-summary{
     grid-template-columns:1fr;
-    gap:12px
+    gap:10px;
   }
 
-  .big-score{font-size:38px}
-  .stars{font-size:23px}
+  .big-score{
+    font-size:32px;
+  }
+
+  .stars{
+    font-size:20px;
+  }
 
   .actions{
     grid-template-columns:1fr;
-    gap:8px;
-    margin:10px
+    gap:6px;
+    margin:8px;
   }
 
   .action{
-    padding:11px 8px;
-    font-size:13px;
-    border-radius:12px
+    padding:10px 8px;
+    font-size:12px;
+    border-radius:10px;
   }
 
   .review{
-    padding:10px;
-    margin-top:7px;
-    grid-template-columns:40px minmax(0,1fr) auto;
-    gap:8px
+    padding:8px;
+    margin-top:6px;
+    grid-template-columns:36px minmax(0,1fr) auto;
+    gap:6px;
   }
 
   .review-avatar{
-    width:40px;
-    height:40px;
-    font-size:18px
+    width:36px;
+    height:36px;
+    font-size:15px;
   }
 
-  .review .date{font-size:11px}
-  .review .comment{font-size:12px}
+  .review .date{
+    font-size:10px;
+  }
+  .review .comment{
+    font-size:11px;
+  }
 
   .bottom-nav{
-    height:72px;
-    width:100%;
-    background:#03132e;
-    border-top:3px solid var(--blue);
-    padding-bottom:env(safe-area-inset-bottom)
+    height:66px;
   }
 
   .nav-btn{
-    font-size:12px;
-    gap:1px
+    font-size:11px;
+    gap:1px;
   }
 
-  .nav-btn .ni{font-size:28px}
+  .nav-btn .ni{
+    font-size:26px;
+  }
 
   .modal{
-    border-radius:20px 20px 0 0;
-    padding:18px
+    border-radius:18px 18px 0 0;
+    padding:16px;
   }
 
   .home-category-section{
-    margin-top:17px
+    margin-top:14px;
   }
 
   .home-category-title{
-    font-size:22px;
-    margin-bottom:9px
+    font-size:20px;
+    margin-bottom:7px;
   }
 
   .home-category-title .cat-icon{
-    font-size:26px
+    font-size:24px;
   }
 
   .home-category-slider{
-    gap:9px;
-    padding-bottom:9px
+    gap:8px;
+    padding-bottom:8px;
   }
 
   .home-category-item{
-    flex:0 0 94px;
-    min-width:94px;
-    height:78px;
-    border-radius:15px
+    flex:0 0 86px;
+    min-width:86px;
+    height:70px;
+    border-radius:14px;
   }
 
-  .home-category-item .emoji{font-size:25px}
-  .home-category-item b{font-size:10px}
+  .home-category-item .emoji{
+    font-size:22px;
+  }
+  .home-category-item b{
+    font-size:9px;
+  }
 }
 
 @media(max-width:430px){
-
   .header{padding:0 12px}
-
-  .logo{
-    font-size:29px
-  }
-
-  .add-btn{
-    font-size:13px;
-    padding:0 11px;
-    height:44px
-  }
-
-  .container{
-    padding-left:12px;
-    padding-right:12px
-  }
-
-  .search-wrap{gap:8px}
-
-  .search-box{
-    height:50px;
-    padding:0 12px
-  }
-
-  .search-btn{
-    height:50px;
-    flex-basis:84px;
-    width:84px;
-    font-size:14px
-  }
-
-  .section-title{font-size:22px}
-
-  .section-title .ico{font-size:26px}
-
-  .result-card{
-    grid-template-columns:52px minmax(0,1fr) auto;
-    gap:8px;
-    padding:9px
-  }
-
-  .avatar{
-    width:50px;
-    height:50px;
-    font-size:25px
-  }
-
-  .business-name{font-size:16px}
-  .meta{font-size:11px}
-  .rating{font-size:15px}
-
-  #home .rank-card{
-    flex-basis:278px;
-    min-width:278px;
-    width:278px
-  }
-
-  .rank-photo{height:128px}
-
-  .rank-body .business-name{font-size:17px}
-
-  .list-row{
-    grid-template-columns:28px 46px minmax(0,1fr) 43px 12px;
-    column-gap:6px;
-    min-height:76px;
-    padding:7px 8px
-  }
-
-  .small-avatar{
-    width:44px;
-    height:44px
-  }
-
-  .rank-large{font-size:26px}
-  .row-name{font-size:13px}
-  .row-meta{font-size:10px}
-  .row-contact{font-size:9px}
-  .list-row .rating{font-size:13px}
-  .arrow{font-size:21px}
-
-  .top-hero .trophy{font-size:46px}
-  .top-hero h1{font-size:32px}
-  .top-hero p{font-size:14px}
-
-  .tabs{margin-bottom:20px}
-
-  .tab{
-    font-size:12px;
-    padding:6px 3px
-  }
-
-  #top .rank-card{
-    min-width: 200px !important;
-    width: 200px !important;
-  }
-
-  #top .carousel-inner{
-    animation: none !important;
-    width: 100% !important;
-    flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
-    overflow-x: auto !important;
-  }
-
-  #top .carousel{
-    overflow-x: auto !important;
-  }
-
-  .profile-topbar{
-    margin:0 12px 7px
-  }
-
-  .profile-topbar strong{
-    font-size:21px!important
-  }
-
-  .profile-cover{margin:0 12px}
-
-  .cover{
-    padding:15px 11px;
-    gap:9px;
-    min-height:145px
-  }
-
-  .profile-avatar{
-    width:76px;
-    height:76px;
-    font-size:36px
-  }
-
-  .profile-title h1{font-size:20px}
-  .profile-title .line{font-size:11px}
-
-  .info-grid{margin:0 8px 8px}
-
-  .info-item{padding:8px 2px}
-
-  .info-item .ii{font-size:21px}
-  .info-item span{font-size:10px}
-  .info-item b{font-size:10px}
-
-  .profile-box{
-    margin:7px 8px;
-    padding:10px
-  }
-
-  .profile-box h3{font-size:16px}
-  .profile-box p{font-size:11px}
-
-  .gallery-item{
-    min-width:138px;
-    height:92px
-  }
-
-  .actions{margin:8px}
-  .action{font-size:12px}
-
-  .bottom-nav{height:70px}
-
-  .nav-btn{
-    font-size:11px
-  }
-
-  .nav-btn .ni{font-size:27px}
-
-  .home-category-slider{gap:8px}
-
-  .home-category-item{
-    flex-basis:88px;
-    min-width:88px;
-    height:74px
-  }
-
-  .home-category-item .emoji{font-size:23px}
-  .home-category-item b{font-size:9px}
+  .logo{font-size:27px}
+  .add-btn{font-size:12px;padding:0 10px;height:40px}
+  .container{padding-left:10px;padding-right:10px}
+  .search-box{height:44px;padding:0 10px}
+  .search-btn{height:44px;flex-basis:76px;width:76px;font-size:13px}
+  .city-btn{font-size:11px;padding:5px 10px}
+  .section-title{font-size:20px}
+  .section-title .ico{font-size:24px}
+  .result-card{padding:8px 10px}
+  .avatar{width:42px;height:42px;font-size:20px}
+  .business-name{font-size:14px}
+  .meta{font-size:10px}
+  .rating{font-size:13px}
+  .list-row{grid-template-columns:24px 38px minmax(0,1fr) 36px 10px;padding:6px 8px}
+  .rank-large{font-size:20px}
+  .small-avatar{width:34px;height:34px;font-size:16px}
+  .row-name{font-size:12px}
+  .row-meta{font-size:9px}
+  .row-contact{font-size:8px}
+  .list-row .rating{font-size:11px}
+  .arrow{font-size:16px}
+  .top-hero .trophy{font-size:40px}
+  .top-hero h1{font-size:28px}
+  .top-hero p{font-size:13px}
+  .tab{font-size:11px;padding:6px 3px}
+  .profile-topbar strong{font-size:18px!important}
+  .back{font-size:28px}
+  .cover{padding:12px 10px;min-height:130px}
+  .profile-avatar{width:60px;height:60px;font-size:28px}
+  .profile-title h1{font-size:17px}
+  .profile-title .line{font-size:10px}
+  .info-item{padding:6px 2px}
+  .info-item .ii{font-size:18px}
+  .info-item span{font-size:8px}
+  .info-item b{font-size:8px}
+  .profile-box{padding:8px;margin:6px 8px}
+  .profile-box h3{font-size:14px}
+  .profile-box p{font-size:10px}
+  .gallery-item{min-width:100px;height:70px;font-size:28px}
+  .big-score{font-size:28px}
+  .stars{font-size:18px}
+  .action{font-size:11px;padding:8px 6px}
+  .bottom-nav{height:60px}
+  .nav-btn{font-size:10px}
+  .nav-btn .ni{font-size:24px}
 }
 </style>
 </head>
@@ -1774,11 +1601,19 @@ a{color:inherit;text-decoration:none}
   <div class="container">
 
     <div class="search-wrap">
-      <div class="search-box">
-        <span class="icon">⌕</span>
-        <input id="searchInput" placeholder="Restoran, do‘kon, avto xizmat..." oninput="searchBusinesses()">
+      
+      <!-- SHAHAR TUGMALARI -->
+      <div class="city-tabs" id="cityTabs"></div>
+      
+      <!-- QIDIRUV SATRI -->
+      <div class="search-row">
+        <div class="search-box">
+          <span class="icon">⌕</span>
+          <input id="searchInput" placeholder="Restoran, do‘kon, avto xizmat..." oninput="searchBusinesses()">
+        </div>
+        <button class="search-btn" onclick="searchBusinesses()">Qidirish</button>
       </div>
-      <button class="search-btn" onclick="searchBusinesses()">Qidirish</button>
+      
     </div>
 
 
@@ -1816,7 +1651,6 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
-    <!-- MASHHUR BRENDLAR (AYLANADI) -->
     <section class="home-popular-section">
       <div class="section-title">
         <span class="ico">⭐</span>
@@ -1829,7 +1663,6 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
-    <!-- TOP BRENDLAR (AYLANADI) -->
     <section>
       <div class="section-title">
         <span class="ico">🏆</span>
@@ -1867,7 +1700,7 @@ a{color:inherit;text-decoration:none}
 </main>
 
 
-<!-- TOP (CHAPDAN O'NGGA - AYLANMAYDI) -->
+<!-- TOP -->
 <main id="top" class="page">
 
   <div class="container">
@@ -1887,12 +1720,10 @@ a{color:inherit;text-decoration:none}
 
     <div class="top-one-section-label" id="top1Label">🏆 TOP 1</div>
 
-    <!-- TOP 1 -->
     <section class="top-section top-one-card-section" id="top1">
       <div class="rank-card-wrapper" style="display:flex;justify-content:center;padding:10px 0;" id="top1Cards"></div>
     </section>
 
-    <!-- TOP 3 -->
     <section class="top-section" id="top3">
       <div class="top-section-head">
         <h2>🏆 TOP 3</h2>
@@ -1903,7 +1734,6 @@ a{color:inherit;text-decoration:none}
       </div>
     </section>
 
-    <!-- TOP 10 -->
     <section class="top-section" id="top10">
       <div class="top-section-head">
         <h2>🏆 TOP 10</h2>
@@ -1914,7 +1744,6 @@ a{color:inherit;text-decoration:none}
       </div>
     </section>
 
-    <!-- TOP 30 -->
     <section class="top-section" id="top30">
       <div class="top-section-head">
         <h2>🏆 TOP 30</h2>
@@ -1925,7 +1754,6 @@ a{color:inherit;text-decoration:none}
       </div>
     </section>
 
-    <!-- TOP 100 -->
     <section class="top-section" id="top100">
       <div class="top-section-head">
         <h2>🏆 TOP 100</h2>
@@ -2005,7 +1833,243 @@ a{color:inherit;text-decoration:none}
 <script>
 
 /* =========================
-   BIZNESLAR
+   SHAHARLAR RO'YXATI
+========================= */
+
+const UZBEK_CITIES = [
+    "toshkent", "samarqand", "buxoro", "namangan",
+    "andijon", "farg'ona", "qo'qon", "jizzax",
+    "sirdaryo", "guliston", "navoiy", "qarshi",
+    "termiz", "urganch", "xiva", "nukus",
+    "shahrisabz", "denov", "kogon", "chirchiq",
+    "angren", "bekobod", "ohangaron", "olmaliq",
+    "shovot", "baliqchi", "koson", "muborak"
+];
+
+let selectedCity = ""; // Foydalanuvchi tanlagan shahar
+
+
+/* =========================
+   SHAHAR TUGMALARINI CHIQARISH
+========================= */
+
+function renderCityTabs() {
+    const container = document.getElementById("cityTabs");
+    
+    // "Barcha shaharlar" tugmasi
+    let html = `
+        <button class="city-btn active" data-city="" onclick="selectCity('')">
+            🌍 Barchasi
+        </button>
+    `;
+    
+    // Har bir shahar uchun tugma
+    UZBEK_CITIES.forEach(city => {
+        const displayName = city.charAt(0).toUpperCase() + city.slice(1);
+        html += `
+            <button class="city-btn" data-city="${city}" onclick="selectCity('${city}')">
+                📍 ${displayName}
+            </button>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+
+/* =========================
+   SHAHAR TANLASH
+========================= */
+
+function selectCity(city) {
+    selectedCity = city;
+    
+    // Barcha tugmalarni yangilash
+    document.querySelectorAll('.city-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.city === city);
+    });
+    
+    // Agar qidiruv maydoni bo'sh bo'lmasa, qayta qidiruv bajarish
+    const input = document.getElementById("searchInput");
+    if (input.value.trim()) {
+        searchBusinesses();
+    } else {
+        // Bo'sh bo'lsa, barcha bizneslarni ko'rsatish (shaharga qarab)
+        renderHomePage();
+    }
+}
+
+
+/* =========================
+   SHAHARNI ANIQLASH (Qidiruvdan)
+========================= */
+
+function extractCity(query) {
+    const words = query.toLowerCase().split(/\s+/);
+    for (const word of words) {
+        const clean = word.replace(/lik$|liq$/, '');
+        if (UZBEK_CITIES.includes(clean)) {
+            return clean;
+        }
+        if (UZBEK_CITIES.includes(word)) {
+            return word;
+        }
+    }
+    return null;
+}
+
+
+/* =========================
+   BIZNESLARNI FILTRLASH (SHAHAR BO'YICHA)
+========================= */
+
+function filterByCity(businesses, city) {
+    if (!city) return businesses;
+    return businesses.filter(b => 
+        b.address.toLowerCase().includes(city)
+    );
+}
+
+
+/* =========================
+   BARCHA BIZNESLAR
+========================= */
+
+function getAll() {
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    return businesses.concat(saved);
+}
+
+
+/* =========================
+   ASOSIY SAHIFANI KO'RSATISH (SHAHAR FILTRI BILAN)
+========================= */
+
+function renderHomePage() {
+    const all = topSorted();
+    
+    // Shahar filtri
+    let filtered = all;
+    if (selectedCity) {
+        filtered = filterByCity(all, selectedCity);
+    }
+    
+    // Mashhur brendlar (6 ta)
+    const popular = filtered.slice(0, 6);
+    document.getElementById("popularCarouselInner").innerHTML = 
+        popular.map((b,i) => card(b,i)).join("");
+    
+    // TOP brendlar (5 ta)
+    const topBrends = filtered.slice(0, 5);
+    document.getElementById("homeTopCarouselInner").innerHTML = 
+        topBrends.map((b,i) => card(b,i)).join("");
+    
+    // Barcha brendlar (10 ta) - aslida cheksiz
+    document.getElementById("homeTop10").innerHTML = 
+        filtered.slice(0, 10).map((b,i) => row(b,i)).join("");
+}
+
+
+/* =========================
+   QIDIRUV (SHAHAR BILAN)
+========================= */
+
+function searchBusinesses() {
+    const q = document.getElementById("searchInput").value.trim().toLowerCase();
+    const box = document.getElementById("searchResults");
+    const list = document.getElementById("resultsList");
+    
+    if (!q) {
+        box.style.display = "none";
+        renderHomePage();
+        return;
+    }
+    
+    // 1. Qidiruvdan shaharni aniqlash
+    const cityFromQuery = extractCity(q);
+    
+    // 2. Qidiruv so'zini tayyorlash
+    let searchTerm = q;
+    let searchCity = selectedCity; // default: foydalanuvchi tanlagan shahar
+    
+    if (cityFromQuery) {
+        // Shahar qidiruvda yozilgan bo'lsa, o'sha shaharni ishlatamiz
+        searchCity = cityFromQuery;
+        searchTerm = q.replace(cityFromQuery, '').replace(/lik$|liq$/, '').trim();
+        if (searchTerm === '' || searchTerm === cityFromQuery) {
+            searchTerm = '';
+        }
+    }
+    
+    // 3. Barcha bizneslarni olish
+    const all = getAll();
+    
+    // 4. Qidiruvni bajarish
+    let found = all.filter(b => {
+        // A) Shahar filtri
+        if (searchCity) {
+            const addressLower = b.address.toLowerCase();
+            if (!addressLower.includes(searchCity)) {
+                return false;
+            }
+        }
+        
+        // B) Matn qidiruvi (agar so'z bo'lsa)
+        if (searchTerm) {
+            const searchFields = (
+                b.name + " " + 
+                b.category + " " + 
+                b.address + " " + 
+                b.about
+            ).toLowerCase();
+            if (!searchFields.includes(searchTerm)) {
+                return false;
+            }
+        }
+        
+        return true;
+    });
+    
+    // 5. Reyting bo'yicha saralash
+    found.sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
+    
+    // 6. Natijalarni ko'rsatish
+    box.style.display = "block";
+    
+    if (found.length === 0) {
+        list.innerHTML = `
+            <div class="profile-box">
+                <p style="text-align:center;color:#aebfe0;">
+                    🔍 "${q}" bo'yicha hech narsa topilmadi.
+                    ${searchCity ? `<br>📍 ${searchCity.charAt(0).toUpperCase() + searchCity.slice(1)} shahrida biznes topilmadi.` : ''}
+                </p>
+            </div>
+        `;
+        return;
+    }
+    
+    list.innerHTML = found.map(b => `
+        <div class="result-card" onclick="openBusiness(${b.id})" style="margin-bottom:12px">
+            <div class="avatar">${b.icon}</div>
+            <div>
+                <div class="business-name">${escapeHtml(b.name)} ${verify(b)}</div>
+                <div class="meta">
+                    📍 ${escapeHtml(b.address)}<br>
+                    🕘 ${escapeHtml(b.hours)}<br>
+                    📞 ${escapeHtml(b.phone)}
+                </div>
+            </div>
+            <div class="rating">
+                ★ ${b.rating.toFixed(1)}
+                <small><br>${b.reviews} ta baho</small>
+            </div>
+        </div>
+    `).join("");
+}
+
+
+/* =========================
+   BIZNESLAR (STATIK MA'LUMOTLAR)
 ========================= */
 
 const businesses = [
@@ -2014,7 +2078,7 @@ const businesses = [
   id:1,
   name:"Salom kafe",
   category:"Kafe",
-  address:"To‘rtko‘l",
+  address:"Toshkent",
   phone:"+998 91 123 45 67",
   hours:"09:00 – 21:00",
   rating:5.0,
@@ -2029,7 +2093,7 @@ const businesses = [
   id:2,
   name:"BIZTOP Restoran",
   category:"Restoran",
-  address:"To‘rtko‘l",
+  address:"Samarqand",
   phone:"+998 90 111 11 11",
   hours:"09:00 – 23:00",
   rating:4.9,
@@ -2044,7 +2108,7 @@ const businesses = [
   id:3,
   name:"BIZTOP Coffee",
   category:"Kafe",
-  address:"To‘rtko‘l",
+  address:"Buxoro",
   phone:"+998 93 111 22 33",
   hours:"08:00 – 22:00",
   rating:4.8,
@@ -2059,7 +2123,7 @@ const businesses = [
   id:4,
   name:"Beauty Star",
   category:"Go‘zallik",
-  address:"To‘rtko‘l",
+  address:"Samarqand",
   phone:"+998 90 222 22 22",
   hours:"09:00 – 20:00",
   rating:4.8,
@@ -2074,7 +2138,7 @@ const businesses = [
   id:5,
   name:"Grand Hotel",
   category:"Mehmonxona",
-  address:"To‘rtko‘l",
+  address:"Toshkent",
   phone:"+998 90 333 33 33",
   hours:"24/7",
   rating:4.8,
@@ -2089,7 +2153,7 @@ const businesses = [
   id:6,
   name:"Mega Market",
   category:"Supermarket",
-  address:"To‘rtko‘l",
+  address:"Toshkent",
   phone:"+998 90 444 44 44",
   hours:"08:00 – 23:00",
   rating:4.7,
@@ -2104,7 +2168,7 @@ const businesses = [
   id:7,
   name:"BIZTOP Burger",
   category:"Restoran",
-  address:"To‘rtko‘l",
+  address:"Samarqand",
   phone:"+998 90 555 55 55",
   hours:"10:00 – 23:00",
   rating:4.7,
@@ -2119,7 +2183,7 @@ const businesses = [
   id:8,
   name:"Auto Pro",
   category:"Avto xizmat",
-  address:"To‘rtko‘l",
+  address:"Buxoro",
   phone:"+998 90 666 66 66",
   hours:"08:00 – 19:00",
   rating:4.6,
@@ -2134,7 +2198,7 @@ const businesses = [
   id:9,
   name:"Smart Tech",
   category:"Telefon/texnika",
-  address:"To‘rtko‘l",
+  address:"Toshkent",
   phone:"+998 90 777 77 77",
   hours:"09:00 – 20:00",
   rating:4.6,
@@ -2149,7 +2213,7 @@ const businesses = [
   id:10,
   name:"Shirin Non",
   category:"Nonvoyxona",
-  address:"To‘rtko‘l",
+  address:"Samarqand",
   phone:"+998 90 888 88 88",
   hours:"06:00 – 21:00",
   rating:4.5,
@@ -2300,22 +2364,6 @@ function filterByCategory(category){
 
 
 /* =========================
-   BARCHA BIZNESLAR
-========================= */
-
-function getAll(){
-
- const saved =
-   JSON.parse(
-     localStorage.getItem("biztopBusinesses") || "[]"
-   );
-
- return businesses.concat(saved);
-
-}
-
-
-/* =========================
    TASDIQLANGAN
 ========================= */
 
@@ -2340,7 +2388,7 @@ function photoClass(b){
 
 
 /* =========================
-   KARTA (KARUSEL UCHUN - AYLANADI)
+   KARTA (KARUSEL UCHUN)
 ========================= */
 
 function card(b,index){
@@ -2393,7 +2441,7 @@ function card(b,index){
 
 
 /* =========================
-   TOP KARTA - CHAPDAN O'NGGA AYLANMAYDIGAN
+   TOP KARTA - CHAPDAN O'NGGA
 ========================= */
 
 function topCard(b,index){
@@ -2520,89 +2568,47 @@ function topSorted(){
 
 
 /* =========================
-   RENDER
+   RENDER (ASOSIY)
 ========================= */
 
 function render(){
 
+ // Shahar filtrini qo'llash
  const all = topSorted();
+ let filtered = all;
+ if (selectedCity) {
+     filtered = filterByCity(all, selectedCity);
+ }
 
- // Uch marta takrorlash (cheksiz aylanish effekti uchun)
- const doubleAll = [...all, ...all, ...all];
+ // Mashhur brendlar (6 ta)
+ const popular = filtered.slice(0, 6);
+ document.getElementById("popularCarouselInner").innerHTML = 
+     popular.map((b,i) => card(b,i)).join("");
 
+ // TOP brendlar (5 ta)
+ const topBrends = filtered.slice(0, 5);
+ document.getElementById("homeTopCarouselInner").innerHTML = 
+     topBrends.map((b,i) => card(b,i)).join("");
 
- document.getElementById(
-   "popularCarouselInner"
- ).innerHTML =
+ // Barcha brendlar (10 ta)
+ document.getElementById("homeTop10").innerHTML = 
+     filtered.slice(0, 10).map((b,i) => row(b,i)).join("");
 
-   doubleAll.slice(0,18)
-      .map((b,i)=>card(b,i))
-      .join("");
+ // TOP SAHIFASI
+ document.getElementById("top1Cards").innerHTML = 
+     all.slice(0,1).map((b,i) => topCard(b,i)).join("");
 
+ document.getElementById("top3CardsInner").innerHTML = 
+     all.slice(0,3).map((b,i) => topCard(b,i)).join("");
 
- document.getElementById(
-   "homeTopCarouselInner"
- ).innerHTML =
+ document.getElementById("top10CardsInner").innerHTML = 
+     all.slice(0,10).map((b,i) => topCard(b,i)).join("");
 
-   doubleAll.slice(0,15)
-      .map((b,i)=>card(b,i))
-      .join("");
+ document.getElementById("top30CardsInner").innerHTML = 
+     all.slice(0,30).map((b,i) => topCard(b,i)).join("");
 
-
- document.getElementById(
-   "homeTop10"
- ).innerHTML =
-
-   all.slice(0,10)
-      .map((b,i)=>row(b,i))
-      .join("");
-
-
- // TOP 1 - faqat 1 ta markazda
- document.getElementById(
-   "top1Cards"
- ).innerHTML =
-
-   all.slice(0,1)
-      .map((b,i)=>topCard(b,i))
-      .join("");
-
-
- // TOP SAHIFASI - CHAPDAN O'NGGA (AYLANMAYDI)
- document.getElementById(
-   "top3CardsInner"
- ).innerHTML =
-
-   all.slice(0,3)
-      .map((b,i)=>topCard(b,i))
-      .join("");
-
-
- document.getElementById(
-   "top10CardsInner"
- ).innerHTML =
-
-   all.slice(0,10)
-      .map((b,i)=>topCard(b,i))
-      .join("");
-
-
- document.getElementById(
-   "top30CardsInner"
- ).innerHTML =
-
-   all.slice(0,30)
-      .map((b,i)=>topCard(b,i))
-      .join("");
-
-
- document.getElementById(
-   "top100CardsInner"
- ).innerHTML =
-
-   all.slice(0,100)
-      .map((b,i)=>topCard(b,i))
-      .join("");
+ document.getElementById("top100CardsInner").innerHTML = 
+     all.slice(0,100).map((b,i) => topCard(b,i)).join("");
 
 }
 
@@ -3115,121 +3121,6 @@ function openDetailFromCard(id){
 
 
 /* =========================
-   QIDIRUV
-========================= */
-
-function searchBusinesses(){
-
- const q =
-   document
-     .getElementById("searchInput")
-     .value
-     .trim()
-     .toLowerCase();
-
-
- const box =
-   document.getElementById(
-     "searchResults"
-   );
-
-
- const list =
-   document.getElementById(
-     "resultsList"
-   );
-
-
- if(!q){
-
-   box.style.display="none";
-
-   return;
-
- }
-
-
- const found =
-   getAll().filter(
-
-     b =>
-       (
-         b.name +
-         " " +
-         b.category +
-         " " +
-         b.address +
-         " " +
-         b.about
-       )
-       .toLowerCase()
-       .includes(q)
-
-   );
-
-
- box.style.display="block";
-
-
- list.innerHTML = found.length
-
- ? found.map(b=>`
-
-   <div
-     class="result-card"
-     onclick="openBusiness(${b.id})"
-     style="margin-bottom:12px">
-
-     <div class="avatar">
-       ${b.icon}
-     </div>
-
-
-     <div>
-
-       <div class="business-name">
-
-         ${escapeHtml(b.name)}
-         ${verify(b)}
-
-       </div>
-
-       <div class="meta">
-
-         📍 ${escapeHtml(b.address)}
-         <br>
-
-         🕘 ${escapeHtml(b.hours)}
-         <br>
-
-         📞 ${escapeHtml(b.phone)}
-
-       </div>
-
-     </div>
-
-
-     <div class="rating">
-
-       ★ ${b.rating.toFixed(1)}
-
-       <small>
-         <br>
-         ${b.reviews} ta baho
-       </small>
-
-     </div>
-
-   </div>
-
- `).join("")
-
- : '<div class="profile-box">Hech narsa topilmadi.</div>';
-
-}
-
-
-/* =========================
    TOP TAB
 ========================= */
 
@@ -3324,7 +3215,7 @@ function addBusiness(){
      document.getElementById(
        "newAddress"
      ).value ||
-     "To‘rtko‘l",
+     "Toshkent",
 
    phone:
      document.getElementById(
@@ -3420,6 +3311,8 @@ function shareProfile(){
 ========================= */
 
 renderCategories();
+
+renderCityTabs();
 
 render();
 
