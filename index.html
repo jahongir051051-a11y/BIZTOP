@@ -65,7 +65,11 @@ a{color:inherit;text-decoration:none}
 .logo{
   font-weight:900;
   font-size:46px;
-  letter-spacing:-3px
+  letter-spacing:-3px;
+  background:none;
+  border:0;
+  color:#fff;
+  cursor:pointer
 }
 
 .logo .biz{color:#147cff}
@@ -79,7 +83,8 @@ a{color:inherit;text-decoration:none}
   font-weight:800;
   padding:16px 26px;
   font-size:22px;
-  box-shadow:0 8px 22px rgba(22,133,255,.25)
+  box-shadow:0 8px 22px rgba(22,133,255,.25);
+  cursor:pointer
 }
 
 .add-btn span{
@@ -138,7 +143,8 @@ a{color:inherit;text-decoration:none}
   background:var(--blue);
   color:#fff;
   font-size:20px;
-  font-weight:800
+  font-weight:800;
+  cursor:pointer
 }
 
 .section-title{
@@ -157,7 +163,8 @@ a{color:inherit;text-decoration:none}
   margin-left:auto;
   color:#2290ff;
   font-size:17px;
-  font-weight:700
+  font-weight:700;
+  cursor:pointer
 }
 
 .result-card{
@@ -170,7 +177,8 @@ a{color:inherit;text-decoration:none}
   border-radius:24px;
   background:linear-gradient(120deg,#0b2550,#071d40);
   box-shadow:var(--shadow);
-  transition:.2s
+  transition:.2s;
+  cursor:pointer
 }
 
 .result-card:hover,
@@ -273,7 +281,8 @@ a{color:inherit;text-decoration:none}
   display:flex;
   flex-direction:column;
   justify-content:center;
-  gap:8px
+  gap:8px;
+  cursor:pointer
 }
 
 .category .ci{font-size:35px}
@@ -298,7 +307,8 @@ a{color:inherit;text-decoration:none}
   overflow:hidden;
   transition:.2s;
   box-shadow:var(--shadow);
-  position:relative
+  position:relative;
+  cursor:pointer
 }
 
 .rank-photo{
@@ -387,7 +397,8 @@ a{color:inherit;text-decoration:none}
   min-height:105px;
   padding:12px 18px;
   border-bottom:1px solid #21456f;
-  transition:.2s
+  transition:.2s;
+  cursor:pointer
 }
 
 .list-row:last-child{border-bottom:0}
@@ -472,7 +483,8 @@ a{color:inherit;text-decoration:none}
   border:0;
   padding:14px;
   font-size:20px;
-  font-weight:900
+  font-weight:900;
+  cursor:pointer
 }
 
 .tab.active{
@@ -515,7 +527,8 @@ a{color:inherit;text-decoration:none}
 .top-section-head .more{
   margin-left:auto;
   color:#1687ff;
-  font-weight:800
+  font-weight:800;
+  cursor:pointer
 }
 
 .profile-head{padding:16px 0 0}
@@ -531,10 +544,9 @@ a{color:inherit;text-decoration:none}
   border:0;
   background:transparent;
   color:#fff;
-  font-size:34px
+  font-size:34px;
+  cursor:pointer
 }
-
-.share{font-size:29px}
 
 .profile-cover{
   border:2px solid #286db5;
@@ -712,7 +724,8 @@ a{color:inherit;text-decoration:none}
   font-weight:900;
   color:#fff;
   font-size:16px;
-  background:#1485ff
+  background:#1485ff;
+  cursor:pointer
 }
 
 .action.telegram{background:#19b969}
@@ -774,7 +787,8 @@ a{color:inherit;text-decoration:none}
   align-items:center;
   justify-content:center;
   gap:3px;
-  font-weight:900
+  font-weight:900;
+  cursor:pointer
 }
 
 .nav-btn .ni{font-size:34px}
@@ -825,7 +839,8 @@ a{color:inherit;text-decoration:none}
   text-align:center;
   scroll-snap-align:start;
   box-shadow:0 5px 14px rgba(0,0,0,.16);
-  transition:.2s
+  transition:.2s;
+  cursor:pointer
 }
 
 .home-category-item:active{
@@ -878,7 +893,8 @@ a{color:inherit;text-decoration:none}
   background:transparent;
   border:0;
   color:#fff;
-  font-size:40px
+  font-size:40px;
+  cursor:pointer
 }
 
 .modal h2{
@@ -924,7 +940,8 @@ a{color:inherit;text-decoration:none}
   padding:15px;
   font-size:18px;
   font-weight:900;
-  margin-top:5px
+  margin-top:5px;
+  cursor:pointer
 }
 
 .detail-actions{
@@ -940,7 +957,8 @@ a{color:inherit;text-decoration:none}
   padding:14px;
   font-weight:900;
   color:#fff;
-  background:#1685ff
+  background:#1685ff;
+  cursor:pointer
 }
 
 .footer{
@@ -1711,10 +1729,9 @@ a{color:inherit;text-decoration:none}
 <div class="app">
 
 <header class="header">
-  <button class="logo" style="background:none;border:0" onclick="showPage('home')">
+  <button class="logo" onclick="showPage('home')">
     <span class="biz">BIZ</span><span class="top">TOP</span>
   </button>
-
   <button class="add-btn" onclick="openAdd()">
     <span>＋</span>Biznes qo‘shish
   </button>
@@ -1727,215 +1744,87 @@ a{color:inherit;text-decoration:none}
   <div class="container">
 
     <div class="search-wrap">
-
       <div class="search-box">
         <span class="icon">⌕</span>
-        <input
-          id="searchInput"
-          placeholder="Restoran, do‘kon, avto xizmat..."
-          oninput="searchBusinesses()">
+        <input id="searchInput" placeholder="Restoran, do‘kon, avto xizmat..." oninput="searchBusinesses()">
       </div>
-
-      <button class="search-btn" onclick="searchBusinesses()">
-        Qidirish
-      </button>
-
+      <button class="search-btn" onclick="searchBusinesses()">Qidirish</button>
     </div>
 
 
     <section id="searchResults" style="display:none">
-
       <div class="section-title">
         <span class="ico">⌕</span>
         Qidiruv natijalari
       </div>
-
       <div id="resultsList"></div>
-
     </section>
 
 
     <div class="hero-home">
-
-      <h1>
-        Eng yaxshi
-        <span class="blue">brendlarni</span>
-        <br>
-        toping
-      </h1>
-
-      <p>
-        BIZTOP — bizneslarni topish, baholash va tanlash platformasi.
-      </p>
-
+      <h1>Eng yaxshi <span class="blue">brendlarni</span><br>toping</h1>
+      <p>BIZTOP — bizneslarni topish, baholash va tanlash platformasi.</p>
     </div>
 
 
-    <!-- Kategoriyalar -->
     <section class="category-wrap">
-
-      <div class="section-title">
-        Kategoriyalar
-      </div>
-
+      <div class="section-title">Kategoriyalar</div>
       <div class="category-grid">
-
-        <div class="category">
-          <div class="ci">💇</div>
-          <b>Go‘zallik</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">🛒</div>
-          <b>Do‘kon</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">🍽️</div>
-          <b>Restoran</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">☕</div>
-          <b>Kafe</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">🚗</div>
-          <b>Avto xizmat</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">🏨</div>
-          <b>Mehmonxona</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">🏥</div>
-          <b>Klinika</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">💊</div>
-          <b>Dorixona</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">👕</div>
-          <b>Kiyim-kechak</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">🥖</div>
-          <b>Nonvoyxona</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">🏪</div>
-          <b>Supermarket</b>
-        </div>
-
-        <div class="category">
-          <div class="ci">📱</div>
-          <b>Telefon/texnika</b>
-        </div>
-
+        <div class="category"><div class="ci">💇</div><b>Go‘zallik</b></div>
+        <div class="category"><div class="ci">🛒</div><b>Do‘kon</b></div>
+        <div class="category"><div class="ci">🍽️</div><b>Restoran</b></div>
+        <div class="category"><div class="ci">☕</div><b>Kafe</b></div>
+        <div class="category"><div class="ci">🚗</div><b>Avto xizmat</b></div>
+        <div class="category"><div class="ci">🏨</div><b>Mehmonxona</b></div>
+        <div class="category"><div class="ci">🏥</div><b>Klinika</b></div>
+        <div class="category"><div class="ci">💊</div><b>Dorixona</b></div>
+        <div class="category"><div class="ci">👕</div><b>Kiyim-kechak</b></div>
+        <div class="category"><div class="ci">🥖</div><b>Nonvoyxona</b></div>
+        <div class="category"><div class="ci">🏪</div><b>Supermarket</b></div>
+        <div class="category"><div class="ci">📱</div><b>Telefon/texnika</b></div>
       </div>
-
     </section>
 
 
-    <!-- Mashhur brendlar -->
     <section class="home-popular-section">
-
       <div class="section-title">
-
         <span class="ico">⭐</span>
-
         Mashhur brendlar
-
-        <span
-          class="link"
-          onclick="showPage('top')">
-          Barchasini ko‘rish ›
-        </span>
-
+        <span class="link" onclick="showPage('top')">Barchasini ko‘rish ›</span>
       </div>
-
-      <div
-        class="carousel"
-        id="popularCarousel">
-      </div>
-
+      <div class="carousel" id="popularCarousel"></div>
     </section>
 
 
-    <!-- TOP brendlar -->
     <section>
-
       <div class="section-title">
-
         <span class="ico">🏆</span>
-
-        TOP
-        <span class="accent">brendlar</span>
-
+        TOP <span class="accent">brendlar</span>
       </div>
-
-      <div
-        class="carousel"
-        id="homeTopCarousel">
-      </div>
-
+      <div class="carousel" id="homeTopCarousel"></div>
     </section>
 
 
-    <!-- 40+ kategoriya -->
     <section class="home-category-section">
-
       <div class="home-category-title">
-
         <span class="cat-icon">📂</span>
         Kategoriyalar
-
       </div>
-
-      <div
-        class="home-category-slider"
-        id="homeCategorySlider">
-      </div>
-
+      <div class="home-category-slider" id="homeCategorySlider"></div>
     </section>
 
 
-    <!-- Barcha brendlar -->
     <section>
-
       <div class="section-title">
-
         <span class="ico">🏆</span>
-
         Brendlar
-
-        <span
-          class="link"
-          onclick="showPage('top')">
-          Barchasini ko‘rish ›
-        </span>
-
+        <span class="link" onclick="showPage('top')">Barchasini ko‘rish ›</span>
       </div>
-
-      <div
-        class="list-box"
-        id="homeTop10">
-      </div>
-
+      <div class="list-box" id="homeTop10"></div>
     </section>
 
 
-    <div class="footer">
-      © 2026 BIZTOP — Bizneslarni topish va baholash platformasi
-    </div>
+    <div class="footer">© 2026 BIZTOP — Bizneslarni topish va baholash platformasi</div>
 
   </div>
 
@@ -1948,148 +1837,54 @@ a{color:inherit;text-decoration:none}
   <div class="container">
 
     <div class="top-hero">
-
       <div class="trophy">🏆</div>
-
       <h1>TOP brendlar</h1>
-
-      <p>
-        Eng yuqori baholangan brendlar
-      </p>
-
+      <p>Eng yuqori baholangan brendlar</p>
     </div>
 
     <div class="tabs">
-
-      <button
-        class="tab active"
-        onclick="scrollTopSection('top3',this)">
-        TOP 3
-      </button>
-
-      <button
-        class="tab"
-        onclick="scrollTopSection('top10',this)">
-        TOP 10
-      </button>
-
-      <button
-        class="tab"
-        onclick="scrollTopSection('top30',this)">
-        TOP 30
-      </button>
-
-      <button
-        class="tab"
-        onclick="scrollTopSection('top100',this)">
-        TOP 100
-      </button>
-
+      <button class="tab active" onclick="scrollTopSection('top3',this)">TOP 3</button>
+      <button class="tab" onclick="scrollTopSection('top10',this)">TOP 10</button>
+      <button class="tab" onclick="scrollTopSection('top30',this)">TOP 30</button>
+      <button class="tab" onclick="scrollTopSection('top100',this)">TOP 100</button>
     </div>
 
+    <div class="top-one-section-label">🏆 TOP 1</div>
 
-    <div class="top-one-section-label">
-      🏆 TOP 1
-    </div>
-
-
-    <section
-      class="top-section top-one-card-section"
-      id="top1">
-
-      <div
-        class="carousel"
-        id="top1Cards">
-      </div>
-
+    <section class="top-section top-one-card-section" id="top1">
+      <div class="carousel" id="top1Cards"></div>
     </section>
 
-
-    <section
-      class="top-section"
-      id="top3">
-
+    <section class="top-section" id="top3">
       <div class="top-section-head">
-
         <h2>🏅 TOP 3</h2>
-
-        <span class="more">
-          Barchasini ko‘rish ›
-        </span>
-
+        <span class="more">Barchasini ko‘rish ›</span>
       </div>
-
-      <div
-        class="carousel"
-        id="top3Cards">
-      </div>
-
+      <div class="carousel" id="top3Cards"></div>
     </section>
 
-
-    <section
-      class="top-section"
-      id="top10">
-
+    <section class="top-section" id="top10">
       <div class="top-section-head">
-
         <h2>🏆 TOP 10</h2>
-
-        <span class="more">
-          Barchasini ko‘rish ›
-        </span>
-
+        <span class="more">Barchasini ko‘rish ›</span>
       </div>
-
-      <div
-        class="carousel"
-        id="top10Cards">
-      </div>
-
+      <div class="carousel" id="top10Cards"></div>
     </section>
 
-
-    <section
-      class="top-section"
-      id="top30">
-
+    <section class="top-section" id="top30">
       <div class="top-section-head">
-
         <h2>🏆 TOP 30</h2>
-
-        <span class="more">
-          Barchasini ko‘rish ›
-        </span>
-
+        <span class="more">Barchasini ko‘rish ›</span>
       </div>
-
-      <div
-        class="carousel"
-        id="top30Cards">
-      </div>
-
+      <div class="carousel" id="top30Cards"></div>
     </section>
 
-
-    <section
-      class="top-section"
-      id="top100">
-
+    <section class="top-section" id="top100">
       <div class="top-section-head">
-
         <h2>🏆 TOP 100</h2>
-
-        <span class="more">
-          Barchasini ko‘rish ›
-        </span>
-
+        <span class="more">Barchasini ko‘rish ›</span>
       </div>
-
-      <div
-        class="carousel"
-        id="top100Cards">
-      </div>
-
+      <div class="carousel" id="top100Cards"></div>
     </section>
 
   </div>
@@ -2103,29 +1898,12 @@ a{color:inherit;text-decoration:none}
   <div class="container profile-head">
 
     <div class="profile-topbar">
-
-      <button
-        class="back"
-        onclick="showPage('top')">
-        ‹
-      </button>
-
-      <strong style="font-size:24px">
-        Biznes profili
-      </strong>
-
-      <button
-        class="back"
-        onclick="shareProfile()">
-        ⌯
-      </button>
-
+      <button class="back" onclick="showPage('top')">‹</button>
+      <strong style="font-size:24px">Biznes profili</strong>
+      <button class="back" onclick="shareProfile()">⌯</button>
     </div>
 
-    <div
-      class="profile-cover"
-      id="profileContent">
-    </div>
+    <div class="profile-cover" id="profileContent"></div>
 
   </div>
 
@@ -2134,148 +1912,42 @@ a{color:inherit;text-decoration:none}
 
 <!-- PASTKI NAVIGATSIYA -->
 <nav class="bottom-nav">
-
-  <button
-    class="nav-btn active"
-    id="navHome"
-    onclick="showPage('home')">
-
+  <button class="nav-btn active" id="navHome" onclick="showPage('home')">
     <span class="ni">⌂</span>
     <span>BIZTOP</span>
-
   </button>
-
-
-  <button
-    class="nav-btn"
-    id="navTop"
-    onclick="showPage('top')">
-
+  <button class="nav-btn" id="navTop" onclick="showPage('top')">
     <span class="ni">🏆</span>
     <span>TOP</span>
-
   </button>
-
-
-  <button
-    class="nav-btn"
-    id="navProfile"
-    onclick="showPage('profile')">
-
+  <button class="nav-btn" id="navProfile" onclick="showPage('profile')">
     <span class="ni">♟</span>
     <span>Profil</span>
-
   </button>
-
 </nav>
 
 
 <!-- BIZNES QO‘SHISH -->
-<div
-  class="modal-backdrop"
-  id="addModal">
-
+<div class="modal-backdrop" id="addModal">
   <div class="modal">
-
-    <button
-      class="close"
-      onclick="closeAdd()">
-      ×
-    </button>
-
+    <button class="close" onclick="closeAdd()">×</button>
     <h2>Biznes qo‘shish</h2>
-
     <div class="form-grid">
-
-      <div class="field">
-
-        <label>Biznes nomi</label>
-
-        <input
-          id="newName"
-          placeholder="Masalan: BIZTOP Restaurant">
-
-      </div>
-
-
-      <div class="field">
-
-        <label>Kategoriya</label>
-
-        <select id="newCategory"></select>
-
-      </div>
-
-
-      <div class="field">
-
-        <label>Manzil</label>
-
-        <input
-          id="newAddress"
-          placeholder="Masalan: To‘rtko‘l">
-
-      </div>
-
-
-      <div class="field">
-
-        <label>Telefon raqami</label>
-
-        <input
-          id="newPhone"
-          placeholder="+998 90 123 45 67">
-
-      </div>
-
-
-      <div class="field">
-
-        <label>Ish vaqti</label>
-
-        <input
-          id="newHours"
-          value="09:00 – 21:00">
-
-      </div>
-
-
-      <div class="field">
-
-        <label>Biznes haqida</label>
-
-        <textarea
-          id="newAbout"
-          placeholder="Biznesingiz haqida qisqacha ma’lumot..."></textarea>
-
-      </div>
-
-
-      <button
-        class="save"
-        onclick="addBusiness()">
-
-        ✅ Biznesni qo‘shish
-
-      </button>
-
+      <div class="field"><label>Biznes nomi</label><input id="newName" placeholder="Masalan: BIZTOP Restaurant"></div>
+      <div class="field"><label>Kategoriya</label><select id="newCategory"></select></div>
+      <div class="field"><label>Manzil</label><input id="newAddress" placeholder="Masalan: To‘rtko‘l"></div>
+      <div class="field"><label>Telefon raqami</label><input id="newPhone" placeholder="+998 90 123 45 67"></div>
+      <div class="field"><label>Ish vaqti</label><input id="newHours" value="09:00 – 21:00"></div>
+      <div class="field"><label>Biznes haqida</label><textarea id="newAbout" placeholder="Biznesingiz haqida qisqacha ma’lumot..."></textarea></div>
+      <button class="save" onclick="addBusiness()">✅ Biznesni qo‘shish</button>
     </div>
-
   </div>
-
 </div>
 
 
 <!-- DETAIL -->
-<div
-  class="modal-backdrop"
-  id="detailModal">
-
-  <div
-    class="modal"
-    id="detailBox">
-  </div>
-
+<div class="modal-backdrop" id="detailModal">
+  <div class="modal" id="detailBox"></div>
 </div>
 
 </div>
