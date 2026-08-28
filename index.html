@@ -1743,6 +1743,7 @@ a{color:inherit;text-decoration:none}
 
   <div class="container">
 
+    <!-- QIDIRUV -->
     <div class="search-wrap">
       <div class="search-box">
         <span class="icon">⌕</span>
@@ -1752,6 +1753,7 @@ a{color:inherit;text-decoration:none}
     </div>
 
 
+    <!-- QIDIRUV NATIJALARI -->
     <section id="searchResults" style="display:none">
       <div class="section-title">
         <span class="ico">⌕</span>
@@ -1761,12 +1763,14 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
+    <!-- BOSH SAHIFA -->
     <div class="hero-home">
       <h1>Eng yaxshi <span class="blue">brendlarni</span><br>toping</h1>
       <p>BIZTOP — bizneslarni topish, baholash va tanlash platformasi.</p>
     </div>
 
 
+    <!-- KATEGORIYALAR -->
     <section class="category-wrap">
       <div class="section-title">Kategoriyalar</div>
       <div class="category-grid">
@@ -1786,6 +1790,7 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
+    <!-- MASHHUR BRENDLAR -->
     <section class="home-popular-section">
       <div class="section-title">
         <span class="ico">⭐</span>
@@ -1796,6 +1801,7 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
+    <!-- TOP BRENDLAR -->
     <section>
       <div class="section-title">
         <span class="ico">🏆</span>
@@ -1805,15 +1811,7 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
-    <section class="home-category-section">
-      <div class="home-category-title">
-        <span class="cat-icon">📂</span>
-        Kategoriyalar
-      </div>
-      <div class="home-category-slider" id="homeCategorySlider"></div>
-    </section>
-
-
+    <!-- BARCHA BRENDLAR -->
     <section>
       <div class="section-title">
         <span class="ico">🏆</span>
@@ -2179,50 +2177,20 @@ const categories = [
 
 function renderCategories(){
 
- const slider =
-   document.getElementById("homeCategorySlider");
-
+ const slider = document.getElementById("homeCategorySlider");
  if(slider){
-
-   slider.innerHTML =
-     categories.map(c => `
-
-       <button
-         type="button"
-         class="home-category-item"
-         onclick="filterByCategory('${c.name}')">
-
-         <span class="emoji">
-           ${c.icon}
-         </span>
-
-         <b>
-           ${escapeHtml(c.name)}
-         </b>
-
-       </button>
-
-     `).join("");
-
+   slider.innerHTML = categories.map(c => `
+     <button type="button" class="home-category-item" onclick="filterByCategory('${c.name}')">
+       <span class="emoji">${c.icon}</span>
+       <b>${escapeHtml(c.name)}</b>
+     </button>
+   `).join("");
  }
 
-
- const select =
-   document.getElementById("newCategory");
-
+ const select = document.getElementById("newCategory");
  if(select){
-
-   select.innerHTML =
-     '<option value="">Kategoriyani tanlang</option>' +
-
-     categories.map(c => `
-
-       <option value="${escapeHtml(c.name)}">
-         ${escapeHtml(c.name)}
-       </option>
-
-     `).join("");
-
+   select.innerHTML = '<option value="">Kategoriyani tanlang</option>' +
+     categories.map(c => `<option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>`).join("");
  }
 
 }
@@ -2233,20 +2201,10 @@ function renderCategories(){
 ========================= */
 
 function filterByCategory(category){
-
- const input =
-   document.getElementById("searchInput");
-
- if(input)
-   input.value = category;
-
+ const input = document.getElementById("searchInput");
+ if(input) input.value = category;
  searchBusinesses();
-
- window.scrollTo({
-   top:0,
-   behavior:"smooth"
- });
-
+ window.scrollTo({ top:0, behavior:"smooth" });
 }
 
 
@@ -2255,14 +2213,8 @@ function filterByCategory(category){
 ========================= */
 
 function getAll(){
-
- const saved =
-   JSON.parse(
-     localStorage.getItem("biztopBusinesses") || "[]"
-   );
-
+ const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
  return businesses.concat(saved);
-
 }
 
 
@@ -2271,11 +2223,7 @@ function getAll(){
 ========================= */
 
 function verify(b){
-
- return b.verified
-   ? '<span class="verify">✓</span>'
-   : '';
-
+ return b.verified ? '<span class="verify">✓</span>' : '';
 }
 
 
@@ -2284,9 +2232,7 @@ function verify(b){
 ========================= */
 
 function photoClass(b){
-
  return b.photo || "cafe";
-
 }
 
 
@@ -2295,51 +2241,17 @@ function photoClass(b){
 ========================= */
 
 function card(b,index){
-
  return `
-
- <article
-   class="rank-card"
-   onclick="openBusiness(${b.id})">
-
-   <div class="rank-num">
-     ${index+1}
-   </div>
-
-   <div class="rank-photo ${photoClass(b)}">
-     ${b.icon}
-   </div>
-
+ <article class="rank-card" onclick="openBusiness(${b.id})">
+   <div class="rank-num">${index+1}</div>
+   <div class="rank-photo ${photoClass(b)}">${b.icon}</div>
    <div class="rank-body">
-
-     <div class="business-name">
-       ${escapeHtml(b.name)}
-       ${verify(b)}
-     </div>
-
-     <div class="rank-rating">
-
-       ★ ${b.rating.toFixed(1)}
-
-       <span
-         style="color:#d0d9e8;font-size:14px">
-
-         (${b.reviews} ta baho)
-
-       </span>
-
-     </div>
-
-     <div class="meta">
-       📍 ${escapeHtml(b.address)}
-     </div>
-
+     <div class="business-name">${escapeHtml(b.name)} ${verify(b)}</div>
+     <div class="rank-rating">★ ${b.rating.toFixed(1)} <span style="color:#d0d9e8;font-size:14px">(${b.reviews} ta baho)</span></div>
+     <div class="meta">📍 ${escapeHtml(b.address)}</div>
    </div>
-
  </article>
-
  `;
-
 }
 
 
@@ -2348,54 +2260,19 @@ function card(b,index){
 ========================= */
 
 function row(b,index){
-
  return `
-
- <div
-   class="list-row"
-   onclick="openBusiness(${b.id})">
-
-   <div class="rank-large">
-     ${index+1}
-   </div>
-
-   <div class="small-avatar">
-     ${b.icon}
-   </div>
-
+ <div class="list-row" onclick="openBusiness(${b.id})">
+   <div class="rank-large">${index+1}</div>
+   <div class="small-avatar">${b.icon}</div>
    <div>
-
-     <div class="row-name">
-       ${escapeHtml(b.name)}
-       ${verify(b)}
-     </div>
-
-     <div class="row-meta">
-       📍 ${escapeHtml(b.address)}
-     </div>
-
+     <div class="row-name">${escapeHtml(b.name)} ${verify(b)}</div>
+     <div class="row-meta">📍 ${escapeHtml(b.address)}</div>
    </div>
-
-   <div class="row-contact">
-
-     ${escapeHtml(b.hours)}
-     <br>
-     ${escapeHtml(b.phone)}
-
-   </div>
-
-   <div class="rating">
-     ★ ${b.rating.toFixed(1)}
-   </div>
-
-   <div class="arrow">
-     ›
-   </div>
-
+   <div class="row-contact">${escapeHtml(b.hours)}<br>${escapeHtml(b.phone)}</div>
+   <div class="rating">★ ${b.rating.toFixed(1)}</div>
+   <div class="arrow">›</div>
  </div>
-
  `;
-
 }
 
 
@@ -2404,15 +2281,7 @@ function row(b,index){
 ========================= */
 
 function topSorted(){
-
- return getAll().sort(
-
-   (a,b) =>
-     b.rating-a.rating ||
-     b.reviews-a.reviews
-
- );
-
+ return getAll().sort((a,b) => b.rating-a.rating || b.reviews-a.reviews);
 }
 
 
@@ -2421,81 +2290,15 @@ function topSorted(){
 ========================= */
 
 function render(){
-
  const all = topSorted();
-
-
- document.getElementById(
-   "popularCarousel"
- ).innerHTML =
-
-   all.slice(0,6)
-      .map((b,i)=>card(b,i))
-      .join("");
-
-
- document.getElementById(
-   "homeTopCarousel"
- ).innerHTML =
-
-   all.slice(0,5)
-      .map((b,i)=>card(b,i))
-      .join("");
-
-
- document.getElementById(
-   "homeTop10"
- ).innerHTML =
-
-   all.slice(0,10)
-      .map((b,i)=>row(b,i))
-      .join("");
-
-
- document.getElementById(
-   "top1Cards"
- ).innerHTML =
-
-   all.slice(0,1)
-      .map((b,i)=>card(b,i))
-      .join("");
-
-
- document.getElementById(
-   "top3Cards"
- ).innerHTML =
-
-   all.slice(0,3)
-      .map((b,i)=>card(b,i))
-      .join("");
-
-
- document.getElementById(
-   "top10Cards"
- ).innerHTML =
-
-   all.slice(0,10)
-      .map((b,i)=>card(b,i))
-      .join("");
-
-
- document.getElementById(
-   "top30Cards"
- ).innerHTML =
-
-   all.slice(0,30)
-      .map((b,i)=>card(b,i))
-      .join("");
-
-
- document.getElementById(
-   "top100Cards"
- ).innerHTML =
-
-   all.slice(0,100)
-      .map((b,i)=>card(b,i))
-      .join("");
-
+ document.getElementById("popularCarousel").innerHTML = all.slice(0,6).map((b,i)=>card(b,i)).join("");
+ document.getElementById("homeTopCarousel").innerHTML = all.slice(0,5).map((b,i)=>card(b,i)).join("");
+ document.getElementById("homeTop10").innerHTML = all.slice(0,10).map((b,i)=>row(b,i)).join("");
+ document.getElementById("top1Cards").innerHTML = all.slice(0,1).map((b,i)=>card(b,i)).join("");
+ document.getElementById("top3Cards").innerHTML = all.slice(0,3).map((b,i)=>card(b,i)).join("");
+ document.getElementById("top10Cards").innerHTML = all.slice(0,10).map((b,i)=>card(b,i)).join("");
+ document.getElementById("top30Cards").innerHTML = all.slice(0,30).map((b,i)=>card(b,i)).join("");
+ document.getElementById("top100Cards").innerHTML = all.slice(0,100).map((b,i)=>card(b,i)).join("");
 }
 
 
@@ -2504,23 +2307,9 @@ function render(){
 ========================= */
 
 function escapeHtml(s){
-
- return String(s).replace(
-
-   /[&<>"']/g,
-
-   m => ({
-
-     "&":"&amp;",
-     "<":"&lt;",
-     ">":"&gt;",
-     '"':"&quot;",
-     "'":"&#039;"
-
-   }[m])
-
- );
-
+ return String(s).replace(/[&<>"']/g, m => ({
+   "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
+ }[m]));
 }
 
 
@@ -2529,48 +2318,12 @@ function escapeHtml(s){
 ========================= */
 
 function showPage(id){
-
- document
-   .querySelectorAll(".page")
-   .forEach(
-     p=>p.classList.remove("active")
-   );
-
-
- document
-   .getElementById(id)
-   .classList.add("active");
-
-
- document
-   .getElementById("navHome")
-   .classList.toggle(
-     "active",
-     id==="home"
-   );
-
-
- document
-   .getElementById("navTop")
-   .classList.toggle(
-     "active",
-     id==="top"
-   );
-
-
- document
-   .getElementById("navProfile")
-   .classList.toggle(
-     "active",
-     id==="profile"
-   );
-
-
- window.scrollTo({
-   top:0,
-   behavior:"smooth"
- });
-
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ document.getElementById("navHome").classList.toggle("active", id==="home");
+ document.getElementById("navTop").classList.toggle("active", id==="top");
+ document.getElementById("navProfile").classList.toggle("active", id==="profile");
+ window.scrollTo({ top:0, behavior:"smooth" });
 }
 
 
@@ -2579,17 +2332,9 @@ function showPage(id){
 ========================= */
 
 function openBusiness(id){
-
- selectedBusiness =
-   getAll().find(
-     b=>String(b.id)===String(id)
-   ) || businesses[0];
-
-
+ selectedBusiness = getAll().find(b=>String(b.id)===String(id)) || businesses[0];
  renderProfile(selectedBusiness);
-
  showPage("profile");
-
 }
 
 
@@ -2598,413 +2343,59 @@ function openBusiness(id){
 ========================= */
 
 function renderProfile(b){
-
- document.getElementById(
-   "profileContent"
- ).innerHTML = `
-
+ document.getElementById("profileContent").innerHTML = `
  <div class="cover">
-
-   <div class="profile-avatar">
-     ${b.icon}
-   </div>
-
+   <div class="profile-avatar">${b.icon}</div>
    <div class="profile-title">
-
-     <h1>
-
-       ${escapeHtml(b.name)}
-       ${verify(b)}
-
-     </h1>
-
-     <div class="line">
-
-       <span
-         style="color:#ffd21f;font-weight:900">
-
-         ★ ${b.rating.toFixed(1)}
-
-       </span>
-
-       (${b.reviews} ta baho)
-
-       ·
-
-       ${escapeHtml(b.category)}
-
-     </div>
-
-     <div class="line">
-
-       <span class="open">
-         ● Ochiq
-       </span>
-
-       ·
-
-       ${escapeHtml(b.hours)}
-
-     </div>
-
+     <h1>${escapeHtml(b.name)} ${verify(b)}</h1>
+     <div class="line"><span style="color:#ffd21f;font-weight:900">★ ${b.rating.toFixed(1)}</span> (${b.reviews} ta baho) · ${escapeHtml(b.category)}</div>
+     <div class="line"><span class="open">● Ochiq</span> · ${escapeHtml(b.hours)}</div>
    </div>
-
  </div>
-
-
  <div class="info-grid">
-
-   <div class="info-item">
-
-     <div class="ii">📍</div>
-
-     <span>Manzil</span>
-
-     <b>
-       ${escapeHtml(b.address)}
-     </b>
-
-   </div>
-
-
-   <div class="info-item">
-
-     <div class="ii">🕘</div>
-
-     <span>Ish vaqti</span>
-
-     <b>
-       ${escapeHtml(b.hours)}
-     </b>
-
-   </div>
-
-
-   <div class="info-item">
-
-     <div class="ii">📞</div>
-
-     <span>Telefon</span>
-
-     <b>
-       ${escapeHtml(b.phone)}
-     </b>
-
-   </div>
-
-
-   <div class="info-item">
-
-     <div class="ii">🏷️</div>
-
-     <span>Brend</span>
-
-     <b>
-       ${escapeHtml(b.name)}
-     </b>
-
-   </div>
-
+   <div class="info-item"><div class="ii">📍</div><span>Manzil</span><b>${escapeHtml(b.address)}</b></div>
+   <div class="info-item"><div class="ii">🕘</div><span>Ish vaqti</span><b>${escapeHtml(b.hours)}</b></div>
+   <div class="info-item"><div class="ii">📞</div><span>Telefon</span><b>${escapeHtml(b.phone)}</b></div>
+   <div class="info-item"><div class="ii">🏷️</div><span>Brend</span><b>${escapeHtml(b.name)}</b></div>
  </div>
-
-
+ <div class="profile-box"><h3>Biznes haqida</h3><p>${escapeHtml(b.about)}</p></div>
  <div class="profile-box">
-
-   <h3>
-     Biznes haqida
-   </h3>
-
-   <p>
-     ${escapeHtml(b.about)}
-   </p>
-
- </div>
-
-
- <div class="profile-box">
-
-   <div
-     style="
-       display:flex;
-       justify-content:space-between;
-       align-items:center
-     ">
-
-     <h3>
-       Rasmlar
-     </h3>
-
-     <span
-       style="
-         color:#1685ff;
-         font-weight:800
-       ">
-
-       Barchasini ko‘rish ›
-
-     </span>
-
-   </div>
-
-
+   <div style="display:flex;justify-content:space-between;align-items:center"><h3>Rasmlar</h3><span style="color:#1685ff;font-weight:800">Barchasini ko‘rish ›</span></div>
    <div class="gallery">
-
-     <div
-       class="gallery-item ${photoClass(b)}">
-
-       ${b.icon}
-
-     </div>
-
-     <div class="gallery-item rest">
-       🍽️
-     </div>
-
-     <div class="gallery-item coffee">
-       ☕
-     </div>
-
-     <div class="gallery-item">
-       🍰
-     </div>
-
+     <div class="gallery-item ${photoClass(b)}">${b.icon}</div>
+     <div class="gallery-item rest">🍽️</div>
+     <div class="gallery-item coffee">☕</div>
+     <div class="gallery-item">🍰</div>
    </div>
-
  </div>
-
-
  <div class="profile-box">
-
    <div class="rating-summary">
-
      <div>
-
-       <h3>
-         Mijozlar bahosi
-       </h3>
-
-       <div class="big-score">
-         ${b.rating.toFixed(1)} / 5
-       </div>
-
-       <div class="stars">
-         ★★★★★
-       </div>
-
-       <div style="color:#b8c7df">
-         ${b.reviews} ta baho
-       </div>
-
+       <h3>Mijozlar bahosi</h3>
+       <div class="big-score">${b.rating.toFixed(1)} / 5</div>
+       <div class="stars">★★★★★</div>
+       <div style="color:#b8c7df">${b.reviews} ta baho</div>
      </div>
-
-
      <div>
-
-       <div class="bar">
-
-         <span>5 ★</span>
-
-         <div class="barline">
-           <i style="width:95%"></i>
-         </div>
-
-         <span>
-           ${Math.max(1,b.reviews-1)}
-         </span>
-
-       </div>
-
-
-       <div class="bar">
-
-         <span>4 ★</span>
-
-         <div class="barline">
-           <i style="width:12%"></i>
-         </div>
-
-         <span>1</span>
-
-       </div>
-
-
-       <div class="bar">
-
-         <span>3 ★</span>
-
-         <div class="barline">
-           <i style="width:0%"></i>
-         </div>
-
-         <span>0</span>
-
-       </div>
-
-
-       <div class="bar">
-
-         <span>2 ★</span>
-
-         <div class="barline">
-           <i style="width:0%"></i>
-         </div>
-
-         <span>0</span>
-
-       </div>
-
-
-       <div class="bar">
-
-         <span>1 ★</span>
-
-         <div class="barline">
-           <i style="width:0%"></i>
-         </div>
-
-         <span>0</span>
-
-       </div>
-
+       <div class="bar"><span>5 ★</span><div class="barline"><i style="width:95%"></i></div><span>${Math.max(1,b.reviews-1)}</span></div>
+       <div class="bar"><span>4 ★</span><div class="barline"><i style="width:12%"></i></div><span>1</span></div>
+       <div class="bar"><span>3 ★</span><div class="barline"><i style="width:0%"></i></div><span>0</span></div>
+       <div class="bar"><span>2 ★</span><div class="barline"><i style="width:0%"></i></div><span>0</span></div>
+       <div class="bar"><span>1 ★</span><div class="barline"><i style="width:0%"></i></div><span>0</span></div>
      </div>
-
    </div>
-
  </div>
-
-
  <div class="actions">
-
-   <button
-     class="action"
-     onclick="
-       location.href='tel:${b.phone.replace(/[^0-9+]/g,'')}'
-     ">
-
-     📞 Qo‘ng‘iroq qilish
-
-   </button>
-
-
-   <button
-     class="action telegram"
-     onclick="
-       alert(
-         'Telegram orqali yozish keyingi bosqichda ulanadi.'
-       )
-     ">
-
-     ➤ Telegram orqali yozish
-
-   </button>
-
-
-   <button
-     class="action map"
-     onclick="
-       alert(
-         'Xarita funksiyasi keyingi bosqichda ulanadi.'
-       )
-     ">
-
-     🗺️ Xaritada ko‘rish
-
-   </button>
-
+   <button class="action" onclick="location.href='tel:${b.phone.replace(/[^0-9+]/g,'')}'">📞 Qo‘ng‘iroq qilish</button>
+   <button class="action telegram" onclick="alert('Telegram orqali yozish keyingi bosqichda ulanadi.')">➤ Telegram orqali yozish</button>
+   <button class="action map" onclick="alert('Xarita funksiyasi keyingi bosqichda ulanadi.')">🗺️ Xaritada ko‘rish</button>
  </div>
-
-
  <div class="profile-box">
-
-   <div
-     style="
-       display:flex;
-       justify-content:space-between;
-       align-items:center
-     ">
-
-     <h3>
-       Mijozlar fikri
-     </h3>
-
-     <span
-       style="
-         color:#1685ff;
-         font-weight:800
-       ">
-
-       Barchasini ko‘rish ›
-
-     </span>
-
-   </div>
-
-
-   <div class="review">
-
-     <div class="review-avatar">
-       A
-     </div>
-
-     <div>
-
-       <b>Ali</b>
-
-       <div class="date">
-         12.05.2024
-       </div>
-
-       <div style="color:#ffd21f">
-         ★★★★★
-       </div>
-
-       <div class="comment">
-         Juda yaxshi xizmat va mazali qahva! 😊
-       </div>
-
-     </div>
-
-     <b>⋮</b>
-
-   </div>
-
-
-   <div class="review">
-
-     <div
-       class="review-avatar"
-       style="background:#26a65b">
-
-       V
-
-     </div>
-
-     <div>
-
-       <b>Vali</b>
-
-       <div class="date">
-         10.05.2024
-       </div>
-
-       <div style="color:#ffd21f">
-         ★★★★★
-       </div>
-
-       <div class="comment">
-         Muhit juda yaxshi, xodimlar ham juda mehribon.
-       </div>
-
-     </div>
-
-     <b>⋮</b>
-
-   </div>
-
+   <div style="display:flex;justify-content:space-between;align-items:center"><h3>Mijozlar fikri</h3><span style="color:#1685ff;font-weight:800">Barchasini ko‘rish ›</span></div>
+   <div class="review"><div class="review-avatar">A</div><div><b>Ali</b><div class="date">12.05.2024</div><div style="color:#ffd21f">★★★★★</div><div class="comment">Juda yaxshi xizmat va mazali qahva! 😊</div></div><b>⋮</b></div>
+   <div class="review"><div class="review-avatar" style="background:#26a65b">V</div><div><b>Vali</b><div class="date">10.05.2024</div><div style="color:#ffd21f">★★★★★</div><div class="comment">Muhit juda yaxshi, xodimlar ham juda mehribon.</div></div><b>⋮</b></div>
  </div>
-
  `;
-
 }
 
 
@@ -3013,9 +2404,7 @@ function renderProfile(b){
 ========================= */
 
 function openDetailFromCard(id){
-
  openBusiness(id);
-
 }
 
 
@@ -3024,113 +2413,24 @@ function openDetailFromCard(id){
 ========================= */
 
 function searchBusinesses(){
-
- const q =
-   document
-     .getElementById("searchInput")
-     .value
-     .trim()
-     .toLowerCase();
-
-
- const box =
-   document.getElementById(
-     "searchResults"
-   );
-
-
- const list =
-   document.getElementById(
-     "resultsList"
-   );
-
-
- if(!q){
-
-   box.style.display="none";
-
-   return;
-
- }
-
-
- const found =
-   getAll().filter(
-
-     b =>
-       (
-         b.name +
-         " " +
-         b.category +
-         " " +
-         b.address +
-         " " +
-         b.about
-       )
-       .toLowerCase()
-       .includes(q)
-
-   );
-
-
+ const q = document.getElementById("searchInput").value.trim().toLowerCase();
+ const box = document.getElementById("searchResults");
+ const list = document.getElementById("resultsList");
+ if(!q){ box.style.display="none"; return; }
+ const found = getAll().filter(b =>
+   (b.name + " " + b.category + " " + b.address + " " + b.about).toLowerCase().includes(q)
+ );
  box.style.display="block";
-
-
- list.innerHTML = found.length
-
- ? found.map(b=>`
-
-   <div
-     class="result-card"
-     onclick="openBusiness(${b.id})"
-     style="margin-bottom:12px">
-
-     <div class="avatar">
-       ${b.icon}
-     </div>
-
-
+ list.innerHTML = found.length ? found.map(b=>`
+   <div class="result-card" onclick="openBusiness(${b.id})" style="margin-bottom:12px">
+     <div class="avatar">${b.icon}</div>
      <div>
-
-       <div class="business-name">
-
-         ${escapeHtml(b.name)}
-         ${verify(b)}
-
-       </div>
-
-       <div class="meta">
-
-         📍 ${escapeHtml(b.address)}
-         <br>
-
-         🕘 ${escapeHtml(b.hours)}
-         <br>
-
-         📞 ${escapeHtml(b.phone)}
-
-       </div>
-
+       <div class="business-name">${escapeHtml(b.name)} ${verify(b)}</div>
+       <div class="meta">📍 ${escapeHtml(b.address)}<br>🕘 ${escapeHtml(b.hours)}<br>📞 ${escapeHtml(b.phone)}</div>
      </div>
-
-
-     <div class="rating">
-
-       ★ ${b.rating.toFixed(1)}
-
-       <small>
-         <br>
-         ${b.reviews} ta baho
-       </small>
-
-     </div>
-
+     <div class="rating">★ ${b.rating.toFixed(1)}<small><br>${b.reviews} ta baho</small></div>
    </div>
-
- `).join("")
-
- : '<div class="profile-box">Hech narsa topilmadi.</div>';
-
+ `).join("") : '<div class="profile-box">Hech narsa topilmadi.</div>';
 }
 
 
@@ -3139,24 +2439,9 @@ function searchBusinesses(){
 ========================= */
 
 function scrollTopSection(id,btn){
-
- document
-   .querySelectorAll(".tab")
-   .forEach(
-     x=>x.classList.remove("active")
-   );
-
-
+ document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
  btn.classList.add("active");
-
-
- document
-   .getElementById(id)
-   .scrollIntoView({
-     behavior:"smooth",
-     block:"start"
-   });
-
+ document.getElementById(id).scrollIntoView({ behavior:"smooth", block:"start" });
 }
 
 
@@ -3164,22 +2449,8 @@ function scrollTopSection(id,btn){
    BIZNES QO‘SHISH MODAL
 ========================= */
 
-function openAdd(){
-
- document
-   .getElementById("addModal")
-   .classList.add("show");
-
-}
-
-
-function closeAdd(){
-
- document
-   .getElementById("addModal")
-   .classList.remove("show");
-
-}
+function openAdd(){ document.getElementById("addModal").classList.add("show"); }
+function closeAdd(){ document.getElementById("addModal").classList.remove("show"); }
 
 
 /* =========================
@@ -3187,102 +2458,29 @@ function closeAdd(){
 ========================= */
 
 function addBusiness(){
-
- const name =
-   document
-     .getElementById("newName")
-     .value
-     .trim();
-
-
- if(!name){
-
-   alert(
-     "Biznes nomini kiriting."
-   );
-
-   return;
-
- }
-
-
- const saved =
-   JSON.parse(
-     localStorage.getItem(
-       "biztopBusinesses"
-     ) || "[]"
-   );
-
-
+ const name = document.getElementById("newName").value.trim();
+ if(!name){ alert("Biznes nomini kiriting."); return; }
+ const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
  const b = {
-
    id:"local-"+Date.now(),
-
    name:name,
-
-   category:
-     document.getElementById(
-       "newCategory"
-     ).value,
-
-   address:
-     document.getElementById(
-       "newAddress"
-     ).value ||
-     "To‘rtko‘l",
-
-   phone:
-     document.getElementById(
-       "newPhone"
-     ).value ||
-     "+998 90 000 00 00",
-
-   hours:
-     document.getElementById(
-       "newHours"
-     ).value ||
-     "09:00 – 21:00",
-
+   category: document.getElementById("newCategory").value,
+   address: document.getElementById("newAddress").value || "To‘rtko‘l",
+   phone: document.getElementById("newPhone").value || "+998 90 000 00 00",
+   hours: document.getElementById("newHours").value || "09:00 – 21:00",
    rating:5.0,
-
    reviews:0,
-
    icon:"🏪",
-
    photo:"market",
-
-   about:
-     document.getElementById(
-       "newAbout"
-     ).value ||
-     "BIZTOP platformasiga yangi qo‘shilgan biznes.",
-
+   about: document.getElementById("newAbout").value || "BIZTOP platformasiga yangi qo‘shilgan biznes.",
    verified:false
-
  };
-
-
  saved.push(b);
-
-
- localStorage.setItem(
-   "biztopBusinesses",
-   JSON.stringify(saved)
- );
-
-
+ localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
  closeAdd();
-
  render();
-
-
- alert(
-   "Biznes muvaffaqiyatli qo‘shildi."
- );
-
-
+ alert("Biznes muvaffaqiyatli qo‘shildi.");
  showPage("home");
-
 }
 
 
@@ -3291,32 +2489,11 @@ function addBusiness(){
 ========================= */
 
 function shareProfile(){
-
  if(navigator.share){
-
-   navigator.share({
-
-     title:selectedBusiness.name,
-
-     text:
-       "BIZTOP biznes profili: " +
-       selectedBusiness.name
-
-   });
-
+   navigator.share({ title:selectedBusiness.name, text: "BIZTOP biznes profili: " + selectedBusiness.name });
  }else{
-
-   navigator.clipboard
-     ?.writeText(location.href)
-     .then(
-       () =>
-         alert(
-           "Profil havolasi nusxalandi."
-         )
-     );
-
+   navigator.clipboard?.writeText(location.href).then(() => alert("Profil havolasi nusxalandi."));
  }
-
 }
 
 
@@ -3325,9 +2502,7 @@ function shareProfile(){
 ========================= */
 
 renderCategories();
-
 render();
-
 renderProfile(selectedBusiness);
 
 </script>
