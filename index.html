@@ -65,11 +65,7 @@ a{color:inherit;text-decoration:none}
 .logo{
   font-weight:900;
   font-size:46px;
-  letter-spacing:-3px;
-  background:none;
-  border:0;
-  color:#fff;
-  cursor:pointer
+  letter-spacing:-3px
 }
 
 .logo .biz{color:#147cff}
@@ -83,8 +79,7 @@ a{color:inherit;text-decoration:none}
   font-weight:800;
   padding:16px 26px;
   font-size:22px;
-  box-shadow:0 8px 22px rgba(22,133,255,.25);
-  cursor:pointer
+  box-shadow:0 8px 22px rgba(22,133,255,.25)
 }
 
 .add-btn span{
@@ -143,8 +138,7 @@ a{color:inherit;text-decoration:none}
   background:var(--blue);
   color:#fff;
   font-size:20px;
-  font-weight:800;
-  cursor:pointer
+  font-weight:800
 }
 
 .section-title{
@@ -163,8 +157,7 @@ a{color:inherit;text-decoration:none}
   margin-left:auto;
   color:#2290ff;
   font-size:17px;
-  font-weight:700;
-  cursor:pointer
+  font-weight:700
 }
 
 .result-card{
@@ -177,8 +170,7 @@ a{color:inherit;text-decoration:none}
   border-radius:24px;
   background:linear-gradient(120deg,#0b2550,#071d40);
   box-shadow:var(--shadow);
-  transition:.2s;
-  cursor:pointer
+  transition:.2s
 }
 
 .result-card:hover,
@@ -281,8 +273,7 @@ a{color:inherit;text-decoration:none}
   display:flex;
   flex-direction:column;
   justify-content:center;
-  gap:8px;
-  cursor:pointer
+  gap:8px
 }
 
 .category .ci{font-size:35px}
@@ -307,8 +298,7 @@ a{color:inherit;text-decoration:none}
   overflow:hidden;
   transition:.2s;
   box-shadow:var(--shadow);
-  position:relative;
-  cursor:pointer
+  position:relative
 }
 
 .rank-photo{
@@ -397,8 +387,7 @@ a{color:inherit;text-decoration:none}
   min-height:105px;
   padding:12px 18px;
   border-bottom:1px solid #21456f;
-  transition:.2s;
-  cursor:pointer
+  transition:.2s
 }
 
 .list-row:last-child{border-bottom:0}
@@ -483,8 +472,7 @@ a{color:inherit;text-decoration:none}
   border:0;
   padding:14px;
   font-size:20px;
-  font-weight:900;
-  cursor:pointer
+  font-weight:900
 }
 
 .tab.active{
@@ -527,8 +515,7 @@ a{color:inherit;text-decoration:none}
 .top-section-head .more{
   margin-left:auto;
   color:#1687ff;
-  font-weight:800;
-  cursor:pointer
+  font-weight:800
 }
 
 .profile-head{padding:16px 0 0}
@@ -544,9 +531,10 @@ a{color:inherit;text-decoration:none}
   border:0;
   background:transparent;
   color:#fff;
-  font-size:34px;
-  cursor:pointer
+  font-size:34px
 }
+
+.share{font-size:29px}
 
 .profile-cover{
   border:2px solid #286db5;
@@ -724,8 +712,7 @@ a{color:inherit;text-decoration:none}
   font-weight:900;
   color:#fff;
   font-size:16px;
-  background:#1485ff;
-  cursor:pointer
+  background:#1485ff
 }
 
 .action.telegram{background:#19b969}
@@ -787,8 +774,7 @@ a{color:inherit;text-decoration:none}
   align-items:center;
   justify-content:center;
   gap:3px;
-  font-weight:900;
-  cursor:pointer
+  font-weight:900
 }
 
 .nav-btn .ni{font-size:34px}
@@ -839,8 +825,7 @@ a{color:inherit;text-decoration:none}
   text-align:center;
   scroll-snap-align:start;
   box-shadow:0 5px 14px rgba(0,0,0,.16);
-  transition:.2s;
-  cursor:pointer
+  transition:.2s
 }
 
 .home-category-item:active{
@@ -893,8 +878,7 @@ a{color:inherit;text-decoration:none}
   background:transparent;
   border:0;
   color:#fff;
-  font-size:40px;
-  cursor:pointer
+  font-size:40px
 }
 
 .modal h2{
@@ -940,8 +924,7 @@ a{color:inherit;text-decoration:none}
   padding:15px;
   font-size:18px;
   font-weight:900;
-  margin-top:5px;
-  cursor:pointer
+  margin-top:5px
 }
 
 .detail-actions{
@@ -957,8 +940,7 @@ a{color:inherit;text-decoration:none}
   padding:14px;
   font-weight:900;
   color:#fff;
-  background:#1685ff;
-  cursor:pointer
+  background:#1685ff
 }
 
 .footer{
@@ -1729,9 +1711,10 @@ a{color:inherit;text-decoration:none}
 <div class="app">
 
 <header class="header">
-  <button class="logo" onclick="showPage('home')">
+  <button class="logo" style="background:none;border:0" onclick="showPage('home')">
     <span class="biz">BIZ</span><span class="top">TOP</span>
   </button>
+
   <button class="add-btn" onclick="openAdd()">
     <span>＋</span>Biznes qo‘shish
   </button>
@@ -1744,87 +1727,215 @@ a{color:inherit;text-decoration:none}
   <div class="container">
 
     <div class="search-wrap">
+
       <div class="search-box">
         <span class="icon">⌕</span>
-        <input id="searchInput" placeholder="Restoran, do‘kon, avto xizmat..." oninput="searchBusinesses()">
+        <input
+          id="searchInput"
+          placeholder="Restoran, do‘kon, avto xizmat..."
+          oninput="searchBusinesses()">
       </div>
-      <button class="search-btn" onclick="searchBusinesses()">Qidirish</button>
+
+      <button class="search-btn" onclick="searchBusinesses()">
+        Qidirish
+      </button>
+
     </div>
 
 
     <section id="searchResults" style="display:none">
+
       <div class="section-title">
         <span class="ico">⌕</span>
         Qidiruv natijalari
       </div>
+
       <div id="resultsList"></div>
+
     </section>
 
 
     <div class="hero-home">
-      <h1>Eng yaxshi <span class="blue">brendlarni</span><br>toping</h1>
-      <p>BIZTOP — bizneslarni topish, baholash va tanlash platformasi.</p>
+
+      <h1>
+        Eng yaxshi
+        <span class="blue">brendlarni</span>
+        <br>
+        toping
+      </h1>
+
+      <p>
+        BIZTOP — bizneslarni topish, baholash va tanlash platformasi.
+      </p>
+
     </div>
 
 
+    <!-- Kategoriyalar -->
     <section class="category-wrap">
-      <div class="section-title">Kategoriyalar</div>
-      <div class="category-grid">
-        <div class="category"><div class="ci">💇</div><b>Go‘zallik</b></div>
-        <div class="category"><div class="ci">🛒</div><b>Do‘kon</b></div>
-        <div class="category"><div class="ci">🍽️</div><b>Restoran</b></div>
-        <div class="category"><div class="ci">☕</div><b>Kafe</b></div>
-        <div class="category"><div class="ci">🚗</div><b>Avto xizmat</b></div>
-        <div class="category"><div class="ci">🏨</div><b>Mehmonxona</b></div>
-        <div class="category"><div class="ci">🏥</div><b>Klinika</b></div>
-        <div class="category"><div class="ci">💊</div><b>Dorixona</b></div>
-        <div class="category"><div class="ci">👕</div><b>Kiyim-kechak</b></div>
-        <div class="category"><div class="ci">🥖</div><b>Nonvoyxona</b></div>
-        <div class="category"><div class="ci">🏪</div><b>Supermarket</b></div>
-        <div class="category"><div class="ci">📱</div><b>Telefon/texnika</b></div>
-      </div>
-    </section>
 
-
-    <section class="home-popular-section">
       <div class="section-title">
-        <span class="ico">⭐</span>
-        Mashhur brendlar
-        <span class="link" onclick="showPage('top')">Barchasini ko‘rish ›</span>
-      </div>
-      <div class="carousel" id="popularCarousel"></div>
-    </section>
-
-
-    <section>
-      <div class="section-title">
-        <span class="ico">🏆</span>
-        TOP <span class="accent">brendlar</span>
-      </div>
-      <div class="carousel" id="homeTopCarousel"></div>
-    </section>
-
-
-    <section class="home-category-section">
-      <div class="home-category-title">
-        <span class="cat-icon">📂</span>
         Kategoriyalar
       </div>
-      <div class="home-category-slider" id="homeCategorySlider"></div>
-    </section>
 
+      <div class="category-grid">
 
-    <section>
-      <div class="section-title">
-        <span class="ico">🏆</span>
-        Brendlar
-        <span class="link" onclick="showPage('top')">Barchasini ko‘rish ›</span>
+        <div class="category">
+          <div class="ci">💇</div>
+          <b>Go‘zallik</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">🛒</div>
+          <b>Do‘kon</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">🍽️</div>
+          <b>Restoran</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">☕</div>
+          <b>Kafe</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">🚗</div>
+          <b>Avto xizmat</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">🏨</div>
+          <b>Mehmonxona</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">🏥</div>
+          <b>Klinika</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">💊</div>
+          <b>Dorixona</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">👕</div>
+          <b>Kiyim-kechak</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">🥖</div>
+          <b>Nonvoyxona</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">🏪</div>
+          <b>Supermarket</b>
+        </div>
+
+        <div class="category">
+          <div class="ci">📱</div>
+          <b>Telefon/texnika</b>
+        </div>
+
       </div>
-      <div class="list-box" id="homeTop10"></div>
+
     </section>
 
 
-    <div class="footer">© 2026 BIZTOP — Bizneslarni topish va baholash platformasi</div>
+    <!-- Mashhur brendlar -->
+    <section class="home-popular-section">
+
+      <div class="section-title">
+
+        <span class="ico">⭐</span>
+
+        Mashhur brendlar
+
+        <span
+          class="link"
+          onclick="showPage('top')">
+          Barchasini ko‘rish ›
+        </span>
+
+      </div>
+
+      <div
+        class="carousel"
+        id="popularCarousel">
+      </div>
+
+    </section>
+
+
+    <!-- TOP brendlar -->
+    <section>
+
+      <div class="section-title">
+
+        <span class="ico">🏆</span>
+
+        TOP
+        <span class="accent">brendlar</span>
+
+      </div>
+
+      <div
+        class="carousel"
+        id="homeTopCarousel">
+      </div>
+
+    </section>
+
+
+    <!-- 40+ kategoriya -->
+    <section class="home-category-section">
+
+      <div class="home-category-title">
+
+        <span class="cat-icon">📂</span>
+        Kategoriyalar
+
+      </div>
+
+      <div
+        class="home-category-slider"
+        id="homeCategorySlider">
+      </div>
+
+    </section>
+
+
+    <!-- Barcha brendlar -->
+    <section>
+
+      <div class="section-title">
+
+        <span class="ico">🏆</span>
+
+        Brendlar
+
+        <span
+          class="link"
+          onclick="showPage('top')">
+          Barchasini ko‘rish ›
+        </span>
+
+      </div>
+
+      <div
+        class="list-box"
+        id="homeTop10">
+      </div>
+
+    </section>
+
+
+    <div class="footer">
+      © 2026 BIZTOP — Bizneslarni topish va baholash platformasi
+    </div>
 
   </div>
 
@@ -1837,54 +1948,148 @@ a{color:inherit;text-decoration:none}
   <div class="container">
 
     <div class="top-hero">
+
       <div class="trophy">🏆</div>
+
       <h1>TOP brendlar</h1>
-      <p>Eng yuqori baholangan brendlar</p>
+
+      <p>
+        Eng yuqori baholangan brendlar
+      </p>
+
     </div>
 
     <div class="tabs">
-      <button class="tab active" onclick="scrollTopSection('top3',this)">TOP 3</button>
-      <button class="tab" onclick="scrollTopSection('top10',this)">TOP 10</button>
-      <button class="tab" onclick="scrollTopSection('top30',this)">TOP 30</button>
-      <button class="tab" onclick="scrollTopSection('top100',this)">TOP 100</button>
+
+      <button
+        class="tab active"
+        onclick="scrollTopSection('top3',this)">
+        TOP 3
+      </button>
+
+      <button
+        class="tab"
+        onclick="scrollTopSection('top10',this)">
+        TOP 10
+      </button>
+
+      <button
+        class="tab"
+        onclick="scrollTopSection('top30',this)">
+        TOP 30
+      </button>
+
+      <button
+        class="tab"
+        onclick="scrollTopSection('top100',this)">
+        TOP 100
+      </button>
+
     </div>
 
-    <div class="top-one-section-label">🏆 TOP 1</div>
 
-    <section class="top-section top-one-card-section" id="top1">
-      <div class="carousel" id="top1Cards"></div>
+    <div class="top-one-section-label">
+      🏆 TOP 1
+    </div>
+
+
+    <section
+      class="top-section top-one-card-section"
+      id="top1">
+
+      <div
+        class="carousel"
+        id="top1Cards">
+      </div>
+
     </section>
 
-    <section class="top-section" id="top3">
+
+    <section
+      class="top-section"
+      id="top3">
+
       <div class="top-section-head">
+
         <h2>🏅 TOP 3</h2>
-        <span class="more">Barchasini ko‘rish ›</span>
+
+        <span class="more">
+          Barchasini ko‘rish ›
+        </span>
+
       </div>
-      <div class="carousel" id="top3Cards"></div>
+
+      <div
+        class="carousel"
+        id="top3Cards">
+      </div>
+
     </section>
 
-    <section class="top-section" id="top10">
+
+    <section
+      class="top-section"
+      id="top10">
+
       <div class="top-section-head">
+
         <h2>🏆 TOP 10</h2>
-        <span class="more">Barchasini ko‘rish ›</span>
+
+        <span class="more">
+          Barchasini ko‘rish ›
+        </span>
+
       </div>
-      <div class="carousel" id="top10Cards"></div>
+
+      <div
+        class="carousel"
+        id="top10Cards">
+      </div>
+
     </section>
 
-    <section class="top-section" id="top30">
+
+    <section
+      class="top-section"
+      id="top30">
+
       <div class="top-section-head">
+
         <h2>🏆 TOP 30</h2>
-        <span class="more">Barchasini ko‘rish ›</span>
+
+        <span class="more">
+          Barchasini ko‘rish ›
+        </span>
+
       </div>
-      <div class="carousel" id="top30Cards"></div>
+
+      <div
+        class="carousel"
+        id="top30Cards">
+      </div>
+
     </section>
 
-    <section class="top-section" id="top100">
+
+    <section
+      class="top-section"
+      id="top100">
+
       <div class="top-section-head">
+
         <h2>🏆 TOP 100</h2>
-        <span class="more">Barchasini ko‘rish ›</span>
+
+        <span class="more">
+          Barchasini ko‘rish ›
+        </span>
+
       </div>
-      <div class="carousel" id="top100Cards"></div>
+
+      <div
+        class="carousel"
+        id="top100Cards">
+      </div>
+
     </section>
 
   </div>
@@ -1898,12 +2103,29 @@ a{color:inherit;text-decoration:none}
   <div class="container profile-head">
 
     <div class="profile-topbar">
-      <button class="back" onclick="showPage('top')">‹</button>
-      <strong style="font-size:24px">Biznes profili</strong>
-      <button class="back" onclick="shareProfile()">⌯</button>
+
+      <button
+        class="back"
+        onclick="showPage('top')">
+        ‹
+      </button>
+
+      <strong style="font-size:24px">
+        Biznes profili
+      </strong>
+
+      <button
+        class="back"
+        onclick="shareProfile()">
+        ⌯
+      </button>
+
     </div>
 
-    <div class="profile-cover" id="profileContent"></div>
+    <div
+      class="profile-cover"
+      id="profileContent">
+    </div>
 
   </div>
 
@@ -1912,60 +2134,148 @@ a{color:inherit;text-decoration:none}
 
 <!-- PASTKI NAVIGATSIYA -->
 <nav class="bottom-nav">
-  <button class="nav-btn active" id="navHome" onclick="showPage('home')">
+
+  <button
+    class="nav-btn active"
+    id="navHome"
+    onclick="showPage('home')">
+
     <span class="ni">⌂</span>
     <span>BIZTOP</span>
+
   </button>
-  <button class="nav-btn" id="navTop" onclick="showPage('top')">
+
+
+  <button
+    class="nav-btn"
+    id="navTop"
+    onclick="showPage('top')">
+
     <span class="ni">🏆</span>
     <span>TOP</span>
+
   </button>
-  <button class="nav-btn" id="navProfile" onclick="showPage('profile')">
+
+
+  <button
+    class="nav-btn"
+    id="navProfile"
+    onclick="showPage('profile')">
+
     <span class="ni">♟</span>
     <span>Profil</span>
+
   </button>
+
 </nav>
 
 
 <!-- BIZNES QO‘SHISH -->
-<div class="modal-backdrop" id="addModal">
+<div
+  class="modal-backdrop"
+  id="addModal">
+
   <div class="modal">
-    <button class="close" onclick="closeAdd()">×</button>
+
+    <button
+      class="close"
+      onclick="closeAdd()">
+      ×
+    </button>
+
     <h2>Biznes qo‘shish</h2>
+
     <div class="form-grid">
+
       <div class="field">
+
         <label>Biznes nomi</label>
-        <input id="newName" placeholder="Masalan: BIZTOP Restaurant">
+
+        <input
+          id="newName"
+          placeholder="Masalan: BIZTOP Restaurant">
+
       </div>
+
+
       <div class="field">
+
         <label>Kategoriya</label>
+
         <select id="newCategory"></select>
+
       </div>
+
+
       <div class="field">
+
         <label>Manzil</label>
-        <input id="newAddress" placeholder="Masalan: To‘rtko‘l">
+
+        <input
+          id="newAddress"
+          placeholder="Masalan: To‘rtko‘l">
+
       </div>
+
+
       <div class="field">
+
         <label>Telefon raqami</label>
-        <input id="newPhone" placeholder="+998 90 123 45 67">
+
+        <input
+          id="newPhone"
+          placeholder="+998 90 123 45 67">
+
       </div>
+
+
       <div class="field">
+
         <label>Ish vaqti</label>
-        <input id="newHours" value="09:00 – 21:00">
+
+        <input
+          id="newHours"
+          value="09:00 – 21:00">
+
       </div>
+
+
       <div class="field">
+
         <label>Biznes haqida</label>
-        <textarea id="newAbout" placeholder="Biznesingiz haqida qisqacha ma’lumot..."></textarea>
+
+        <textarea
+          id="newAbout"
+          placeholder="Biznesingiz haqida qisqacha ma’lumot..."></textarea>
+
       </div>
-      <button class="save" onclick="addBusiness()">✅ Biznesni qo‘shish</button>
+
+
+      <button
+        class="save"
+        onclick="addBusiness()">
+
+        ✅ Biznesni qo‘shish
+
+      </button>
+
     </div>
+
   </div>
+
 </div>
 
 
 <!-- DETAIL -->
-<div class="modal-backdrop" id="detailModal">
-  <div class="modal" id="detailBox"></div>
+<div
+  class="modal-backdrop"
+  id="detailModal">
+
+  <div
+    class="modal"
+    id="detailBox">
+  </div>
+
 </div>
 
 </div>
@@ -1974,11 +2284,165 @@ a{color:inherit;text-decoration:none}
 <script>
 
 /* =========================
-   BIZNESLAR (API dan olinadi)
+   BIZNESLAR
 ========================= */
 
-let businesses = [];
-let selectedBusiness = null;
+const businesses = [
+
+ {
+  id:1,
+  name:"Salom kafe",
+  category:"Kafe",
+  address:"To‘rtko‘l",
+  phone:"+998 91 123 45 67",
+  hours:"09:00 – 21:00",
+  rating:5.0,
+  reviews:23,
+  icon:"☕",
+  photo:"cafe",
+  about:"Salom kafe – mazali qahva, shirinliklar va qulay muhit. Do‘stlaringiz bilan yoqimli vaqt o‘tkazish uchun eng yaxshi joy!",
+  verified:true
+ },
+
+ {
+  id:2,
+  name:"BIZTOP Restoran",
+  category:"Restoran",
+  address:"To‘rtko‘l",
+  phone:"+998 90 111 11 11",
+  hours:"09:00 – 23:00",
+  rating:4.9,
+  reviews:18,
+  icon:"🍽️",
+  photo:"rest",
+  about:"Mazali taomlar, oilaviy muhit va sifatli xizmat.",
+  verified:true
+ },
+
+ {
+  id:3,
+  name:"BIZTOP Coffee",
+  category:"Kafe",
+  address:"To‘rtko‘l",
+  phone:"+998 93 111 22 33",
+  hours:"08:00 – 22:00",
+  rating:4.8,
+  reviews:15,
+  icon:"☕",
+  photo:"coffee",
+  about:"Qahva va shirinliklar uchun zamonaviy joy.",
+  verified:true
+ },
+
+ {
+  id:4,
+  name:"Beauty Star",
+  category:"Go‘zallik",
+  address:"To‘rtko‘l",
+  phone:"+998 90 222 22 22",
+  hours:"09:00 – 20:00",
+  rating:4.8,
+  reviews:12,
+  icon:"💇",
+  photo:"beauty",
+  about:"Go‘zallik va parvarish xizmatlari.",
+  verified:true
+ },
+
+ {
+  id:5,
+  name:"Grand Hotel",
+  category:"Mehmonxona",
+  address:"To‘rtko‘l",
+  phone:"+998 90 333 33 33",
+  hours:"24/7",
+  rating:4.8,
+  reviews:12,
+  icon:"🏨",
+  photo:"hotel",
+  about:"Qulay xonalar va mehmondo‘st xizmat.",
+  verified:true
+ },
+
+ {
+  id:6,
+  name:"Mega Market",
+  category:"Supermarket",
+  address:"To‘rtko‘l",
+  phone:"+998 90 444 44 44",
+  hours:"08:00 – 23:00",
+  rating:4.7,
+  reviews:11,
+  icon:"🛒",
+  photo:"market",
+  about:"Kundalik xaridlar uchun katta tanlov.",
+  verified:true
+ },
+
+ {
+  id:7,
+  name:"BIZTOP Burger",
+  category:"Restoran",
+  address:"To‘rtko‘l",
+  phone:"+998 90 555 55 55",
+  hours:"10:00 – 23:00",
+  rating:4.7,
+  reviews:83,
+  icon:"🍔",
+  photo:"burger",
+  about:"Mazali burger va tez tayyorlanadigan taomlar.",
+  verified:true
+ },
+
+ {
+  id:8,
+  name:"Auto Pro",
+  category:"Avto xizmat",
+  address:"To‘rtko‘l",
+  phone:"+998 90 666 66 66",
+  hours:"08:00 – 19:00",
+  rating:4.6,
+  reviews:31,
+  icon:"🚗",
+  photo:"auto",
+  about:"Avtomobil ta’mirlash va servis.",
+  verified:true
+ },
+
+ {
+  id:9,
+  name:"Smart Tech",
+  category:"Telefon/texnika",
+  address:"To‘rtko‘l",
+  phone:"+998 90 777 77 77",
+  hours:"09:00 – 20:00",
+  rating:4.6,
+  reviews:27,
+  icon:"📱",
+  photo:"tech",
+  about:"Telefon va texnika mahsulotlari.",
+  verified:true
+ },
+
+ {
+  id:10,
+  name:"Shirin Non",
+  category:"Nonvoyxona",
+  address:"To‘rtko‘l",
+  phone:"+998 90 888 88 88",
+  hours:"06:00 – 21:00",
+  rating:4.5,
+  reviews:25,
+  icon:"🥖",
+  photo:"bread",
+  about:"Issiq non va mazali pishiriqlar.",
+  verified:true
+ }
+
+];
+
+
+let selectedBusiness = businesses[0];
 
 
 /* =========================
@@ -1986,6 +2450,7 @@ let selectedBusiness = null;
 ========================= */
 
 const categories = [
+
  {name:"Restoran",icon:"🍽️"},
  {name:"Kafe",icon:"☕"},
  {name:"Do‘kon",icon:"🛒"},
@@ -2032,25 +2497,8 @@ const categories = [
  {name:"Bank va moliya",icon:"🏦"},
  {name:"Sug‘urta",icon:"🛡️"},
  {name:"Boshqa",icon:"📦"}
+
 ];
-
-
-/* =========================
-   API DAN MA'LUMOTLARNI OLISH
-========================= */
-
-async function loadBusinessesFromAPI() {
-    try {
-        const res = await fetch('/api/businesses');
-        businesses = await res.json();
-        render();
-    } catch (error) {
-        console.error('API xatosi:', error);
-        const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
-        businesses = saved.length ? saved : [];
-        render();
-    }
-}
 
 
 /* =========================
@@ -2059,20 +2507,50 @@ async function loadBusinessesFromAPI() {
 
 function renderCategories(){
 
- const slider = document.getElementById("homeCategorySlider");
+ const slider =
+   document.getElementById("homeCategorySlider");
+
  if(slider){
-   slider.innerHTML = categories.map(c => `
-     <button type="button" class="home-category-item" onclick="filterByCategory('${c.name}')">
-       <span class="emoji">${c.icon}</span>
-       <b>${escapeHtml(c.name)}</b>
-     </button>
-   `).join("");
+
+   slider.innerHTML =
+     categories.map(c => `
+
+       <button
+         type="button"
+         class="home-category-item"
+         onclick="filterByCategory('${c.name}')">
+
+         <span class="emoji">
+           ${c.icon}
+         </span>
+
+         <b>
+           ${escapeHtml(c.name)}
+         </b>
+
+       </button>
+
+     `).join("");
+
  }
 
- const select = document.getElementById("newCategory");
+
+ const select =
+   document.getElementById("newCategory");
+
  if(select){
-   select.innerHTML = '<option value="">Kategoriyani tanlang</option>' +
-     categories.map(c => `<option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>`).join("");
+
+   select.innerHTML =
+     '<option value="">Kategoriyani tanlang</option>' +
+
+     categories.map(c => `
+
+       <option value="${escapeHtml(c.name)}">
+         ${escapeHtml(c.name)}
+       </option>
+
+     `).join("");
+
  }
 
 }
@@ -2083,21 +2561,36 @@ function renderCategories(){
 ========================= */
 
 function filterByCategory(category){
- const input = document.getElementById("searchInput");
- if(input) input.value = category;
+
+ const input =
+   document.getElementById("searchInput");
+
+ if(input)
+   input.value = category;
+
  searchBusinesses();
- window.scrollTo({ top:0, behavior:"smooth" });
+
+ window.scrollTo({
+   top:0,
+   behavior:"smooth"
+ });
+
 }
 
 
 /* =========================
-   XAVFSIZ HTML
+   BARCHA BIZNESLAR
 ========================= */
 
-function escapeHtml(s){
- return String(s).replace(/[&<>"']/g, m => ({
-   "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
- }[m]));
+function getAll(){
+
+ const saved =
+   JSON.parse(
+     localStorage.getItem("biztopBusinesses") || "[]"
+   );
+
+ return businesses.concat(saved);
+
 }
 
 
@@ -2106,7 +2599,11 @@ function escapeHtml(s){
 ========================= */
 
 function verify(b){
- return b.is_verified ? '<span class="verify">✓</span>' : '';
+
+ return b.verified
+   ? '<span class="verify">✓</span>'
+   : '';
+
 }
 
 
@@ -2115,7 +2612,9 @@ function verify(b){
 ========================= */
 
 function photoClass(b){
+
  return b.photo || "cafe";
+
 }
 
 
@@ -2124,17 +2623,51 @@ function photoClass(b){
 ========================= */
 
 function card(b,index){
+
  return `
- <article class="rank-card" onclick="openBusiness(${b.id})">
-   <div class="rank-num">${index+1}</div>
-   <div class="rank-photo ${photoClass(b)}">${b.icon || '🏪'}</div>
-   <div class="rank-body">
-     <div class="business-name">${escapeHtml(b.name)} ${verify(b)}</div>
-     <div class="rank-rating">★ ${b.rating ? b.rating.toFixed(1) : '0'} <span style="color:#d0d9e8;font-size:14px">(${b.reviews_count || b.reviews || 0} ta baho)</span></div>
-     <div class="meta">📍 ${escapeHtml(b.address || 'Noma\'lum')}</div>
+
+ <article
+   class="rank-card"
+   onclick="openBusiness(${b.id})">
+
+   <div class="rank-num">
+     ${index+1}
    </div>
+
+   <div class="rank-photo ${photoClass(b)}">
+     ${b.icon}
+   </div>
+
+   <div class="rank-body">
+
+     <div class="business-name">
+       ${escapeHtml(b.name)}
+       ${verify(b)}
+     </div>
+
+     <div class="rank-rating">
+
+       ★ ${b.rating.toFixed(1)}
+
+       <span
+         style="color:#d0d9e8;font-size:14px">
+
+         (${b.reviews} ta baho)
+
+       </span>
+
+     </div>
+
+     <div class="meta">
+       📍 ${escapeHtml(b.address)}
+     </div>
+
+   </div>
+
  </article>
+
  `;
+
 }
 
 
@@ -2143,19 +2676,54 @@ function card(b,index){
 ========================= */
 
 function row(b,index){
+
  return `
- <div class="list-row" onclick="openBusiness(${b.id})">
-   <div class="rank-large">${index+1}</div>
-   <div class="small-avatar">${b.icon || '🏪'}</div>
-   <div>
-     <div class="row-name">${escapeHtml(b.name)} ${verify(b)}</div>
-     <div class="row-meta">📍 ${escapeHtml(b.address || 'Noma\'lum')}</div>
+
+ <div
+   class="list-row"
+   onclick="openBusiness(${b.id})">
+
+   <div class="rank-large">
+     ${index+1}
    </div>
-   <div class="row-contact">${escapeHtml(b.hours || '09:00 – 21:00')}<br>${escapeHtml(b.phone || 'Noma\'lum')}</div>
-   <div class="rating">★ ${b.rating ? b.rating.toFixed(1) : '0'}</div>
-   <div class="arrow">›</div>
+
+   <div class="small-avatar">
+     ${b.icon}
+   </div>
+
+   <div>
+
+     <div class="row-name">
+       ${escapeHtml(b.name)}
+       ${verify(b)}
+     </div>
+
+     <div class="row-meta">
+       📍 ${escapeHtml(b.address)}
+     </div>
+
+   </div>
+
+   <div class="row-contact">
+
+     ${escapeHtml(b.hours)}
+     <br>
+     ${escapeHtml(b.phone)}
+
+   </div>
+
+   <div class="rating">
+     ★ ${b.rating.toFixed(1)}
+   </div>
+
+   <div class="arrow">
+     ›
+   </div>
+
  </div>
+
  `;
+
 }
 
 
@@ -2164,10 +2732,15 @@ function row(b,index){
 ========================= */
 
 function topSorted(){
- return [...businesses].sort((a,b) =>
-   (b.rating || 0) - (a.rating || 0) ||
-   (b.reviews_count || b.reviews || 0) - (a.reviews_count || a.reviews || 0)
+
+ return getAll().sort(
+
+   (a,b) =>
+     b.rating-a.rating ||
+     b.reviews-a.reviews
+
  );
+
 }
 
 
@@ -2176,15 +2749,106 @@ function topSorted(){
 ========================= */
 
 function render(){
+
  const all = topSorted();
- document.getElementById("popularCarousel").innerHTML = all.slice(0,6).map((b,i)=>card(b,i)).join("");
- document.getElementById("homeTopCarousel").innerHTML = all.slice(0,5).map((b,i)=>card(b,i)).join("");
- document.getElementById("homeTop10").innerHTML = all.slice(0,10).map((b,i)=>row(b,i)).join("");
- document.getElementById("top1Cards").innerHTML = all.slice(0,1).map((b,i)=>card(b,i)).join("");
- document.getElementById("top3Cards").innerHTML = all.slice(0,3).map((b,i)=>card(b,i)).join("");
- document.getElementById("top10Cards").innerHTML = all.slice(0,10).map((b,i)=>card(b,i)).join("");
- document.getElementById("top30Cards").innerHTML = all.slice(0,30).map((b,i)=>card(b,i)).join("");
- document.getElementById("top100Cards").innerHTML = all.slice(0,100).map((b,i)=>card(b,i)).join("");
+
+
+ document.getElementById(
+   "popularCarousel"
+ ).innerHTML =
+
+   all.slice(0,6)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "homeTopCarousel"
+ ).innerHTML =
+
+   all.slice(0,5)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "homeTop10"
+ ).innerHTML =
+
+   all.slice(0,10)
+      .map((b,i)=>row(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "top1Cards"
+ ).innerHTML =
+
+   all.slice(0,1)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "top3Cards"
+ ).innerHTML =
+
+   all.slice(0,3)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "top10Cards"
+ ).innerHTML =
+
+   all.slice(0,10)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "top30Cards"
+ ).innerHTML =
+
+   all.slice(0,30)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+
+ document.getElementById(
+   "top100Cards"
+ ).innerHTML =
+
+   all.slice(0,100)
+      .map((b,i)=>card(b,i))
+      .join("");
+
+}
+
+
+/* =========================
+   XAVFSIZ HTML
+========================= */
+
+function escapeHtml(s){
+
+ return String(s).replace(
+
+   /[&<>"']/g,
+
+   m => ({
+
+     "&":"&amp;",
+     "<":"&lt;",
+     ">":"&gt;",
+     '"':"&quot;",
+     "'":"&#039;"
+
+   }[m])
+
+ );
+
 }
 
 
@@ -2193,12 +2857,48 @@ function render(){
 ========================= */
 
 function showPage(id){
- document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
- document.getElementById(id).classList.add("active");
- document.getElementById("navHome").classList.toggle("active", id==="home");
- document.getElementById("navTop").classList.toggle("active", id==="top");
- document.getElementById("navProfile").classList.toggle("active", id==="profile");
- window.scrollTo({ top:0, behavior:"smooth" });
+
+ document
+   .querySelectorAll(".page")
+   .forEach(
+     p=>p.classList.remove("active")
+   );
+
+
+ document
+   .getElementById(id)
+   .classList.add("active");
+
+
+ document
+   .getElementById("navHome")
+   .classList.toggle(
+     "active",
+     id==="home"
+   );
+
+
+ document
+   .getElementById("navTop")
+   .classList.toggle(
+     "active",
+     id==="top"
+   );
+
+
+ document
+   .getElementById("navProfile")
+   .classList.toggle(
+     "active",
+     id==="profile"
+   );
+
+
+ window.scrollTo({
+   top:0,
+   behavior:"smooth"
+ });
+
 }
 
 
@@ -2207,11 +2907,17 @@ function showPage(id){
 ========================= */
 
 function openBusiness(id){
- selectedBusiness = businesses.find(b=>String(b.id)===String(id)) || businesses[0] || null;
- if(selectedBusiness){
-   renderProfile(selectedBusiness);
-   showPage("profile");
- }
+
+ selectedBusiness =
+   getAll().find(
+     b=>String(b.id)===String(id)
+   ) || businesses[0];
+
+
+ renderProfile(selectedBusiness);
+
+ showPage("profile");
+
 }
 
 
@@ -2220,59 +2926,424 @@ function openBusiness(id){
 ========================= */
 
 function renderProfile(b){
- document.getElementById("profileContent").innerHTML = `
+
+ document.getElementById(
+   "profileContent"
+ ).innerHTML = `
+
  <div class="cover">
-   <div class="profile-avatar">${b.icon || '🏪'}</div>
+
+   <div class="profile-avatar">
+     ${b.icon}
+   </div>
+
    <div class="profile-title">
-     <h1>${escapeHtml(b.name)} ${verify(b)}</h1>
-     <div class="line"><span style="color:#ffd21f;font-weight:900">★ ${b.rating ? b.rating.toFixed(1) : '0'}</span> (${b.reviews_count || b.reviews || 0} ta baho) · ${escapeHtml(b.category || 'Noma\'lum')}</div>
-     <div class="line"><span class="open">● Ochiq</span> · ${escapeHtml(b.hours || '09:00 – 21:00')}</div>
+
+     <h1>
+
+       ${escapeHtml(b.name)}
+       ${verify(b)}
+
+     </h1>
+
+     <div class="line">
+
+       <span
+         style="color:#ffd21f;font-weight:900">
+
+         ★ ${b.rating.toFixed(1)}
+
+       </span>
+
+       (${b.reviews} ta baho)
+
+       ·
+
+       ${escapeHtml(b.category)}
+
+     </div>
+
+     <div class="line">
+
+       <span class="open">
+         ● Ochiq
+       </span>
+
+       ·
+
+       ${escapeHtml(b.hours)}
+
+     </div>
+
    </div>
+
  </div>
+
+
  <div class="info-grid">
-   <div class="info-item"><div class="ii">📍</div><span>Manzil</span><b>${escapeHtml(b.address || 'Noma\'lum')}</b></div>
-   <div class="info-item"><div class="ii">🕘</div><span>Ish vaqti</span><b>${escapeHtml(b.hours || '09:00 – 21:00')}</b></div>
-   <div class="info-item"><div class="ii">📞</div><span>Telefon</span><b>${escapeHtml(b.phone || 'Noma\'lum')}</b></div>
-   <div class="info-item"><div class="ii">🏷️</div><span>Brend</span><b>${escapeHtml(b.name)}</b></div>
+
+   <div class="info-item">
+
+     <div class="ii">📍</div>
+
+     <span>Manzil</span>
+
+     <b>
+       ${escapeHtml(b.address)}
+     </b>
+
+   </div>
+
+
+   <div class="info-item">
+
+     <div class="ii">🕘</div>
+
+     <span>Ish vaqti</span>
+
+     <b>
+       ${escapeHtml(b.hours)}
+     </b>
+
+   </div>
+
+
+   <div class="info-item">
+
+     <div class="ii">📞</div>
+
+     <span>Telefon</span>
+
+     <b>
+       ${escapeHtml(b.phone)}
+     </b>
+
+   </div>
+
+
+   <div class="info-item">
+
+     <div class="ii">🏷️</div>
+
+     <span>Brend</span>
+
+     <b>
+       ${escapeHtml(b.name)}
+     </b>
+
+   </div>
+
  </div>
- <div class="profile-box"><h3>Biznes haqida</h3><p>${escapeHtml(b.about || b.description || 'Biznes haqida ma\'lumot yo\'q')}</p></div>
+
+
  <div class="profile-box">
-   <div style="display:flex;justify-content:space-between;align-items:center"><h3>Rasmlar</h3><span style="color:#1685ff;font-weight:800">Barchasini ko‘rish ›</span></div>
+
+   <h3>
+     Biznes haqida
+   </h3>
+
+   <p>
+     ${escapeHtml(b.about)}
+   </p>
+
+ </div>
+
+
+ <div class="profile-box">
+
+   <div
+     style="
+       display:flex;
+       justify-content:space-between;
+       align-items:center
+     ">
+
+     <h3>
+       Rasmlar
+     </h3>
+
+     <span
+       style="
+         color:#1685ff;
+         font-weight:800
+       ">
+
+       Barchasini ko‘rish ›
+
+     </span>
+
+   </div>
+
+
    <div class="gallery">
-     <div class="gallery-item ${photoClass(b)}">${b.icon || '🏪'}</div>
-     <div class="gallery-item rest">🍽️</div>
-     <div class="gallery-item coffee">☕</div>
-     <div class="gallery-item">🍰</div>
+
+     <div
+       class="gallery-item ${photoClass(b)}">
+
+       ${b.icon}
+
+     </div>
+
+     <div class="gallery-item rest">
+       🍽️
+     </div>
+
+     <div class="gallery-item coffee">
+       ☕
+     </div>
+
+     <div class="gallery-item">
+       🍰
+     </div>
+
    </div>
+
  </div>
+
+
  <div class="profile-box">
+
    <div class="rating-summary">
+
      <div>
-       <h3>Mijozlar bahosi</h3>
-       <div class="big-score">${b.rating ? b.rating.toFixed(1) : '0'} / 5</div>
-       <div class="stars">★★★★★</div>
-       <div style="color:#b8c7df">${b.reviews_count || b.reviews || 0} ta baho</div>
+
+       <h3>
+         Mijozlar bahosi
+       </h3>
+
+       <div class="big-score">
+         ${b.rating.toFixed(1)} / 5
+       </div>
+
+       <div class="stars">
+         ★★★★★
+       </div>
+
+       <div style="color:#b8c7df">
+         ${b.reviews} ta baho
+       </div>
+
      </div>
+
+
      <div>
-       <div class="bar"><span>5 ★</span><div class="barline"><i style="width:${b.rating ? Math.min(100, (b.rating/5)*100) : 0}%"></i></div><span>${Math.max(1, b.reviews_count || b.reviews || 1)}</span></div>
-       <div class="bar"><span>4 ★</span><div class="barline"><i style="width:12%"></i></div><span>1</span></div>
-       <div class="bar"><span>3 ★</span><div class="barline"><i style="width:0%"></i></div><span>0</span></div>
-       <div class="bar"><span>2 ★</span><div class="barline"><i style="width:0%"></i></div><span>0</span></div>
-       <div class="bar"><span>1 ★</span><div class="barline"><i style="width:0%"></i></div><span>0</span></div>
+
+       <div class="bar">
+
+         <span>5 ★</span>
+
+         <div class="barline">
+           <i style="width:95%"></i>
+         </div>
+
+         <span>
+           ${Math.max(1,b.reviews-1)}
+         </span>
+
+       </div>
+
+
+       <div class="bar">
+
+         <span>4 ★</span>
+
+         <div class="barline">
+           <i style="width:12%"></i>
+         </div>
+
+         <span>1</span>
+
+       </div>
+
+
+       <div class="bar">
+
+         <span>3 ★</span>
+
+         <div class="barline">
+           <i style="width:0%"></i>
+         </div>
+
+         <span>0</span>
+
+       </div>
+
+
+       <div class="bar">
+
+         <span>2 ★</span>
+
+         <div class="barline">
+           <i style="width:0%"></i>
+         </div>
+
+         <span>0</span>
+
+       </div>
+
+
+       <div class="bar">
+
+         <span>1 ★</span>
+
+         <div class="barline">
+           <i style="width:0%"></i>
+         </div>
+
+         <span>0</span>
+
+       </div>
+
      </div>
+
    </div>
+
  </div>
+
+
  <div class="actions">
-   <button class="action" onclick="location.href='tel:${(b.phone || '').replace(/[^0-9+]/g,'')}'">📞 Qo‘ng‘iroq qilish</button>
-   <button class="action telegram" onclick="alert('Telegram orqali yozish keyingi bosqichda ulanadi.')">➤ Telegram orqali yozish</button>
-   <button class="action map" onclick="alert('Xarita funksiyasi keyingi bosqichda ulanadi.')">🗺️ Xaritada ko‘rish</button>
+
+   <button
+     class="action"
+     onclick="
+       location.href='tel:${b.phone.replace(/[^0-9+]/g,'')}'
+     ">
+
+     📞 Qo‘ng‘iroq qilish
+
+   </button>
+
+
+   <button
+     class="action telegram"
+     onclick="
+       alert(
+         'Telegram orqali yozish keyingi bosqichda ulanadi.'
+       )
+     ">
+
+     ➤ Telegram orqali yozish
+
+   </button>
+
+
+   <button
+     class="action map"
+     onclick="
+       alert(
+         'Xarita funksiyasi keyingi bosqichda ulanadi.'
+       )
+     ">
+
+     🗺️ Xaritada ko‘rish
+
+   </button>
+
  </div>
+
+
  <div class="profile-box">
-   <div style="display:flex;justify-content:space-between;align-items:center"><h3>Mijozlar fikri</h3><span style="color:#1685ff;font-weight:800">Barchasini ko‘rish ›</span></div>
-   <div class="review"><div class="review-avatar">A</div><div><b>Ali</b><div class="date">12.05.2024</div><div style="color:#ffd21f">★★★★★</div><div class="comment">Juda yaxshi xizmat va mazali qahva! 😊</div></div><b>⋮</b></div>
-   <div class="review"><div class="review-avatar" style="background:#26a65b">V</div><div><b>Vali</b><div class="date">10.05.2024</div><div style="color:#ffd21f">★★★★★</div><div class="comment">Muhit juda yaxshi, xodimlar ham juda mehribon.</div></div><b>⋮</b></div>
+
+   <div
+     style="
+       display:flex;
+       justify-content:space-between;
+       align-items:center
+     ">
+
+     <h3>
+       Mijozlar fikri
+     </h3>
+
+     <span
+       style="
+         color:#1685ff;
+         font-weight:800
+       ">
+
+       Barchasini ko‘rish ›
+
+     </span>
+
+   </div>
+
+
+   <div class="review">
+
+     <div class="review-avatar">
+       A
+     </div>
+
+     <div>
+
+       <b>Ali</b>
+
+       <div class="date">
+         12.05.2024
+       </div>
+
+       <div style="color:#ffd21f">
+         ★★★★★
+       </div>
+
+       <div class="comment">
+         Juda yaxshi xizmat va mazali qahva! 😊
+       </div>
+
+     </div>
+
+     <b>⋮</b>
+
+   </div>
+
+
+   <div class="review">
+
+     <div
+       class="review-avatar"
+       style="background:#26a65b">
+
+       V
+
+     </div>
+
+     <div>
+
+       <b>Vali</b>
+
+       <div class="date">
+         10.05.2024
+       </div>
+
+       <div style="color:#ffd21f">
+         ★★★★★
+       </div>
+
+       <div class="comment">
+         Muhit juda yaxshi, xodimlar ham juda mehribon.
+       </div>
+
+     </div>
+
+     <b>⋮</b>
+
+   </div>
+
  </div>
+
  `;
+
+}
+
+
+/* =========================
+   DETAIL
+========================= */
+
+function openDetailFromCard(id){
+
+ openBusiness(id);
+
 }
 
 
@@ -2280,34 +3351,114 @@ function renderProfile(b){
    QIDIRUV
 ========================= */
 
-async function searchBusinesses(){
- const q = document.getElementById("searchInput").value.trim().toLowerCase();
- const box = document.getElementById("searchResults");
- const list = document.getElementById("resultsList");
- if(!q){ box.style.display="none"; return; }
- let found = [];
- try {
-    const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
-    found = await res.json();
- } catch (error) {
-    found = businesses.filter(b =>
-      (b.name || '') + ' ' + (b.category || '') + ' ' + (b.address || '') + ' ' + (b.about || '')
-      .toLowerCase().includes(q)
-    );
+function searchBusinesses(){
+
+ const q =
+   document
+     .getElementById("searchInput")
+     .value
+     .trim()
+     .toLowerCase();
+
+
+ const box =
+   document.getElementById(
+     "searchResults"
+   );
+
+
+ const list =
+   document.getElementById(
+     "resultsList"
+   );
+
+
+ if(!q){
+
+   box.style.display="none";
+
+   return;
+
  }
+
+
+ const found =
+   getAll().filter(
+
+     b =>
+       (
+         b.name +
+         " " +
+         b.category +
+         " " +
+         b.address +
+         " " +
+         b.about
+       )
+       .toLowerCase()
+       .includes(q)
+
+   );
+
+
  box.style.display="block";
+
+
  list.innerHTML = found.length
+
  ? found.map(b=>`
-   <div class="result-card" onclick="openBusiness(${b.id})" style="margin-bottom:12px">
-     <div class="avatar">${b.icon || '🏪'}</div>
-     <div>
-       <div class="business-name">${escapeHtml(b.name)} ${verify(b)}</div>
-       <div class="meta">📍 ${escapeHtml(b.address || 'Noma\'lum')}<br>🕘 ${escapeHtml(b.hours || '09:00 – 21:00')}<br>📞 ${escapeHtml(b.phone || 'Noma\'lum')}</div>
+
+   <div
+     class="result-card"
+     onclick="openBusiness(${b.id})"
+     style="margin-bottom:12px">
+
+     <div class="avatar">
+       ${b.icon}
      </div>
-     <div class="rating">★ ${b.rating ? b.rating.toFixed(1) : '0'}<small><br>${b.reviews_count || b.reviews || 0} ta baho</small></div>
+
+
+     <div>
+
+       <div class="business-name">
+
+         ${escapeHtml(b.name)}
+         ${verify(b)}
+
+       </div>
+
+       <div class="meta">
+
+         📍 ${escapeHtml(b.address)}
+         <br>
+
+         🕘 ${escapeHtml(b.hours)}
+         <br>
+
+         📞 ${escapeHtml(b.phone)}
+
+       </div>
+
+     </div>
+
+
+     <div class="rating">
+
+       ★ ${b.rating.toFixed(1)}
+
+       <small>
+         <br>
+         ${b.reviews} ta baho
+       </small>
+
+     </div>
+
    </div>
+
  `).join("")
+
  : '<div class="profile-box">Hech narsa topilmadi.</div>';
+
 }
 
 
@@ -2316,9 +3467,24 @@ async function searchBusinesses(){
 ========================= */
 
 function scrollTopSection(id,btn){
- document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+
+ document
+   .querySelectorAll(".tab")
+   .forEach(
+     x=>x.classList.remove("active")
+   );
+
+
  btn.classList.add("active");
- document.getElementById(id).scrollIntoView({ behavior:"smooth", block:"start" });
+
+
+ document
+   .getElementById(id)
+   .scrollIntoView({
+     behavior:"smooth",
+     block:"start"
+   });
+
 }
 
 
@@ -2326,57 +3492,125 @@ function scrollTopSection(id,btn){
    BIZNES QO‘SHISH MODAL
 ========================= */
 
-function openAdd(){ document.getElementById("addModal").classList.add("show"); }
-function closeAdd(){ document.getElementById("addModal").classList.remove("show"); }
+function openAdd(){
+
+ document
+   .getElementById("addModal")
+   .classList.add("show");
+
+}
+
+
+function closeAdd(){
+
+ document
+   .getElementById("addModal")
+   .classList.remove("show");
+
+}
 
 
 /* =========================
-   BIZNES QO‘SHISH (API orqali)
+   BIZNES QO‘SHISH
 ========================= */
 
-async function addBusiness(){
- const name = document.getElementById("newName").value.trim();
- if(!name){ alert("Biznes nomini kiriting."); return; }
- const newBusiness = {
-   name: name,
-   category: document.getElementById("newCategory").value || "Boshqa",
-   address: document.getElementById("newAddress").value || "To‘rtko‘l",
-   phone: document.getElementById("newPhone").value || "+998 90 000 00 00",
-   hours: document.getElementById("newHours").value || "09:00 – 21:00",
-   rating: 5.0,
-   reviews_count: 0,
-   icon: "🏪",
-   photo: "market",
-   about: document.getElementById("newAbout").value || "BIZTOP platformasiga yangi qo‘shilgan biznes.",
-   is_verified: false
- };
- try {
-    const res = await fetch('/api/businesses', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newBusiness)
-    });
-    if (res.ok) {
-        const saved = await res.json();
-        businesses.push(saved);
-        closeAdd();
-        render();
-        alert("✅ Biznes muvaffaqiyatli qo‘shildi!");
-        showPage("home");
-        return;
-    }
- } catch (error) {
-    console.error('API xatosi:', error);
+function addBusiness(){
+
+ const name =
+   document
+     .getElementById("newName")
+     .value
+     .trim();
+
+
+ if(!name){
+
+   alert(
+     "Biznes nomini kiriting."
+   );
+
+   return;
+
  }
- const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
- newBusiness.id = "local-" + Date.now();
- saved.push(newBusiness);
- localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
- businesses = businesses.concat(saved);
+
+
+ const saved =
+   JSON.parse(
+     localStorage.getItem(
+       "biztopBusinesses"
+     ) || "[]"
+   );
+
+
+ const b = {
+
+   id:"local-"+Date.now(),
+
+   name:name,
+
+   category:
+     document.getElementById(
+       "newCategory"
+     ).value,
+
+   address:
+     document.getElementById(
+       "newAddress"
+     ).value ||
+     "To‘rtko‘l",
+
+   phone:
+     document.getElementById(
+       "newPhone"
+     ).value ||
+     "+998 90 000 00 00",
+
+   hours:
+     document.getElementById(
+       "newHours"
+     ).value ||
+     "09:00 – 21:00",
+
+   rating:5.0,
+
+   reviews:0,
+
+   icon:"🏪",
+
+   photo:"market",
+
+   about:
+     document.getElementById(
+       "newAbout"
+     ).value ||
+     "BIZTOP platformasiga yangi qo‘shilgan biznes.",
+
+   verified:false
+
+ };
+
+
+ saved.push(b);
+
+
+ localStorage.setItem(
+   "biztopBusinesses",
+   JSON.stringify(saved)
+ );
+
+
  closeAdd();
+
  render();
- alert("✅ Biznes muvaffaqiyatli qo‘shildi! (lokal)");
+
+
+ alert(
+   "Biznes muvaffaqiyatli qo‘shildi."
+ );
+
+
  showPage("home");
+
 }
 
 
@@ -2385,11 +3619,32 @@ async function addBusiness(){
 ========================= */
 
 function shareProfile(){
+
  if(navigator.share){
-   navigator.share({ title: selectedBusiness ? selectedBusiness.name : "BIZTOP", text: "BIZTOP biznes profili: " + (selectedBusiness ? selectedBusiness.name : "") });
+
+   navigator.share({
+
+     title:selectedBusiness.name,
+
+     text:
+       "BIZTOP biznes profili: " +
+       selectedBusiness.name
+
+   });
+
  }else{
-   navigator.clipboard?.writeText(location.href).then(() => alert("Profil havolasi nusxalandi."));
+
+   navigator.clipboard
+     ?.writeText(location.href)
+     .then(
+       () =>
+         alert(
+           "Profil havolasi nusxalandi."
+         )
+     );
+
  }
+
 }
 
 
@@ -2398,7 +3653,10 @@ function shareProfile(){
 ========================= */
 
 renderCategories();
-loadBusinessesFromAPI();
+
+render();
+
+renderProfile(selectedBusiness);
 
 </script>
 
