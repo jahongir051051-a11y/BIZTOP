@@ -154,25 +154,26 @@ a{color:inherit;text-decoration:none}
   cursor:pointer
 }
 
-/* SHAHAR TUGMALARI */
-.city-tabs{
+/* SHAHAR TUGMASI */
+.city-selector{
   display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:4px;
+  gap:10px;
+  align-items:center;
 }
 
 .city-btn{
   background:#0c2a59;
   border:1px solid #2768a9;
   border-radius:20px;
-  padding:8px 16px;
+  padding:8px 18px;
   color:#aebfe0;
   font-size:14px;
   font-weight:600;
   cursor:pointer;
   transition:.3s;
-  white-space:nowrap;
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
 
 .city-btn:hover{
@@ -184,6 +185,88 @@ a{color:inherit;text-decoration:none}
   background:#1685ff;
   border-color:#1685ff;
   color:#fff;
+}
+
+.city-btn .arrow{
+  font-size:12px;
+  transition:.3s;
+}
+
+.city-btn .arrow.open{
+  transform:rotate(180deg);
+}
+
+/* VILOYATLAR DROPDOWN */
+.city-dropdown{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#0a234d;
+  border:1px solid #2768a9;
+  border-radius:16px;
+  padding:10px;
+  z-index:200;
+  min-width:200px;
+  max-height:300px;
+  overflow-y:auto;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+.city-dropdown.show{
+  display:block;
+}
+
+.city-dropdown .region-title{
+  color:#1685ff;
+  font-weight:700;
+  font-size:13px;
+  padding:6px 10px;
+  border-bottom:1px solid #21456f;
+  margin-bottom:4px;
+}
+
+.city-dropdown .city-item{
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  color:#aebfe0;
+  font-size:14px;
+  transition:.2s;
+}
+
+.city-dropdown .city-item:hover{
+  background:#1685ff;
+  color:#fff;
+}
+
+.city-dropdown .city-item.active{
+  background:#1685ff;
+  color:#fff;
+}
+
+.city-dropdown::-webkit-scrollbar{
+  width:4px;
+}
+
+.city-dropdown::-webkit-scrollbar-thumb{
+  background:#1685ff;
+  border-radius:4px;
+}
+
+/* SHAHAR TANLANGANDA KO'RSATISH */
+.selected-city-display{
+  color:#fff;
+  font-size:13px;
+  background:#0c2a59;
+  padding:4px 12px;
+  border-radius:12px;
+  border:1px solid #2768a9;
+  display:none;
+}
+
+.selected-city-display.show{
+  display:inline-block;
 }
 
 .section-title{
@@ -1039,6 +1122,12 @@ a{color:inherit;text-decoration:none}
   padding:20px
 }
 
+/* CITY DROPDOWN - POSITION */
+.city-selector-wrapper{
+  position:relative;
+  display:inline-block;
+}
+
 @media(max-width:760px){
 
   :root{
@@ -1136,14 +1225,26 @@ a{color:inherit;text-decoration:none}
     font-size:14px;
   }
 
-  .city-tabs{
+  .city-selector{
     gap:6px;
+    flex-wrap:wrap;
   }
 
   .city-btn{
     font-size:12px;
-    padding:6px 12px;
+    padding:6px 14px;
     border-radius:16px;
+  }
+
+  .city-dropdown{
+    min-width:160px;
+    max-height:250px;
+    left:-10px;
+  }
+
+  .city-dropdown .city-item{
+    font-size:13px;
+    padding:6px 10px;
   }
 
   .section-title{
@@ -1537,7 +1638,9 @@ a{color:inherit;text-decoration:none}
   .container{padding-left:10px;padding-right:10px}
   .search-box{height:44px;padding:0 10px}
   .search-btn{height:44px;flex-basis:76px;width:76px;font-size:13px}
-  .city-btn{font-size:11px;padding:5px 10px}
+  .city-btn{font-size:11px;padding:5px 12px}
+  .city-dropdown{min-width:140px;max-height:200px}
+  .city-dropdown .city-item{font-size:12px;padding:5px 8px}
   .section-title{font-size:20px}
   .section-title .ico{font-size:24px}
   .result-card{padding:8px 10px}
@@ -1602,8 +1705,40 @@ a{color:inherit;text-decoration:none}
 
     <div class="search-wrap">
       
-      <!-- SHAHAR TUGMALARI -->
-      <div class="city-tabs" id="cityTabs"></div>
+      <!-- SHAHAR TUGMASI -->
+      <div class="city-selector">
+        <div class="city-selector-wrapper">
+          <button class="city-btn" onclick="toggleCityDropdown()" id="cityDropdownBtn">
+            📍 <span id="selectedCityName">Shahar</span>
+            <span class="arrow" id="cityArrow">▼</span>
+          </button>
+          
+          <!-- VILOYATLAR DROPDOWN -->
+          <div class="city-dropdown" id="cityDropdown">
+            <div class="region-title">📍 Viloyatlar</div>
+            <div class="city-item" onclick="selectCity('')">🌍 Barchasi</div>
+            <div class="city-item" onclick="selectCity('toshkent')">📍 Toshkent</div>
+            <div class="city-item" onclick="selectCity('samarqand')">📍 Samarqand</div>
+            <div class="city-item" onclick="selectCity('buxoro')">📍 Buxoro</div>
+            <div class="city-item" onclick="selectCity('namangan')">📍 Namangan</div>
+            <div class="city-item" onclick="selectCity('andijon')">📍 Andijon</div>
+            <div class="city-item" onclick="selectCity('fargona')">📍 Farg‘ona</div>
+            <div class="city-item" onclick="selectCity('qoqon')">📍 Qo‘qon</div>
+            <div class="city-item" onclick="selectCity('jizzax')">📍 Jizzax</div>
+            <div class="city-item" onclick="selectCity('sirdaryo')">📍 Sirdaryo</div>
+            <div class="city-item" onclick="selectCity('guliston')">📍 Guliston</div>
+            <div class="city-item" onclick="selectCity('navoiy')">📍 Navoiy</div>
+            <div class="city-item" onclick="selectCity('qarshi')">📍 Qarshi</div>
+            <div class="city-item" onclick="selectCity('termiz')">📍 Termiz</div>
+            <div class="city-item" onclick="selectCity('urganch')">📍 Urganch</div>
+            <div class="city-item" onclick="selectCity('xiva')">📍 Xiva</div>
+            <div class="city-item" onclick="selectCity('nukus')">📍 Nukus</div>
+          </div>
+        </div>
+        
+        <!-- TANLANGAN SHAHAR KO'RINADI -->
+        <span class="selected-city-display" id="selectedCityDisplay"></span>
+      </div>
       
       <!-- QIDIRUV SATRI -->
       <div class="search-row">
@@ -1812,7 +1947,7 @@ a{color:inherit;text-decoration:none}
     <div class="form-grid">
       <div class="field"><label>Biznes nomi</label><input id="newName" placeholder="Masalan: BIZTOP Restaurant"></div>
       <div class="field"><label>Kategoriya</label><select id="newCategory"></select></div>
-      <div class="field"><label>Manzil</label><input id="newAddress" placeholder="Masalan: To‘rtko‘l"></div>
+      <div class="field"><label>Manzil</label><input id="newAddress" placeholder="Masalan: Toshkent"></div>
       <div class="field"><label>Telefon raqami</label><input id="newPhone" placeholder="+998 90 123 45 67"></div>
       <div class="field"><label>Ish vaqti</label><input id="newHours" value="09:00 – 21:00"></div>
       <div class="field"><label>Biznes haqida</label><textarea id="newAbout" placeholder="Biznesingiz haqida qisqacha ma’lumot..."></textarea></div>
@@ -1833,48 +1968,61 @@ a{color:inherit;text-decoration:none}
 <script>
 
 /* =========================
-   SHAHARLAR RO'YXATI
+   SHAHARLAR
 ========================= */
 
 const UZBEK_CITIES = [
     "toshkent", "samarqand", "buxoro", "namangan",
-    "andijon", "farg'ona", "qo'qon", "jizzax",
+    "andijon", "fargona", "qoqon", "jizzax",
     "sirdaryo", "guliston", "navoiy", "qarshi",
-    "termiz", "urganch", "xiva", "nukus",
-    "shahrisabz", "denov", "kogon", "chirchiq",
-    "angren", "bekobod", "ohangaron", "olmaliq",
-    "shovot", "baliqchi", "koson", "muborak"
+    "termiz", "urganch", "xiva", "nukus"
 ];
 
-let selectedCity = ""; // Foydalanuvchi tanlagan shahar
+const CITY_DISPLAY = {
+    'toshkent': 'Toshkent',
+    'samarqand': 'Samarqand',
+    'buxoro': 'Buxoro',
+    'namangan': 'Namangan',
+    'andijon': 'Andijon',
+    'fargona': 'Farg\'ona',
+    'qoqon': 'Qo\'qon',
+    'jizzax': 'Jizzax',
+    'sirdaryo': 'Sirdaryo',
+    'guliston': 'Guliston',
+    'navoiy': 'Navoiy',
+    'qarshi': 'Qarshi',
+    'termiz': 'Termiz',
+    'urganch': 'Urganch',
+    'xiva': 'Xiva',
+    'nukus': 'Nukus'
+};
+
+let selectedCity = "";
 
 
 /* =========================
-   SHAHAR TUGMALARINI CHIQARISH
+   SHAHAR DROPDOWN
 ========================= */
 
-function renderCityTabs() {
-    const container = document.getElementById("cityTabs");
-    
-    // "Barcha shaharlar" tugmasi
-    let html = `
-        <button class="city-btn active" data-city="" onclick="selectCity('')">
-            🌍 Barchasi
-        </button>
-    `;
-    
-    // Har bir shahar uchun tugma
-    UZBEK_CITIES.forEach(city => {
-        const displayName = city.charAt(0).toUpperCase() + city.slice(1);
-        html += `
-            <button class="city-btn" data-city="${city}" onclick="selectCity('${city}')">
-                📍 ${displayName}
-            </button>
-        `;
-    });
-    
-    container.innerHTML = html;
+function toggleCityDropdown() {
+    const dropdown = document.getElementById('cityDropdown');
+    const arrow = document.getElementById('cityArrow');
+    dropdown.classList.toggle('show');
+    arrow.classList.toggle('open');
 }
+
+function closeCityDropdown() {
+    document.getElementById('cityDropdown').classList.remove('show');
+    document.getElementById('cityArrow').classList.remove('open');
+}
+
+// Tashqariga bosganda yopish
+document.addEventListener('click', function(e) {
+    const wrapper = document.querySelector('.city-selector-wrapper');
+    if (wrapper && !wrapper.contains(e.target)) {
+        closeCityDropdown();
+    }
+});
 
 
 /* =========================
@@ -1884,43 +2032,39 @@ function renderCityTabs() {
 function selectCity(city) {
     selectedCity = city;
     
-    // Barcha tugmalarni yangilash
-    document.querySelectorAll('.city-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.city === city);
+    // Dropdown ni yopish
+    closeCityDropdown();
+    
+    // Tugma matnini yangilash
+    const displayName = city ? CITY_DISPLAY[city] || city.charAt(0).toUpperCase() + city.slice(1) : 'Shahar';
+    document.getElementById('selectedCityName').textContent = displayName;
+    
+    // Tanlangan shaharni ko'rsatish
+    const display = document.getElementById('selectedCityDisplay');
+    if (city) {
+        display.textContent = '📍 ' + displayName;
+        display.classList.add('show');
+    } else {
+        display.classList.remove('show');
+    }
+    
+    // Aktiv klassni yangilash
+    document.querySelectorAll('.city-item').forEach(item => {
+        item.classList.toggle('active', item.dataset.city === city);
     });
     
-    // Agar qidiruv maydoni bo'sh bo'lmasa, qayta qidiruv bajarish
-    const input = document.getElementById("searchInput");
+    // Qidiruv maydonini tozalash va qayta yuklash
+    const input = document.getElementById('searchInput');
     if (input.value.trim()) {
         searchBusinesses();
     } else {
-        // Bo'sh bo'lsa, barcha bizneslarni ko'rsatish (shaharga qarab)
         renderHomePage();
     }
 }
 
 
 /* =========================
-   SHAHARNI ANIQLASH (Qidiruvdan)
-========================= */
-
-function extractCity(query) {
-    const words = query.toLowerCase().split(/\s+/);
-    for (const word of words) {
-        const clean = word.replace(/lik$|liq$/, '');
-        if (UZBEK_CITIES.includes(clean)) {
-            return clean;
-        }
-        if (UZBEK_CITIES.includes(word)) {
-            return word;
-        }
-    }
-    return null;
-}
-
-
-/* =========================
-   BIZNESLARNI FILTRLASH (SHAHAR BO'YICHA)
+   BIZNESLARNI FILTRLASH
 ========================= */
 
 function filterByCity(businesses, city) {
@@ -1942,36 +2086,31 @@ function getAll() {
 
 
 /* =========================
-   ASOSIY SAHIFANI KO'RSATISH (SHAHAR FILTRI BILAN)
+   ASOSIY SAHIFANI KO'RSATISH
 ========================= */
 
 function renderHomePage() {
     const all = topSorted();
-    
-    // Shahar filtri
     let filtered = all;
     if (selectedCity) {
         filtered = filterByCity(all, selectedCity);
     }
     
-    // Mashhur brendlar (6 ta)
     const popular = filtered.slice(0, 6);
     document.getElementById("popularCarouselInner").innerHTML = 
         popular.map((b,i) => card(b,i)).join("");
     
-    // TOP brendlar (5 ta)
     const topBrends = filtered.slice(0, 5);
     document.getElementById("homeTopCarouselInner").innerHTML = 
         topBrends.map((b,i) => card(b,i)).join("");
     
-    // Barcha brendlar (10 ta) - aslida cheksiz
     document.getElementById("homeTop10").innerHTML = 
         filtered.slice(0, 10).map((b,i) => row(b,i)).join("");
 }
 
 
 /* =========================
-   QIDIRUV (SHAHAR BILAN)
+   QIDIRUV
 ========================= */
 
 function searchBusinesses() {
@@ -1985,55 +2124,26 @@ function searchBusinesses() {
         return;
     }
     
-    // 1. Qidiruvdan shaharni aniqlash
-    const cityFromQuery = extractCity(q);
-    
-    // 2. Qidiruv so'zini tayyorlash
-    let searchTerm = q;
-    let searchCity = selectedCity; // default: foydalanuvchi tanlagan shahar
-    
-    if (cityFromQuery) {
-        // Shahar qidiruvda yozilgan bo'lsa, o'sha shaharni ishlatamiz
-        searchCity = cityFromQuery;
-        searchTerm = q.replace(cityFromQuery, '').replace(/lik$|liq$/, '').trim();
-        if (searchTerm === '' || searchTerm === cityFromQuery) {
-            searchTerm = '';
-        }
-    }
-    
-    // 3. Barcha bizneslarni olish
-    const all = getAll();
-    
-    // 4. Qidiruvni bajarish
-    let found = all.filter(b => {
-        // A) Shahar filtri
-        if (searchCity) {
-            const addressLower = b.address.toLowerCase();
-            if (!addressLower.includes(searchCity)) {
+    let found = getAll().filter(b => {
+        // Shahar filtri
+        if (selectedCity) {
+            if (!b.address.toLowerCase().includes(selectedCity)) {
                 return false;
             }
         }
         
-        // B) Matn qidiruvi (agar so'z bo'lsa)
-        if (searchTerm) {
-            const searchFields = (
-                b.name + " " + 
-                b.category + " " + 
-                b.address + " " + 
-                b.about
-            ).toLowerCase();
-            if (!searchFields.includes(searchTerm)) {
-                return false;
-            }
-        }
-        
-        return true;
+        // Matn qidiruvi
+        const searchFields = (
+            b.name + " " + 
+            b.category + " " + 
+            b.address + " " + 
+            b.about
+        ).toLowerCase();
+        return searchFields.includes(q);
     });
     
-    // 5. Reyting bo'yicha saralash
     found.sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
     
-    // 6. Natijalarni ko'rsatish
     box.style.display = "block";
     
     if (found.length === 0) {
@@ -2041,7 +2151,7 @@ function searchBusinesses() {
             <div class="profile-box">
                 <p style="text-align:center;color:#aebfe0;">
                     🔍 "${q}" bo'yicha hech narsa topilmadi.
-                    ${searchCity ? `<br>📍 ${searchCity.charAt(0).toUpperCase() + searchCity.slice(1)} shahrida biznes topilmadi.` : ''}
+                    ${selectedCity ? `<br>📍 ${CITY_DISPLAY[selectedCity]} shahrida biznes topilmadi.` : ''}
                 </p>
             </div>
         `;
@@ -2069,7 +2179,7 @@ function searchBusinesses() {
 
 
 /* =========================
-   BIZNESLAR (STATIK MA'LUMOTLAR)
+   BIZNESLAR (STATIK)
 ========================= */
 
 const businesses = [
@@ -2085,7 +2195,7 @@ const businesses = [
   reviews:23,
   icon:"☕",
   photo:"cafe",
-  about:"Salom kafe – mazali qahva, shirinliklar va qulay muhit. Do‘stlaringiz bilan yoqimli vaqt o‘tkazish uchun eng yaxshi joy!",
+  about:"Salom kafe – mazali qahva, shirinliklar va qulay muhit.",
   verified:true
  },
 
@@ -2388,7 +2498,7 @@ function photoClass(b){
 
 
 /* =========================
-   KARTA (KARUSEL UCHUN)
+   KARTA
 ========================= */
 
 function card(b,index){
@@ -2441,7 +2551,7 @@ function card(b,index){
 
 
 /* =========================
-   TOP KARTA - CHAPDAN O'NGGA
+   TOP KARTA
 ========================= */
 
 function topCard(b,index){
@@ -2568,33 +2678,26 @@ function topSorted(){
 
 
 /* =========================
-   RENDER (ASOSIY)
+   RENDER
 ========================= */
 
 function render(){
 
- // Shahar filtrini qo'llash
  const all = topSorted();
  let filtered = all;
  if (selectedCity) {
      filtered = filterByCity(all, selectedCity);
  }
 
- // Mashhur brendlar (6 ta)
- const popular = filtered.slice(0, 6);
  document.getElementById("popularCarouselInner").innerHTML = 
-     popular.map((b,i) => card(b,i)).join("");
+     filtered.slice(0,6).map((b,i) => card(b,i)).join("");
 
- // TOP brendlar (5 ta)
- const topBrends = filtered.slice(0, 5);
  document.getElementById("homeTopCarouselInner").innerHTML = 
-     topBrends.map((b,i) => card(b,i)).join("");
+     filtered.slice(0,5).map((b,i) => card(b,i)).join("");
 
- // Barcha brendlar (10 ta)
  document.getElementById("homeTop10").innerHTML = 
-     filtered.slice(0, 10).map((b,i) => row(b,i)).join("");
+     filtered.slice(0,10).map((b,i) => row(b,i)).join("");
 
- // TOP SAHIFASI
  document.getElementById("top1Cards").innerHTML = 
      all.slice(0,1).map((b,i) => topCard(b,i)).join("");
 
@@ -3311,8 +3414,6 @@ function shareProfile(){
 ========================= */
 
 renderCategories();
-
-renderCityTabs();
 
 render();
 
