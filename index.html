@@ -442,89 +442,136 @@ a{color:inherit;text-decoration:none}
 }
 
 /* =========================
-   BRENDLAR KARTOCHKASI (1-RASMGA MOS)
+   BRENDLAR KARTOCHKASI - YANGI ZAMONAVIY
 ========================= */
 
 .brand-card {
-    display: block;
-    padding: 14px 16px;
-    border-bottom: 1px solid #21456f;
-    background: transparent;
-    transition: 0.2s;
-    cursor: pointer;
+  display: block;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #0b2550, #091f45);
+  border: 1px solid #1f5a9e;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-.brand-card:last-child {
-    border-bottom: none;
+.brand-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1685ff, #4da6ff);
+  opacity: 0.6;
 }
 
 .brand-card:hover {
-    background: #0a234d;
+  border-color: #1685ff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(22, 133, 255, 0.15);
 }
 
-.brand-card .brand-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 4px;
+.brand-card:last-child {
+  margin-bottom: 0;
+}
+
+.brand-card .brand-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
 }
 
 .brand-card .brand-number {
-    font-size: 18px;
-    font-weight: 900;
-    color: #1982ff;
-    min-width: 28px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #1982ff;
+  min-width: 32px;
+  background: rgba(22, 133, 255, 0.12);
+  padding: 2px 10px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .brand-card .brand-name {
-    font-size: 17px;
-    font-weight: 700;
-    color: #fff;
-    flex: 1;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  flex: 1;
 }
 
 .brand-card .brand-name .verify {
-    width: 18px;
-    height: 18px;
-    font-size: 11px;
-    margin-left: 4px;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  margin-left: 4px;
 }
 
 .brand-card .brand-rating {
-    color: var(--yellow);
-    font-weight: 700;
-    font-size: 14px;
-    white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--yellow);
+  font-weight: 700;
+  font-size: 15px;
+  background: rgba(255, 210, 31, 0.10);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 210, 31, 0.15);
 }
 
-.brand-card .brand-details {
-    padding-left: 38px;
+.brand-card .brand-rating .star {
+  font-size: 14px;
 }
 
-.brand-card .brand-detail {
-    font-size: 14px;
-    color: #afc0dc;
-    line-height: 1.8;
-    padding: 1px 0;
+.brand-card .brand-body {
+  padding-left: 44px;
 }
 
-.brand-card .brand-detail .label {
-    display: inline-block;
-    min-width: 24px;
+.brand-card .brand-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #afc0dc;
+  padding: 3px 0;
 }
 
-.brand-card .brand-detail .value {
-    color: #d6dfed;
+.brand-card .brand-info .ico {
+  min-width: 22px;
+  font-size: 15px;
 }
 
-.brand-card .brand-detail .phone {
-    color: #1685ff;
+.brand-card .brand-info .val {
+  color: #d6dfed;
+}
+
+.brand-card .brand-info .val.phone {
+  color: #1685ff;
+  font-weight: 600;
+}
+
+.brand-card .brand-category {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #4da6ff;
+  background: rgba(22, 133, 255, 0.12);
+  padding: 2px 12px;
+  border-radius: 12px;
+  margin-top: 4px;
+  border: 1px solid rgba(22, 133, 255, 0.15);
 }
 
 .brand-card .brand-divider {
-    border: 0;
-    border-top: 1px solid #21456f;
-    margin: 8px 0 4px 38px;
+  border: 0;
+  border-top: 1px solid rgba(33, 69, 111, 0.4);
+  margin: 8px 0 4px 44px;
 }
 
 .hero-home{
@@ -1215,6 +1262,10 @@ a{color:inherit;text-decoration:none}
   padding:20px
 }
 
+/* ========================= */
+/* MOBIL UCHUN - YANGI KARTOCHKA */
+/* ========================= */
+
 @media(max-width:760px){
   :root{
     --mobile-bg:#031432;
@@ -1390,35 +1441,57 @@ a{color:inherit;text-decoration:none}
 
   .rating small{font-size:10px}
 
-  /* MOBILDA BRENDLAR KARTOCHKASI (1-RASMGA MOS) */
+  /* ========================= */
+  /* MOBILDA YANGI KARTOCHKA */
+  /* ========================= */
+
   .brand-card {
-    padding: 12px 14px;
+    padding: 14px 14px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+  }
+
+  .brand-card .brand-top {
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   .brand-card .brand-number {
     font-size: 16px;
-    min-width: 24px;
+    min-width: 28px;
+    padding: 1px 8px;
   }
 
   .brand-card .brand-name {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .brand-card .brand-rating {
     font-size: 13px;
+    padding: 2px 10px;
   }
 
-  .brand-card .brand-details {
-    padding-left: 34px;
+  .brand-card .brand-body {
+    padding-left: 38px;
   }
 
-  .brand-card .brand-detail {
+  .brand-card .brand-info {
     font-size: 13px;
-    line-height: 1.7;
+    padding: 2px 0;
+  }
+
+  .brand-card .brand-info .ico {
+    min-width: 20px;
+    font-size: 13px;
+  }
+
+  .brand-card .brand-category {
+    font-size: 10px;
+    padding: 1px 10px;
   }
 
   .brand-card .brand-divider {
-    margin: 6px 0 4px 34px;
+    margin: 6px 0 2px 38px;
   }
 
   #home .container{
@@ -1750,33 +1823,47 @@ a{color:inherit;text-decoration:none}
   .rating{font-size:13px}
 
   .brand-card {
-    padding: 10px 12px;
+    padding: 12px 12px;
+    margin-bottom: 10px;
+    border-radius: 14px;
   }
 
   .brand-card .brand-number {
     font-size: 14px;
-    min-width: 20px;
+    min-width: 24px;
+    padding: 1px 6px;
   }
 
   .brand-card .brand-name {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .brand-card .brand-rating {
     font-size: 11px;
+    padding: 2px 8px;
   }
 
-  .brand-card .brand-details {
-    padding-left: 28px;
+  .brand-card .brand-body {
+    padding-left: 32px;
   }
 
-  .brand-card .brand-detail {
+  .brand-card .brand-info {
     font-size: 11px;
-    line-height: 1.6;
+    padding: 1px 0;
+  }
+
+  .brand-card .brand-info .ico {
+    min-width: 18px;
+    font-size: 11px;
+  }
+
+  .brand-card .brand-category {
+    font-size: 9px;
+    padding: 1px 8px;
   }
 
   .brand-card .brand-divider {
-    margin: 4px 0 2px 28px;
+    margin: 4px 0 2px 32px;
   }
 
   #home .container{
@@ -2183,14 +2270,14 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
-    <!-- BRENDLAR SAHIFASI - TO'LIQ RO'YXAT (KARTOCHKA KO'RINISHIDA) -->
+    <!-- BRENDLAR SAHIFASI - YANGI ZAMONAVIY KARTOCHKA -->
     <section>
       <div class="section-title">
         <span class="ico">🏆</span>
         Brendlar
         <span class="link" onclick="showPage('top')">Barchasini ko‘rish ›</span>
       </div>
-      <div class="list-box" id="homeTop10"></div>
+      <div id="homeTop10"></div>
     </section>
 
 
@@ -2604,7 +2691,7 @@ function renderHomePage() {
     document.getElementById("homeTopCarouselInner").innerHTML = 
         filtered.slice(0,5).map((b,i) => card(b,i)).join("");
     
-    // BRENDLAR RO'YXATI - KARTOCHKA KO'RINISHIDA
+    // BRENDLAR RO'YXATI - YANGI ZAMONAVIY KARTOCHKA
     document.getElementById("homeTop10").innerHTML = 
         filtered.map((b,i) => rowCard(b,i)).join("");
 
@@ -3131,30 +3218,33 @@ function topCard(b,index){
 
 
 /* =========================
-   RO‘YXAT QATORI - KARTOCHKA KO'RINISHIDA (1-RASMGA MOS)
+   RO‘YXAT QATORI - YANGI ZAMONAVIY KARTOCHKA
 ========================= */
 
 function rowCard(b, index) {
     return `
         <div class="brand-card" onclick="openBusiness(${b.id})">
-            <div class="brand-header">
+            <div class="brand-top">
                 <span class="brand-number">${index+1}</span>
                 <span class="brand-name">${escapeHtml(b.name)} ${verify(b)}</span>
-                <span class="brand-rating">⭐ ${b.rating.toFixed(1)}</span>
+                <span class="brand-rating">
+                    <span class="star">★</span> ${b.rating.toFixed(1)}
+                </span>
             </div>
-            <div class="brand-details">
-                <div class="brand-detail">
-                    <span class="label">📍</span>
-                    <span class="value">${escapeHtml(b.address)}</span>
+            <div class="brand-body">
+                <div class="brand-info">
+                    <span class="ico">📍</span>
+                    <span class="val">${escapeHtml(b.address)}</span>
                 </div>
-                <div class="brand-detail">
-                    <span class="label">🕘</span>
-                    <span class="value">${escapeHtml(b.hours)}</span>
+                <div class="brand-info">
+                    <span class="ico">🕘</span>
+                    <span class="val">${escapeHtml(b.hours)}</span>
                 </div>
-                <div class="brand-detail">
-                    <span class="label">📞</span>
-                    <span class="value phone">${escapeHtml(b.phone)}</span>
+                <div class="brand-info">
+                    <span class="ico">📞</span>
+                    <span class="val phone">${escapeHtml(b.phone)}</span>
                 </div>
+                <div class="brand-category">${escapeHtml(b.category)}</div>
             </div>
             <hr class="brand-divider">
         </div>
@@ -3202,7 +3292,7 @@ function render(){
  document.getElementById("homeTopCarouselInner").innerHTML = 
      filtered.slice(0,5).map((b,i) => card(b,i)).join("");
 
- // BRENDLAR RO'YXATI - KARTOCHKA KO'RINISHIDA
+ // BRENDLAR RO'YXATI - YANGI ZAMONAVIY KARTOCHKA
  document.getElementById("homeTop10").innerHTML = 
      filtered.map((b,i) => rowCard(b,i)).join("");
 
