@@ -518,6 +518,9 @@ a{color:inherit;text-decoration:none}
   color:#b9c9e2;
   font-size:15px;
   line-height:1.7;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 .arrow{
@@ -1397,45 +1400,58 @@ a{color:inherit;text-decoration:none}
 
   .rating small{font-size:10px}
 
-  /* MOBILDA BRENDLAR RO'YXATI - TO'LIQ */
+  /* MOBILDA BRENDLAR RO'YXATI - TO'LIQ KO'RINISH UCHUN */
   .list-row{
-    grid-template-columns:28px 44px minmax(0,1fr) 46px 12px;
-    gap:6px;
-    min-height:72px;
-    padding:7px 10px;
+    grid-template-columns: 28px 44px minmax(0, 1fr) 48px 12px !important;
+    gap: 4px !important;
+    min-height: 56px !important;
+    padding: 4px 8px !important;
   }
 
   .rank-large{
-    font-size:24px;
-    min-width:28px;
+    font-size: 18px !important;
+    min-width: 20px !important;
   }
 
   .small-avatar{
-    width:40px;
-    height:40px;
-    font-size:20px;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 14px !important;
   }
 
   .row-name{
-    font-size:13px;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100px !important;
   }
 
   .row-meta{
-    font-size:10px;
-    margin-top:2px;
+    font-size: 8px !important;
+    margin-top: 0px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100px !important;
   }
 
   .row-contact{
-    font-size:9px;
-    line-height:1.2;
+    font-size: 8px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 48px !important;
   }
 
   .list-row .rating{
-    font-size:13px;
+    font-size: 10px !important;
+    white-space: nowrap !important;
   }
 
   .arrow{
-    font-size:18px;
+    font-size: 12px !important;
   }
 
   #home .carousel{
@@ -1686,16 +1702,16 @@ a{color:inherit;text-decoration:none}
   }
 
   .bottom-nav{
-    height:66px;
+    height:54px !important;
   }
 
   .nav-btn{
-    font-size:11px;
-    gap:1px;
+    font-size:9px !important;
+    gap:0px !important;
   }
 
   .nav-btn .ni{
-    font-size:26px;
+    font-size:20px !important;
   }
 
   .modal{
@@ -1735,71 +1751,12 @@ a{color:inherit;text-decoration:none}
     font-size:9px;
   }
 
-  /* ======================================== */
-  /* TUZATISH: BRENDLAR RO'YXATI VA PASTKI MENYU */
-  /* ======================================== */
   #home .container{
     padding-bottom: 70px !important;
   }
 
-  #home .list-box{
-    margin-bottom: 8px;
-  }
-
   .footer{
     display: none !important;
-  }
-
-  .bottom-nav{
-    height: 54px !important;
-  }
-
-  .nav-btn{
-    font-size: 9px !important;
-    gap: 0px !important;
-  }
-
-  .nav-btn .ni{
-    font-size: 20px !important;
-  }
-
-  .list-row{
-    min-height: 56px !important;
-    padding: 4px 8px !important;
-    gap: 4px !important;
-  }
-
-  .rank-large{
-    font-size: 18px !important;
-    min-width: 20px !important;
-  }
-
-  .small-avatar{
-    width: 30px !important;
-    height: 30px !important;
-    font-size: 14px !important;
-  }
-
-  .row-name{
-    font-size: 11px !important;
-  }
-
-  .row-meta{
-    font-size: 8px !important;
-    margin-top: 0px !important;
-  }
-
-  .row-contact{
-    font-size: 8px !important;
-    line-height: 1.1 !important;
-  }
-
-  .list-row .rating{
-    font-size: 10px !important;
-  }
-
-  .arrow{
-    font-size: 12px !important;
   }
 }
 
@@ -1824,15 +1781,11 @@ a{color:inherit;text-decoration:none}
   .meta{font-size:10px}
   .rating{font-size:13px}
 
-  /* KICHIK MOBILDA BRENDLAR RO'YXATI - TO'LIQ */
-  #home .container{
-    padding-bottom: 60px !important;
-  }
-
   .list-row{
-    min-height: 48px !important;
-    padding: 3px 6px !important;
+    grid-template-columns: 20px 32px minmax(0, 1fr) 40px 10px !important;
     gap: 3px !important;
+    min-height: 44px !important;
+    padding: 3px 6px !important;
   }
 
   .rank-large{
@@ -1848,14 +1801,17 @@ a{color:inherit;text-decoration:none}
 
   .row-name{
     font-size: 9px !important;
+    max-width: 70px !important;
   }
 
   .row-meta{
     font-size: 7px !important;
+    max-width: 70px !important;
   }
 
   .row-contact{
     font-size: 7px !important;
+    max-width: 40px !important;
   }
 
   .list-row .rating{
@@ -1867,15 +1823,19 @@ a{color:inherit;text-decoration:none}
   }
 
   .bottom-nav{
-    height: 48px !important;
+    height:48px !important;
   }
 
   .nav-btn{
-    font-size: 8px !important;
+    font-size:8px !important;
   }
 
   .nav-btn .ni{
-    font-size: 17px !important;
+    font-size:17px !important;
+  }
+
+  #home .container{
+    padding-bottom: 60px !important;
   }
 
   .footer{
