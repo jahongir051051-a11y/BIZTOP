@@ -342,7 +342,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* =========================
-   BRENDLAR SAHIFASI - TO'LIQ KO'RINISH
+   BRENDLAR SAHIFASI
 ========================= */
 
 .section-title{
@@ -381,7 +381,7 @@ a{color:inherit;text-decoration:none}
 
 .result-card:hover,
 .rank-card:hover,
-.list-row:hover{
+.brand-card:hover{
   border-color:#208cff;
   transform:translateY(-1px)
 }
@@ -441,97 +441,90 @@ a{color:inherit;text-decoration:none}
   font-size:17px
 }
 
-/* LIST BOX - BRENDLAR RO'YXATI (TO'LIQ) */
-.list-box{
-  border:1px solid #28558a;
-  border-radius:22px;
-  overflow:hidden;
-  background:#071c3c;
-  width:100%;
+/* =========================
+   BRENDLAR KARTOCHKASI (1-RASMGA MOS)
+========================= */
+
+.brand-card {
+    display: block;
+    padding: 14px 16px;
+    border-bottom: 1px solid #21456f;
+    background: transparent;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
-.list-row{
-  display:grid;
-  grid-template-columns:55px 62px 1fr 190px 80px 28px;
-  gap:12px;
-  align-items:center;
-  min-height:105px;
-  padding:12px 18px;
-  border-bottom:1px solid #21456f;
-  transition:.2s;
-  cursor:pointer
+.brand-card:last-child {
+    border-bottom: none;
 }
 
-.list-row:last-child{border-bottom:0}
-
-.list-row:hover{
-  background:#0a234d;
-  border-color:#208cff;
+.brand-card:hover {
+    background: #0a234d;
 }
 
-.rank-large{
-  font-size:34px;
-  color:#1982ff;
-  font-weight:900;
-  text-align:center;
-  min-width:40px;
+.brand-card .brand-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
 }
 
-.small-avatar{
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  border:2px solid #2d7fdc;
-  background:#162e55;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:27px;
-  overflow:hidden;
-  flex-shrink:0;
+.brand-card .brand-number {
+    font-size: 18px;
+    font-weight: 900;
+    color: #1982ff;
+    min-width: 28px;
 }
 
-.small-avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover
+.brand-card .brand-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    flex: 1;
 }
 
-.row-name{
-  font-weight:900;
-  font-size:19px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.brand-card .brand-name .verify {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    margin-left: 4px;
 }
 
-.row-meta{
-  color:#afc0dc;
-  font-size:15px;
-  margin-top:3px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.brand-card .brand-rating {
+    color: var(--yellow);
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
-.row-contact{
-  color:#b9c9e2;
-  font-size:15px;
-  line-height:1.7;
+.brand-card .brand-details {
+    padding-left: 38px;
 }
 
-.arrow{
-  font-size:27px;
-  color:#a8b9d6;
-  text-align:right;
+.brand-card .brand-detail {
+    font-size: 14px;
+    color: #afc0dc;
+    line-height: 1.8;
+    padding: 1px 0;
 }
 
-/* BRENDLAR UCHUN QO'SHIMCHA */
-.list-row .rating{
-  color:var(--yellow);
-  font-weight:900;
-  font-size:18px;
-  white-space:nowrap;
+.brand-card .brand-detail .label {
+    display: inline-block;
+    min-width: 24px;
+}
+
+.brand-card .brand-detail .value {
+    color: #d6dfed;
+}
+
+.brand-card .brand-detail .phone {
+    color: #1685ff;
+}
+
+.brand-card .brand-divider {
+    border: 0;
+    border-top: 1px solid #21456f;
+    margin: 8px 0 4px 38px;
 }
 
 .hero-home{
@@ -1397,45 +1390,57 @@ a{color:inherit;text-decoration:none}
 
   .rating small{font-size:10px}
 
-  /* MOBILDA BRENDLAR RO'YXATI - TO'LIQ */
-  .list-row{
-    grid-template-columns:28px 44px minmax(0,1fr) 46px 12px;
-    gap:6px;
-    min-height:72px;
-    padding:7px 10px;
+  /* MOBILDA BRENDLAR KARTOCHKASI (1-RASMGA MOS) */
+  .brand-card {
+    padding: 12px 14px;
   }
 
-  .rank-large{
-    font-size:24px;
-    min-width:28px;
+  .brand-card .brand-number {
+    font-size: 16px;
+    min-width: 24px;
   }
 
-  .small-avatar{
-    width:40px;
-    height:40px;
-    font-size:20px;
+  .brand-card .brand-name {
+    font-size: 15px;
   }
 
-  .row-name{
-    font-size:13px;
+  .brand-card .brand-rating {
+    font-size: 13px;
   }
 
-  .row-meta{
-    font-size:10px;
-    margin-top:2px;
+  .brand-card .brand-details {
+    padding-left: 34px;
   }
 
-  .row-contact{
-    font-size:9px;
-    line-height:1.2;
+  .brand-card .brand-detail {
+    font-size: 13px;
+    line-height: 1.7;
   }
 
-  .list-row .rating{
-    font-size:13px;
+  .brand-card .brand-divider {
+    margin: 6px 0 4px 34px;
   }
 
-  .arrow{
-    font-size:18px;
+  #home .container{
+    padding-bottom:80px !important;
+  }
+
+  .footer{
+    padding-bottom:70px !important;
+    font-size:11px !important;
+  }
+
+  .bottom-nav{
+    height:58px !important;
+  }
+
+  .nav-btn{
+    font-size:10px !important;
+    gap:1px !important;
+  }
+
+  .nav-btn .ni{
+    font-size:22px !important;
   }
 
   #home .carousel{
@@ -1685,19 +1690,6 @@ a{color:inherit;text-decoration:none}
     font-size:11px;
   }
 
-  .bottom-nav{
-    height:66px;
-  }
-
-  .nav-btn{
-    font-size:11px;
-    gap:1px;
-  }
-
-  .nav-btn .ni{
-    font-size:26px;
-  }
-
   .modal{
     border-radius:18px 18px 0 0;
     padding:16px;
@@ -1734,34 +1726,6 @@ a{color:inherit;text-decoration:none}
   .home-category-item b{
     font-size:9px;
   }
-
-  /* ======================================== */
-  /* TUZATISH: BRENDLAR RO'YXATI VA PASTKI MENYU */
-  /* ======================================== */
-  #home .container{
-    padding-bottom: 90px !important;
-  }
-
-  #home .list-box{
-    margin-bottom: 12px;
-  }
-
-  .footer{
-    padding-bottom: 80px !important;
-  }
-
-  .bottom-nav{
-    height: 62px !important;
-  }
-
-  .nav-btn{
-    font-size: 10px !important;
-    gap: 1px !important;
-  }
-
-  .nav-btn .ni{
-    font-size: 22px !important;
-  }
 }
 
 @media(max-width:430px){
@@ -1785,36 +1749,57 @@ a{color:inherit;text-decoration:none}
   .meta{font-size:10px}
   .rating{font-size:13px}
 
-  /* KICHIK MOBILDA BRENDLAR RO'YXATI - TO'LIQ */
-  .list-row{
-    grid-template-columns:24px 38px minmax(0,1fr) 38px 10px;
-    padding:6px 8px;
-    min-height:64px;
+  .brand-card {
+    padding: 10px 12px;
   }
-  .rank-large{
-    font-size:18px;
-    min-width:20px;
+
+  .brand-card .brand-number {
+    font-size: 14px;
+    min-width: 20px;
   }
-  .small-avatar{
-    width:32px;
-    height:32px;
-    font-size:14px;
+
+  .brand-card .brand-name {
+    font-size: 13px;
   }
-  .row-name{
-    font-size:11px;
+
+  .brand-card .brand-rating {
+    font-size: 11px;
   }
-  .row-meta{
-    font-size:8px;
+
+  .brand-card .brand-details {
+    padding-left: 28px;
   }
-  .row-contact{
-    font-size:8px;
+
+  .brand-card .brand-detail {
+    font-size: 11px;
+    line-height: 1.6;
   }
-  .list-row .rating{
-    font-size:11px;
+
+  .brand-card .brand-divider {
+    margin: 4px 0 2px 28px;
   }
-  .arrow{
-    font-size:14px;
+
+  #home .container{
+    padding-bottom:70px !important;
   }
+
+  .bottom-nav{
+    height:52px !important;
+  }
+
+  .nav-btn{
+    font-size:9px !important;
+  }
+
+  .nav-btn .ni{
+    font-size:19px !important;
+  }
+
+  .footer{
+    padding-bottom:60px !important;
+    font-size:10px !important;
+  }
+
   .top-hero .trophy{font-size:40px}
   .top-hero h1{font-size:28px}
   .top-hero p{font-size:13px}
@@ -1836,32 +1821,6 @@ a{color:inherit;text-decoration:none}
   .big-score{font-size:28px}
   .stars{font-size:18px}
   .action{font-size:11px;padding:8px 6px}
-
-  /* TUZATISH: KICHIK MOBILDA HAM */
-  #home .container{
-    padding-bottom: 80px !important;
-  }
-
-  #home .list-box{
-    margin-bottom: 10px;
-  }
-
-  .footer{
-    padding-bottom: 70px !important;
-  }
-
-  .bottom-nav{
-    height: 56px !important;
-  }
-
-  .nav-btn{
-    font-size: 9px !important;
-    gap: 0px !important;
-  }
-
-  .nav-btn .ni{
-    font-size: 20px !important;
-  }
 }
 </style>
 </head>
@@ -2224,7 +2183,7 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
-    <!-- BRENDLAR SAHIFASI - TO'LIQ RO'YXAT -->
+    <!-- BRENDLAR SAHIFASI - TO'LIQ RO'YXAT (KARTOCHKA KO'RINISHIDA) -->
     <section>
       <div class="section-title">
         <span class="ico">🏆</span>
@@ -2645,9 +2604,9 @@ function renderHomePage() {
     document.getElementById("homeTopCarouselInner").innerHTML = 
         filtered.slice(0,5).map((b,i) => card(b,i)).join("");
     
-    // BRENDLAR RO'YXATI - HAMMASI (cheksiz) - TO'LIQ KO'RINADI
+    // BRENDLAR RO'YXATI - KARTOCHKA KO'RINISHIDA
     document.getElementById("homeTop10").innerHTML = 
-        filtered.map((b,i) => row(b,i)).join("");
+        filtered.map((b,i) => rowCard(b,i)).join("");
 
     document.getElementById("top1Cards").innerHTML = 
         all.slice(0,1).map((b,i) => topCard(b,i)).join("");
@@ -3065,7 +3024,7 @@ function photoClass(b){
 
 
 /* =========================
-   KARTA
+   KARTA (ASOSIY)
 ========================= */
 
 function card(b,index){
@@ -3172,58 +3131,34 @@ function topCard(b,index){
 
 
 /* =========================
-   RO‘YXAT QATORI - BRENDLAR (TO'LIQ)
+   RO‘YXAT QATORI - KARTOCHKA KO'RINISHIDA (1-RASMGA MOS)
 ========================= */
 
-function row(b,index){
-
- return `
-
- <div
-   class="list-row"
-   onclick="openBusiness(${b.id})">
-
-   <div class="rank-large">
-     ${index+1}
-   </div>
-
-   <div class="small-avatar">
-     ${b.icon}
-   </div>
-
-   <div>
-
-     <div class="row-name">
-       ${escapeHtml(b.name)}
-       ${verify(b)}
-     </div>
-
-     <div class="row-meta">
-       📍 ${escapeHtml(b.address)}
-     </div>
-
-   </div>
-
-   <div class="row-contact">
-
-     ${escapeHtml(b.hours)}
-     <br>
-     ${escapeHtml(b.phone)}
-
-   </div>
-
-   <div class="rating">
-     ★ ${b.rating.toFixed(1)}
-   </div>
-
-   <div class="arrow">
-     ›
-   </div>
-
- </div>
-
- `;
-
+function rowCard(b, index) {
+    return `
+        <div class="brand-card" onclick="openBusiness(${b.id})">
+            <div class="brand-header">
+                <span class="brand-number">${index+1}</span>
+                <span class="brand-name">${escapeHtml(b.name)} ${verify(b)}</span>
+                <span class="brand-rating">⭐ ${b.rating.toFixed(1)}</span>
+            </div>
+            <div class="brand-details">
+                <div class="brand-detail">
+                    <span class="label">📍</span>
+                    <span class="value">${escapeHtml(b.address)}</span>
+                </div>
+                <div class="brand-detail">
+                    <span class="label">🕘</span>
+                    <span class="value">${escapeHtml(b.hours)}</span>
+                </div>
+                <div class="brand-detail">
+                    <span class="label">📞</span>
+                    <span class="value phone">${escapeHtml(b.phone)}</span>
+                </div>
+            </div>
+            <hr class="brand-divider">
+        </div>
+    `;
 }
 
 
@@ -3267,9 +3202,9 @@ function render(){
  document.getElementById("homeTopCarouselInner").innerHTML = 
      filtered.slice(0,5).map((b,i) => card(b,i)).join("");
 
- // BRENDLAR RO'YXATI - HAMMASI (cheksiz)
+ // BRENDLAR RO'YXATI - KARTOCHKA KO'RINISHIDA
  document.getElementById("homeTop10").innerHTML = 
-     filtered.map((b,i) => row(b,i)).join("");
+     filtered.map((b,i) => rowCard(b,i)).join("");
 
  document.getElementById("top1Cards").innerHTML = 
      all.slice(0,1).map((b,i) => topCard(b,i)).join("");
