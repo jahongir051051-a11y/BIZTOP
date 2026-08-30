@@ -484,7 +484,6 @@ a{color:inherit;text-decoration:none}
   margin-bottom: 0;
 }
 
-/* AVATAR */
 .brand-card .brand-avatar {
   width: 60px;
   height: 60px;
@@ -507,7 +506,6 @@ a{color:inherit;text-decoration:none}
   object-fit: cover;
 }
 
-/* KARTOCHKA ICHI */
 .brand-card .brand-content {
   flex: 1;
   min-width: 0;
@@ -1468,7 +1466,6 @@ a{color:inherit;text-decoration:none}
 
   .rating small{font-size:10px}
 
-  /* MOBILDA AVATAR BILAN KARTOCHKA */
   .brand-card {
     padding: 12px 14px;
     gap: 12px;
@@ -2289,7 +2286,7 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
-    <!-- BRENDLAR SAHIFASI - AVATAR BILAN, REYTING BO'YICHA SARALANGAN -->
+    <!-- BRENDLAR SAHIFASI -->
     <section>
       <div class="section-title">
         <span class="ico">🏆</span>
@@ -2679,13 +2676,12 @@ function filterByDistrict(businesses, city, district) {
 
 
 /* =========================
-   BARCHA BIZNESLAR - REYTING BO'YICHA SARALANGAN
+   BARCHA BIZNESLAR
 ========================= */
 
 function getAll() {
     const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
     const all = businesses.concat(saved);
-    // Reyting bo'yicha saralash (yuqoridan pastga)
     return all.sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
 }
 
@@ -2695,7 +2691,7 @@ function getAll() {
 ========================= */
 
 function renderHomePage() {
-    const all = getAll(); // Saralangan ro'yxat
+    const all = getAll();
     let filtered = all;
     
     if (selectedCity) {
@@ -2712,7 +2708,6 @@ function renderHomePage() {
     document.getElementById("homeTopCarouselInner").innerHTML = 
         filtered.slice(0,5).map((b,i) => card(b,i)).join("");
     
-    // BRENDLAR RO'YXATI - AVATAR BILAN, REYTING BO'YICHA SARALANGAN
     document.getElementById("homeTop10").innerHTML = 
         filtered.map((b,i) => rowCard(b,i)).join("");
 
@@ -3239,7 +3234,7 @@ function topCard(b,index){
 
 
 /* =========================
-   RO‘YXAT QATORI - AVATAR BILAN, REYTING BO'YICHA SARALANGAN
+   RO‘YXAT QATORI - AVATAR BILAN
 ========================= */
 
 function rowCard(b, index) {
@@ -3276,10 +3271,10 @@ function rowCard(b, index) {
 
 
 /* =========================
-   REYTING BO‘YICHA SARALASH (getAll ichida)
+   REYTING BO‘YICHA SARALASH
 ========================= */
 
-// getAll() funksiyasi yuqorida reyting bo'yicha saralangan
+// getAll() funksiyasi ichida saralanadi
 
 
 /* =========================
@@ -3323,6 +3318,20 @@ function render(){
  document.getElementById("top100CardsInner").innerHTML = 
      all.slice(0,100).map((b,i) => topCard(b,i)).join("");
 
+}
+
+
+/* =========================
+   XARITADA KO'RISH (YANGI)
+========================= */
+
+function openMap(address) {
+    if (!address) {
+        alert('Manzil topilmadi!');
+        return;
+    }
+    const url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address);
+    window.open(url, '_blank');
 }
 
 
@@ -3712,13 +3721,10 @@ function renderProfile(b){
    </button>
 
 
+   <!-- XARITADA KO'RISH TUGMASI (YANGILANDI) -->
    <button
      class="action map"
-     onclick="
-       alert(
-         'Xarita funksiyasi keyingi bosqichda ulanadi.'
-       )
-     ">
+     onclick="openMap('${escapeHtml(b.address)}')">
 
      🗺️ Xaritada ko‘rish
 
