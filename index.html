@@ -444,7 +444,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* =========================
-   BRENDLAR KARTOCHKASI - AVATAR BILAN
+   BRENDLAR KARTOCHKASI
 ========================= */
 
 .brand-card {
@@ -2808,7 +2808,7 @@ function searchBusinesses() {
 
 
 /* =========================
-   BIZNESLAR (STATIK)
+   BIZNESLAR (STATIK) - TELEGRAM VA KOORDINATLAR QO'SHILDI
 ========================= */
 
 const businesses = [
@@ -2825,7 +2825,10 @@ const businesses = [
   icon:"☕",
   photo:"cafe",
   about:"Salom kafe – mazali qahva, shirinliklar va qulay muhit.",
-  verified:true
+  verified:true,
+  telegram: "@salomkafe",
+  lat: 41.311081,
+  lng: 69.240562
  },
 
  {
@@ -2840,7 +2843,10 @@ const businesses = [
   icon:"🍽️",
   photo:"rest",
   about:"Mazali taomlar, oilaviy muhit va sifatli xizmat.",
-  verified:true
+  verified:true,
+  telegram: "@biztop",
+  lat: 39.654181,
+  lng: 66.959683
  },
 
  {
@@ -2855,7 +2861,10 @@ const businesses = [
   icon:"☕",
   photo:"coffee",
   about:"Qahva va shirinliklar uchun zamonaviy joy.",
-  verified:true
+  verified:true,
+  telegram: "@biztopcoffee",
+  lat: 39.774722,
+  lng: 64.428611
  },
 
  {
@@ -2870,7 +2879,10 @@ const businesses = [
   icon:"💇",
   photo:"beauty",
   about:"Go‘zallik va parvarish xizmatlari.",
-  verified:true
+  verified:true,
+  telegram: "@beautystar",
+  lat: 39.654181,
+  lng: 66.959683
  },
 
  {
@@ -2885,7 +2897,10 @@ const businesses = [
   icon:"🏨",
   photo:"hotel",
   about:"Qulay xonalar va mehmondo‘st xizmat.",
-  verified:true
+  verified:true,
+  telegram: "@grandhotel",
+  lat: 41.311081,
+  lng: 69.240562
  },
 
  {
@@ -2900,7 +2915,10 @@ const businesses = [
   icon:"🛒",
   photo:"market",
   about:"Kundalik xaridlar uchun katta tanlov.",
-  verified:true
+  verified:true,
+  telegram: "@megamarket",
+  lat: 41.551902,
+  lng: 61.008403
  },
 
  {
@@ -2915,7 +2933,10 @@ const businesses = [
   icon:"🍔",
   photo:"burger",
   about:"Mazali burger va tez tayyorlanadigan taomlar.",
-  verified:true
+  verified:true,
+  telegram: "@biztopburger",
+  lat: 39.654181,
+  lng: 66.959683
  },
 
  {
@@ -2930,7 +2951,10 @@ const businesses = [
   icon:"🚗",
   photo:"auto",
   about:"Avtomobil ta’mirlash va servis.",
-  verified:true
+  verified:true,
+  telegram: "@autopro",
+  lat: 39.774722,
+  lng: 64.428611
  },
 
  {
@@ -2945,7 +2969,10 @@ const businesses = [
   icon:"📱",
   photo:"tech",
   about:"Telefon va texnika mahsulotlari.",
-  verified:true
+  verified:true,
+  telegram: "@smarttech",
+  lat: 41.311081,
+  lng: 69.240562
  },
 
  {
@@ -2960,7 +2987,10 @@ const businesses = [
   icon:"🥖",
   photo:"bread",
   about:"Issiq non va mazali pishiriqlar.",
-  verified:true
+  verified:true,
+  telegram: "@shirinnon",
+  lat: 39.654181,
+  lng: 66.959683
  }
 
 ];
@@ -3322,16 +3352,37 @@ function render(){
 
 
 /* =========================
-   XARITADA KO'RISH (YANGI)
+   TELEGRAM ORQALI BOG'LANISH (YANGI)
 ========================= */
 
-function openMap(address) {
-    if (!address) {
-        alert('Manzil topilmadi!');
+function openTelegram(telegram) {
+    if (!telegram) {
+        alert('Telegram manzili topilmadi!');
         return;
     }
-    const url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address);
+    // @ belgisini olib tashlash (agar bor bo'lsa)
+    const username = telegram.replace('@', '');
+    const url = 'https://t.me/' + username;
     window.open(url, '_blank');
+}
+
+
+/* =========================
+   XARITADA KO'RISH (YANGI - KOORDINATLAR BILAN)
+========================= */
+
+function openMap(lat, lng, address) {
+    // Agar koordinatalar mavjud bo'lsa, ular bo'yicha ochish
+    if (lat && lng) {
+        const url = 'https://www.google.com/maps?q=' + lat + ',' + lng;
+        window.open(url, '_blank');
+    } else if (address) {
+        // Koordinatalar bo'lmasa, manzil bo'yicha qidirish
+        const url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address);
+        window.open(url, '_blank');
+    } else {
+        alert('Xarita ma\'lumoti topilmadi!');
+    }
 }
 
 
@@ -3430,7 +3481,7 @@ function openBusiness(id){
 
 
 /* =========================
-   PROFILNI CHIQARISH
+   PROFILNI CHIQARISH (TELEGRAM VA XARITA TUGMALARI YANGILANDI)
 ========================= */
 
 function renderProfile(b){
@@ -3697,34 +3748,28 @@ function renderProfile(b){
 
  <div class="actions">
 
+   <!-- Qo'ng'iroq qilish -->
    <button
      class="action"
-     onclick="
-       location.href='tel:${b.phone.replace(/[^0-9+]/g,'')}'
-     ">
+     onclick="location.href='tel:${b.phone.replace(/[^0-9+]/g,'')}'">
 
      📞 Qo‘ng‘iroq qilish
 
    </button>
 
-
+   <!-- Telegram orqali yozish (YANGI) -->
    <button
      class="action telegram"
-     onclick="
-       alert(
-         'Telegram orqali yozish keyingi bosqichda ulanadi.'
-       )
-     ">
+     onclick="openTelegram('${b.telegram || ''}')">
 
      ➤ Telegram orqali yozish
 
    </button>
 
-
-   <!-- XARITADA KO'RISH TUGMASI (YANGILANDI) -->
+   <!-- Xaritada ko'rish (YANGI - KOORDINATLAR BILAN) -->
    <button
      class="action map"
-     onclick="openMap('${escapeHtml(b.address)}')">
+     onclick="openMap('${b.lat || ''}', '${b.lng || ''}', '${escapeHtml(b.address)}')">
 
      🗺️ Xaritada ko‘rish
 
@@ -3887,7 +3932,7 @@ function closeAdd(){
 
 
 /* =========================
-   BIZNES QO‘SHISH
+   BIZNES QO‘SHISH (TELEGRAM VA KOORDINATLAR QO'SHILDI)
 ========================= */
 
 function addBusiness(){
@@ -3961,7 +4006,12 @@ function addBusiness(){
      ).value ||
      "BIZTOP platformasiga yangi qo‘shilgan biznes.",
 
-   verified:false
+   verified:false,
+
+   // YANGI MAYDONLAR
+   telegram: "", // Telegram username (masalan: @biztop)
+   lat: "", // Kenglik
+   lng: "" // Uzunlik
 
  };
 
