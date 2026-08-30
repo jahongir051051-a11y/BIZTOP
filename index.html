@@ -75,6 +75,12 @@ a{color:inherit;text-decoration:none}
 .logo .biz{color:#147cff}
 .logo .top{color:#fff}
 
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
 .add-btn{
   border:0;
   border-radius:38px;
@@ -91,6 +97,44 @@ a{color:inherit;text-decoration:none}
   font-size:30px;
   vertical-align:-2px;
   margin-right:8px
+}
+
+/* Foydalanuvchi tugmasi */
+.user-btn{
+  background:transparent;
+  border:1px solid #2768a9;
+  border-radius:50%;
+  width:44px;
+  height:44px;
+  color:#fff;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s;
+  position:relative;
+}
+
+.user-btn:hover{
+  border-color:#1685ff;
+  background:rgba(22,133,255,0.15);
+}
+
+.user-btn .badge{
+  position:absolute;
+  top:-4px;
+  right:-4px;
+  background:#22c55e;
+  color:#fff;
+  font-size:10px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .page{
@@ -154,6 +198,7 @@ a{color:inherit;text-decoration:none}
   cursor:pointer
 }
 
+/* SHAHAR TANLASH */
 .city-selector{
   display:flex;
   gap:10px;
@@ -343,9 +388,9 @@ a{color:inherit;text-decoration:none}
   display:inline-block;
 }
 
-/* =========================
-   BRENDLAR SAHIFASI
-========================= */
+/* ========================= */
+/* BRENDLAR SAHIFASI */
+/* ========================= */
 
 .section-title{
   display:flex;
@@ -443,9 +488,9 @@ a{color:inherit;text-decoration:none}
   font-size:17px
 }
 
-/* =========================
-   BRENDLAR KARTOCHKASI
-========================= */
+/* ========================= */
+/* BRENDLAR KARTOCHKASI */
+/* ========================= */
 
 .brand-card {
   display: flex;
@@ -604,6 +649,285 @@ a{color:inherit;text-decoration:none}
   border: 0;
   border-top: 1px solid rgba(33, 69, 111, 0.4);
   margin: 6px 0 2px 0;
+}
+
+/* ========================= */
+/* BOSHQARUV (MY BUSINESSES) */
+/* ========================= */
+
+.my-business-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #0b2550, #091f45);
+  border: 1px solid #1f5a9e;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.my-business-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e, #4da6ff);
+  opacity: 0.6;
+}
+
+.my-business-card:hover {
+  border-color: #22c55e;
+  transform: translateY(-2px);
+}
+
+.my-business-card .brand-avatar {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border-radius: 50%;
+  border: 2px solid #22c55e;
+  background: radial-gradient(circle at 35% 30%, #314f75, #050f22 72%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.my-business-card .brand-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.my-business-card .brand-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.my-business-card .brand-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.my-business-card .brand-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  flex: 1;
+}
+
+.my-business-card .brand-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--yellow);
+  font-weight: 700;
+  font-size: 14px;
+  background: rgba(255, 210, 31, 0.10);
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 210, 31, 0.15);
+}
+
+.my-business-card .brand-body {
+  padding-left: 0;
+}
+
+.my-business-card .brand-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #afc0dc;
+  padding: 2px 0;
+}
+
+.my-business-card .brand-info .ico {
+  min-width: 20px;
+  font-size: 13px;
+}
+
+.my-business-card .brand-info .val {
+  color: #d6dfed;
+}
+
+.my-business-card .brand-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.my-business-card .brand-actions .btn {
+  padding: 6px 16px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.my-business-card .brand-actions .btn-edit {
+  background: #1685ff;
+  color: #fff;
+}
+
+.my-business-card .brand-actions .btn-edit:hover {
+  background: #2d94ff;
+}
+
+.my-business-card .brand-actions .btn-delete {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+.my-business-card .brand-actions .btn-delete:hover {
+  background: #ff6666;
+}
+
+.my-business-card .brand-actions .btn-upload {
+  background: #22c55e;
+  color: #fff;
+}
+
+.my-business-card .brand-actions .btn-upload:hover {
+  background: #2dd96a;
+}
+
+.my-business-card .brand-actions .btn-remove-img {
+  background: #ff8c00;
+  color: #fff;
+}
+
+.my-business-card .brand-actions .btn-remove-img:hover {
+  background: #ffa500;
+}
+
+/* ========================= */
+/* TAHRIRLASH MODAL */
+/* ========================= */
+
+.edit-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:200;
+  padding:20px;
+}
+
+.edit-modal.show{
+  display:flex;
+}
+
+.edit-box{
+  background:#08234f;
+  border:2px solid #1685ff;
+  border-radius:24px;
+  padding:30px;
+  width:100%;
+  max-width:450px;
+  position:relative;
+  max-height:90vh;
+  overflow-y:auto;
+}
+
+.edit-box .close{
+  position:absolute;
+  right:16px;
+  top:10px;
+  background:transparent;
+  border:0;
+  color:#fff;
+  font-size:32px;
+  cursor:pointer;
+}
+
+.edit-box h2{
+  font-size:24px;
+  margin:0 0 16px;
+  color:#fff;
+  text-align:center;
+}
+
+.edit-box .field{
+  margin-bottom:12px;
+}
+
+.edit-box .field label{
+  display:block;
+  color:#b6c7e0;
+  font-weight:600;
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+.edit-box .field input,
+.edit-box .field textarea,
+.edit-box .field select{
+  width:100%;
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid #3b6fa7;
+  background:#0c2d5e;
+  color:#fff;
+  font-size:15px;
+  outline:none;
+}
+
+.edit-box .field input:focus,
+.edit-box .field textarea:focus{
+  border-color:#1685ff;
+}
+
+.edit-box .field textarea{
+  min-height:80px;
+  resize:vertical;
+}
+
+.edit-box .btn-save{
+  width:100%;
+  padding:12px;
+  border:0;
+  border-radius:12px;
+  background:#1685ff;
+  color:#fff;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.edit-box .btn-save:hover{
+  background:#2d94ff;
+}
+
+.edit-box .current-image{
+  margin:6px 0 10px;
+  text-align:center;
+}
+
+.edit-box .current-image img{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid #1685ff;
 }
 
 .hero-home{
@@ -1345,6 +1669,12 @@ a{color:inherit;text-decoration:none}
     margin-right:5px
   }
 
+  .user-btn{
+    width:38px;
+    height:38px;
+    font-size:15px;
+  }
+
   .page{
     padding-bottom:82px;
     min-height:calc(100vh - 68px)
@@ -1508,6 +1838,43 @@ a{color:inherit;text-decoration:none}
   .brand-card .brand-category {
     font-size: 9px;
     padding: 1px 8px;
+  }
+
+  .my-business-card {
+    padding: 12px 14px;
+    gap: 12px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+  }
+
+  .my-business-card .brand-avatar {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 24px;
+  }
+
+  .my-business-card .brand-name {
+    font-size: 15px;
+  }
+
+  .my-business-card .brand-rating {
+    font-size: 12px;
+    padding: 2px 8px;
+  }
+
+  .my-business-card .brand-info {
+    font-size: 12px;
+    padding: 1px 0;
+  }
+
+  .my-business-card .brand-actions .btn {
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+
+  .edit-box{
+    padding:20px;
   }
 
   #home .container{
@@ -1821,6 +2188,7 @@ a{color:inherit;text-decoration:none}
   .header{padding:0 12px}
   .logo{font-size:27px}
   .add-btn{font-size:12px;padding:0 10px;height:40px}
+  .user-btn{width:34px;height:34px;font-size:13px}
   .container{padding-left:10px;padding-right:10px}
   .search-box{height:44px;padding:0 10px}
   .search-btn{height:44px;flex-basis:76px;width:76px;font-size:13px}
@@ -1882,6 +2250,43 @@ a{color:inherit;text-decoration:none}
     padding: 1px 6px;
   }
 
+  .my-business-card {
+    padding: 10px 12px;
+    gap: 10px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+  }
+
+  .my-business-card .brand-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 20px;
+  }
+
+  .my-business-card .brand-name {
+    font-size: 13px;
+  }
+
+  .my-business-card .brand-rating {
+    font-size: 10px;
+    padding: 1px 6px;
+  }
+
+  .my-business-card .brand-info {
+    font-size: 10px;
+    padding: 1px 0;
+  }
+
+  .my-business-card .brand-actions .btn {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .edit-box{
+    padding:16px;
+  }
+
   #home .container{
     padding-bottom:70px !important;
   }
@@ -1936,13 +2341,19 @@ a{color:inherit;text-decoration:none}
   <button class="logo" onclick="showPage('home')">
     <span class="biz">BIZ</span><span class="top">TOP</span>
   </button>
-  <button class="add-btn" onclick="openAdd()">
-    <span>＋</span>Biznes qo‘shish
-  </button>
+  <div class="header-actions">
+    <button class="add-btn" onclick="openAdd()">
+      <span>＋</span>Biznes qo‘shish
+    </button>
+    <button class="user-btn" onclick="showPage('mybusiness')" title="Mening bizneslarim">
+      <span class="ni">👤</span>
+      <span class="badge" id="myBizBadge" style="display:none;">0</span>
+    </button>
+  </div>
 </header>
 
 
-<!-- BIZTOP -->
+<!-- BIZTOP (BOSH SAHIFA) -->
 <main id="home" class="page active">
 
   <div class="container">
@@ -1960,249 +2371,20 @@ a{color:inherit;text-decoration:none}
             <div class="region-title">📍 Viloyatlar</div>
             <div class="city-grid">
               <div class="city-item" onclick="selectCity('')">🌍 Barchasi</div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('toshkent')">
-                📍 Toshkent <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-toshkent">
-                  <div class="district-title">Toshkent tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('toshkent','Toshkent shahri')">Toshkent shahri</div>
-                  <div class="district-item" onclick="selectDistrict('toshkent','Olmazor')">Olmazor</div>
-                  <div class="district-item" onclick="selectDistrict('toshkent','Bektemir')">Bektemir</div>
-                  <div class="district-item" onclick="selectDistrict('toshkent','Mirobod')">Mirobod</div>
-                  <div class="district-item" onclick="selectDistrict('toshkent','Mirzo Ulug\'bek')">Mirzo Ulug'bek</div>
-                  <div class="district-item" onclick="selectDistrict('toshkent','Sergeli')">Sergeli</div>
-                  <div class="district-item" onclick="selectDistrict('toshkent','Shayxontohur')">Shayxontohur</div>
-                  <div class="district-item" onclick="selectDistrict('toshkent','Chilonzor')">Chilonzor</div>
-                  <div class="district-item" onclick="selectDistrict('toshkent','Yakkasaroy')">Yakkasaroy</div>
-                  <div class="district-item" onclick="selectDistrict('toshkent','Yunusobod')">Yunusobod</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('samarqand')">
-                📍 Samarqand <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-samarqand">
-                  <div class="district-title">Samarqand tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('samarqand','Samarqand shahri')">Samarqand shahri</div>
-                  <div class="district-item" onclick="selectDistrict('samarqand','Bulung\'ur')">Bulung'ur</div>
-                  <div class="district-item" onclick="selectDistrict('samarqand','Jomboy')">Jomboy</div>
-                  <div class="district-item" onclick="selectDistrict('samarqand','Kattaqo\'rg\'on')">Kattaqo'rg'on</div>
-                  <div class="district-item" onclick="selectDistrict('samarqand','Narpay')">Narpay</div>
-                  <div class="district-item" onclick="selectDistrict('samarqand','Oqdaryo')">Oqdaryo</div>
-                  <div class="district-item" onclick="selectDistrict('samarqand','Payariq')">Payariq</div>
-                  <div class="district-item" onclick="selectDistrict('samarqand','Urgut')">Urgut</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('buxoro')">
-                📍 Buxoro <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-buxoro">
-                  <div class="district-title">Buxoro tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('buxoro','Buxoro shahri')">Buxoro shahri</div>
-                  <div class="district-item" onclick="selectDistrict('buxoro','G\'ijduvon')">G'ijduvon</div>
-                  <div class="district-item" onclick="selectDistrict('buxoro','Kogon')">Kogon</div>
-                  <div class="district-item" onclick="selectDistrict('buxoro','Olot')">Olot</div>
-                  <div class="district-item" onclick="selectDistrict('buxoro','Qorako\'l')">Qorako'l</div>
-                  <div class="district-item" onclick="selectDistrict('buxoro','Romitan')">Romitan</div>
-                  <div class="district-item" onclick="selectDistrict('buxoro','Shofirkon')">Shofirkon</div>
-                  <div class="district-item" onclick="selectDistrict('buxoro','Vobkent')">Vobkent</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('namangan')">
-                📍 Namangan <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-namangan">
-                  <div class="district-title">Namangan tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','Namangan shahri')">Namangan shahri</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','Chortoq')">Chortoq</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','Kosonsoy')">Kosonsoy</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','Mingbuloq')">Mingbuloq</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','Namangan tumani')">Namangan tumani</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','Norin')">Norin</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','Pop')">Pop</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','To\'raqo\'rg\'on')">To'raqo'rg'on</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','Uychi')">Uychi</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','Uchqo\'rg\'on')">Uchqo'rg'on</div>
-                  <div class="district-item" onclick="selectDistrict('namangan','Yangiqo\'rg\'on')">Yangiqo'rg'on</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('andijon')">
-                📍 Andijon <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-andijon">
-                  <div class="district-title">Andijon tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Andijon shahri')">Andijon shahri</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Asaka')">Asaka</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Baliqchi')">Baliqchi</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Bo\'ston')">Bo'ston</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Buloqboshi')">Buloqboshi</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Izboskan')">Izboskan</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Jalaquduq')">Jalaquduq</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Marhamat')">Marhamat</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Oltinko\'l')">Oltinko'l</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Paxtaobod')">Paxtaobod</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Shahrixon')">Shahrixon</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Ulug\'nor')">Ulug'nor</div>
-                  <div class="district-item" onclick="selectDistrict('andijon','Xo\'jaobod')">Xo'jaobod</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('fargona')">
-                📍 Farg‘ona <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-fargona">
-                  <div class="district-title">Farg'ona tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Farg\'ona shahri')">Farg'ona shahri</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Quva')">Quva</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Quvasoy')">Quvasoy</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Oltiariq')">Oltiariq</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Rishton')">Rishton</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','So\'x')">So'x</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Toshloq')">Toshloq</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Uchko\'prik')">Uchko'prik</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Yozyovon')">Yozyovon</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Bag\'dod')">Bag'dod</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Beshariq')">Beshariq</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Buvayda')">Buvayda</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Dang\'ara')">Dang'ara</div>
-                  <div class="district-item" onclick="selectDistrict('fargona','Furqat')">Furqat</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('qoqon')">
-                📍 Qo‘qon <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-qoqon">
-                  <div class="district-title">Qo'qon tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('qoqon','Qo\'qon shahri')">Qo'qon shahri</div>
-                  <div class="district-item" onclick="selectDistrict('qoqon','Qo\'qon tumani')">Qo'qon tumani</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('jizzax')">
-                📍 Jizzax <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-jizzax">
-                  <div class="district-title">Jizzax tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Jizzax shahri')">Jizzax shahri</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Arnasoy')">Arnasoy</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Baxmal')">Baxmal</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Do\'stlik')">Do'stlik</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Forish')">Forish</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Gallaorol')">Gallaorol</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Mirzacho\'l')">Mirzacho'l</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Paxtakor')">Paxtakor</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Yangiobod')">Yangiobod</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Zafarobod')">Zafarobod</div>
-                  <div class="district-item" onclick="selectDistrict('jizzax','Zomin')">Zomin</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('sirdaryo')">
-                📍 Sirdaryo <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-sirdaryo">
-                  <div class="district-title">Sirdaryo tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('sirdaryo','Guliston shahri')">Guliston shahri</div>
-                  <div class="district-item" onclick="selectDistrict('sirdaryo','Guliston tumani')">Guliston tumani</div>
-                  <div class="district-item" onclick="selectDistrict('sirdaryo','Boyovut')">Boyovut</div>
-                  <div class="district-item" onclick="selectDistrict('sirdaryo','Mirzaobod')">Mirzaobod</div>
-                  <div class="district-item" onclick="selectDistrict('sirdaryo','Oqoltin')">Oqoltin</div>
-                  <div class="district-item" onclick="selectDistrict('sirdaryo','Sardoba')">Sardoba</div>
-                  <div class="district-item" onclick="selectDistrict('sirdaryo','Sayxunobod')">Sayxunobod</div>
-                  <div class="district-item" onclick="selectDistrict('sirdaryo','Xovos')">Xovos</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('navoiy')">
-                📍 Navoiy <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-navoiy">
-                  <div class="district-title">Navoiy tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('navoiy','Navoiy shahri')">Navoiy shahri</div>
-                  <div class="district-item" onclick="selectDistrict('navoiy','Zarafshon')">Zarafshon</div>
-                  <div class="district-item" onclick="selectDistrict('navoiy','Karmana')">Karmana</div>
-                  <div class="district-item" onclick="selectDistrict('navoiy','Qiziltepa')">Qiziltepa</div>
-                  <div class="district-item" onclick="selectDistrict('navoiy','Konimex')">Konimex</div>
-                  <div class="district-item" onclick="selectDistrict('navoiy','Navbahor')">Navbahor</div>
-                  <div class="district-item" onclick="selectDistrict('navoiy','Nurota')">Nurota</div>
-                  <div class="district-item" onclick="selectDistrict('navoiy','Tomdi')">Tomdi</div>
-                  <div class="district-item" onclick="selectDistrict('navoiy','Uchquduq')">Uchquduq</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('qarshi')">
-                📍 Qarshi <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-qarshi">
-                  <div class="district-title">Qarshi tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Qarshi shahri')">Qarshi shahri</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Dehqonobod')">Dehqonobod</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Kasbi')">Kasbi</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Kitob')">Kitob</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Koson')">Koson</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Mirishkor')">Mirishkor</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Muborak')">Muborak</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Nishon')">Nishon</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Qamashi')">Qamashi</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Shahrisabz')">Shahrisabz</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','Yakkabog\'')">Yakkabog'</div>
-                  <div class="district-item" onclick="selectDistrict('qarshi','G\'uzor')">G'uzor</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('termiz')">
-                📍 Termiz <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-termiz">
-                  <div class="district-title">Termiz tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Termiz shahri')">Termiz shahri</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Angor')">Angor</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Boysun')">Boysun</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Denov')">Denov</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Jarqo\'rg\'on')">Jarqo'rg'on</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Muzrabot')">Muzrabot</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Oltinsoy')">Oltinsoy</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Sariosiyo')">Sariosiyo</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Sherobod')">Sherobod</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Shurchi')">Shurchi</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Qiziriq')">Qiziriq</div>
-                  <div class="district-item" onclick="selectDistrict('termiz','Uzun')">Uzun</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('urganch')">
-                📍 Urganch <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-urganch">
-                  <div class="district-title">Urganch tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Urganch shahri')">Urganch shahri</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Xiva')">Xiva</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Bog\'ot')">Bog'ot</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Gurlan')">Gurlan</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Hazorasp')">Hazorasp</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Qo\'shko\'pir')">Qo'shko'pir</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Shovot')">Shovot</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Tuproqqal\'a')">Tuproqqal'a</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Xonqa')">Xonqa</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Yangiariq')">Yangiariq</div>
-                  <div class="district-item" onclick="selectDistrict('urganch','Yangibozor')">Yangibozor</div>
-                </div>
-              </div>
-              
-              <div class="city-item has-children" onclick="toggleDistricts('qoraqalpogiston')">
-                📍 Qoraqalpog‘iston <span class="sub-arrow">▶</span>
-                <div class="district-dropdown" id="districts-qoraqalpogiston">
-                  <div class="district-title">Qoraqalpog'iston tumanlari</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Nukus shahri')">Nukus shahri</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Amudaryo')">Amudaryo</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Beruniy')">Beruniy</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Bo\'zatov')">Bo'zatov</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Chimboy')">Chimboy</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Ellikqal\'a')">Ellikqal'a</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Kegeyli')">Kegeyli</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Mo\'ynoq')">Mo'ynoq</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Qanliko\'l')">Qanliko'l</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Qo\'ng\'irot')">Qo'ng'irot</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Qorao\'zak')">Qorao'zak</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Shumanay')">Shumanay</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Taxtako\'pir')">Taxtako'pir</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','To\'rtko\'l')">To'rtko'l</div>
-                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Xo\'jayli')">Xo'jayli</div>
-                </div>
-              </div>
-              
+              <div class="city-item" onclick="selectCity('toshkent')">📍 Toshkent</div>
+              <div class="city-item" onclick="selectCity('samarqand')">📍 Samarqand</div>
+              <div class="city-item" onclick="selectCity('buxoro')">📍 Buxoro</div>
+              <div class="city-item" onclick="selectCity('namangan')">📍 Namangan</div>
+              <div class="city-item" onclick="selectCity('andijon')">📍 Andijon</div>
+              <div class="city-item" onclick="selectCity('fargona')">📍 Farg‘ona</div>
+              <div class="city-item" onclick="selectCity('qoqon')">📍 Qo‘qon</div>
+              <div class="city-item" onclick="selectCity('jizzax')">📍 Jizzax</div>
+              <div class="city-item" onclick="selectCity('sirdaryo')">📍 Sirdaryo</div>
+              <div class="city-item" onclick="selectCity('navoiy')">📍 Navoiy</div>
+              <div class="city-item" onclick="selectCity('qarshi')">📍 Qarshi</div>
+              <div class="city-item" onclick="selectCity('termiz')">📍 Termiz</div>
+              <div class="city-item" onclick="selectCity('urganch')">📍 Urganch</div>
+              <div class="city-item" onclick="selectCity('qoraqalpogiston')">📍 Qoraqalpog‘iston</div>
             </div>
           </div>
         </div>
@@ -2286,7 +2468,6 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
-    <!-- BRENDLAR SAHIFASI -->
     <section>
       <div class="section-title">
         <span class="ico">🏆</span>
@@ -2304,7 +2485,7 @@ a{color:inherit;text-decoration:none}
 </main>
 
 
-<!-- TOP -->
+<!-- TOP BRENDLAR -->
 <main id="top" class="page">
 
   <div class="container">
@@ -2391,6 +2572,32 @@ a{color:inherit;text-decoration:none}
 </main>
 
 
+<!-- Mening bizneslarim (BOSHQARUV) -->
+<main id="mybusiness" class="page">
+
+  <div class="container">
+
+    <div class="profile-topbar" style="margin-bottom:16px;">
+      <button class="back" onclick="showPage('home')">‹</button>
+      <strong style="font-size:24px">👤 Mening bizneslarim</strong>
+      <div style="width:40px;"></div>
+    </div>
+
+    <div id="myBusinessList">
+      <div style="text-align:center;color:#aebfe0;padding:40px 0;">
+        <p style="font-size:18px;">📭 Hali biznes qo'shmagansiz</p>
+        <p style="font-size:14px;margin-top:8px;">"Biznes qo'shish" tugmasini bosing va o'z biznesingizni qo'shing</p>
+        <button class="add-btn" onclick="closeAdd();openAdd();" style="margin-top:16px;padding:12px 24px;font-size:16px;">
+          <span>＋</span> Biznes qo'shish
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+
 <!-- PASTKI NAVIGATSIYA -->
 <nav class="bottom-nav">
   <button class="nav-btn active" id="navHome" onclick="showPage('home')">
@@ -2408,7 +2615,7 @@ a{color:inherit;text-decoration:none}
 </nav>
 
 
-<!-- BIZNES QO‘SHISH -->
+<!-- BIZNES QO'SHISH MODAL -->
 <div class="modal-backdrop" id="addModal">
   <div class="modal">
     <button class="close" onclick="closeAdd()">×</button>
@@ -2419,8 +2626,54 @@ a{color:inherit;text-decoration:none}
       <div class="field"><label>Manzil</label><input id="newAddress" placeholder="Masalan: Toshkent"></div>
       <div class="field"><label>Telefon raqami</label><input id="newPhone" placeholder="+998 90 123 45 67"></div>
       <div class="field"><label>Ish vaqti</label><input id="newHours" value="09:00 – 21:00"></div>
+      <div class="field"><label>Telegram</label><input id="newTelegram" placeholder="@username"></div>
       <div class="field"><label>Biznes haqida</label><textarea id="newAbout" placeholder="Biznesingiz haqida qisqacha ma’lumot..."></textarea></div>
       <button class="save" onclick="addBusiness()">✅ Biznesni qo‘shish</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- TAHRIRLASH MODAL -->
+<div class="edit-modal" id="editModal">
+  <div class="edit-box">
+    <button class="close" onclick="closeEdit()">×</button>
+    <h2>✏️ Biznesni tahrirlash</h2>
+    <div id="editForm">
+      <div class="field">
+        <label>Biznes nomi</label>
+        <input id="editName" placeholder="Biznes nomi">
+      </div>
+      <div class="field">
+        <label>Kategoriya</label>
+        <select id="editCategory"></select>
+      </div>
+      <div class="field">
+        <label>Manzil</label>
+        <input id="editAddress" placeholder="Manzil">
+      </div>
+      <div class="field">
+        <label>Telefon raqami</label>
+        <input id="editPhone" placeholder="+998 90 123 45 67">
+      </div>
+      <div class="field">
+        <label>Ish vaqti</label>
+        <input id="editHours" placeholder="09:00 – 21:00">
+      </div>
+      <div class="field">
+        <label>Telegram</label>
+        <input id="editTelegram" placeholder="@username">
+      </div>
+      <div class="field">
+        <label>Biznes haqida</label>
+        <textarea id="editAbout" placeholder="Biznes haqida ma'lumot..."></textarea>
+      </div>
+      <div class="field">
+        <label>Rasm</label>
+        <div id="editImagePreview" class="current-image"></div>
+        <input type="file" id="editImageInput" accept="image/*" style="color:#fff;margin-top:6px;">
+      </div>
+      <button class="btn-save" onclick="saveEdit()">💾 Saqlash</button>
     </div>
   </div>
 </div>
@@ -2441,67 +2694,25 @@ a{color:inherit;text-decoration:none}
 ========================= */
 
 const CITY_DATA = {
-    'toshkent': {
-        name: 'Toshkent',
-        districts: ['Toshkent shahri', 'Olmazor', 'Bektemir', 'Mirobod', 'Mirzo Ulug\'bek', 'Sergeli', 'Shayxontohur', 'Chilonzor', 'Yakkasaroy', 'Yunusobod']
-    },
-    'samarqand': {
-        name: 'Samarqand',
-        districts: ['Samarqand shahri', 'Bulung\'ur', 'Jomboy', 'Kattaqo\'rg\'on', 'Narpay', 'Oqdaryo', 'Payariq', 'Urgut']
-    },
-    'buxoro': {
-        name: 'Buxoro',
-        districts: ['Buxoro shahri', 'G\'ijduvon', 'Kogon', 'Olot', 'Qorako\'l', 'Romitan', 'Shofirkon', 'Vobkent']
-    },
-    'namangan': {
-        name: 'Namangan',
-        districts: ['Namangan shahri', 'Chortoq', 'Kosonsoy', 'Mingbuloq', 'Namangan tumani', 'Norin', 'Pop', 'To\'raqo\'rg\'on', 'Uychi', 'Uchqo\'rg\'on', 'Yangiqo\'rg\'on']
-    },
-    'andijon': {
-        name: 'Andijon',
-        districts: ['Andijon shahri', 'Asaka', 'Baliqchi', 'Bo\'ston', 'Buloqboshi', 'Izboskan', 'Jalaquduq', 'Marhamat', 'Oltinko\'l', 'Paxtaobod', 'Shahrixon', 'Ulug\'nor', 'Xo\'jaobod']
-    },
-    'fargona': {
-        name: 'Farg\'ona',
-        districts: ['Farg\'ona shahri', 'Quva', 'Quvasoy', 'Oltiariq', 'Rishton', 'So\'x', 'Toshloq', 'Uchko\'prik', 'Yozyovon', 'Bag\'dod', 'Beshariq', 'Buvayda', 'Dang\'ara', 'Furqat']
-    },
-    'qoqon': {
-        name: 'Qo\'qon',
-        districts: ['Qo\'qon shahri', 'Qo\'qon tumani']
-    },
-    'jizzax': {
-        name: 'Jizzax',
-        districts: ['Jizzax shahri', 'Arnasoy', 'Baxmal', 'Do\'stlik', 'Forish', 'Gallaorol', 'Mirzacho\'l', 'Paxtakor', 'Yangiobod', 'Zafarobod', 'Zomin']
-    },
-    'sirdaryo': {
-        name: 'Sirdaryo',
-        districts: ['Guliston shahri', 'Guliston tumani', 'Boyovut', 'Mirzaobod', 'Oqoltin', 'Sardoba', 'Sayxunobod', 'Xovos']
-    },
-    'navoiy': {
-        name: 'Navoiy',
-        districts: ['Navoiy shahri', 'Zarafshon', 'Karmana', 'Qiziltepa', 'Konimex', 'Navbahor', 'Nurota', 'Tomdi', 'Uchquduq']
-    },
-    'qarshi': {
-        name: 'Qarshi',
-        districts: ['Qarshi shahri', 'Dehqonobod', 'Kasbi', 'Kitob', 'Koson', 'Mirishkor', 'Muborak', 'Nishon', 'Qamashi', 'Shahrisabz', 'Yakkabog\'', 'G\'uzor']
-    },
-    'termiz': {
-        name: 'Termiz',
-        districts: ['Termiz shahri', 'Angor', 'Boysun', 'Denov', 'Jarqo\'rg\'on', 'Muzrabot', 'Oltinsoy', 'Sariosiyo', 'Sherobod', 'Shurchi', 'Qiziriq', 'Uzun']
-    },
-    'urganch': {
-        name: 'Urganch',
-        districts: ['Urganch shahri', 'Xiva', 'Bog\'ot', 'Gurlan', 'Hazorasp', 'Qo\'shko\'pir', 'Shovot', 'Tuproqqal\'a', 'Xonqa', 'Yangiariq', 'Yangibozor']
-    },
-    'qoraqalpogiston': {
-        name: 'Qoraqalpog\'iston',
-        districts: ['Nukus shahri', 'Amudaryo', 'Beruniy', 'Bo\'zatov', 'Chimboy', 'Ellikqal\'a', 'Kegeyli', 'Mo\'ynoq', 'Qanliko\'l', 'Qo\'ng\'irot', 'Qorao\'zak', 'Shumanay', 'Taxtako\'pir', 'To\'rtko\'l', 'Xo\'jayli']
-    }
+    'toshkent': { name: 'Toshkent', districts: ['Toshkent shahri', 'Olmazor', 'Bektemir', 'Mirobod', 'Mirzo Ulug\'bek', 'Sergeli', 'Shayxontohur', 'Chilonzor', 'Yakkasaroy', 'Yunusobod'] },
+    'samarqand': { name: 'Samarqand', districts: ['Samarqand shahri', 'Bulung\'ur', 'Jomboy', 'Kattaqo\'rg\'on', 'Narpay', 'Oqdaryo', 'Payariq', 'Urgut'] },
+    'buxoro': { name: 'Buxoro', districts: ['Buxoro shahri', 'G\'ijduvon', 'Kogon', 'Olot', 'Qorako\'l', 'Romitan', 'Shofirkon', 'Vobkent'] },
+    'namangan': { name: 'Namangan', districts: ['Namangan shahri', 'Chortoq', 'Kosonsoy', 'Mingbuloq', 'Namangan tumani', 'Norin', 'Pop', 'To\'raqo\'rg\'on', 'Uychi', 'Uchqo\'rg\'on', 'Yangiqo\'rg\'on'] },
+    'andijon': { name: 'Andijon', districts: ['Andijon shahri', 'Asaka', 'Baliqchi', 'Bo\'ston', 'Buloqboshi', 'Izboskan', 'Jalaquduq', 'Marhamat', 'Oltinko\'l', 'Paxtaobod', 'Shahrixon', 'Ulug\'nor', 'Xo\'jaobod'] },
+    'fargona': { name: 'Farg\'ona', districts: ['Farg\'ona shahri', 'Quva', 'Quvasoy', 'Oltiariq', 'Rishton', 'So\'x', 'Toshloq', 'Uchko\'prik', 'Yozyovon', 'Bag\'dod', 'Beshariq', 'Buvayda', 'Dang\'ara', 'Furqat'] },
+    'qoqon': { name: 'Qo\'qon', districts: ['Qo\'qon shahri', 'Qo\'qon tumani'] },
+    'jizzax': { name: 'Jizzax', districts: ['Jizzax shahri', 'Arnasoy', 'Baxmal', 'Do\'stlik', 'Forish', 'Gallaorol', 'Mirzacho\'l', 'Paxtakor', 'Yangiobod', 'Zafarobod', 'Zomin'] },
+    'sirdaryo': { name: 'Sirdaryo', districts: ['Guliston shahri', 'Guliston tumani', 'Boyovut', 'Mirzaobod', 'Oqoltin', 'Sardoba', 'Sayxunobod', 'Xovos'] },
+    'navoiy': { name: 'Navoiy', districts: ['Navoiy shahri', 'Zarafshon', 'Karmana', 'Qiziltepa', 'Konimex', 'Navbahor', 'Nurota', 'Tomdi', 'Uchquduq'] },
+    'qarshi': { name: 'Qarshi', districts: ['Qarshi shahri', 'Dehqonobod', 'Kasbi', 'Kitob', 'Koson', 'Mirishkor', 'Muborak', 'Nishon', 'Qamashi', 'Shahrisabz', 'Yakkabog\'', 'G\'uzor'] },
+    'termiz': { name: 'Termiz', districts: ['Termiz shahri', 'Angor', 'Boysun', 'Denov', 'Jarqo\'rg\'on', 'Muzrabot', 'Oltinsoy', 'Sariosiyo', 'Sherobod', 'Shurchi', 'Qiziriq', 'Uzun'] },
+    'urganch': { name: 'Urganch', districts: ['Urganch shahri', 'Xiva', 'Bog\'ot', 'Gurlan', 'Hazorasp', 'Qo\'shko\'pir', 'Shovot', 'Tuproqqal\'a', 'Xonqa', 'Yangiariq', 'Yangibozor'] },
+    'qoraqalpogiston': { name: 'Qoraqalpog\'iston', districts: ['Nukus shahri', 'Amudaryo', 'Beruniy', 'Bo\'zatov', 'Chimboy', 'Ellikqal\'a', 'Kegeyli', 'Mo\'ynoq', 'Qanliko\'l', 'Qo\'ng\'irot', 'Qorao\'zak', 'Shumanay', 'Taxtako\'pir', 'To\'rtko\'l', 'Xo\'jayli'] }
 };
 
-const CITY_KEYS = Object.keys(CITY_DATA);
 let selectedCity = "";
 let selectedDistrict = "";
+let editingId = null;
 
 
 /* =========================
@@ -2515,143 +2726,58 @@ function loadSelectedCity() {
             const data = JSON.parse(saved);
             selectedCity = data.city || "";
             selectedDistrict = data.district || "";
-            
             if (selectedCity) {
                 const cityDisplay = CITY_DATA[selectedCity]?.name || selectedCity;
                 let fullDisplay = cityDisplay;
-                if (selectedDistrict) {
-                    fullDisplay = cityDisplay + ' › ' + selectedDistrict;
-                }
+                if (selectedDistrict) fullDisplay = cityDisplay + ' › ' + selectedDistrict;
                 document.getElementById('selectedCityName').textContent = fullDisplay;
                 const display = document.getElementById('selectedCityDisplay');
                 display.textContent = '📍 ' + fullDisplay;
                 display.classList.add('show');
             }
         }
-    } catch (e) {
-        console.log('LocalStorage dan yuklashda xatolik');
-    }
+    } catch (e) { console.log('LocalStorage xatolik'); }
 }
 
 function saveSelectedCity() {
     try {
-        localStorage.setItem('biztop_selected_city', JSON.stringify({
-            city: selectedCity,
-            district: selectedDistrict
-        }));
-    } catch (e) {
-        console.log('LocalStorage ga saqlashda xatolik');
-    }
+        localStorage.setItem('biztop_selected_city', JSON.stringify({ city: selectedCity, district: selectedDistrict }));
+    } catch (e) { console.log('LocalStorage xatolik'); }
 }
 
 
 /* =========================
-   DROPDOWN FUNKSIYALARI
+   DROPDOWN
 ========================= */
 
 function toggleCityDropdown() {
-    const dropdown = document.getElementById('cityDropdown');
-    const arrow = document.getElementById('cityArrow');
-    dropdown.classList.toggle('show');
-    arrow.classList.toggle('open');
+    document.getElementById('cityDropdown').classList.toggle('show');
+    document.getElementById('cityArrow').classList.toggle('open');
 }
 
 function closeCityDropdown() {
     document.getElementById('cityDropdown').classList.remove('show');
     document.getElementById('cityArrow').classList.remove('open');
-    document.querySelectorAll('.district-dropdown').forEach(d => d.classList.remove('show'));
-}
-
-function toggleDistricts(cityKey) {
-    const districtDropdown = document.getElementById('districts-' + cityKey);
-    if (districtDropdown) {
-        document.querySelectorAll('.district-dropdown').forEach(d => {
-            if (d.id !== 'districts-' + cityKey) {
-                d.classList.remove('show');
-            }
-        });
-        districtDropdown.classList.toggle('show');
-    }
 }
 
 document.addEventListener('click', function(e) {
     const wrapper = document.querySelector('.city-selector-wrapper');
-    if (wrapper && !wrapper.contains(e.target)) {
-        closeCityDropdown();
-    }
+    if (wrapper && !wrapper.contains(e.target)) closeCityDropdown();
 });
-
-
-/* =========================
-   SHAHAR TANLASH
-========================= */
 
 function selectCity(city) {
     selectedCity = city;
     selectedDistrict = "";
     closeCityDropdown();
     saveSelectedCity();
-    
-    const displayName = city ? CITY_DATA[city]?.name || city.charAt(0).toUpperCase() + city.slice(1) : 'Shahar';
+    const displayName = city ? CITY_DATA[city]?.name || city : 'Shahar';
     document.getElementById('selectedCityName').textContent = displayName;
-    
     const display = document.getElementById('selectedCityDisplay');
-    if (city) {
-        display.textContent = '📍 ' + displayName;
-        display.classList.add('show');
-    } else {
-        display.classList.remove('show');
-    }
-    
-    document.querySelectorAll('.city-item').forEach(item => item.classList.remove('active'));
-    document.querySelectorAll('.district-item').forEach(item => item.classList.remove('active'));
-    document.querySelectorAll('.district-dropdown').forEach(d => d.classList.remove('show'));
-    
+    if (city) { display.textContent = '📍 ' + displayName; display.classList.add('show'); }
+    else { display.classList.remove('show'); }
     const input = document.getElementById('searchInput');
-    if (input.value.trim()) {
-        searchBusinesses();
-    } else {
-        renderHomePage();
-    }
-}
-
-
-/* =========================
-   TUMAN TANLASH
-========================= */
-
-function selectDistrict(cityKey, districtName) {
-    selectedCity = cityKey;
-    selectedDistrict = districtName;
-    closeCityDropdown();
-    saveSelectedCity();
-    
-    document.querySelectorAll('.district-dropdown').forEach(d => d.classList.remove('show'));
-    
-    const cityDisplay = CITY_DATA[cityKey]?.name || cityKey.charAt(0).toUpperCase() + cityKey.slice(1);
-    const fullDisplay = cityDisplay + ' › ' + districtName;
-    
-    document.getElementById('selectedCityName').textContent = fullDisplay;
-    
-    const display = document.getElementById('selectedCityDisplay');
-    display.textContent = '📍 ' + fullDisplay;
-    display.classList.add('show');
-    
-    document.querySelectorAll('.city-item').forEach(item => item.classList.remove('active'));
-    document.querySelectorAll('.district-item').forEach(item => item.classList.remove('active'));
-    
-    document.querySelectorAll('.district-item').forEach(item => {
-        if (item.textContent.trim() === districtName) {
-            item.classList.add('active');
-        }
-    });
-    
-    const input = document.getElementById('searchInput');
-    if (input.value.trim()) {
-        searchBusinesses();
-    } else {
-        renderHomePage();
-    }
+    if (input.value.trim()) searchBusinesses();
+    else renderHomePage();
 }
 
 
@@ -2661,17 +2787,7 @@ function selectDistrict(cityKey, districtName) {
 
 function filterByCity(businesses, city) {
     if (!city) return businesses;
-    return businesses.filter(b => 
-        b.address.toLowerCase().includes(city.toLowerCase())
-    );
-}
-
-function filterByDistrict(businesses, city, district) {
-    if (!city || !district) return filterByCity(businesses, city);
-    return businesses.filter(b => {
-        const address = b.address.toLowerCase();
-        return address.includes(city.toLowerCase()) && address.includes(district.toLowerCase());
-    });
+    return businesses.filter(b => b.address.toLowerCase().includes(city.toLowerCase()));
 }
 
 
@@ -2693,38 +2809,19 @@ function getAll() {
 function renderHomePage() {
     const all = getAll();
     let filtered = all;
+    if (selectedCity) filtered = filterByCity(all, selectedCity);
     
-    if (selectedCity) {
-        if (selectedDistrict) {
-            filtered = filterByDistrict(all, selectedCity, selectedDistrict);
-        } else {
-            filtered = filterByCity(all, selectedCity);
-        }
-    }
+    document.getElementById("popularCarouselInner").innerHTML = filtered.slice(0,6).map((b,i) => card(b,i)).join("");
+    document.getElementById("homeTopCarouselInner").innerHTML = filtered.slice(0,5).map((b,i) => card(b,i)).join("");
+    document.getElementById("homeTop10").innerHTML = filtered.map((b,i) => rowCard(b,i)).join("");
+    document.getElementById("top1Cards").innerHTML = all.slice(0,1).map((b,i) => topCard(b,i)).join("");
+    document.getElementById("top3CardsInner").innerHTML = all.slice(0,3).map((b,i) => topCard(b,i)).join("");
+    document.getElementById("top10CardsInner").innerHTML = all.slice(0,10).map((b,i) => topCard(b,i)).join("");
+    document.getElementById("top30CardsInner").innerHTML = all.slice(0,30).map((b,i) => topCard(b,i)).join("");
+    document.getElementById("top100CardsInner").innerHTML = all.slice(0,100).map((b,i) => topCard(b,i)).join("");
     
-    document.getElementById("popularCarouselInner").innerHTML = 
-        filtered.slice(0,6).map((b,i) => card(b,i)).join("");
-    
-    document.getElementById("homeTopCarouselInner").innerHTML = 
-        filtered.slice(0,5).map((b,i) => card(b,i)).join("");
-    
-    document.getElementById("homeTop10").innerHTML = 
-        filtered.map((b,i) => rowCard(b,i)).join("");
-
-    document.getElementById("top1Cards").innerHTML = 
-        all.slice(0,1).map((b,i) => topCard(b,i)).join("");
-
-    document.getElementById("top3CardsInner").innerHTML = 
-        all.slice(0,3).map((b,i) => topCard(b,i)).join("");
-
-    document.getElementById("top10CardsInner").innerHTML = 
-        all.slice(0,10).map((b,i) => topCard(b,i)).join("");
-
-    document.getElementById("top30CardsInner").innerHTML = 
-        all.slice(0,30).map((b,i) => topCard(b,i)).join("");
-
-    document.getElementById("top100CardsInner").innerHTML = 
-        all.slice(0,100).map((b,i) => topCard(b,i)).join("");
+    // Badge yangilash
+    updateBadge();
 }
 
 
@@ -2736,265 +2833,47 @@ function searchBusinesses() {
     const q = document.getElementById("searchInput").value.trim().toLowerCase();
     const box = document.getElementById("searchResults");
     const list = document.getElementById("resultsList");
-    
-    if (!q) {
-        box.style.display = "none";
-        renderHomePage();
-        return;
-    }
-    
+    if (!q) { box.style.display = "none"; renderHomePage(); return; }
     let found = getAll().filter(b => {
-        if (selectedCity) {
-            if (selectedDistrict) {
-                const address = b.address.toLowerCase();
-                if (!address.includes(selectedCity.toLowerCase()) || !address.includes(selectedDistrict.toLowerCase())) {
-                    return false;
-                }
-            } else {
-                if (!b.address.toLowerCase().includes(selectedCity.toLowerCase())) {
-                    return false;
-                }
-            }
-        }
-        
-        const searchFields = (
-            b.name + " " + 
-            b.category + " " + 
-            b.address + " " + 
-            b.about
-        ).toLowerCase();
+        if (selectedCity && !b.address.toLowerCase().includes(selectedCity.toLowerCase())) return false;
+        const searchFields = (b.name + " " + b.category + " " + b.address + " " + b.about).toLowerCase();
         return searchFields.includes(q);
     });
-    
     found.sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
-    
     box.style.display = "block";
-    
     if (found.length === 0) {
-        let locationMsg = '';
-        if (selectedCity && selectedDistrict) {
-            locationMsg = `<br>📍 ${CITY_DATA[selectedCity]?.name || selectedCity} › ${selectedDistrict} da biznes topilmadi.`;
-        } else if (selectedCity) {
-            locationMsg = `<br>📍 ${CITY_DATA[selectedCity]?.name || selectedCity} da biznes topilmadi.`;
-        }
-        list.innerHTML = `
-            <div class="profile-box">
-                <p style="text-align:center;color:#aebfe0;">
-                    🔍 "${q}" bo'yicha hech narsa topilmadi.${locationMsg}
-                </p>
-            </div>
-        `;
+        list.innerHTML = `<div class="profile-box"><p style="text-align:center;color:#aebfe0;">🔍 "${q}" bo'yicha hech narsa topilmadi.</p></div>`;
         return;
     }
-    
     list.innerHTML = found.map(b => `
         <div class="result-card" onclick="openBusiness(${b.id})" style="margin-bottom:12px">
             <div class="avatar">${b.icon}</div>
             <div>
                 <div class="business-name">${escapeHtml(b.name)} ${verify(b)}</div>
-                <div class="meta">
-                    📍 ${escapeHtml(b.address)}<br>
-                    🕘 ${escapeHtml(b.hours)}<br>
-                    📞 ${escapeHtml(b.phone)}
-                </div>
+                <div class="meta">📍 ${escapeHtml(b.address)}<br>🕘 ${escapeHtml(b.hours)}<br>📞 ${escapeHtml(b.phone)}</div>
             </div>
-            <div class="rating">
-                ★ ${b.rating.toFixed(1)}
-                <small><br>${b.reviews} ta baho</small>
-            </div>
+            <div class="rating">★ ${b.rating.toFixed(1)}<small><br>${b.reviews} ta baho</small></div>
         </div>
     `).join("");
 }
 
 
 /* =========================
-   BIZNESLAR (STATIK) - TELEGRAM VA KOORDINATLAR QO'SHILDI
+   BIZNESLAR (STATIK)
 ========================= */
 
 const businesses = [
-
- {
-  id:1,
-  name:"Salom kafe",
-  category:"Kafe",
-  address:"Toshkent shahri",
-  phone:"+998 91 123 45 67",
-  hours:"09:00 – 21:00",
-  rating:5.0,
-  reviews:23,
-  icon:"☕",
-  photo:"cafe",
-  about:"Salom kafe – mazali qahva, shirinliklar va qulay muhit.",
-  verified:true,
-  telegram: "@salomkafe",
-  lat: 41.311081,
-  lng: 69.240562
- },
-
- {
-  id:2,
-  name:"BIZTOP Restoran",
-  category:"Restoran",
-  address:"Samarqand shahri",
-  phone:"+998 90 111 11 11",
-  hours:"09:00 – 23:00",
-  rating:4.9,
-  reviews:18,
-  icon:"🍽️",
-  photo:"rest",
-  about:"Mazali taomlar, oilaviy muhit va sifatli xizmat.",
-  verified:true,
-  telegram: "@biztop",
-  lat: 39.654181,
-  lng: 66.959683
- },
-
- {
-  id:3,
-  name:"BIZTOP Coffee",
-  category:"Kafe",
-  address:"Buxoro shahri",
-  phone:"+998 93 111 22 33",
-  hours:"08:00 – 22:00",
-  rating:4.8,
-  reviews:15,
-  icon:"☕",
-  photo:"coffee",
-  about:"Qahva va shirinliklar uchun zamonaviy joy.",
-  verified:true,
-  telegram: "@biztopcoffee",
-  lat: 39.774722,
-  lng: 64.428611
- },
-
- {
-  id:4,
-  name:"Beauty Star",
-  category:"Go‘zallik",
-  address:"Samarqand shahri",
-  phone:"+998 90 222 22 22",
-  hours:"09:00 – 20:00",
-  rating:4.8,
-  reviews:12,
-  icon:"💇",
-  photo:"beauty",
-  about:"Go‘zallik va parvarish xizmatlari.",
-  verified:true,
-  telegram: "@beautystar",
-  lat: 39.654181,
-  lng: 66.959683
- },
-
- {
-  id:5,
-  name:"Grand Hotel",
-  category:"Mehmonxona",
-  address:"Toshkent shahri",
-  phone:"+998 90 333 33 33",
-  hours:"24/7",
-  rating:4.8,
-  reviews:12,
-  icon:"🏨",
-  photo:"hotel",
-  about:"Qulay xonalar va mehmondo‘st xizmat.",
-  verified:true,
-  telegram: "@grandhotel",
-  lat: 41.311081,
-  lng: 69.240562
- },
-
- {
-  id:6,
-  name:"Mega Market",
-  category:"Supermarket",
-  address:"To‘rtko‘l",
-  phone:"+998 90 444 44 44",
-  hours:"08:00 – 23:00",
-  rating:4.7,
-  reviews:11,
-  icon:"🛒",
-  photo:"market",
-  about:"Kundalik xaridlar uchun katta tanlov.",
-  verified:true,
-  telegram: "@megamarket",
-  lat: 41.551902,
-  lng: 61.008403
- },
-
- {
-  id:7,
-  name:"BIZTOP Burger",
-  category:"Restoran",
-  address:"Samarqand shahri",
-  phone:"+998 90 555 55 55",
-  hours:"10:00 – 23:00",
-  rating:4.7,
-  reviews:83,
-  icon:"🍔",
-  photo:"burger",
-  about:"Mazali burger va tez tayyorlanadigan taomlar.",
-  verified:true,
-  telegram: "@biztopburger",
-  lat: 39.654181,
-  lng: 66.959683
- },
-
- {
-  id:8,
-  name:"Auto Pro",
-  category:"Avto xizmat",
-  address:"Buxoro shahri",
-  phone:"+998 90 666 66 66",
-  hours:"08:00 – 19:00",
-  rating:4.6,
-  reviews:31,
-  icon:"🚗",
-  photo:"auto",
-  about:"Avtomobil ta’mirlash va servis.",
-  verified:true,
-  telegram: "@autopro",
-  lat: 39.774722,
-  lng: 64.428611
- },
-
- {
-  id:9,
-  name:"Smart Tech",
-  category:"Telefon/texnika",
-  address:"Toshkent shahri",
-  phone:"+998 90 777 77 77",
-  hours:"09:00 – 20:00",
-  rating:4.6,
-  reviews:27,
-  icon:"📱",
-  photo:"tech",
-  about:"Telefon va texnika mahsulotlari.",
-  verified:true,
-  telegram: "@smarttech",
-  lat: 41.311081,
-  lng: 69.240562
- },
-
- {
-  id:10,
-  name:"Shirin Non",
-  category:"Nonvoyxona",
-  address:"Samarqand shahri",
-  phone:"+998 90 888 88 88",
-  hours:"06:00 – 21:00",
-  rating:4.5,
-  reviews:25,
-  icon:"🥖",
-  photo:"bread",
-  about:"Issiq non va mazali pishiriqlar.",
-  verified:true,
-  telegram: "@shirinnon",
-  lat: 39.654181,
-  lng: 66.959683
- }
-
+ { id:1, name:"Salom kafe", category:"Kafe", address:"Toshkent shahri", phone:"+998 91 123 45 67", hours:"09:00 – 21:00", rating:5.0, reviews:23, icon:"☕", photo:"cafe", about:"Salom kafe – mazali qahva, shirinliklar va qulay muhit.", verified:true, telegram:"@salomkafe", lat:41.311081, lng:69.240562 },
+ { id:2, name:"BIZTOP Restoran", category:"Restoran", address:"Samarqand shahri", phone:"+998 90 111 11 11", hours:"09:00 – 23:00", rating:4.9, reviews:18, icon:"🍽️", photo:"rest", about:"Mazali taomlar, oilaviy muhit va sifatli xizmat.", verified:true, telegram:"@biztop", lat:39.654181, lng:66.959683 },
+ { id:3, name:"BIZTOP Coffee", category:"Kafe", address:"Buxoro shahri", phone:"+998 93 111 22 33", hours:"08:00 – 22:00", rating:4.8, reviews:15, icon:"☕", photo:"coffee", about:"Qahva va shirinliklar uchun zamonaviy joy.", verified:true, telegram:"@biztopcoffee", lat:39.774722, lng:64.428611 },
+ { id:4, name:"Beauty Star", category:"Go‘zallik", address:"Samarqand shahri", phone:"+998 90 222 22 22", hours:"09:00 – 20:00", rating:4.8, reviews:12, icon:"💇", photo:"beauty", about:"Go‘zallik va parvarish xizmatlari.", verified:true, telegram:"@beautystar", lat:39.654181, lng:66.959683 },
+ { id:5, name:"Grand Hotel", category:"Mehmonxona", address:"Toshkent shahri", phone:"+998 90 333 33 33", hours:"24/7", rating:4.8, reviews:12, icon:"🏨", photo:"hotel", about:"Qulay xonalar va mehmondo‘st xizmat.", verified:true, telegram:"@grandhotel", lat:41.311081, lng:69.240562 },
+ { id:6, name:"Mega Market", category:"Supermarket", address:"To‘rtko‘l", phone:"+998 90 444 44 44", hours:"08:00 – 23:00", rating:4.7, reviews:11, icon:"🛒", photo:"market", about:"Kundalik xaridlar uchun katta tanlov.", verified:true, telegram:"@megamarket", lat:41.551902, lng:61.008403 },
+ { id:7, name:"BIZTOP Burger", category:"Restoran", address:"Samarqand shahri", phone:"+998 90 555 55 55", hours:"10:00 – 23:00", rating:4.7, reviews:83, icon:"🍔", photo:"burger", about:"Mazali burger va tez tayyorlanadigan taomlar.", verified:true, telegram:"@biztopburger", lat:39.654181, lng:66.959683 },
+ { id:8, name:"Auto Pro", category:"Avto xizmat", address:"Buxoro shahri", phone:"+998 90 666 66 66", hours:"08:00 – 19:00", rating:4.6, reviews:31, icon:"🚗", photo:"auto", about:"Avtomobil ta’mirlash va servis.", verified:true, telegram:"@autopro", lat:39.774722, lng:64.428611 },
+ { id:9, name:"Smart Tech", category:"Telefon/texnika", address:"Toshkent shahri", phone:"+998 90 777 77 77", hours:"09:00 – 20:00", rating:4.6, reviews:27, icon:"📱", photo:"tech", about:"Telefon va texnika mahsulotlari.", verified:true, telegram:"@smarttech", lat:41.311081, lng:69.240562 },
+ { id:10, name:"Shirin Non", category:"Nonvoyxona", address:"Samarqand shahri", phone:"+998 90 888 88 88", hours:"06:00 – 21:00", rating:4.5, reviews:25, icon:"🥖", photo:"bread", about:"Issiq non va mazali pishiriqlar.", verified:true, telegram:"@shirinnon", lat:39.654181, lng:66.959683 }
 ];
-
 
 let selectedBusiness = businesses[0];
 
@@ -3004,7 +2883,6 @@ let selectedBusiness = businesses[0];
 ========================= */
 
 const categories = [
-
  {name:"Restoran",icon:"🍽️"},
  {name:"Kafe",icon:"☕"},
  {name:"Do‘kon",icon:"🛒"},
@@ -3051,7 +2929,6 @@ const categories = [
  {name:"Sug‘urta",icon:"🛡️"},
  {name:"Game zona",icon:"🎮"},
  {name:"Boshqa",icon:"📦"}
-
 ];
 
 
@@ -3060,53 +2937,27 @@ const categories = [
 ========================= */
 
 function renderCategories(){
-
- const slider =
-   document.getElementById("homeCategorySlider");
-
- if(slider){
-
-   slider.innerHTML =
-     categories.map(c => `
-
-       <button
-         type="button"
-         class="home-category-item"
-         onclick="filterByCategory('${c.name}')">
-
-         <span class="emoji">
-           ${c.icon}
-         </span>
-
-         <b>
-           ${escapeHtml(c.name)}
-         </b>
-
-       </button>
-
-     `).join("");
-
- }
-
-
- const select =
-   document.getElementById("newCategory");
-
- if(select){
-
-   select.innerHTML =
-     '<option value="">Kategoriyani tanlang</option>' +
-
-     categories.map(c => `
-
-       <option value="${escapeHtml(c.name)}">
-         ${escapeHtml(c.name)}
-       </option>
-
-     `).join("");
-
- }
-
+    const slider = document.getElementById("homeCategorySlider");
+    if(slider){
+        slider.innerHTML = categories.map(c => `
+            <button type="button" class="home-category-item" onclick="filterByCategory('${c.name}')">
+                <span class="emoji">${c.icon}</span><b>${escapeHtml(c.name)}</b>
+            </button>
+        `).join("");
+    }
+    const select = document.getElementById("newCategory");
+    if(select){
+        select.innerHTML = '<option value="">Kategoriyani tanlang</option>' + categories.map(c => `
+            <option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>
+        `).join("");
+    }
+    // Edit kategoriya
+    const editSelect = document.getElementById("editCategory");
+    if(editSelect){
+        editSelect.innerHTML = '<option value="">Kategoriyani tanlang</option>' + categories.map(c => `
+            <option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>
+        `).join("");
+    }
 }
 
 
@@ -3115,299 +2966,87 @@ function renderCategories(){
 ========================= */
 
 function filterByCategory(category){
-
- const input =
-   document.getElementById("searchInput");
-
- if(input)
-   input.value = category;
-
- searchBusinesses();
-
- window.scrollTo({
-   top:0,
-   behavior:"smooth"
- });
-
+    document.getElementById("searchInput").value = category;
+    searchBusinesses();
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 
 /* =========================
-   TASDIQLANGAN
+   YORDAMCHI FUNKSIYALAR
 ========================= */
 
-function verify(b){
-
- return b.verified
-   ? '<span class="verify">✓</span>'
-   : '';
-
-}
+function verify(b){ return b.verified ? '<span class="verify">✓</span>' : ''; }
+function photoClass(b){ return b.photo || "cafe"; }
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" }[m])); }
 
 
 /* =========================
-   RASM CLASS
-========================= */
-
-function photoClass(b){
-
- return b.photo || "cafe";
-
-}
-
-
-/* =========================
-   KARTA (ASOSIY)
+   KARTA FUNKSIYALARI
 ========================= */
 
 function card(b,index){
-
- return `
-
- <article
-   class="rank-card"
-   onclick="openBusiness(${b.id})">
-
-   <div class="rank-num">
-     ${index+1}
-   </div>
-
-   <div class="rank-photo ${photoClass(b)}">
-     ${b.icon}
-   </div>
-
-   <div class="rank-body">
-
-     <div class="business-name">
-       ${escapeHtml(b.name)}
-       ${verify(b)}
-     </div>
-
-     <div class="rank-rating">
-
-       ★ ${b.rating.toFixed(1)}
-
-       <span
-         style="color:#d0d9e8;font-size:14px">
-
-         (${b.reviews} ta baho)
-
-       </span>
-
-     </div>
-
-     <div class="meta">
-       📍 ${escapeHtml(b.address)}
-     </div>
-
-   </div>
-
- </article>
-
- `;
-
+    return `<article class="rank-card" onclick="openBusiness(${b.id})">
+        <div class="rank-num">${index+1}</div>
+        <div class="rank-photo ${photoClass(b)}">${b.icon}</div>
+        <div class="rank-body">
+            <div class="business-name">${escapeHtml(b.name)} ${verify(b)}</div>
+            <div class="rank-rating">★ ${b.rating.toFixed(1)} <span style="color:#d0d9e8;font-size:14px;">(${b.reviews} ta baho)</span></div>
+            <div class="meta">📍 ${escapeHtml(b.address)}</div>
+        </div>
+    </article>`;
 }
-
-
-/* =========================
-   TOP KARTA
-========================= */
 
 function topCard(b,index){
-
- return `
-
- <article
-   class="rank-card"
-   onclick="openBusiness(${b.id})"
-   style="min-width:260px; width:260px; flex-shrink:0;">
-
-   <div class="rank-num">
-     ${index+1}
-   </div>
-
-   <div class="rank-photo ${photoClass(b)}">
-     ${b.icon}
-   </div>
-
-   <div class="rank-body">
-
-     <div class="business-name">
-       ${escapeHtml(b.name)}
-       ${verify(b)}
-     </div>
-
-     <div class="rank-rating">
-
-       ★ ${b.rating.toFixed(1)}
-
-       <span
-         style="color:#d0d9e8;font-size:14px">
-
-         (${b.reviews} ta baho)
-
-       </span>
-
-     </div>
-
-     <div class="meta">
-       📍 ${escapeHtml(b.address)}
-     </div>
-
-   </div>
-
- </article>
-
- `;
-
+    return `<article class="rank-card" onclick="openBusiness(${b.id})" style="min-width:260px; width:260px; flex-shrink:0;">
+        <div class="rank-num">${index+1}</div>
+        <div class="rank-photo ${photoClass(b)}">${b.icon}</div>
+        <div class="rank-body">
+            <div class="business-name">${escapeHtml(b.name)} ${verify(b)}</div>
+            <div class="rank-rating">★ ${b.rating.toFixed(1)} <span style="color:#d0d9e8;font-size:14px;">(${b.reviews} ta baho)</span></div>
+            <div class="meta">📍 ${escapeHtml(b.address)}</div>
+        </div>
+    </article>`;
 }
-
-
-/* =========================
-   RO‘YXAT QATORI - AVATAR BILAN
-========================= */
 
 function rowCard(b, index) {
-    return `
-        <div class="brand-card" onclick="openBusiness(${b.id})">
-            <div class="brand-avatar">${b.icon}</div>
-            <div class="brand-content">
-                <div class="brand-top">
-                    <span class="brand-number">${index+1}</span>
-                    <span class="brand-name">${escapeHtml(b.name)} ${verify(b)}</span>
-                    <span class="brand-rating">
-                        <span class="star">★</span> ${b.rating.toFixed(1)}
-                    </span>
-                </div>
-                <div class="brand-body">
-                    <div class="brand-info">
-                        <span class="ico">📍</span>
-                        <span class="val">${escapeHtml(b.address)}</span>
-                    </div>
-                    <div class="brand-info">
-                        <span class="ico">🕘</span>
-                        <span class="val">${escapeHtml(b.hours)}</span>
-                    </div>
-                    <div class="brand-info">
-                        <span class="ico">📞</span>
-                        <span class="val phone">${escapeHtml(b.phone)}</span>
-                    </div>
-                    <div class="brand-category">${escapeHtml(b.category)}</div>
-                </div>
+    return `<div class="brand-card" onclick="openBusiness(${b.id})">
+        <div class="brand-avatar">${b.icon}</div>
+        <div class="brand-content">
+            <div class="brand-top">
+                <span class="brand-number">${index+1}</span>
+                <span class="brand-name">${escapeHtml(b.name)} ${verify(b)}</span>
+                <span class="brand-rating"><span class="star">★</span> ${b.rating.toFixed(1)}</span>
+            </div>
+            <div class="brand-body">
+                <div class="brand-info"><span class="ico">📍</span><span class="val">${escapeHtml(b.address)}</span></div>
+                <div class="brand-info"><span class="ico">🕘</span><span class="val">${escapeHtml(b.hours)}</span></div>
+                <div class="brand-info"><span class="ico">📞</span><span class="val phone">${escapeHtml(b.phone)}</span></div>
+                <div class="brand-category">${escapeHtml(b.category)}</div>
             </div>
         </div>
-    `;
+    </div>`;
 }
 
 
 /* =========================
-   REYTING BO‘YICHA SARALASH
-========================= */
-
-// getAll() funksiyasi ichida saralanadi
-
-
-/* =========================
-   RENDER
-========================= */
-
-function render(){
-
- const all = getAll();
- let filtered = all;
- 
- if (selectedCity) {
-     if (selectedDistrict) {
-         filtered = filterByDistrict(all, selectedCity, selectedDistrict);
-     } else {
-         filtered = filterByCity(all, selectedCity);
-     }
- }
-
- document.getElementById("popularCarouselInner").innerHTML = 
-     filtered.slice(0,6).map((b,i) => card(b,i)).join("");
-
- document.getElementById("homeTopCarouselInner").innerHTML = 
-     filtered.slice(0,5).map((b,i) => card(b,i)).join("");
-
- document.getElementById("homeTop10").innerHTML = 
-     filtered.map((b,i) => rowCard(b,i)).join("");
-
- document.getElementById("top1Cards").innerHTML = 
-     all.slice(0,1).map((b,i) => topCard(b,i)).join("");
-
- document.getElementById("top3CardsInner").innerHTML = 
-     all.slice(0,3).map((b,i) => topCard(b,i)).join("");
-
- document.getElementById("top10CardsInner").innerHTML = 
-     all.slice(0,10).map((b,i) => topCard(b,i)).join("");
-
- document.getElementById("top30CardsInner").innerHTML = 
-     all.slice(0,30).map((b,i) => topCard(b,i)).join("");
-
- document.getElementById("top100CardsInner").innerHTML = 
-     all.slice(0,100).map((b,i) => topCard(b,i)).join("");
-
-}
-
-
-/* =========================
-   TELEGRAM ORQALI BOG'LANISH (YANGI)
+   TELEGRAM VA XARITA
 ========================= */
 
 function openTelegram(telegram) {
-    if (!telegram) {
-        alert('Telegram manzili topilmadi!');
-        return;
-    }
-    // @ belgisini olib tashlash (agar bor bo'lsa)
+    if (!telegram) { alert('Telegram manzili topilmadi!'); return; }
     const username = telegram.replace('@', '');
-    const url = 'https://t.me/' + username;
-    window.open(url, '_blank');
+    window.open('https://t.me/' + username, '_blank');
 }
 
-
-/* =========================
-   XARITADA KO'RISH (YANGI - KOORDINATLAR BILAN)
-========================= */
-
 function openMap(lat, lng, address) {
-    // Agar koordinatalar mavjud bo'lsa, ular bo'yicha ochish
     if (lat && lng) {
-        const url = 'https://www.google.com/maps?q=' + lat + ',' + lng;
-        window.open(url, '_blank');
+        window.open('https://www.google.com/maps?q=' + lat + ',' + lng, '_blank');
     } else if (address) {
-        // Koordinatalar bo'lmasa, manzil bo'yicha qidirish
-        const url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address);
-        window.open(url, '_blank');
+        window.open('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address), '_blank');
     } else {
         alert('Xarita ma\'lumoti topilmadi!');
     }
-}
-
-
-/* =========================
-   XAVFSIZ HTML
-========================= */
-
-function escapeHtml(s){
-
- return String(s).replace(
-
-   /[&<>"']/g,
-
-   m => ({
-
-     "&":"&amp;",
-     "<":"&lt;",
-     ">":"&gt;",
-     '"':"&quot;",
-     "'":"&#039;"
-
-   }[m])
-
- );
-
 }
 
 
@@ -3416,48 +3055,13 @@ function escapeHtml(s){
 ========================= */
 
 function showPage(id){
-
- document
-   .querySelectorAll(".page")
-   .forEach(
-     p=>p.classList.remove("active")
-   );
-
-
- document
-   .getElementById(id)
-   .classList.add("active");
-
-
- document
-   .getElementById("navHome")
-   .classList.toggle(
-     "active",
-     id==="home"
-   );
-
-
- document
-   .getElementById("navTop")
-   .classList.toggle(
-     "active",
-     id==="top"
-   );
-
-
- document
-   .getElementById("navProfile")
-   .classList.toggle(
-     "active",
-     id==="profile"
-   );
-
-
- window.scrollTo({
-   top:0,
-   behavior:"smooth"
- });
-
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    document.getElementById("navHome").classList.toggle("active", id==="home");
+    document.getElementById("navTop").classList.toggle("active", id==="top");
+    document.getElementById("navProfile").classList.toggle("active", id==="profile");
+    if(id === "mybusiness") renderMyBusiness();
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 
@@ -3466,577 +3070,295 @@ function showPage(id){
 ========================= */
 
 function openBusiness(id){
-
- selectedBusiness =
-   getAll().find(
-     b=>String(b.id)===String(id)
-   ) || businesses[0];
-
-
- renderProfile(selectedBusiness);
-
- showPage("profile");
-
+    selectedBusiness = getAll().find(b => String(b.id) === String(id)) || businesses[0];
+    renderProfile(selectedBusiness);
+    showPage("profile");
 }
-
-
-/* =========================
-   PROFILNI CHIQARISH (TELEGRAM VA XARITA TUGMALARI YANGILANDI)
-========================= */
 
 function renderProfile(b){
-
- document.getElementById(
-   "profileContent"
- ).innerHTML = `
-
- <div class="cover">
-
-   <div class="profile-avatar">
-     ${b.icon}
-   </div>
-
-   <div class="profile-title">
-
-     <h1>
-
-       ${escapeHtml(b.name)}
-       ${verify(b)}
-     </h1>
-
-     <div class="line">
-
-       <span
-         style="color:#ffd21f;font-weight:900">
-
-         ★ ${b.rating.toFixed(1)}
-
-       </span>
-
-       (${b.reviews} ta baho)
-
-       ·
-
-       ${escapeHtml(b.category)}
-
-     </div>
-
-     <div class="line">
-
-       <span class="open">
-         ● Ochiq
-       </span>
-
-       ·
-
-       ${escapeHtml(b.hours)}
-
-     </div>
-
-   </div>
-
- </div>
-
-
- <div class="info-grid">
-
-   <div class="info-item">
-
-     <div class="ii">📍</div>
-
-     <span>Manzil</span>
-
-     <b>
-       ${escapeHtml(b.address)}
-     </b>
-
-   </div>
-
-
-   <div class="info-item">
-
-     <div class="ii">🕘</div>
-
-     <span>Ish vaqti</span>
-
-     <b>
-       ${escapeHtml(b.hours)}
-     </b>
-
-   </div>
-
-
-   <div class="info-item">
-
-     <div class="ii">📞</div>
-
-     <span>Telefon</span>
-
-     <b>
-       ${escapeHtml(b.phone)}
-     </b>
-
-   </div>
-
- </div>
-
-
- <div class="profile-box">
-
-   <h3>
-     Biznes haqida
-   </h3>
-
-   <p>
-     ${escapeHtml(b.about)}
-   </p>
-
- </div>
-
-
- <div class="profile-box">
-
-   <div
-     style="
-       display:flex;
-       justify-content:space-between;
-       align-items:center
-     ">
-
-     <h3>
-       Rasmlar
-     </h3>
-
-     <span
-       style="
-         color:#1685ff;
-         font-weight:800
-       ">
-
-       Barchasini ko‘rish ›
-
-     </span>
-
-   </div>
-
-
-   <div class="gallery">
-
-     <div
-       class="gallery-item ${photoClass(b)}">
-
-       ${b.icon}
-
-     </div>
-
-     <div class="gallery-item rest">
-       🍽️
-     </div>
-
-     <div class="gallery-item coffee">
-       ☕
-     </div>
-
-     <div class="gallery-item">
-       🍰
-     </div>
-
-   </div>
-
- </div>
-
-
- <div class="profile-box">
-
-   <div class="rating-summary">
-
-     <div>
-
-       <h3>
-         Mijozlar bahosi
-       </h3>
-
-       <div class="big-score">
-         ${b.rating.toFixed(1)} / 5
-       </div>
-
-       <div class="stars">
-         ★★★★★
-       </div>
-
-       <div style="color:#b8c7df">
-         ${b.reviews} ta baho
-       </div>
-
-     </div>
-
-
-     <div>
-
-       <div class="bar">
-
-         <span>5 ★</span>
-
-         <div class="barline">
-           <i style="width:95%"></i>
-         </div>
-
-         <span>
-           ${Math.max(1,b.reviews-1)}
-         </span>
-
-       </div>
-
-
-       <div class="bar">
-
-         <span>4 ★</span>
-
-         <div class="barline">
-           <i style="width:12%"></i>
-         </div>
-
-         <span>1</span>
-
-       </div>
-
-
-       <div class="bar">
-
-         <span>3 ★</span>
-
-         <div class="barline">
-           <i style="width:0%"></i>
-         </div>
-
-         <span>0</span>
-
-       </div>
-
-
-       <div class="bar">
-
-         <span>2 ★</span>
-
-         <div class="barline">
-           <i style="width:0%"></i>
-         </div>
-
-         <span>0</span>
-
-       </div>
-
-
-       <div class="bar">
-
-         <span>1 ★</span>
-
-         <div class="barline">
-           <i style="width:0%"></i>
-         </div>
-
-         <span>0</span>
-
-       </div>
-
-     </div>
-
-   </div>
-
- </div>
-
-
- <div class="actions">
-
-   <!-- Qo'ng'iroq qilish -->
-   <button
-     class="action"
-     onclick="location.href='tel:${b.phone.replace(/[^0-9+]/g,'')}'">
-
-     📞 Qo‘ng‘iroq qilish
-
-   </button>
-
-   <!-- Telegram orqali yozish (YANGI) -->
-   <button
-     class="action telegram"
-     onclick="openTelegram('${b.telegram || ''}')">
-
-     ➤ Telegram orqali yozish
-
-   </button>
-
-   <!-- Xaritada ko'rish (YANGI - KOORDINATLAR BILAN) -->
-   <button
-     class="action map"
-     onclick="openMap('${b.lat || ''}', '${b.lng || ''}', '${escapeHtml(b.address)}')">
-
-     🗺️ Xaritada ko‘rish
-
-   </button>
-
- </div>
-
-
- <div class="profile-box">
-
-   <div
-     style="
-       display:flex;
-       justify-content:space-between;
-       align-items:center
-     ">
-
-     <h3>
-       Mijozlar fikri
-     </h3>
-
-     <span
-       style="
-         color:#1685ff;
-         font-weight:800
-       ">
-
-       Barchasini ko‘rish ›
-
-     </span>
-
-   </div>
-
-
-   <div class="review">
-
-     <div class="review-avatar">
-       A
-     </div>
-
-     <div>
-
-       <b>Ali</b>
-
-       <div class="date">
-         12.05.2024
-       </div>
-
-       <div style="color:#ffd21f">
-         ★★★★★
-       </div>
-
-       <div class="comment">
-         Juda yaxshi xizmat va mazali qahva! 😊
-       </div>
-
-     </div>
-
-     <b>⋮</b>
-
-   </div>
-
-
-   <div class="review">
-
-     <div
-       class="review-avatar"
-       style="background:#26a65b">
-
-       V
-
-     </div>
-
-     <div>
-
-       <b>Vali</b>
-
-       <div class="date">
-         10.05.2024
-       </div>
-
-       <div style="color:#ffd21f">
-         ★★★★★
-       </div>
-
-       <div class="comment">
-         Muhit juda yaxshi, xodimlar ham juda mehribon.
-       </div>
-
-     </div>
-
-     <b>⋮</b>
-
-   </div>
-
- </div>
-
- `;
-
+    document.getElementById("profileContent").innerHTML = `
+        <div class="cover">
+            <div class="profile-avatar">${b.icon}</div>
+            <div class="profile-title">
+                <h1>${escapeHtml(b.name)} ${verify(b)}</h1>
+                <div class="line"><span style="color:#ffd21f;font-weight:900;">★ ${b.rating.toFixed(1)}</span> (${b.reviews} ta baho) · ${escapeHtml(b.category)}</div>
+                <div class="line"><span class="open">● Ochiq</span> · ${escapeHtml(b.hours)}</div>
+            </div>
+        </div>
+        <div class="info-grid">
+            <div class="info-item"><div class="ii">📍</div><span>Manzil</span><b>${escapeHtml(b.address)}</b></div>
+            <div class="info-item"><div class="ii">🕘</div><span>Ish vaqti</span><b>${escapeHtml(b.hours)}</b></div>
+            <div class="info-item"><div class="ii">📞</div><span>Telefon</span><b>${escapeHtml(b.phone)}</b></div>
+        </div>
+        <div class="profile-box"><h3>Biznes haqida</h3><p>${escapeHtml(b.about)}</p></div>
+        <div class="profile-box">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h3>Rasmlar</h3><span style="color:#1685ff;font-weight:800;">Barchasini ko‘rish ›</span></div>
+            <div class="gallery"><div class="gallery-item ${photoClass(b)}">${b.icon}</div><div class="gallery-item rest">🍽️</div><div class="gallery-item coffee">☕</div><div class="gallery-item">🍰</div></div>
+        </div>
+        <div class="profile-box">
+            <div class="rating-summary">
+                <div><h3>Mijozlar bahosi</h3><div class="big-score">${b.rating.toFixed(1)} / 5</div><div class="stars">★★★★★</div><div style="color:#b8c7df">${b.reviews} ta baho</div></div>
+                <div>
+                    <div class="bar"><span>5 ★</span><div class="barline"><i style="width:95%"></i></div><span>${Math.max(1,b.reviews-1)}</span></div>
+                    <div class="bar"><span>4 ★</span><div class="barline"><i style="width:12%"></i></div><span>1</span></div>
+                    <div class="bar"><span>3 ★</span><div class="barline"><i style="width:0%"></i></div><span>0</span></div>
+                    <div class="bar"><span>2 ★</span><div class="barline"><i style="width:0%"></i></div><span>0</span></div>
+                    <div class="bar"><span>1 ★</span><div class="barline"><i style="width:0%"></i></div><span>0</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="action" onclick="location.href='tel:${b.phone.replace(/[^0-9+]/g,'')}'">📞 Qo‘ng‘iroq qilish</button>
+            <button class="action telegram" onclick="openTelegram('${b.telegram || ''}')">➤ Telegram orqali yozish</button>
+            <button class="action map" onclick="openMap('${b.lat || ''}', '${b.lng || ''}', '${escapeHtml(b.address)}')">🗺️ Xaritada ko‘rish</button>
+        </div>
+        <div class="profile-box">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h3>Mijozlar fikri</h3><span style="color:#1685ff;font-weight:800;">Barchasini ko‘rish ›</span></div>
+            <div class="review"><div class="review-avatar">A</div><div><b>Ali</b><div class="date">12.05.2024</div><div style="color:#ffd21f">★★★★★</div><div class="comment">Juda yaxshi xizmat va mazali qahva! 😊</div></div><b>⋮</b></div>
+            <div class="review"><div class="review-avatar" style="background:#26a65b;">V</div><div><b>Vali</b><div class="date">10.05.2024</div><div style="color:#ffd21f">★★★★★</div><div class="comment">Muhit juda yaxshi, xodimlar ham juda mehribon.</div></div><b>⋮</b></div>
+        </div>
+    `;
 }
 
 
 /* =========================
-   DETAIL
+   MY BUSINESS (BOSHQARUV)
 ========================= */
 
-function openDetailFromCard(id){
+function updateBadge() {
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    const badge = document.getElementById("myBizBadge");
+    if (saved.length > 0) {
+        badge.textContent = saved.length;
+        badge.style.display = "flex";
+    } else {
+        badge.style.display = "none";
+    }
+}
 
- openBusiness(id);
-
+function renderMyBusiness() {
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    const container = document.getElementById("myBusinessList");
+    
+    if (saved.length === 0) {
+        container.innerHTML = `
+            <div style="text-align:center;color:#aebfe0;padding:40px 0;">
+                <p style="font-size:18px;">📭 Hali biznes qo'shmagansiz</p>
+                <p style="font-size:14px;margin-top:8px;">"Biznes qo'shish" tugmasini bosing va o'z biznesingizni qo'shing</p>
+                <button class="add-btn" onclick="closeAdd();openAdd();" style="margin-top:16px;padding:12px 24px;font-size:16px;">
+                    <span>＋</span> Biznes qo'shish
+                </button>
+            </div>
+        `;
+        return;
+    }
+    
+    container.innerHTML = saved.map((b, i) => `
+        <div class="my-business-card">
+            <div class="brand-avatar">
+                ${b.image ? `<img src="${b.image}" alt="${escapeHtml(b.name)}">` : b.icon}
+            </div>
+            <div class="brand-content">
+                <div class="brand-top">
+                    <span class="brand-name">${escapeHtml(b.name)} ${b.verified ? '<span class="verify">✓</span>' : ''}</span>
+                    <span class="brand-rating"><span class="star">★</span> ${b.rating.toFixed(1)}</span>
+                </div>
+                <div class="brand-body">
+                    <div class="brand-info"><span class="ico">📍</span><span class="val">${escapeHtml(b.address)}</span></div>
+                    <div class="brand-info"><span class="ico">🕘</span><span class="val">${escapeHtml(b.hours)}</span></div>
+                    <div class="brand-info"><span class="ico">📞</span><span class="val phone">${escapeHtml(b.phone)}</span></div>
+                    ${b.telegram ? `<div class="brand-info"><span class="ico">✈️</span><span class="val">${escapeHtml(b.telegram)}</span></div>` : ''}
+                    <div class="brand-category">${escapeHtml(b.category)}</div>
+                </div>
+                <div class="brand-actions">
+                    <button class="btn btn-edit" onclick="openEdit('${b.id}')">✏️ Tahrirlash</button>
+                    <button class="btn btn-delete" onclick="deleteBusiness('${b.id}')">🗑️ O‘chirish</button>
+                    <button class="btn btn-upload" onclick="uploadImage('${b.id}')">📷 Rasm yuklash</button>
+                    ${b.image ? `<button class="btn btn-remove-img" onclick="removeImage('${b.id}')">🖼️ Rasmni o‘chirish</button>` : ''}
+                </div>
+            </div>
+        </div>
+    `).join("");
 }
 
 
 /* =========================
-   TOP TAB
-========================= */
-
-function scrollTopSection(id,btn){
-
- document
-   .querySelectorAll(".tab")
-   .forEach(
-     x=>x.classList.remove("active")
-   );
-
-
- btn.classList.add("active");
-
-
- document
-   .getElementById(id)
-   .scrollIntoView({
-     behavior:"smooth",
-     block:"start"
-   });
-
-}
-
-
-/* =========================
-   BIZNES QO‘SHISH MODAL
+   BIZNES QO'SHISH
 ========================= */
 
 function openAdd(){
-
- document
-   .getElementById("addModal")
-   .classList.add("show");
-
+    document.getElementById("addModal").classList.add("show");
 }
 
-
 function closeAdd(){
+    document.getElementById("addModal").classList.remove("show");
+}
 
- document
-   .getElementById("addModal")
-   .classList.remove("show");
-
+function addBusiness(){
+    const name = document.getElementById("newName").value.trim();
+    if(!name){ alert("Biznes nomini kiriting."); return; }
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    const b = {
+        id: "local-" + Date.now(),
+        name: name,
+        category: document.getElementById("newCategory").value || "Boshqa",
+        address: document.getElementById("newAddress").value || "Toshkent",
+        phone: document.getElementById("newPhone").value || "+998 90 000 00 00",
+        hours: document.getElementById("newHours").value || "09:00 – 21:00",
+        telegram: document.getElementById("newTelegram").value || "",
+        rating: 5.0,
+        reviews: 0,
+        icon: "🏪",
+        photo: "market",
+        about: document.getElementById("newAbout").value || "BIZTOP platformasiga yangi qo‘shilgan biznes.",
+        verified: false,
+        image: null,
+        lat: "",
+        lng: ""
+    };
+    saved.push(b);
+    localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
+    closeAdd();
+    render();
+    renderMyBusiness();
+    updateBadge();
+    alert("Biznes muvaffaqiyatli qo‘shildi!");
+    showPage("home");
 }
 
 
 /* =========================
-   BIZNES QO‘SHISH (TELEGRAM VA KOORDINATLAR QO'SHILDI)
+   TAHRIRLASH
 ========================= */
 
-function addBusiness(){
+function openEdit(id) {
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    const biz = saved.find(b => String(b.id) === String(id));
+    if (!biz) { alert("Biznes topilmadi!"); return; }
+    editingId = id;
+    document.getElementById("editName").value = biz.name || "";
+    document.getElementById("editCategory").value = biz.category || "";
+    document.getElementById("editAddress").value = biz.address || "";
+    document.getElementById("editPhone").value = biz.phone || "";
+    document.getElementById("editHours").value = biz.hours || "";
+    document.getElementById("editTelegram").value = biz.telegram || "";
+    document.getElementById("editAbout").value = biz.about || "";
+    const preview = document.getElementById("editImagePreview");
+    if (biz.image) {
+        preview.innerHTML = `<img src="${biz.image}" alt="Rasm">`;
+    } else {
+        preview.innerHTML = `<span style="color:#aebfe0;font-size:13px;">Rasm yuklanmagan</span>`;
+    }
+    document.getElementById("editModal").classList.add("show");
+}
 
- const name =
-   document
-     .getElementById("newName")
-     .value
-     .trim();
+function closeEdit() {
+    document.getElementById("editModal").classList.remove("show");
+    editingId = null;
+}
+
+function saveEdit() {
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    const index = saved.findIndex(b => String(b.id) === String(editingId));
+    if (index === -1) { alert("Biznes topilmadi!"); return; }
+    const fileInput = document.getElementById("editImageInput");
+    let image = saved[index].image;
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            image = e.target.result;
+            finishSave(index, image);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    } else {
+        finishSave(index, image);
+    }
+}
+
+function finishSave(index, image) {
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    saved[index].name = document.getElementById("editName").value.trim() || saved[index].name;
+    saved[index].category = document.getElementById("editCategory").value || saved[index].category;
+    saved[index].address = document.getElementById("editAddress").value || saved[index].address;
+    saved[index].phone = document.getElementById("editPhone").value || saved[index].phone;
+    saved[index].hours = document.getElementById("editHours").value || saved[index].hours;
+    saved[index].telegram = document.getElementById("editTelegram").value || "";
+    saved[index].about = document.getElementById("editAbout").value || saved[index].about;
+    saved[index].image = image;
+    localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
+    closeEdit();
+    render();
+    renderMyBusiness();
+    updateBadge();
+    alert("Biznes muvaffaqiyatli yangilandi!");
+}
+
+function uploadImage(id) {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = function(e) {
+        if (e.target.files && e.target.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+                const index = saved.findIndex(b => String(b.id) === String(id));
+                if (index !== -1) {
+                    saved[index].image = ev.target.result;
+                    localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
+                    renderMyBusiness();
+                    updateBadge();
+                    alert("Rasm muvaffaqiyatli yuklandi!");
+                }
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    };
+    input.click();
+}
+
+function removeImage(id) {
+    if (!confirm("Rasmni o'chirishni xohlaysizmi?")) return;
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    const index = saved.findIndex(b => String(b.id) === String(id));
+    if (index !== -1) {
+        saved[index].image = null;
+        localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
+        renderMyBusiness();
+        updateBadge();
+        alert("Rasm o'chirildi!");
+    }
+}
+
+function deleteBusiness(id) {
+    if (!confirm("Biznesni o'chirishni xohlaysizmi? Bu amalni qaytarib bo'lmaydi!")) return;
+    let saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    saved = saved.filter(b => String(b.id) !== String(id));
+    localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
+    render();
+    renderMyBusiness();
+    updateBadge();
+    alert("Biznes o'chirildi!");
+}
 
 
- if(!name){
+/* =========================
+   RENDER
+========================= */
 
-   alert(
-     "Biznes nomini kiriting."
-   );
-
-   return;
-
- }
-
-
- const saved =
-   JSON.parse(
-     localStorage.getItem(
-       "biztopBusinesses"
-     ) || "[]"
-   );
-
-
- const b = {
-
-   id:"local-"+Date.now(),
-
-   name:name,
-
-   category:
-     document.getElementById(
-       "newCategory"
-     ).value,
-
-   address:
-     document.getElementById(
-       "newAddress"
-     ).value ||
-     "Toshkent",
-
-   phone:
-     document.getElementById(
-       "newPhone"
-     ).value ||
-     "+998 90 000 00 00",
-
-   hours:
-     document.getElementById(
-       "newHours"
-     ).value ||
-     "09:00 – 21:00",
-
-   rating:5.0,
-
-   reviews:0,
-
-   icon:"🏪",
-
-   photo:"market",
-
-   about:
-     document.getElementById(
-       "newAbout"
-     ).value ||
-     "BIZTOP platformasiga yangi qo‘shilgan biznes.",
-
-   verified:false,
-
-   // YANGI MAYDONLAR
-   telegram: "", // Telegram username (masalan: @biztop)
-   lat: "", // Kenglik
-   lng: "" // Uzunlik
-
- };
-
-
- saved.push(b);
-
-
- localStorage.setItem(
-   "biztopBusinesses",
-   JSON.stringify(saved)
- );
-
-
- closeAdd();
-
- render();
-
-
- alert(
-   "Biznes muvaffaqiyatli qo‘shildi."
- );
-
-
- showPage("home");
-
+function render(){
+    const all = getAll();
+    let filtered = all;
+    if (selectedCity) filtered = filterByCity(all, selectedCity);
+    document.getElementById("popularCarouselInner").innerHTML = filtered.slice(0,6).map((b,i) => card(b,i)).join("");
+    document.getElementById("homeTopCarouselInner").innerHTML = filtered.slice(0,5).map((b,i) => card(b,i)).join("");
+    document.getElementById("homeTop10").innerHTML = filtered.map((b,i) => rowCard(b,i)).join("");
+    document.getElementById("top1Cards").innerHTML = all.slice(0,1).map((b,i) => topCard(b,i)).join("");
+    document.getElementById("top3CardsInner").innerHTML = all.slice(0,3).map((b,i) => topCard(b,i)).join("");
+    document.getElementById("top10CardsInner").innerHTML = all.slice(0,10).map((b,i) => topCard(b,i)).join("");
+    document.getElementById("top30CardsInner").innerHTML = all.slice(0,30).map((b,i) => topCard(b,i)).join("");
+    document.getElementById("top100CardsInner").innerHTML = all.slice(0,100).map((b,i) => topCard(b,i)).join("");
+    updateBadge();
 }
 
 
@@ -4045,33 +3367,30 @@ function addBusiness(){
 ========================= */
 
 function shareProfile(){
-
- if(navigator.share){
-
-   navigator.share({
-
-     title:selectedBusiness.name,
-
-     text:
-       "BIZTOP biznes profili: " +
-       selectedBusiness.name
-
-   });
-
- }else{
-
-   navigator.clipboard
-     ?.writeText(location.href)
-     .then(
-       () =>
-         alert(
-           "Profil havolasi nusxalandi."
-         )
-     );
-
- }
-
+    if(navigator.share){
+        navigator.share({ title: selectedBusiness.name, text: "BIZTOP biznes profili: " + selectedBusiness.name });
+    } else {
+        navigator.clipboard?.writeText(location.href).then(() => alert("Profil havolasi nusxalandi."));
+    }
 }
+
+
+/* =========================
+   TOP TAB
+========================= */
+
+function scrollTopSection(id,btn){
+    document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+
+/* =========================
+   DETAIL
+========================= */
+
+function openDetailFromCard(id){ openBusiness(id); }
 
 
 /* =========================
@@ -4079,12 +3398,10 @@ function shareProfile(){
 ========================= */
 
 renderCategories();
-
 loadSelectedCity();
-
 render();
-
 renderProfile(selectedBusiness);
+updateBadge();
 
 </script>
 
