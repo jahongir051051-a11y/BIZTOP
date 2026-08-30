@@ -154,10 +154,6 @@ a{color:inherit;text-decoration:none}
   cursor:pointer
 }
 
-/* ========================= */
-/* SHAHAR TANLASH - VILOYAT VA TUMANLAR */
-/* ========================= */
-
 .city-selector{
   display:flex;
   gap:10px;
@@ -205,7 +201,6 @@ a{color:inherit;text-decoration:none}
   transform:rotate(180deg);
 }
 
-/* VILOYATLAR DROPDOWN (SHAHAR TUGMASI ICHIDA) */
 .city-dropdown{
   display:none;
   position:absolute;
@@ -274,7 +269,6 @@ a{color:inherit;text-decoration:none}
   color:#fff;
 }
 
-/* TUMANLAR DROPDOWN (VILOYAT TANLANGANDAN KEYIN) */
 .district-dropdown{
   display:none;
   position:absolute;
@@ -450,11 +444,13 @@ a{color:inherit;text-decoration:none}
 }
 
 /* =========================
-   BRENDLAR KARTOCHKASI
+   BRENDLAR KARTOCHKASI - AVATAR BILAN
 ========================= */
 
 .brand-card {
-  display: block;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
   padding: 16px 18px;
   margin-bottom: 14px;
   border-radius: 18px;
@@ -488,26 +484,56 @@ a{color:inherit;text-decoration:none}
   margin-bottom: 0;
 }
 
+/* AVATAR */
+.brand-card .brand-avatar {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border-radius: 50%;
+  border: 2px solid #2d7fdc;
+  background: radial-gradient(circle at 35% 30%, #314f75, #050f22 72%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.brand-card .brand-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* KARTOCHKA ICHI */
+.brand-card .brand-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .brand-card .brand-top {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 8px;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
 }
 
 .brand-card .brand-number {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 900;
   color: #1982ff;
-  min-width: 32px;
+  min-width: 28px;
   background: rgba(22, 133, 255, 0.12);
-  padding: 2px 10px;
+  padding: 1px 8px;
   border-radius: 8px;
   text-align: center;
 }
 
 .brand-card .brand-name {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: #fff;
   flex: 1;
@@ -526,33 +552,33 @@ a{color:inherit;text-decoration:none}
   gap: 4px;
   color: var(--yellow);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
   background: rgba(255, 210, 31, 0.10);
-  padding: 4px 12px;
+  padding: 2px 10px;
   border-radius: 20px;
   border: 1px solid rgba(255, 210, 31, 0.15);
 }
 
 .brand-card .brand-rating .star {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .brand-card .brand-body {
-  padding-left: 44px;
+  padding-left: 0;
 }
 
 .brand-card .brand-info {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 13px;
   color: #afc0dc;
-  padding: 3px 0;
+  padding: 2px 0;
 }
 
 .brand-card .brand-info .ico {
-  min-width: 22px;
-  font-size: 15px;
+  min-width: 20px;
+  font-size: 13px;
 }
 
 .brand-card .brand-info .val {
@@ -566,20 +592,20 @@ a{color:inherit;text-decoration:none}
 
 .brand-card .brand-category {
   display: inline-block;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   color: #4da6ff;
   background: rgba(22, 133, 255, 0.12);
-  padding: 2px 12px;
+  padding: 1px 10px;
   border-radius: 12px;
-  margin-top: 4px;
+  margin-top: 3px;
   border: 1px solid rgba(22, 133, 255, 0.15);
 }
 
 .brand-card .brand-divider {
   border: 0;
   border-top: 1px solid rgba(33, 69, 111, 0.4);
-  margin: 8px 0 4px 44px;
+  margin: 6px 0 2px 0;
 }
 
 .hero-home{
@@ -1442,53 +1468,49 @@ a{color:inherit;text-decoration:none}
 
   .rating small{font-size:10px}
 
+  /* MOBILDA AVATAR BILAN KARTOCHKA */
   .brand-card {
-    padding: 14px 14px;
+    padding: 12px 14px;
+    gap: 12px;
     margin-bottom: 12px;
     border-radius: 16px;
   }
 
-  .brand-card .brand-top {
-    gap: 10px;
-    flex-wrap: wrap;
+  .brand-card .brand-avatar {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 24px;
   }
 
   .brand-card .brand-number {
-    font-size: 16px;
-    min-width: 28px;
-    padding: 1px 8px;
+    font-size: 14px;
+    min-width: 24px;
+    padding: 1px 6px;
   }
 
   .brand-card .brand-name {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .brand-card .brand-rating {
-    font-size: 13px;
-    padding: 2px 10px;
-  }
-
-  .brand-card .brand-body {
-    padding-left: 38px;
+    font-size: 12px;
+    padding: 2px 8px;
   }
 
   .brand-card .brand-info {
-    font-size: 13px;
-    padding: 2px 0;
+    font-size: 12px;
+    padding: 1px 0;
   }
 
   .brand-card .brand-info .ico {
-    min-width: 20px;
-    font-size: 13px;
+    min-width: 18px;
+    font-size: 12px;
   }
 
   .brand-card .brand-category {
-    font-size: 10px;
-    padding: 1px 10px;
-  }
-
-  .brand-card .brand-divider {
-    margin: 6px 0 2px 38px;
+    font-size: 9px;
+    padding: 1px 8px;
   }
 
   #home .container{
@@ -1820,47 +1842,47 @@ a{color:inherit;text-decoration:none}
   .rating{font-size:13px}
 
   .brand-card {
-    padding: 12px 12px;
+    padding: 10px 12px;
+    gap: 10px;
     margin-bottom: 10px;
     border-radius: 14px;
   }
 
+  .brand-card .brand-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 20px;
+  }
+
   .brand-card .brand-number {
-    font-size: 14px;
-    min-width: 24px;
-    padding: 1px 6px;
+    font-size: 12px;
+    min-width: 20px;
+    padding: 1px 5px;
   }
 
   .brand-card .brand-name {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .brand-card .brand-rating {
-    font-size: 11px;
-    padding: 2px 8px;
-  }
-
-  .brand-card .brand-body {
-    padding-left: 32px;
+    font-size: 10px;
+    padding: 1px 6px;
   }
 
   .brand-card .brand-info {
-    font-size: 11px;
+    font-size: 10px;
     padding: 1px 0;
   }
 
   .brand-card .brand-info .ico {
-    min-width: 18px;
-    font-size: 11px;
+    min-width: 16px;
+    font-size: 10px;
   }
 
   .brand-card .brand-category {
-    font-size: 9px;
-    padding: 1px 8px;
-  }
-
-  .brand-card .brand-divider {
-    margin: 4px 0 2px 32px;
+    font-size: 8px;
+    padding: 1px 6px;
   }
 
   #home .container{
@@ -1930,7 +1952,6 @@ a{color:inherit;text-decoration:none}
 
     <div class="search-wrap">
       
-      <!-- SHAHAR TANLASH - VILOYAT VA TUMANLAR -->
       <div class="city-selector">
         <div class="city-selector-wrapper">
           <button class="city-btn" onclick="toggleCityDropdown()" id="cityDropdownBtn">
@@ -1938,7 +1959,6 @@ a{color:inherit;text-decoration:none}
             <span class="arrow" id="cityArrow">▼</span>
           </button>
           
-          <!-- VILOYATLAR RO'YXATI -->
           <div class="city-dropdown" id="cityDropdown">
             <div class="region-title">📍 Viloyatlar</div>
             <div class="city-grid">
@@ -2269,7 +2289,7 @@ a{color:inherit;text-decoration:none}
     </section>
 
 
-    <!-- BRENDLAR SAHIFASI -->
+    <!-- BRENDLAR SAHIFASI - AVATAR BILAN, REYTING BO'YICHA SARALANGAN -->
     <section>
       <div class="section-title">
         <span class="ico">🏆</span>
@@ -2509,8 +2529,6 @@ function loadSelectedCity() {
                 const display = document.getElementById('selectedCityDisplay');
                 display.textContent = '📍 ' + fullDisplay;
                 display.classList.add('show');
-                
-                document.querySelectorAll('.city-item').forEach(item => item.classList.remove('active'));
             }
         }
     } catch (e) {
@@ -2661,12 +2679,14 @@ function filterByDistrict(businesses, city, district) {
 
 
 /* =========================
-   BARCHA BIZNESLAR
+   BARCHA BIZNESLAR - REYTING BO'YICHA SARALANGAN
 ========================= */
 
 function getAll() {
     const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
-    return businesses.concat(saved);
+    const all = businesses.concat(saved);
+    // Reyting bo'yicha saralash (yuqoridan pastga)
+    return all.sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
 }
 
 
@@ -2675,7 +2695,7 @@ function getAll() {
 ========================= */
 
 function renderHomePage() {
-    const all = topSorted();
+    const all = getAll(); // Saralangan ro'yxat
     let filtered = all;
     
     if (selectedCity) {
@@ -2692,6 +2712,7 @@ function renderHomePage() {
     document.getElementById("homeTopCarouselInner").innerHTML = 
         filtered.slice(0,5).map((b,i) => card(b,i)).join("");
     
+    // BRENDLAR RO'YXATI - AVATAR BILAN, REYTING BO'YICHA SARALANGAN
     document.getElementById("homeTop10").innerHTML = 
         filtered.map((b,i) => rowCard(b,i)).join("");
 
@@ -3218,55 +3239,47 @@ function topCard(b,index){
 
 
 /* =========================
-   RO‘YXAT QATORI - KARTOCHKA
+   RO‘YXAT QATORI - AVATAR BILAN, REYTING BO'YICHA SARALANGAN
 ========================= */
 
 function rowCard(b, index) {
     return `
         <div class="brand-card" onclick="openBusiness(${b.id})">
-            <div class="brand-top">
-                <span class="brand-number">${index+1}</span>
-                <span class="brand-name">${escapeHtml(b.name)} ${verify(b)}</span>
-                <span class="brand-rating">
-                    <span class="star">★</span> ${b.rating.toFixed(1)}
-                </span>
+            <div class="brand-avatar">${b.icon}</div>
+            <div class="brand-content">
+                <div class="brand-top">
+                    <span class="brand-number">${index+1}</span>
+                    <span class="brand-name">${escapeHtml(b.name)} ${verify(b)}</span>
+                    <span class="brand-rating">
+                        <span class="star">★</span> ${b.rating.toFixed(1)}
+                    </span>
+                </div>
+                <div class="brand-body">
+                    <div class="brand-info">
+                        <span class="ico">📍</span>
+                        <span class="val">${escapeHtml(b.address)}</span>
+                    </div>
+                    <div class="brand-info">
+                        <span class="ico">🕘</span>
+                        <span class="val">${escapeHtml(b.hours)}</span>
+                    </div>
+                    <div class="brand-info">
+                        <span class="ico">📞</span>
+                        <span class="val phone">${escapeHtml(b.phone)}</span>
+                    </div>
+                    <div class="brand-category">${escapeHtml(b.category)}</div>
+                </div>
             </div>
-            <div class="brand-body">
-                <div class="brand-info">
-                    <span class="ico">📍</span>
-                    <span class="val">${escapeHtml(b.address)}</span>
-                </div>
-                <div class="brand-info">
-                    <span class="ico">🕘</span>
-                    <span class="val">${escapeHtml(b.hours)}</span>
-                </div>
-                <div class="brand-info">
-                    <span class="ico">📞</span>
-                    <span class="val phone">${escapeHtml(b.phone)}</span>
-                </div>
-                <div class="brand-category">${escapeHtml(b.category)}</div>
-            </div>
-            <hr class="brand-divider">
         </div>
     `;
 }
 
 
 /* =========================
-   REYTING BO‘YICHA SARALASH
+   REYTING BO‘YICHA SARALASH (getAll ichida)
 ========================= */
 
-function topSorted(){
-
- return getAll().sort(
-
-   (a,b) =>
-     b.rating-a.rating ||
-     b.reviews-a.reviews
-
- );
-
-}
+// getAll() funksiyasi yuqorida reyting bo'yicha saralangan
 
 
 /* =========================
@@ -3275,7 +3288,7 @@ function topSorted(){
 
 function render(){
 
- const all = topSorted();
+ const all = getAll();
  let filtered = all;
  
  if (selectedCity) {
