@@ -483,6 +483,7 @@ a{color:inherit;text-decoration:none}
   font-size:17px
 }
 
+/* BRENDLAR KARTOCHKASI */
 .brand-card {
   display: flex;
   align-items: flex-start;
@@ -642,6 +643,7 @@ a{color:inherit;text-decoration:none}
   margin: 6px 0 2px 0;
 }
 
+/* MY BUSINESS CARD */
 .my-business-card {
   display: flex;
   align-items: flex-start;
@@ -803,7 +805,7 @@ a{color:inherit;text-decoration:none}
 }
 .my-business-card .brand-actions .btn-settings:hover { background: #7c3aed; }
 
-/* SETTINGS MODAL */
+/* SOZLAMALAR MODAL */
 .settings-modal{
   position:fixed;
   inset:0;
@@ -1692,6 +1694,10 @@ a{color:inherit;text-decoration:none}
   padding:20px
 }
 
+/* ========================= */
+/* MOBIL */
+/* ========================= */
+
 @media(max-width:760px){
   .header{height:68px;padding:0 16px}
   .logo{font-size:31px;letter-spacing:-2px;padding:0;line-height:1}
@@ -2077,7 +2083,7 @@ a{color:inherit;text-decoration:none}
 </div>
 
 
-<!-- SETTINGS MODAL -->
+<!-- SOZLAMALAR MODAL -->
 <div class="settings-modal" id="settingsModal">
   <div class="settings-box">
     <button class="close" onclick="closeSettings()">×</button>
@@ -2437,7 +2443,7 @@ function showPage(id){
 
 
 /* =========================
-   BIZNES PROFILI
+   BIZNES PROFILI - YANGI QO'SHILGAN BIZNES UCHUN HAM ISHLAYDI
 ========================= */
 
 function openBusiness(id){
@@ -2499,7 +2505,7 @@ function renderProfile(b){
 
 
 /* =========================
-   MY BUSINESS
+   MY BUSINESS (BOSHQARUV)
 ========================= */
 
 function updateBadge() {
@@ -2559,7 +2565,7 @@ function renderMyBusiness() {
 
 
 /* =========================
-   SOZLAMALAR - TUZATILDI
+   SOZLAMALAR
 ========================= */
 
 function openSettings(id) {
@@ -2593,77 +2599,6 @@ function uploadCoverImage(id) {
         }
     };
     input.click();
-}
-
-
-/* =========================
-   TAHRIRLASH - TUZATILDI
-========================= */
-
-function openEdit(id) {
-    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
-    const biz = saved.find(b => String(b.id) === String(id));
-    if (!biz) { alert("Biznes topilmadi!"); return; }
-    editingId = id;
-    document.getElementById("editName").value = biz.name || "";
-    document.getElementById("editCategory").value = biz.category || "";
-    document.getElementById("editAddress").value = biz.address || "";
-    document.getElementById("editPhone").value = biz.phone || "";
-    document.getElementById("editHours").value = biz.hours || "09:00 – 21:00";
-    document.getElementById("editTelegram").value = biz.telegram || "";
-    document.getElementById("editAbout").value = biz.about || "";
-    
-    const preview = document.getElementById("editImagePreview");
-    if (biz.image) {
-        preview.innerHTML = `<img src="${biz.image}" alt="Rasm" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid #1685ff;">`;
-    } else {
-        preview.innerHTML = `<span style="color:#aebfe0;font-size:13px;">Rasm yuklanmagan</span>";
-    }
-    document.getElementById("editModal").classList.add("show");
-}
-
-function closeEdit() {
-    document.getElementById("editModal").classList.remove("show");
-    editingId = null;
-}
-
-function saveEdit() {
-    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
-    const index = saved.findIndex(b => String(b.id) === String(editingId));
-    if (index === -1) { alert("Biznes topilmadi!"); return; }
-    
-    const fileInput = document.getElementById("editImageInput");
-    let image = saved[index].image;
-    
-    if (fileInput.files && fileInput.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            image = e.target.result;
-            finishSave(index, image);
-        };
-        reader.readAsDataURL(fileInput.files[0]);
-    } else {
-        finishSave(index, image);
-    }
-}
-
-function finishSave(index, image) {
-    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
-    saved[index].name = document.getElementById("editName").value.trim() || saved[index].name;
-    saved[index].category = document.getElementById("editCategory").value || saved[index].category;
-    saved[index].address = document.getElementById("editAddress").value.trim() || saved[index].address;
-    saved[index].phone = document.getElementById("editPhone").value.trim() || saved[index].phone;
-    saved[index].hours = document.getElementById("editHours").value.trim() || "09:00 – 21:00";
-    saved[index].telegram = document.getElementById("editTelegram").value.trim() || "";
-    saved[index].about = document.getElementById("editAbout").value.trim() || saved[index].about;
-    saved[index].image = image;
-    
-    localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
-    closeEdit();
-    render();
-    renderMyBusiness();
-    updateBadge();
-    alert("Biznes muvaffaqiyatli yangilandi!");
 }
 
 
@@ -2709,8 +2644,70 @@ function addBusiness(){
 
 
 /* =========================
-   RASM YUKLASH
+   TAHRIRLASH
 ========================= */
+
+function openEdit(id) {
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    const biz = saved.find(b => String(b.id) === String(id));
+    if (!biz) { alert("Biznes topilmadi!"); return; }
+    editingId = id;
+    document.getElementById("editName").value = biz.name || "";
+    document.getElementById("editCategory").value = biz.category || "";
+    document.getElementById("editAddress").value = biz.address || "";
+    document.getElementById("editPhone").value = biz.phone || "";
+    document.getElementById("editHours").value = biz.hours || "";
+    document.getElementById("editTelegram").value = biz.telegram || "";
+    document.getElementById("editAbout").value = biz.about || "";
+    const preview = document.getElementById("editImagePreview");
+    if (biz.image) {
+        preview.innerHTML = `<img src="${biz.image}" alt="Rasm">`;
+    } else {
+        preview.innerHTML = `<span style="color:#aebfe0;font-size:13px;">Rasm yuklanmagan</span>`;
+    }
+    document.getElementById("editModal").classList.add("show");
+}
+
+function closeEdit() {
+    document.getElementById("editModal").classList.remove("show");
+    editingId = null;
+}
+
+function saveEdit() {
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    const index = saved.findIndex(b => String(b.id) === String(editingId));
+    if (index === -1) { alert("Biznes topilmadi!"); return; }
+    const fileInput = document.getElementById("editImageInput");
+    let image = saved[index].image;
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            image = e.target.result;
+            finishSave(index, image);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    } else {
+        finishSave(index, image);
+    }
+}
+
+function finishSave(index, image) {
+    const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
+    saved[index].name = document.getElementById("editName").value.trim() || saved[index].name;
+    saved[index].category = document.getElementById("editCategory").value || saved[index].category;
+    saved[index].address = document.getElementById("editAddress").value || saved[index].address;
+    saved[index].phone = document.getElementById("editPhone").value || saved[index].phone;
+    saved[index].hours = document.getElementById("editHours").value || saved[index].hours;
+    saved[index].telegram = document.getElementById("editTelegram").value || "";
+    saved[index].about = document.getElementById("editAbout").value || saved[index].about;
+    saved[index].image = image;
+    localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
+    closeEdit();
+    render();
+    renderMyBusiness();
+    updateBadge();
+    alert("Biznes muvaffaqiyatli yangilandi!");
+}
 
 function uploadImage(id) {
     const input = document.createElement('input');
