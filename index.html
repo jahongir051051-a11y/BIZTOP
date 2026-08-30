@@ -155,75 +155,39 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ========================= */
-/* SHAHAR TANLASH - 2 QATOR */
+/* SHAHAR TANLASH - VILOYAT VA TUMANLAR */
 /* ========================= */
 
 .city-selector{
   display:flex;
-  flex-direction:column;
-  gap:6px;
-  width:100%;
-}
-
-.city-selector-top{
-  display:flex;
+  gap:10px;
   align-items:center;
-  gap:12px;
-}
-
-.city-selector-top .city-label{
-  font-size:16px;
-  font-weight:700;
-  color:#fff;
-  min-width:60px;
-}
-
-.city-selector-top .selected-city-name{
-  font-size:16px;
-  font-weight:600;
-  color:#22c55e;
-  background:#0c2a59;
-  padding:6px 16px;
-  border-radius:12px;
-  border:1px solid #22c55e;
-  display:inline-block;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.city-selector-top .selected-city-name:hover{
-  background:#1685ff;
-  border-color:#1685ff;
-  color:#fff;
-}
-
-.city-selector-bottom{
-  display:flex;
   flex-wrap:wrap;
-  gap:6px;
-  align-items:center;
-  padding:8px 0;
+}
+
+.city-selector-wrapper{
+  position:relative;
+  display:inline-block;
 }
 
 .city-btn{
   background:#0c2a59;
   border:1px solid #2768a9;
-  border-radius:18px;
-  padding:6px 16px;
+  border-radius:20px;
+  padding:8px 18px;
   color:#aebfe0;
-  font-size:13px;
+  font-size:14px;
   font-weight:600;
   cursor:pointer;
   transition:.3s;
   display:flex;
   align-items:center;
-  gap:5px;
+  gap:6px;
 }
 
 .city-btn:hover{
   border-color:#1685ff;
   color:#fff;
-  background:#103a6e;
 }
 
 .city-btn.active{
@@ -233,7 +197,7 @@ a{color:inherit;text-decoration:none}
 }
 
 .city-btn .arrow{
-  font-size:10px;
+  font-size:12px;
   transition:.3s;
 }
 
@@ -241,7 +205,7 @@ a{color:inherit;text-decoration:none}
   transform:rotate(180deg);
 }
 
-/* Tumanlar dropdown */
+/* VILOYATLAR DROPDOWN (SHAHAR TUGMASI ICHIDA) */
 .city-dropdown{
   display:none;
   position:absolute;
@@ -249,11 +213,11 @@ a{color:inherit;text-decoration:none}
   left:0;
   background:#0a234d;
   border:1px solid #2768a9;
-  border-radius:14px;
-  padding:10px;
+  border-radius:16px;
+  padding:12px;
   z-index:200;
-  min-width:220px;
-  max-height:300px;
+  min-width:320px;
+  max-height:400px;
   overflow-y:auto;
   box-shadow:0 20px 60px rgba(0,0,0,.6);
   margin-top:4px;
@@ -266,24 +230,24 @@ a{color:inherit;text-decoration:none}
 .city-dropdown .region-title{
   color:#1685ff;
   font-weight:700;
-  font-size:13px;
-  padding:6px 10px;
+  font-size:14px;
+  padding:8px 12px;
   border-bottom:1px solid #21456f;
-  margin-bottom:4px;
+  margin-bottom:6px;
 }
 
 .city-dropdown .city-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:3px;
+  gap:4px;
 }
 
 .city-dropdown .city-item{
-  padding:6px 10px;
-  border-radius:8px;
+  padding:8px 12px;
+  border-radius:10px;
   cursor:pointer;
   color:#aebfe0;
-  font-size:13px;
+  font-size:14px;
   transition:.2s;
   display:flex;
   justify-content:space-between;
@@ -310,7 +274,7 @@ a{color:inherit;text-decoration:none}
   color:#fff;
 }
 
-/* Tuman dropdown (2-qatorda) */
+/* TUMANLAR DROPDOWN (VILOYAT TANLANGANDAN KEYIN) */
 .district-dropdown{
   display:none;
   position:absolute;
@@ -318,11 +282,11 @@ a{color:inherit;text-decoration:none}
   left:100%;
   background:#0a234d;
   border:1px solid #2768a9;
-  border-radius:14px;
-  padding:8px;
+  border-radius:16px;
+  padding:10px;
   z-index:300;
-  min-width:180px;
-  max-height:280px;
+  min-width:200px;
+  max-height:300px;
   overflow-y:auto;
   box-shadow:0 20px 60px rgba(0,0,0,.6);
   margin-left:4px;
@@ -335,18 +299,18 @@ a{color:inherit;text-decoration:none}
 .district-dropdown .district-title{
   color:#1685ff;
   font-weight:700;
-  font-size:12px;
-  padding:5px 10px;
+  font-size:13px;
+  padding:6px 10px;
   border-bottom:1px solid #21456f;
   margin-bottom:4px;
 }
 
 .district-dropdown .district-item{
-  padding:6px 12px;
-  border-radius:6px;
+  padding:7px 12px;
+  border-radius:8px;
   cursor:pointer;
   color:#aebfe0;
-  font-size:12px;
+  font-size:13px;
   transition:.2s;
 }
 
@@ -362,18 +326,13 @@ a{color:inherit;text-decoration:none}
 
 .city-dropdown::-webkit-scrollbar,
 .district-dropdown::-webkit-scrollbar{
-  width:4px;
+  width:5px;
 }
 
 .city-dropdown::-webkit-scrollbar-thumb,
 .district-dropdown::-webkit-scrollbar-thumb{
   background:#1685ff;
-  border-radius:4px;
-}
-
-.city-selector-wrapper{
-  position:relative;
-  display:inline-block;
+  border-radius:5px;
 }
 
 .selected-city-display{
@@ -1410,31 +1369,20 @@ a{color:inherit;text-decoration:none}
     font-size:14px;
   }
 
-  /* SHAHAR TANLASH - 2 QATOR (MOBIL) */
-  .city-selector-top .city-label{
-    font-size:14px;
-    min-width:50px;
-  }
-
-  .city-selector-top .selected-city-name{
-    font-size:14px;
-    padding:4px 12px;
-  }
-
   .city-btn{
-    font-size:11px;
-    padding:4px 12px;
-    border-radius:14px;
+    font-size:12px;
+    padding:6px 14px;
+    border-radius:16px;
   }
 
   .city-dropdown{
-    min-width:200px;
-    max-height:250px;
+    min-width:280px;
+    max-height:300px;
   }
 
   .city-dropdown .city-item{
-    font-size:12px;
-    padding:5px 8px;
+    font-size:13px;
+    padding:6px 10px;
   }
 
   .city-dropdown .city-grid{
@@ -1442,13 +1390,13 @@ a{color:inherit;text-decoration:none}
   }
 
   .district-dropdown{
-    min-width:160px;
-    max-height:220px;
+    min-width:180px;
+    max-height:250px;
   }
 
   .district-dropdown .district-item{
-    font-size:11px;
-    padding:4px 8px;
+    font-size:12px;
+    padding:5px 8px;
   }
 
   .section-title{
@@ -1857,50 +1805,13 @@ a{color:inherit;text-decoration:none}
   .container{padding-left:10px;padding-right:10px}
   .search-box{height:44px;padding:0 10px}
   .search-btn{height:44px;flex-basis:76px;width:76px;font-size:13px}
-
-  .city-selector-top .city-label{
-    font-size:12px;
-    min-width:40px;
-  }
-
-  .city-selector-top .selected-city-name{
-    font-size:12px;
-    padding:3px 10px;
-  }
-
-  .city-btn{
-    font-size:10px;
-    padding:3px 10px;
-    border-radius:12px;
-  }
-
-  .city-dropdown{
-    min-width:180px;
-    max-height:200px;
-  }
-
-  .city-dropdown .city-item{
-    font-size:11px;
-    padding:4px 6px;
-  }
-
-  .city-dropdown .city-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .district-dropdown{
-    min-width:140px;
-    max-height:180px;
-  }
-
-  .district-dropdown .district-item{
-    font-size:10px;
-    padding:3px 6px;
-  }
-
-  .section-title{
-    font-size:20px;
-  }
+  .city-btn{font-size:11px;padding:5px 12px}
+  .city-dropdown{min-width:240px;max-height:250px}
+  .city-dropdown .city-item{font-size:12px;padding:5px 8px}
+  .city-dropdown .city-grid{grid-template-columns:1fr 1fr}
+  .district-dropdown{min-width:160px;max-height:200px}
+  .district-dropdown .district-item{font-size:11px;padding:4px 6px}
+  .section-title{font-size:20px}
   .section-title .ico{font-size:24px}
   .result-card{padding:8px 10px}
   .avatar{width:42px;height:42px;font-size:20px}
@@ -2019,48 +1930,268 @@ a{color:inherit;text-decoration:none}
 
     <div class="search-wrap">
       
-      <!-- SHAHAR TANLASH - 2 QATOR -->
+      <!-- SHAHAR TANLASH - VILOYAT VA TUMANLAR -->
       <div class="city-selector">
-        
-        <!-- 1-QATOR: Shahar va tanlangan shahar -->
-        <div class="city-selector-top">
-          <span class="city-label">📍 Shahar</span>
-          <span class="selected-city-name" id="selectedCityDisplay" onclick="toggleCityDropdown()">
-            <span id="selectedCityName">Barchasi</span>
+        <div class="city-selector-wrapper">
+          <button class="city-btn" onclick="toggleCityDropdown()" id="cityDropdownBtn">
+            📍 <span id="selectedCityName">Shahar</span>
             <span class="arrow" id="cityArrow">▼</span>
-          </span>
-        </div>
-
-        <!-- 2-QATOR: Viloyatlar (tugmalar) -->
-        <div class="city-selector-bottom" id="cityButtons">
-          <button class="city-btn active" onclick="selectCity('')">🌍 Barchasi</button>
-          <button class="city-btn" onclick="selectCity('toshkent')">📍 Toshkent</button>
-          <button class="city-btn" onclick="selectCity('samarqand')">📍 Samarqand</button>
-          <button class="city-btn" onclick="selectCity('buxoro')">📍 Buxoro</button>
-          <button class="city-btn" onclick="selectCity('namangan')">📍 Namangan</button>
-          <button class="city-btn" onclick="selectCity('andijon')">📍 Andijon</button>
-          <button class="city-btn" onclick="selectCity('fargona')">📍 Farg‘ona</button>
-          <button class="city-btn" onclick="selectCity('qoqon')">📍 Qo‘qon</button>
-          <button class="city-btn" onclick="selectCity('jizzax')">📍 Jizzax</button>
-          <button class="city-btn" onclick="selectCity('sirdaryo')">📍 Sirdaryo</button>
-          <button class="city-btn" onclick="selectCity('navoiy')">📍 Navoiy</button>
-          <button class="city-btn" onclick="selectCity('qarshi')">📍 Qarshi</button>
-          <button class="city-btn" onclick="selectCity('termiz')">📍 Termiz</button>
-          <button class="city-btn" onclick="selectCity('urganch')">📍 Urganch</button>
-          <button class="city-btn" onclick="selectCity('qoraqalpogiston')">📍 Qoraqalpog‘iston</button>
-        </div>
-
-        <!-- Tumanlar dropdown (viloyat tanlangandan keyin) -->
-        <div class="city-selector-wrapper" style="position:relative;">
+          </button>
+          
+          <!-- VILOYATLAR RO'YXATI -->
           <div class="city-dropdown" id="cityDropdown">
-            <div class="region-title" id="districtTitle">📍 Toshkent tumanlari</div>
-            <div class="city-grid" id="districtGrid"></div>
+            <div class="region-title">📍 Viloyatlar</div>
+            <div class="city-grid">
+              <div class="city-item" onclick="selectCity('')">🌍 Barchasi</div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('toshkent')">
+                📍 Toshkent <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-toshkent">
+                  <div class="district-title">Toshkent tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('toshkent','Toshkent shahri')">Toshkent shahri</div>
+                  <div class="district-item" onclick="selectDistrict('toshkent','Olmazor')">Olmazor</div>
+                  <div class="district-item" onclick="selectDistrict('toshkent','Bektemir')">Bektemir</div>
+                  <div class="district-item" onclick="selectDistrict('toshkent','Mirobod')">Mirobod</div>
+                  <div class="district-item" onclick="selectDistrict('toshkent','Mirzo Ulug\'bek')">Mirzo Ulug'bek</div>
+                  <div class="district-item" onclick="selectDistrict('toshkent','Sergeli')">Sergeli</div>
+                  <div class="district-item" onclick="selectDistrict('toshkent','Shayxontohur')">Shayxontohur</div>
+                  <div class="district-item" onclick="selectDistrict('toshkent','Chilonzor')">Chilonzor</div>
+                  <div class="district-item" onclick="selectDistrict('toshkent','Yakkasaroy')">Yakkasaroy</div>
+                  <div class="district-item" onclick="selectDistrict('toshkent','Yunusobod')">Yunusobod</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('samarqand')">
+                📍 Samarqand <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-samarqand">
+                  <div class="district-title">Samarqand tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('samarqand','Samarqand shahri')">Samarqand shahri</div>
+                  <div class="district-item" onclick="selectDistrict('samarqand','Bulung\'ur')">Bulung'ur</div>
+                  <div class="district-item" onclick="selectDistrict('samarqand','Jomboy')">Jomboy</div>
+                  <div class="district-item" onclick="selectDistrict('samarqand','Kattaqo\'rg\'on')">Kattaqo'rg'on</div>
+                  <div class="district-item" onclick="selectDistrict('samarqand','Narpay')">Narpay</div>
+                  <div class="district-item" onclick="selectDistrict('samarqand','Oqdaryo')">Oqdaryo</div>
+                  <div class="district-item" onclick="selectDistrict('samarqand','Payariq')">Payariq</div>
+                  <div class="district-item" onclick="selectDistrict('samarqand','Urgut')">Urgut</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('buxoro')">
+                📍 Buxoro <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-buxoro">
+                  <div class="district-title">Buxoro tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('buxoro','Buxoro shahri')">Buxoro shahri</div>
+                  <div class="district-item" onclick="selectDistrict('buxoro','G\'ijduvon')">G'ijduvon</div>
+                  <div class="district-item" onclick="selectDistrict('buxoro','Kogon')">Kogon</div>
+                  <div class="district-item" onclick="selectDistrict('buxoro','Olot')">Olot</div>
+                  <div class="district-item" onclick="selectDistrict('buxoro','Qorako\'l')">Qorako'l</div>
+                  <div class="district-item" onclick="selectDistrict('buxoro','Romitan')">Romitan</div>
+                  <div class="district-item" onclick="selectDistrict('buxoro','Shofirkon')">Shofirkon</div>
+                  <div class="district-item" onclick="selectDistrict('buxoro','Vobkent')">Vobkent</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('namangan')">
+                📍 Namangan <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-namangan">
+                  <div class="district-title">Namangan tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','Namangan shahri')">Namangan shahri</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','Chortoq')">Chortoq</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','Kosonsoy')">Kosonsoy</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','Mingbuloq')">Mingbuloq</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','Namangan tumani')">Namangan tumani</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','Norin')">Norin</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','Pop')">Pop</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','To\'raqo\'rg\'on')">To'raqo'rg'on</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','Uychi')">Uychi</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','Uchqo\'rg\'on')">Uchqo'rg'on</div>
+                  <div class="district-item" onclick="selectDistrict('namangan','Yangiqo\'rg\'on')">Yangiqo'rg'on</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('andijon')">
+                📍 Andijon <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-andijon">
+                  <div class="district-title">Andijon tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Andijon shahri')">Andijon shahri</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Asaka')">Asaka</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Baliqchi')">Baliqchi</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Bo\'ston')">Bo'ston</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Buloqboshi')">Buloqboshi</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Izboskan')">Izboskan</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Jalaquduq')">Jalaquduq</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Marhamat')">Marhamat</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Oltinko\'l')">Oltinko'l</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Paxtaobod')">Paxtaobod</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Shahrixon')">Shahrixon</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Ulug\'nor')">Ulug'nor</div>
+                  <div class="district-item" onclick="selectDistrict('andijon','Xo\'jaobod')">Xo'jaobod</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('fargona')">
+                📍 Farg‘ona <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-fargona">
+                  <div class="district-title">Farg'ona tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Farg\'ona shahri')">Farg'ona shahri</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Quva')">Quva</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Quvasoy')">Quvasoy</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Oltiariq')">Oltiariq</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Rishton')">Rishton</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','So\'x')">So'x</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Toshloq')">Toshloq</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Uchko\'prik')">Uchko'prik</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Yozyovon')">Yozyovon</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Bag\'dod')">Bag'dod</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Beshariq')">Beshariq</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Buvayda')">Buvayda</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Dang\'ara')">Dang'ara</div>
+                  <div class="district-item" onclick="selectDistrict('fargona','Furqat')">Furqat</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('qoqon')">
+                📍 Qo‘qon <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-qoqon">
+                  <div class="district-title">Qo'qon tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('qoqon','Qo\'qon shahri')">Qo'qon shahri</div>
+                  <div class="district-item" onclick="selectDistrict('qoqon','Qo\'qon tumani')">Qo'qon tumani</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('jizzax')">
+                📍 Jizzax <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-jizzax">
+                  <div class="district-title">Jizzax tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Jizzax shahri')">Jizzax shahri</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Arnasoy')">Arnasoy</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Baxmal')">Baxmal</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Do\'stlik')">Do'stlik</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Forish')">Forish</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Gallaorol')">Gallaorol</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Mirzacho\'l')">Mirzacho'l</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Paxtakor')">Paxtakor</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Yangiobod')">Yangiobod</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Zafarobod')">Zafarobod</div>
+                  <div class="district-item" onclick="selectDistrict('jizzax','Zomin')">Zomin</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('sirdaryo')">
+                📍 Sirdaryo <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-sirdaryo">
+                  <div class="district-title">Sirdaryo tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('sirdaryo','Guliston shahri')">Guliston shahri</div>
+                  <div class="district-item" onclick="selectDistrict('sirdaryo','Guliston tumani')">Guliston tumani</div>
+                  <div class="district-item" onclick="selectDistrict('sirdaryo','Boyovut')">Boyovut</div>
+                  <div class="district-item" onclick="selectDistrict('sirdaryo','Mirzaobod')">Mirzaobod</div>
+                  <div class="district-item" onclick="selectDistrict('sirdaryo','Oqoltin')">Oqoltin</div>
+                  <div class="district-item" onclick="selectDistrict('sirdaryo','Sardoba')">Sardoba</div>
+                  <div class="district-item" onclick="selectDistrict('sirdaryo','Sayxunobod')">Sayxunobod</div>
+                  <div class="district-item" onclick="selectDistrict('sirdaryo','Xovos')">Xovos</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('navoiy')">
+                📍 Navoiy <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-navoiy">
+                  <div class="district-title">Navoiy tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('navoiy','Navoiy shahri')">Navoiy shahri</div>
+                  <div class="district-item" onclick="selectDistrict('navoiy','Zarafshon')">Zarafshon</div>
+                  <div class="district-item" onclick="selectDistrict('navoiy','Karmana')">Karmana</div>
+                  <div class="district-item" onclick="selectDistrict('navoiy','Qiziltepa')">Qiziltepa</div>
+                  <div class="district-item" onclick="selectDistrict('navoiy','Konimex')">Konimex</div>
+                  <div class="district-item" onclick="selectDistrict('navoiy','Navbahor')">Navbahor</div>
+                  <div class="district-item" onclick="selectDistrict('navoiy','Nurota')">Nurota</div>
+                  <div class="district-item" onclick="selectDistrict('navoiy','Tomdi')">Tomdi</div>
+                  <div class="district-item" onclick="selectDistrict('navoiy','Uchquduq')">Uchquduq</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('qarshi')">
+                📍 Qarshi <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-qarshi">
+                  <div class="district-title">Qarshi tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Qarshi shahri')">Qarshi shahri</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Dehqonobod')">Dehqonobod</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Kasbi')">Kasbi</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Kitob')">Kitob</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Koson')">Koson</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Mirishkor')">Mirishkor</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Muborak')">Muborak</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Nishon')">Nishon</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Qamashi')">Qamashi</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Shahrisabz')">Shahrisabz</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','Yakkabog\'')">Yakkabog'</div>
+                  <div class="district-item" onclick="selectDistrict('qarshi','G\'uzor')">G'uzor</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('termiz')">
+                📍 Termiz <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-termiz">
+                  <div class="district-title">Termiz tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Termiz shahri')">Termiz shahri</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Angor')">Angor</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Boysun')">Boysun</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Denov')">Denov</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Jarqo\'rg\'on')">Jarqo'rg'on</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Muzrabot')">Muzrabot</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Oltinsoy')">Oltinsoy</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Sariosiyo')">Sariosiyo</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Sherobod')">Sherobod</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Shurchi')">Shurchi</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Qiziriq')">Qiziriq</div>
+                  <div class="district-item" onclick="selectDistrict('termiz','Uzun')">Uzun</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('urganch')">
+                📍 Urganch <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-urganch">
+                  <div class="district-title">Urganch tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Urganch shahri')">Urganch shahri</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Xiva')">Xiva</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Bog\'ot')">Bog'ot</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Gurlan')">Gurlan</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Hazorasp')">Hazorasp</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Qo\'shko\'pir')">Qo'shko'pir</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Shovot')">Shovot</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Tuproqqal\'a')">Tuproqqal'a</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Xonqa')">Xonqa</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Yangiariq')">Yangiariq</div>
+                  <div class="district-item" onclick="selectDistrict('urganch','Yangibozor')">Yangibozor</div>
+                </div>
+              </div>
+              
+              <div class="city-item has-children" onclick="toggleDistricts('qoraqalpogiston')">
+                📍 Qoraqalpog‘iston <span class="sub-arrow">▶</span>
+                <div class="district-dropdown" id="districts-qoraqalpogiston">
+                  <div class="district-title">Qoraqalpog'iston tumanlari</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Nukus shahri')">Nukus shahri</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Amudaryo')">Amudaryo</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Beruniy')">Beruniy</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Bo\'zatov')">Bo'zatov</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Chimboy')">Chimboy</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Ellikqal\'a')">Ellikqal'a</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Kegeyli')">Kegeyli</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Mo\'ynoq')">Mo'ynoq</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Qanliko\'l')">Qanliko'l</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Qo\'ng\'irot')">Qo'ng'irot</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Qorao\'zak')">Qorao'zak</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Shumanay')">Shumanay</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Taxtako\'pir')">Taxtako'pir</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','To\'rtko\'l')">To'rtko'l</div>
+                  <div class="district-item" onclick="selectDistrict('qoraqalpogiston','Xo\'jayli')">Xo'jayli</div>
+                </div>
+              </div>
+              
+            </div>
           </div>
         </div>
-
+        <span class="selected-city-display" id="selectedCityDisplay"></span>
       </div>
       
-      <!-- QIDIRUV -->
       <div class="search-row">
         <div class="search-box">
           <span class="icon">⌕</span>
@@ -2375,16 +2506,11 @@ function loadSelectedCity() {
                     fullDisplay = cityDisplay + ' › ' + selectedDistrict;
                 }
                 document.getElementById('selectedCityName').textContent = fullDisplay;
-                document.getElementById('selectedCityDisplay').textContent = '📍 ' + fullDisplay;
-                document.getElementById('selectedCityDisplay').classList.add('show');
+                const display = document.getElementById('selectedCityDisplay');
+                display.textContent = '📍 ' + fullDisplay;
+                display.classList.add('show');
                 
-                // Viloyat tugmasini aktiv qilish
-                document.querySelectorAll('.city-btn').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.city-btn').forEach(btn => {
-                    if (btn.textContent.includes(cityDisplay)) {
-                        btn.classList.add('active');
-                    }
-                });
+                document.querySelectorAll('.city-item').forEach(item => item.classList.remove('active'));
             }
         }
     } catch (e) {
@@ -2405,71 +2531,66 @@ function saveSelectedCity() {
 
 
 /* =========================
-   SHAHAR TANLASH FUNKSIYALARI
+   DROPDOWN FUNKSIYALARI
 ========================= */
 
 function toggleCityDropdown() {
     const dropdown = document.getElementById('cityDropdown');
     const arrow = document.getElementById('cityArrow');
     dropdown.classList.toggle('show');
-    if (arrow) arrow.classList.toggle('open');
+    arrow.classList.toggle('open');
 }
 
 function closeCityDropdown() {
     document.getElementById('cityDropdown').classList.remove('show');
-    const arrow = document.getElementById('cityArrow');
-    if (arrow) arrow.classList.remove('open');
+    document.getElementById('cityArrow').classList.remove('open');
+    document.querySelectorAll('.district-dropdown').forEach(d => d.classList.remove('show'));
 }
 
-function selectCity(cityKey) {
-    selectedCity = cityKey;
+function toggleDistricts(cityKey) {
+    const districtDropdown = document.getElementById('districts-' + cityKey);
+    if (districtDropdown) {
+        document.querySelectorAll('.district-dropdown').forEach(d => {
+            if (d.id !== 'districts-' + cityKey) {
+                d.classList.remove('show');
+            }
+        });
+        districtDropdown.classList.toggle('show');
+    }
+}
+
+document.addEventListener('click', function(e) {
+    const wrapper = document.querySelector('.city-selector-wrapper');
+    if (wrapper && !wrapper.contains(e.target)) {
+        closeCityDropdown();
+    }
+});
+
+
+/* =========================
+   SHAHAR TANLASH
+========================= */
+
+function selectCity(city) {
+    selectedCity = city;
     selectedDistrict = "";
     closeCityDropdown();
     saveSelectedCity();
     
-    // Yangilash
-    const displayName = cityKey ? CITY_DATA[cityKey]?.name || cityKey : 'Barchasi';
+    const displayName = city ? CITY_DATA[city]?.name || city.charAt(0).toUpperCase() + city.slice(1) : 'Shahar';
     document.getElementById('selectedCityName').textContent = displayName;
     
     const display = document.getElementById('selectedCityDisplay');
-    if (cityKey) {
+    if (city) {
         display.textContent = '📍 ' + displayName;
         display.classList.add('show');
     } else {
         display.classList.remove('show');
     }
     
-    // Tugmalarni yangilash
-    document.querySelectorAll('.city-btn').forEach(btn => btn.classList.remove('active'));
-    if (cityKey) {
-        document.querySelectorAll('.city-btn').forEach(btn => {
-            if (btn.textContent.includes(displayName)) {
-                btn.classList.add('active');
-            }
-        });
-    } else {
-        document.querySelector('.city-btn:first-child')?.classList.add('active');
-    }
-    
-    // Tumanlarni yashirish
+    document.querySelectorAll('.city-item').forEach(item => item.classList.remove('active'));
+    document.querySelectorAll('.district-item').forEach(item => item.classList.remove('active'));
     document.querySelectorAll('.district-dropdown').forEach(d => d.classList.remove('show'));
-    
-    // Tuman dropdownini to'ldirish
-    if (cityKey && CITY_DATA[cityKey]) {
-        const districtGrid = document.getElementById('districtGrid');
-        const districtTitle = document.getElementById('districtTitle');
-        districtTitle.textContent = '📍 ' + CITY_DATA[cityKey].name + ' tumanlari';
-        districtGrid.innerHTML = CITY_DATA[cityKey].districts.map(d => `
-            <div class="city-item" onclick="selectDistrict('${cityKey}','${d}')">
-                ${d}
-            </div>
-        `).join('');
-        
-        // Dropdownni ko'rsatish
-        document.getElementById('cityDropdown').classList.add('show');
-        const arrow = document.getElementById('cityArrow');
-        if (arrow) arrow.classList.add('open');
-    }
     
     const input = document.getElementById('searchInput');
     if (input.value.trim()) {
@@ -2479,30 +2600,31 @@ function selectCity(cityKey) {
     }
 }
 
+
+/* =========================
+   TUMAN TANLASH
+========================= */
+
 function selectDistrict(cityKey, districtName) {
     selectedCity = cityKey;
     selectedDistrict = districtName;
     closeCityDropdown();
     saveSelectedCity();
     
-    const cityDisplay = CITY_DATA[cityKey]?.name || cityKey;
+    document.querySelectorAll('.district-dropdown').forEach(d => d.classList.remove('show'));
+    
+    const cityDisplay = CITY_DATA[cityKey]?.name || cityKey.charAt(0).toUpperCase() + cityKey.slice(1);
     const fullDisplay = cityDisplay + ' › ' + districtName;
     
     document.getElementById('selectedCityName').textContent = fullDisplay;
+    
     const display = document.getElementById('selectedCityDisplay');
     display.textContent = '📍 ' + fullDisplay;
     display.classList.add('show');
     
-    // Tugmalarni yangilash
-    document.querySelectorAll('.city-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.city-btn').forEach(btn => {
-        if (btn.textContent.includes(cityDisplay)) {
-            btn.classList.add('active');
-        }
-    });
-    
-    // Tuman dropdownidagi aktiv element
+    document.querySelectorAll('.city-item').forEach(item => item.classList.remove('active'));
     document.querySelectorAll('.district-item').forEach(item => item.classList.remove('active'));
+    
     document.querySelectorAll('.district-item').forEach(item => {
         if (item.textContent.trim() === districtName) {
             item.classList.add('active');
