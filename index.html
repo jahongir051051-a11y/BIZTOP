@@ -642,7 +642,7 @@ a{color:inherit;text-decoration:none}
   margin: 6px 0 2px 0;
 }
 
-/* MY BUSINESS CARD - FAQAT SOZLAMALAR TUGMASI QOLDI */
+/* MY BUSINESS CARD */
 .my-business-card {
   display: flex;
   align-items: flex-start;
@@ -757,7 +757,6 @@ a{color:inherit;text-decoration:none}
   color: #d6dfed;
 }
 
-/* FAQAT SOZLAMALAR TUGMASI */
 .my-business-card .brand-actions {
   display: flex;
   gap: 8px;
@@ -1991,7 +1990,7 @@ a{color:inherit;text-decoration:none}
 </main>
 
 
-<!-- MY BUSINESS - FAQAT SOZLAMALAR TUGMASI -->
+<!-- MY BUSINESS -->
 <main id="mybusiness" class="page">
   <div class="container">
     <div class="profile-topbar" style="margin-bottom:16px;">
@@ -2531,7 +2530,7 @@ function renderProfile(b){
 
 
 /* =========================
-   MY BUSINESS (FAQAT SOZLAMALAR TUGMASI)
+   MY BUSINESS
 ========================= */
 
 function updateBadge() {
@@ -2587,7 +2586,7 @@ function renderMyBusiness() {
 
 
 /* =========================
-   SOZLAMALAR
+   SOZLAMALAR - TUZATILDI (Tahrirlash, Profil rasmi, Sahifa rasmi ishlaydi)
 ========================= */
 
 function openSettings(id) {
@@ -2600,6 +2599,7 @@ function closeSettings() {
     settingsBusinessId = null;
 }
 
+/* SAHIFA RASMI (QOPQOQ) - ISHLAYDI */
 function uploadCoverImage(id) {
     const input = document.createElement('input');
     input.type = 'file';
@@ -2674,7 +2674,7 @@ function addBusiness(){
 
 
 /* =========================
-   TAHRIRLASH
+   TAHRIRLASH - TUZATILDI (ISH VAQTI KORINADI)
 ========================= */
 
 function openEdit(id) {
@@ -2739,6 +2739,7 @@ function finishSave(index, image) {
     alert("Biznes muvaffaqiyatli yangilandi!");
 }
 
+/* PROFIL RASMI - ISHLAYDI */
 function uploadImage(id) {
     const input = document.createElement('input');
     input.type = 'file';
@@ -2754,7 +2755,7 @@ function uploadImage(id) {
                     localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
                     renderMyBusiness();
                     updateBadge();
-                    alert("Rasm muvaffaqiyatli yuklandi!");
+                    alert("Profil rasmi muvaffaqiyatli yuklandi!");
                 }
             };
             reader.readAsDataURL(e.target.files[0]);
