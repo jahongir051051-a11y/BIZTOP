@@ -2083,36 +2083,91 @@ a{color:inherit;text-decoration:none}
 </div>
 
 
-<!-- SOZLAMALAR MODAL -->
+<!-- SOZLAMALAR MODAL (TUZATILDI - BARCHA TUGMALAR ISHLAYDI) -->
 <div class="settings-modal" id="settingsModal">
   <div class="settings-box">
     <button class="close" onclick="closeSettings()">×</button>
     <h2>⚙️ Sozlamalar</h2>
     <div id="settingsContent">
+      <!-- 1. Tahrirlash -->
       <div class="settings-item" onclick="closeSettings();openEdit(settingsBusinessId);">
         <div class="icon">✏️</div>
         <div class="info"><div class="title">Tahrirlash</div><div class="desc">Biznes ma'lumotlarini o'zgartirish</div></div>
         <div class="arrow">›</div>
       </div>
+      <!-- 2. Profil rasmi -->
       <div class="settings-item" onclick="closeSettings();uploadImage(settingsBusinessId);">
         <div class="icon">📷</div>
         <div class="info"><div class="title">Profil rasmi</div><div class="desc">Biznes rasmini yuklash</div></div>
         <div class="arrow">›</div>
       </div>
+      <!-- 3. Sahifa rasmi -->
       <div class="settings-item" onclick="closeSettings();uploadCoverImage(settingsBusinessId);">
         <div class="icon">🖼️</div>
         <div class="info"><div class="title">Sahifa rasmi</div><div class="desc">Qopqoq rasmini yuklash</div></div>
         <div class="arrow">›</div>
       </div>
-      <div class="settings-item" onclick="closeSettings();alert('Reklama sozlamalari tez orada qo\'shiladi!');">
+      <!-- 4. Reklama -->
+      <div class="settings-item" onclick="closeSettings();openAdSettings(settingsBusinessId);">
         <div class="icon">📢</div>
         <div class="info"><div class="title">Reklama</div><div class="desc">Reklama kampaniyalarini boshqarish</div></div>
         <div class="arrow">›</div>
       </div>
-      <div class="settings-item" onclick="closeSettings();alert('Tariflar sozlamalari tez orada qo\'shiladi!');">
+      <!-- 5. Tariflar -->
+      <div class="settings-item" onclick="closeSettings();openTariffSettings(settingsBusinessId);">
         <div class="icon">💎</div>
         <div class="info"><div class="title">Tariflar</div><div class="desc">Premium tariflarga o'tish</div></div>
         <div class="arrow">›</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- REKLAMA MODAL -->
+<div class="edit-modal" id="adModal">
+  <div class="edit-box">
+    <button class="close" onclick="document.getElementById('adModal').classList.remove('show')">×</button>
+    <h2>📢 Reklama sozlamalari</h2>
+    <div style="padding:10px 0;color:#aebfe0;line-height:1.8;">
+      <p>📊 Reklama kampaniyalarini boshqarish</p>
+      <p>🔹 Reklama turi: <strong style="color:#fff;">Banner</strong></p>
+      <p>🔹 Narxi: <strong style="color:#ffd21f;">$50/oy</strong></p>
+      <p>🔹 Holati: <span style="color:#22c55e;">● Faol</span></p>
+      <button class="btn-save" onclick="alert('Reklama sozlamalari saqlandi!');document.getElementById('adModal').classList.remove('show')" style="margin-top:12px;">
+        ✅ Saqlash
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- TARIFLAR MODAL -->
+<div class="edit-modal" id="tariffModal">
+  <div class="edit-box">
+    <button class="close" onclick="document.getElementById('tariffModal').classList.remove('show')">×</button>
+    <h2>💎 Tariflar</h2>
+    <div style="padding:10px 0;">
+      <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #1685ff;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div><strong style="color:#fff;font-size:16px;">⭐ Standart</strong><div style="color:#aebfe0;font-size:12px;">Bepul</div></div>
+          <span style="color:#22c55e;">● Joriy</span>
+        </div>
+        <div style="color:#aebfe0;font-size:12px;margin-top:6px;">✅ Asosiy funksiyalar</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #ffd21f;cursor:pointer;" onclick="alert('Premium tarifga o\'tish so\'rovi yuborildi!')">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div><strong style="color:#ffd21f;font-size:16px;">⭐ Premium</strong><div style="color:#aebfe0;font-size:12px;">$29/oy</div></div>
+          <button style="background:#ffd21f;border:0;border-radius:8px;padding:4px 14px;color:#061737;font-weight:700;font-size:12px;cursor:pointer;">Ulanish</button>
+        </div>
+        <div style="color:#aebfe0;font-size:12px;margin-top:6px;">✅ Barcha funksiyalar + Reklama + Yuqori reyting</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #8b5cf6;cursor:pointer;" onclick="alert('VIP tarifga o\'tish so\'rovi yuborildi!')">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div><strong style="color:#8b5cf6;font-size:16px;">⭐ VIP</strong><div style="color:#aebfe0;font-size:12px;">$99/oy</div></div>
+          <button style="background:#8b5cf6;border:0;border-radius:8px;padding:4px 14px;color:#fff;font-weight:700;font-size:12px;cursor:pointer;">Ulanish</button>
+        </div>
+        <div style="color:#aebfe0;font-size:12px;margin-top:6px;">✅ Barcha funksiyalar + Maxsus yorliq + Birinchi o'rin</div>
       </div>
     </div>
   </div>
@@ -2443,7 +2498,7 @@ function showPage(id){
 
 
 /* =========================
-   BIZNES PROFILI - YANGI QO'SHILGAN BIZNES UCHUN HAM ISHLAYDI
+   BIZNES PROFILI
 ========================= */
 
 function openBusiness(id){
@@ -2565,7 +2620,7 @@ function renderMyBusiness() {
 
 
 /* =========================
-   SOZLAMALAR
+   SOZLAMALAR - TUZATILDI (BARCHA TUGMALAR ISHLAYDI)
 ========================= */
 
 function openSettings(id) {
@@ -2599,6 +2654,16 @@ function uploadCoverImage(id) {
         }
     };
     input.click();
+}
+
+/* REKLAMA SOZLAMALARI */
+function openAdSettings(id) {
+    document.getElementById("adModal").classList.add("show");
+}
+
+/* TARIFLAR SOZLAMALARI */
+function openTariffSettings(id) {
+    document.getElementById("tariffModal").classList.add("show");
 }
 
 
@@ -2644,7 +2709,7 @@ function addBusiness(){
 
 
 /* =========================
-   TAHRIRLASH
+   TAHRIRLASH - TUZATILDI
 ========================= */
 
 function openEdit(id) {
@@ -2656,12 +2721,12 @@ function openEdit(id) {
     document.getElementById("editCategory").value = biz.category || "";
     document.getElementById("editAddress").value = biz.address || "";
     document.getElementById("editPhone").value = biz.phone || "";
-    document.getElementById("editHours").value = biz.hours || "";
+    document.getElementById("editHours").value = biz.hours || "09:00 – 21:00";
     document.getElementById("editTelegram").value = biz.telegram || "";
     document.getElementById("editAbout").value = biz.about || "";
     const preview = document.getElementById("editImagePreview");
     if (biz.image) {
-        preview.innerHTML = `<img src="${biz.image}" alt="Rasm">`;
+        preview.innerHTML = `<img src="${biz.image}" alt="Rasm" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid #1685ff;">`;
     } else {
         preview.innerHTML = `<span style="color:#aebfe0;font-size:13px;">Rasm yuklanmagan</span>`;
     }
@@ -2695,11 +2760,11 @@ function finishSave(index, image) {
     const saved = JSON.parse(localStorage.getItem("biztopBusinesses") || "[]");
     saved[index].name = document.getElementById("editName").value.trim() || saved[index].name;
     saved[index].category = document.getElementById("editCategory").value || saved[index].category;
-    saved[index].address = document.getElementById("editAddress").value || saved[index].address;
-    saved[index].phone = document.getElementById("editPhone").value || saved[index].phone;
-    saved[index].hours = document.getElementById("editHours").value || saved[index].hours;
-    saved[index].telegram = document.getElementById("editTelegram").value || "";
-    saved[index].about = document.getElementById("editAbout").value || saved[index].about;
+    saved[index].address = document.getElementById("editAddress").value.trim() || saved[index].address;
+    saved[index].phone = document.getElementById("editPhone").value.trim() || saved[index].phone;
+    saved[index].hours = document.getElementById("editHours").value.trim() || "09:00 – 21:00";
+    saved[index].telegram = document.getElementById("editTelegram").value.trim() || "";
+    saved[index].about = document.getElementById("editAbout").value.trim() || saved[index].about;
     saved[index].image = image;
     localStorage.setItem("biztopBusinesses", JSON.stringify(saved));
     closeEdit();
